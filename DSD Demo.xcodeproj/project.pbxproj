@@ -34,6 +34,7 @@
 		86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */; };
 		86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E21825562F00F48B2E /* SignCaptureViewController.m */; };
 		86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80E4182560CD00F48B2E /* OrderInfo.json */; };
+		86BA80E818256B6100F48B2E /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E718256B6100F48B2E /* Order.m */; };
 		86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */; };
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
@@ -93,6 +94,8 @@
 		86BA80E11825562F00F48B2E /* SignCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignCaptureViewController.h; sourceTree = "<group>"; };
 		86BA80E21825562F00F48B2E /* SignCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignCaptureViewController.m; sourceTree = "<group>"; };
 		86BA80E4182560CD00F48B2E /* OrderInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OrderInfo.json; sourceTree = "<group>"; };
+		86BA80E618256B6100F48B2E /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		86BA80E718256B6100F48B2E /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
 		86E26D3E1823BAD100D17098 /* SODCustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODCustomTableCell.h; sourceTree = "<group>"; };
 		86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODCustomTableCell.m; sourceTree = "<group>"; };
 		86E26D401823BAD100D17098 /* SODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODViewControllerViewController.h; sourceTree = "<group>"; };
@@ -243,8 +246,6 @@
 				86BA80E4182560CD00F48B2E /* OrderInfo.json */,
 				86E26D441823BAF400D17098 /* materials.json */,
 				860DF5E3182243BD001FDEF2 /* CustomerInfo.json */,
-				865EE6F11822868600A3A891 /* Customer.h */,
-				865EE6F21822868600A3A891 /* Customer.m */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -293,6 +294,10 @@
 		86EC740D182019BB0056553C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				865EE6F11822868600A3A891 /* Customer.h */,
+				865EE6F21822868600A3A891 /* Customer.m */,
+				86BA80E618256B6100F48B2E /* Order.h */,
+				86BA80E718256B6100F48B2E /* Order.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
 				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
+				86BA80E818256B6100F48B2E /* Order.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
