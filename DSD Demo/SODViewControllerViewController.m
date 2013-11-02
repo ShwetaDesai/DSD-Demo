@@ -159,24 +159,41 @@
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
     viewFooter.backgroundColor = COLOR_THEME;
+    
+    UITextField *txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+    txtFieldMatID.placeholder = @" Enter Material ID";
+    txtFieldMatID.backgroundColor = [UIColor whiteColor];
+    [viewFooter addSubview:txtFieldMatID];
+    
+    UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+    [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnAdd setBackgroundColor:[UIColor whiteColor]];
+    [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+    [viewFooter addSubview:btnAdd];
+    
+    UIImageView *imgViewBarCode = [[UIImageView alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+    imgViewBarCode.image = [UIImage imageNamed:@"barcode.png"];
+    [viewFooter addSubview:imgViewBarCode];
+    
     UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor whiteColor]];
     [btnSubmit setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    
-    [self.view addSubview:btnSubmit];
     [viewFooter addSubview:btnSubmit];
     
     return viewFooter;
 }
     
 - (void)submitButtonClicked {
-    for (int i=0; i < 6; i++) {
-        NSLog(@"%d\n", enteredValues[i]);
-    }
     _confirmFlag = TRUE;
     [self.tableView reloadData];
+}
+
+- (void)addButtonClicked {
+    
 }
 @end
