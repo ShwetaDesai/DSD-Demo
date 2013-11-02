@@ -10,9 +10,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
-    NSMutableArray *customersToService;
+    NSMutableArray *customersToService, *ordersPlaced;
+    NSString *customerToServicID;
 }
 @property (strong, nonatomic) UIWindow *window;
 @property (strong,nonatomic) NSMutableArray *customersToService;
-
+@property (strong,nonatomic) NSMutableArray *ordersPlaced;
+@property (strong,nonatomic) NSString *customerToServicID;
 @end

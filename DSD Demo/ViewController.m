@@ -23,7 +23,7 @@
     [self initControllers];
     [self initButtons];
     contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ccbg1.png"]];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceWizardView) name:nServiceOutletButtonClicked object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceWizardView:) name:nServiceOutletButtonClicked object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCustomerDetailsView:) name:nShowCustomerDetailsView object:nil];
     
@@ -121,18 +121,21 @@
     todayTableViewController = [[TodayInfoViewController alloc] init];
     customerViewC = [[CustomerListViewController alloc] init];
     sodViewController = [[SODViewControllerViewController alloc]initWithStyle:UITableViewStylePlain];
-    
-    wizardVC = [[ServiceWizardViewController alloc] init];
-    
     customerDetailVC = [[CustomerDetailsViewController alloc] init];
-//    customerViewC.customerDetailVCObject = customerDetailVC;
+    wizardVC = [[ServiceWizardViewController alloc] init];
 }
 
--(void) showServiceWizardView{
+-(void) showServiceWizardView:(NSNotification*)notification{
+    NSLog(@"ENTER  showServiceWizardView");
+    NSLog(@"cust ID chosen:%@",[[notification userInfo] valueForKey:@"customerToServiceID"]);
+    
+    ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID = [[notification userInfo] valueForKey:@"customerToServiceID"];
+    
     for (UIView* view in [contentView subviews])
         [view removeFromSuperview];
     
     wizardVC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 490);
+//    wizardVC.customerID = [[notification userInfo] valueForKey:@"customerToServiceID"];
     wizardVC.view.layer.cornerRadius = 10.0;
     [contentView addSubview:wizardVC.view];
     

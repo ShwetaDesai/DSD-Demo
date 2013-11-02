@@ -7,15 +7,17 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Order.h"
 
 @implementation AppDelegate
-@synthesize customersToService;
+@synthesize customersToService,ordersPlaced,customerToServicID;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     customersToService = [[NSMutableArray alloc] init];
+    ordersPlaced = [[NSMutableArray alloc] init];
     [self loadDataObjects];
+    [self parseOrderInfoData];
     
     // Override point for customization after application launch.
     
@@ -64,4 +66,36 @@
     [arrOrders addObjectsFromArray:arrObjects];
 }
 
+-(void)parseOrderInfoData{
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"OrderInfo" ofType:@"json"];
+    
+    NSError *fileReadError;
+    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&fileReadError];
+    NSLog(@"File read error:%@",fileReadError);
+    
+    NSError *JSONreadError;
+
+    NSDictionary *temp = [NSJSONSerialization
+                          JSONObjectWithData:data
+                          options:kNilOptions
+                          error:&JSONreadError];
+    
+    NSLog(@"JSON read error:%@",JSONreadError);
+//    NSLog(@"count ordersPlaced:%d",[temp count]);
+    NSArray *tArr = [temp objectForKey:@"ORDER"];
+    for (int i = 0; i < [tArr count]; i++) {
+        Order *obj1 = [[Order alloc] init];
+        
+        obj1.matNo = [[tArr objectAtIndex:i] objectForKey:@"MAT_NO"];
+        obj1.customerNo = [[tArr objectAtIndex:i] objectForKey:@"CUST_NO"];
+
+        obj1.reqrdQty = [[[tArr objectAtIndex:i] objectForKey:@"DPLN_QTY"] integerValue];
+        
+        obj1.matDesc = [[tArr objectAtIndex:i] objectForKey:@"MAT_DESC1"];
+        
+        [ordersPlaced addObject:obj1];
+        NSLog(@"obj matno:%@",obj1.matNo);
+    }
+    NSLog(@"appObject.ordersPlaced EXIT:%d",[ordersPlaced count]);
+}
 @end
