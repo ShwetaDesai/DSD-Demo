@@ -1,0 +1,105 @@
+{
+  "ORDER":[
+       {
+        "DELV_NO": "0085094299",
+        "CUST_NO": "0001050446",
+        "MAT_NO": "401760",
+        "ITM_NO": "000010",
+        "DPLN_QTY": "13",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "13",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094299",
+        "CUST_NO": "0001050446",
+        "MAT_NO": "404271",
+        "ITM_NO": "000020",
+        "DPLN_QTY": "10",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "10",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094299",
+        "CUST_NO": "0001050446",
+        "MAT_NO": "380136",
+        "ITM_NO": "000030",
+        "DPLN_QTY": "10",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "10",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094299",
+        "CUST_NO": "0001050446",
+        "MAT_NO": "380003",
+        "ITM_NO": "000040",
+        "DPLN_QTY": "12",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "12",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094299",
+        "CUST_NO": "0001050446",
+        "MAT_NO": "380004",
+        "ITM_NO": "000050",
+        "DPLN_QTY": "25",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "25",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094300",
+        "CUST_NO": "0001146020",
+        "MAT_NO": "401760",
+        "ITM_NO": "000010",
+        "DPLN_QTY": "20",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "20",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094300",
+        "CUST_NO": "0001146020",
+        "MAT_NO": "404271",
+        "ITM_NO": "000020",
+        "DPLN_QTY": "10",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "10",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094300",
+        "CUST_NO": "0001146020",
+        "MAT_NO": "380136",
+        "ITM_NO": "000030",
+        "DPLN_QTY": "112",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "112",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094300",
+        "CUST_NO": "0001146020",
+        "MAT_NO": "380003",
+        "ITM_NO": "000040",
+        "DPLN_QTY": "120",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "120",
+        "DACT_UOM": "CS"
+      },
+      {
+        "DELV_NO": "0085094300",
+        "CUST_NO": "0001146020",
+        "MAT_NO": "380004",
+        "ITM_NO": "000050",
+        "DPLN_QTY": "50",
+        "DPLN_UOM": "CS",
+        "DACT_QTY": "50",
+        "DACT_UOM": "CS"
+      }
+    ]
+}
+
