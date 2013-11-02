@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F2412F1A-016D-4CBE-ADA1-D50CBF468E27</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DSD Demo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>236EAE5D-0105-4373-907A-AAB69F6C1EDC</key>
+		<string>https://github.com/ShwetaDesai/DSD-Demo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DSD Demo.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>236EAE5D-0105-4373-907A-AAB69F6C1EDC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ShwetaDesai/DSD-Demo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>236EAE5D-0105-4373-907A-AAB69F6C1EDC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>236EAE5D-0105-4373-907A-AAB69F6C1EDC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DSD-Demo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
