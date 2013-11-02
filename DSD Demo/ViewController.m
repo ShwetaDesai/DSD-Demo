@@ -67,7 +67,7 @@
 
 -(void) showTodaysView {
     
-    todayTableViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 500);
+    todayTableViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
 
     [contentView addSubview:todayTableViewController.view];
     tagNoButtonSelected = 1;
@@ -102,6 +102,7 @@
             //show the transaction Summary view
         }else if (buttonClicked.tag == 5){
             //show the EOD view
+            [self showEODView];
         }
         tagNoButtonSelected = buttonClicked.tag;
     }
@@ -109,16 +110,27 @@
 
 -(void) showSODView {
     sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
-    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 500);
+    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
     
     [contentView addSubview:sodViewController.view];
     
     tagNoButtonSelected = 2;
     
 }
+
+-(void) showEODView {
+    eodViewController = [[EODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
+    eodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    
+    [contentView addSubview:eodViewController.view];
+    
+    tagNoButtonSelected = 5;
+    
+}
+
 -(void) showServiceOutletView {
     
-    customerViewC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 500);
+    customerViewC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
 //    [self containerAddChildViewController:customerViewC];
     [contentView addSubview:customerViewC.view];
     

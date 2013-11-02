@@ -10,6 +10,7 @@
 #import "TodayInfoViewController.h"
 #import "CustomerListViewController.h"
 #import "SODViewControllerViewController.h"
+#import "EODViewControllerViewController.h"
 #import "Constants.h"
 
 @interface ViewController : UIViewController
@@ -18,6 +19,7 @@
     TodayInfoViewController *todayTableViewController;
     CustomerListViewController *customerViewC;
     SODViewControllerViewController *sodViewController;
+    EODViewControllerViewController *eodViewController;
 }
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UIButton *btn_Today;

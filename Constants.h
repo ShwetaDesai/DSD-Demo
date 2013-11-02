@@ -15,11 +15,18 @@
 #define row_Height_TodayTableView 50
 #define font_TodayTableView 19
 //#define height_CustomerTableSectionHeader 19
+
+
 NSMutableArray *arrOrders;
 int enteredValues[6], acceptedValues[6];
 
 #define COLOR_THEME [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
 #define COLOR_ERROR [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
+
+#define kLeftMargin                             10.0
+#define kTopMargin                              10.0
+#define kTextFieldWidth                         70.0
+#define kTextFieldHeight                        25.0
 
 
 #define JSONTAG_MAT_NO              @"MAT_NO"

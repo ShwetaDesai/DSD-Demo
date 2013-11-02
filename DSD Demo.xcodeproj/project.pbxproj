@@ -34,6 +34,9 @@
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
+		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
+		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
+		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,11 @@
 		86E26D411823BAD100D17098 /* SODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODViewControllerViewController.m; sourceTree = "<group>"; };
 		86E26D441823BAF400D17098 /* materials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = materials.json; sourceTree = "<group>"; };
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
+		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
+		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
+		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
+		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +153,7 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
+				BB784C511824FB9F001C7644 /* EOD */,
 				86E26D3D1823BA9B00D17098 /* SOD */,
 				860DF5DD1822365B001FDEF2 /* Constants.h */,
 				8681691818211948005516A2 /* JSON */,
@@ -195,6 +204,7 @@
 		86749029181F92DC0052BB75 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BBAFCEE2182516F50025D478 /* barcode.png */,
 				86E26D461823C5F500D17098 /* back.png */,
 				8681690D1820E1DA005516A2 /* ccbg1.png */,
 				8681690E1820E1DA005516A2 /* ccbg2.png */,
@@ -231,6 +241,8 @@
 			children = (
 				860DF5DA18223148001FDEF2 /* TodayInfoViewController.h */,
 				860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */,
+				BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */,
+				BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */,
 			);
 			name = Today;
 			sourceTree = "<group>";
@@ -251,6 +263,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		BB784C511824FB9F001C7644 /* EOD */ = {
+			isa = PBXGroup;
+			children = (
+				BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */,
+				BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */,
+			);
+			name = EOD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +356,7 @@
 				860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */,
 				860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */,
 				866DD4A2181C403000DF43C5 /* Main.storyboard in Resources */,
+				BBAFCEE3182516F50025D478 /* barcode.png in Resources */,
 				86E26D471823C5F500D17098 /* back.png in Resources */,
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
 				868169101820E1DA005516A2 /* ccbg2.png in Resources */,
@@ -360,12 +382,14 @@
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
+				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				866DD49B181C403000DF43C5 /* main.m in Sources */,
 				86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */,
 				860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */,
 				865EE6F31822868600A3A891 /* Customer.m in Sources */,
+				BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
