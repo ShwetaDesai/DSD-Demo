@@ -30,6 +30,10 @@
 		8681690F1820E1DA005516A2 /* ccbg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8681690D1820E1DA005516A2 /* ccbg1.png */; };
 		868169101820E1DA005516A2 /* ccbg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8681690E1820E1DA005516A2 /* ccbg2.png */; };
 		8681691718210681005516A2 /* CustomerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681691618210681005516A2 /* CustomerListViewController.m */; };
+		86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */; };
+		86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */; };
+		86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E21825562F00F48B2E /* SignCaptureViewController.m */; };
+		86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80E4182560CD00F48B2E /* OrderInfo.json */; };
 		86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */; };
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
@@ -80,6 +84,12 @@
 		8681690E1820E1DA005516A2 /* ccbg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbg2.png; sourceTree = "<group>"; };
 		8681691518210680005516A2 /* CustomerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerListViewController.h; sourceTree = "<group>"; };
 		8681691618210681005516A2 /* CustomerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerListViewController.m; sourceTree = "<group>"; };
+		86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWizardViewController.h; sourceTree = "<group>"; };
+		86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceWizardViewController.m; sourceTree = "<group>"; };
+		86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceWizardViewController.xib; sourceTree = "<group>"; };
+		86BA80E11825562F00F48B2E /* SignCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignCaptureViewController.h; sourceTree = "<group>"; };
+		86BA80E21825562F00F48B2E /* SignCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignCaptureViewController.m; sourceTree = "<group>"; };
+		86BA80E4182560CD00F48B2E /* OrderInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OrderInfo.json; sourceTree = "<group>"; };
 		86E26D3E1823BAD100D17098 /* SODCustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODCustomTableCell.h; sourceTree = "<group>"; };
 		86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODCustomTableCell.m; sourceTree = "<group>"; };
 		86E26D401823BAD100D17098 /* SODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODViewControllerViewController.h; sourceTree = "<group>"; };
@@ -145,6 +155,7 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
+				86BA80E01825562100F48B2E /* Signature */,
 				86E26D3D1823BA9B00D17098 /* SOD */,
 				860DF5DD1822365B001FDEF2 /* Constants.h */,
 				8681691818211948005516A2 /* JSON */,
@@ -206,6 +217,7 @@
 		868169141821064F005516A2 /* Outlet Service */ = {
 			isa = PBXGroup;
 			children = (
+				86BA80D21825185800F48B2E /* ServiceWizard */,
 				8681691518210680005516A2 /* CustomerListViewController.h */,
 				8681691618210681005516A2 /* CustomerListViewController.m */,
 				860DF5E518225C8C001FDEF2 /* CustomerDetailsViewController.h */,
@@ -218,6 +230,7 @@
 		8681691818211948005516A2 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				86BA80E4182560CD00F48B2E /* OrderInfo.json */,
 				86E26D441823BAF400D17098 /* materials.json */,
 				860DF5E3182243BD001FDEF2 /* CustomerInfo.json */,
 				865EE6F11822868600A3A891 /* Customer.h */,
@@ -233,6 +246,25 @@
 				860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */,
 			);
 			name = Today;
+			sourceTree = "<group>";
+		};
+		86BA80D21825185800F48B2E /* ServiceWizard */ = {
+			isa = PBXGroup;
+			children = (
+				86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */,
+				86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */,
+				86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */,
+			);
+			name = ServiceWizard;
+			sourceTree = "<group>";
+		};
+		86BA80E01825562100F48B2E /* Signature */ = {
+			isa = PBXGroup;
+			children = (
+				86BA80E11825562F00F48B2E /* SignCaptureViewController.h */,
+				86BA80E21825562F00F48B2E /* SignCaptureViewController.m */,
+			);
+			name = Signature;
 			sourceTree = "<group>";
 		};
 		86E26D3D1823BA9B00D17098 /* SOD */ = {
@@ -330,10 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				866DD4A7181C403000DF43C5 /* Images.xcassets in Resources */,
+				86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */,
 				86E26D451823BAF400D17098 /* materials.json in Resources */,
 				866DD499181C403000DF43C5 /* InfoPlist.strings in Resources */,
 				860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */,
 				860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */,
+				86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */,
 				866DD4A2181C403000DF43C5 /* Main.storyboard in Resources */,
 				86E26D471823C5F500D17098 /* back.png in Resources */,
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
@@ -362,6 +396,8 @@
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
+				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
+				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
 				866DD49B181C403000DF43C5 /* main.m in Sources */,
 				86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */,
 				860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */,

@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "CustomerDetailsViewController.h"
-//#import "TestViewController.h"
 
 @interface ViewController ()
 
@@ -23,41 +21,21 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self initControllers];
-    [btn_Today setSelected:YES];
- 
-    [btn_Today setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_SOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_ServiceOutlet setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_transactionSummary setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_EOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    
-    btn_Today.tag = 1;
-    btn_SOD.tag = 2;
-    btn_ServiceOutlet.tag = 3;
-    btn_transactionSummary.tag = 4;
-    btn_EOD.tag = 5;
-    
-    [btn_Today addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [btn_EOD addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-
-    [btn_SOD addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-
-    [btn_ServiceOutlet addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-
-    [btn_transactionSummary addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-
-    [btn_Today setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_SOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_ServiceOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_transactionSummary setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_EOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-   
+    [self initButtons];
     contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ccbg1.png"]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceWizardView) name:nServiceOutletButtonClicked object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCustomerDetailsView:) name:nShowCustomerDetailsView object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceOutletView) name:nShowCustomerListView object:nil];
+
     
     [self showTodaysView];
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -117,9 +95,13 @@
     
 }
 -(void) showServiceOutletView {
+    for (UIView *view in contentView.subviews) {
+        [view removeFromSuperview];
+    }
     
+//    NSLog(@"content view count:%d",[[contentView subviews] count]);
     customerViewC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 500);
-//    [self containerAddChildViewController:customerViewC];
+    
     [contentView addSubview:customerViewC.view];
     
     tagNoButtonSelected = 3;
@@ -129,13 +111,73 @@
     todayTableViewController = [[TodayInfoViewController alloc] init];
     customerViewC = [[CustomerListViewController alloc] init];
     sodViewController = [[SODViewControllerViewController alloc]initWithStyle:UITableViewStylePlain];
+    
+    wizardVC = [[ServiceWizardViewController alloc] init];
+    
+    customerDetailVC = [[CustomerDetailsViewController alloc] init];
+//    customerViewC.customerDetailVCObject = customerDetailVC;
 }
 
-- (void)containerAddChildViewController:(UIViewController *)childViewController {
+-(void) showServiceWizardView{
+    for (UIView* view in [contentView subviews])
+        [view removeFromSuperview];
     
-    [self addChildViewController:childViewController];
-    [self.view addSubview:childViewController.view];
-    [childViewController didMoveToParentViewController:self];
+    wizardVC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 490);
+    wizardVC.view.layer.cornerRadius = 10.0;
+    [contentView addSubview:wizardVC.view];
+    
+}
+//- (void)containerAddChildViewController:(UIViewController *)childViewController {
+//    
+//    [self addChildViewController:childViewController];
+//    [self.view addSubview:childViewController.view];
+//    [childViewController didMoveToParentViewController:self];
+//    
+//}
+
+-(void)initButtons {
+    [btn_Today setSelected:YES];
+    
+    [btn_Today setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
+    [btn_SOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
+    [btn_ServiceOutlet setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
+    [btn_transactionSummary setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
+    [btn_EOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
+    
+    btn_Today.tag = 1;
+    btn_SOD.tag = 2;
+    btn_ServiceOutlet.tag = 3;
+    btn_transactionSummary.tag = 4;
+    btn_EOD.tag = 5;
+    
+    [btn_Today addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn_EOD addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn_SOD addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn_ServiceOutlet addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn_transactionSummary addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [btn_Today setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn_SOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn_ServiceOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn_transactionSummary setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn_EOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+}
+
+-(void)showCustomerDetailsView:(NSNotification*)notification{
+    NSLog(@"ENTER  showCustomerDetailsView");
+    int index = [[[notification userInfo] valueForKey:@"index"] intValue];
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    
+    customerDetailVC.customerSelected = [appObject.customersToService objectAtIndex:index];
+
+    customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos+30, tableWidth, 350);
+    customerDetailVC.view.layer.cornerRadius = 10.0;
+
+    [contentView addSubview:customerDetailVC.view];
     
 }
 @end

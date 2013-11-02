@@ -7,8 +7,6 @@
 //
 
 #import "CustomerListViewController.h"
-#import "Constants.h"
-#import "CustomerDetailsViewController.h"
 #import "Customer.h"
 #import "AppDelegate.h"
 
@@ -38,10 +36,10 @@
     navigationView.tag = 1;
     
     NSString *title = @"Customer List";
-    UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 130)/2,0, 130, 25 )];
+    UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 140)/2,0, 140, 25 )];
     lbltitle.text = title;
     lbltitle.textColor = [UIColor whiteColor];
-    lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView];
+    lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView+2];
     lbltitle.tag = 2;
     [navigationView addSubview:lbltitle];
     [self.view addSubview:navigationView];
@@ -98,8 +96,10 @@
         customerObject.city = [[customersArray objectAtIndex:i] objectForKey:@"CITY"];
         
         customerObject.ID = [[customersArray objectAtIndex:i] objectForKey:@"CUST_NO"];
+ 
+        customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
         
-        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
+//        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
         
         AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
         [appObject.customersToService addObject:customerObject];
@@ -151,23 +151,27 @@
 //    NSLog(@"row selected");
     
     // get and pass the customer object from the App delegate array
-    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
     
-    CustomerDetailsViewController *customerDetailVC = [[CustomerDetailsViewController alloc] init];
-    
-    customerDetailVC.customerSelected = [appObject.customersToService objectAtIndex:indexPath.row];
-    
-    customerDetailVC.view.frame = CGRectMake(0, 30, tableWidth, 350);
-    customerDetailVC.view.layer.cornerRadius = 10.0;
-    
-//    // push the view
-    [self showBackButton];
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:2.0];
-    [self.view addSubview:customerDetailVC.view];
-//    [UIView commitAnimations];
+//    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
 
+        [self showBackButton];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:indexPath.row] forKey:@"index"];
+    
+      [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerDetailsView object:self  userInfo:dict];
+    
+//    [appObject.customersToService objectAtIndex:indexPath.row]
+    //
+//    CustomerDetailsViewController *customerDetailVC = [[CustomerDetailsViewController alloc] init];
+//    
+//    customerDetailVCObject.customerSelected = [appObject.customersToService objectAtIndex:indexPath.row];
 //
+//    customerDetailVCObject.view.frame = CGRectMake(0, 30, tableWidth, 350);
+//    customerDetailVCObject.view.layer.cornerRadius = 10.0;
+//
+
+//    [self.view addSubview:customerDetailVCObject.view];
+   
 }
 
 -(void)showBackButton {
@@ -175,7 +179,15 @@
     [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
     backButton.tag = 4;
     [backButton setFrame:CGRectMake(0, 0, 70, 23)];
+    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
+    
     [[self.view viewWithTag:1] addSubview:backButton];
     
+}
+-(void)onclickBackButton{
+ 
+    [backButton removeFromSuperview];
+    //remove the customer Details View
+    [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerListView object:nil];
 }
 @end

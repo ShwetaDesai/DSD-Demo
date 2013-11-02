@@ -10,7 +10,9 @@
 #import "TodayInfoViewController.h"
 #import "CustomerListViewController.h"
 #import "SODViewControllerViewController.h"
-#import "Constants.h"
+#import "ServiceWizardViewController.h"
+#import "CustomerDetailsViewController.h"
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController
 {
@@ -18,6 +20,8 @@
     TodayInfoViewController *todayTableViewController;
     CustomerListViewController *customerViewC;
     SODViewControllerViewController *sodViewController;
+    ServiceWizardViewController *wizardVC;
+    CustomerDetailsViewController *customerDetailVC;
 }
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UIButton *btn_Today;

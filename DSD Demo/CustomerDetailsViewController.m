@@ -36,6 +36,8 @@
     lbl_street.text = customerSelected.street;
     lbl_zip.text = customerSelected.pinCode;
     lbl_city.text = customerSelected.city;
+//    NSLog(@"customerSelected.phoneNo:%@",customerSelected.phoneNo);
+    
     lbl_phoneNumber.text = customerSelected.phoneNo;
     
     [btn_ServiceOutlet addTarget:self action:@selector(onClickServiceOutlet) forControlEvents:UIControlEventTouchUpInside];
@@ -49,5 +51,6 @@
 
 -(void) onClickServiceOutlet{
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:nServiceOutletButtonClicked object:nil];
 }
 @end

@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomerDetailsViewController.h"
 
 @interface CustomerListViewController : UIViewController
     <UITableViewDataSource,UITableViewDelegate>
 {        
-        UITableView *customerListTableView;
-        NSDictionary *customerDictionary;
-        NSArray *customersArray;
+    UITableView *customerListTableView;
+    NSDictionary *customerDictionary;
+    NSArray *customersArray;
     UIButton *backButton;
     UIView *navigationView;
-//        UINavigationController *navController;
-    }
+//    CustomerDetailsViewController *customerDetailVCObject;
+}
+
+@property (nonatomic,retain) CustomerDetailsViewController *customerDetailVCObject;
 
 @end
