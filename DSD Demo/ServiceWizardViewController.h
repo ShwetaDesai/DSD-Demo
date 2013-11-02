@@ -13,13 +13,18 @@
 <UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *arr_NoServiceItems;
+    NSMutableArray *arr_SalesOrders;
     UITableView *tbvNoService;
     UITableView *tbvSummary, *tbvSales, *tbvReturns;
     NSIndexPath *selectedRow;
     SignCaptureViewController *signatureViewController;
     int yPos;
-    int IDlastSelectedTab,selectedSegmentBarID;
+    int selectedSegmentBarID;
+    NSString *customerID;
+    int IDlastSelectedTab;
+    NSMutableArray *visibilityTruth;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
+@property (nonatomic,strong)   NSString *customerID;
 
 @end
