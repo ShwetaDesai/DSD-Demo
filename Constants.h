@@ -14,7 +14,13 @@
 #define tableWidth 790
 #define row_Height_TodayTableView 50
 #define font_TodayTableView 19
-//#define height_CustomerTableSectionHeader 19
+#define nServiceOutletButtonClicked @"nServiceOutletButtonClicked"
+
+#define nShowCustomerDetailsView @"nShowCustomerDetailsView"
+#define nShowCustomerListView @"nShowCustomerListView"
+
+
+
 NSMutableArray *arrOrders;
 int enteredValues[6], acceptedValues[6];
 
