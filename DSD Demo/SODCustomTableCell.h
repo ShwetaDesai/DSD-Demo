@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Order.h"
 
 @interface SODCustomTableCell : UITableViewCell {
     UILabel *_lblMatID, *_lblMatDesc, *_lblMatPlannedQty;
@@ -17,6 +18,6 @@
 }
 
 - (void)setData:(int)index :(int)colorIndex;
-    
+- (void)setDataForRow:(int)indexID forOrder:(Order*)orderItem;
 //@property (nonatomic, strong)NSMutableDictionary *dictionaryObject;
 @end

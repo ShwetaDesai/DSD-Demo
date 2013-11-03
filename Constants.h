@@ -19,7 +19,7 @@
 
 #define nShowCustomerDetailsView @"nShowCustomerDetailsView"
 #define nShowCustomerListView @"nShowCustomerListView"
-
+#define nSoldQtyUpdate @"nSoldQtyUpdate"
 
 NSMutableArray *arrOrders;
 int enteredValues[6], acceptedValues[6];

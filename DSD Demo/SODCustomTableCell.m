@@ -7,6 +7,8 @@
 //
 
 #import "SODCustomTableCell.h"
+
+
 #define OFFSET_FIELDS       5
 #define WIDTH_FLAG          20
 #define HEIGHT_FLAG         20
@@ -72,6 +74,15 @@
     // Configure the view for the selected state
 }
 
+- (void)setDataForRow:(int)indexID forOrder:(Order*)orderItem{
+    _index = indexID;
+    _lblMatID.text = orderItem.matNo;
+    _lblMatDesc.text = orderItem.matDesc;
+    _lblMatPlannedQty.text = [NSString stringWithFormat:@"%d",orderItem.reqrdQty];
+    _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+    self.backgroundColor = [UIColor whiteColor];
+    
+}
 - (void)setData:(int)indexID :(int)colorIndex {
     _index = indexID;
     NSDictionary *dictionaryObject = [arrOrders objectAtIndex:_index];
@@ -103,6 +114,11 @@
     NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
     
     enteredValues[_index] = [_txtFieldActualCount.text intValue];
+    NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
+    
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,_index, nil] forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
 }
 
 - (void)acceptButtonClicked {

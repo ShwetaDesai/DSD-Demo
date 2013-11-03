@@ -10,7 +10,7 @@
 #import "SignCaptureViewController.h"
 
 @interface ServiceWizardViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate>
+<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate>
 {
     NSArray *arr_NoServiceItems;
     NSMutableArray *arr_SalesOrders;
@@ -26,5 +26,6 @@
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
 @property (nonatomic,strong)   NSString *customerID;
+@property (strong, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
