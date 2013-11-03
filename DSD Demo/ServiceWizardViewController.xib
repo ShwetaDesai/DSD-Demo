@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ServiceWizardViewController">
             <connections>
+                <outlet property="confirmButton" destination="MYk-u9-2n1" id="QvR-MA-HYd"/>
                 <outlet property="segmentedBar" destination="2ED-T3-Ea2" id="QSR-lL-vtG"/>
                 <outlet property="view" destination="2" id="3"/>
             </connections>
@@ -24,12 +25,24 @@
                     </constraints>
                     <segments>
                         <segment title="Sales"/>
-                        <segment title="Returns"/>
-                        <segment title="No Sale"/>
-                        <segment title="Summary"/>
+                        <segment title="Returns" enabled="NO"/>
+                        <segment title="No Sale" enabled="NO"/>
+                        <segment title="Summary" enabled="NO"/>
                     </segments>
                     <color key="tintColor" red="0.86872718979999997" green="0.096458713500000001" blue="0.099281478100000001" alpha="1" colorSpace="calibratedRGB"/>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYk-u9-2n1">
+                    <rect key="frame" x="298" y="424" width="194" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                    <state key="normal" title="Confirm and Proceed">
+                        <color key="titleColor" red="0.86872718979999997" green="0.096458713500000001" blue="0.099281478100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="onClickconfirmButton:" destination="-1" eventType="touchUpInside" id="PcS-7x-zjC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
