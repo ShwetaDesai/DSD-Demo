@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import "Order.h"
+#import "Customer.h"
 
 @implementation AppDelegate
-@synthesize customersToService,ordersPlaced,customerToServicID;
+@synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -18,6 +19,7 @@
     ordersPlaced = [[NSMutableArray alloc] init];
     [self loadDataObjects];
     [self parseOrderInfoData];
+    [self getCustomerDetails];
     
     // Override point for customization after application launch.
     
@@ -98,4 +100,49 @@
     }
     NSLog(@"appObject.ordersPlaced EXIT:%d",[ordersPlaced count]);
 }
+
+-(void) getCustomerDetails {
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CustomerInfo" ofType:@"json"];
+    
+    NSError *fileReadError;
+    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&fileReadError];
+    NSLog(@"File read error:%@",fileReadError);
+    
+    NSError *JSONreadError;
+    //customerDictionary
+    NSDictionary *customerDictionary = [NSJSONSerialization
+                          JSONObjectWithData:data
+                          options:kNilOptions
+                          error:&JSONreadError];
+    
+    NSLog(@"JSON read error:%@",JSONreadError);
+    //    NSLog(@"dicto values:%@",customerDictionary);
+    NSArray *customersArray = [customerDictionary objectForKey:@"CUST_REC"];
+    
+    //    NSLog(@"count:%d",[customersArray count]);
+    
+    for (int i = 0; i < [customersArray count]; i++) {
+        Customer *customerObject = [[Customer alloc] init];
+        
+        customerObject.name = [[customersArray objectAtIndex:i] objectForKey:@"NAME"];
+        
+        customerObject.street = [[customersArray objectAtIndex:i] objectForKey:@"STREET"];
+        
+        customerObject.pinCode = [[customersArray objectAtIndex:i] objectForKey:@"PCODE"];
+        
+        customerObject.city = [[customersArray objectAtIndex:i] objectForKey:@"CITY"];
+        
+        customerObject.ID = [[customersArray objectAtIndex:i] objectForKey:@"CUST_NO"];
+        
+        customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
+        
+        //        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
+        [customersToService addObject:customerObject];
+        
+//        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+//        [appObject.customersToService addObject:customerObject];
+    }
+}
+
 @end

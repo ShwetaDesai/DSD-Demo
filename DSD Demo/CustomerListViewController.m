@@ -29,32 +29,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getCustomerDetails];
+//    [self getCustomerDetails];
     
-    navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, 30)];
-    navigationView.backgroundColor = [UIColor clearColor];
-    navigationView.tag = 1;
+//    navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, 30)];
+//    navigationView.backgroundColor = [UIColor clearColor];
+    
+    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
+    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
+    [backButton setHidden:YES];
+//    [navigationView addSubview:backButton];
+    [self.view addSubview:backButton];
     
     NSString *title = @"Customer List";
     UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 140)/2,0, 140, 25 )];
     lbltitle.text = title;
     lbltitle.textColor = [UIColor whiteColor];
     lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView+2];
-    lbltitle.tag = 2;
-    [navigationView addSubview:lbltitle];
-    [self.view addSubview:navigationView];
+//    lbltitle.tag = 2;
+    [self.view addSubview:lbltitle];
+//    [self.view addSubview:navigationView];
 //
+    customersArray = [NSArray arrayWithArray:((AppDelegate*)[[UIApplication sharedApplication] delegate]).customersToService];
+    
     customerListTableView = [[UITableView alloc] initWithFrame:CGRectMake( 0, 30 , tableWidth, [customersArray count]*row_Height_TodayTableView + 30) style:UITableViewStylePlain];
     customerListTableView.dataSource = self;
     customerListTableView.delegate = self;
-    customerListTableView.tag = 3;
+//    customerListTableView.tag = 3;
     customerListTableView.layer.cornerRadius = 10.0;
     
     [self.view addSubview:customerListTableView];
-//    NSLog(@"tableView obj inin view did load:%@",customerListTableView);
-//    
-//    NSLog(@"class obj inin view did load:%@",self);
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,48 +68,48 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) getCustomerDetails {
-
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CustomerInfo" ofType:@"json"];
-    
-    NSError *fileReadError;
-    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&fileReadError];
-    NSLog(@"File read error:%@",fileReadError);
-    
-    NSError *JSONreadError;
-    //customerDictionary
-    customerDictionary = [NSJSONSerialization
-                          JSONObjectWithData:data
-                          options:kNilOptions
-                          error:&JSONreadError];
-    
-    NSLog(@"JSON read error:%@",JSONreadError);
-//    NSLog(@"dicto values:%@",customerDictionary);
-    customersArray = [customerDictionary objectForKey:@"CUST_REC"];
-    
-//    NSLog(@"count:%d",[customersArray count]);
-    
-    for (int i = 0; i < [customersArray count]; i++) {
-        Customer *customerObject = [[Customer alloc] init];
-       
-        customerObject.name = [[customersArray objectAtIndex:i] objectForKey:@"NAME"];
-
-        customerObject.street = [[customersArray objectAtIndex:i] objectForKey:@"STREET"];
-
-        customerObject.pinCode = [[customersArray objectAtIndex:i] objectForKey:@"PCODE"];
-        
-        customerObject.city = [[customersArray objectAtIndex:i] objectForKey:@"CITY"];
-        
-        customerObject.ID = [[customersArray objectAtIndex:i] objectForKey:@"CUST_NO"];
- 
-        customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
-        
-//        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
-        
-        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-        [appObject.customersToService addObject:customerObject];
-    }
-}
+//-(void) getCustomerDetails {
+//
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"CustomerInfo" ofType:@"json"];
+//    
+//    NSError *fileReadError;
+//    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&fileReadError];
+//    NSLog(@"File read error:%@",fileReadError);
+//    
+//    NSError *JSONreadError;
+//    //customerDictionary
+//    customerDictionary = [NSJSONSerialization
+//                          JSONObjectWithData:data
+//                          options:kNilOptions
+//                          error:&JSONreadError];
+//    
+//    NSLog(@"JSON read error:%@",JSONreadError);
+////    NSLog(@"dicto values:%@",customerDictionary);
+//    customersArray = [customerDictionary objectForKey:@"CUST_REC"];
+//    
+////    NSLog(@"count:%d",[customersArray count]);
+//    
+//    for (int i = 0; i < [customersArray count]; i++) {
+//        Customer *customerObject = [[Customer alloc] init];
+//       
+//        customerObject.name = [[customersArray objectAtIndex:i] objectForKey:@"NAME"];
+//
+//        customerObject.street = [[customersArray objectAtIndex:i] objectForKey:@"STREET"];
+//
+//        customerObject.pinCode = [[customersArray objectAtIndex:i] objectForKey:@"PCODE"];
+//        
+//        customerObject.city = [[customersArray objectAtIndex:i] objectForKey:@"CITY"];
+//        
+//        customerObject.ID = [[customersArray objectAtIndex:i] objectForKey:@"CUST_NO"];
+// 
+//        customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
+//        
+////        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
+//        
+//        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+//        [appObject.customersToService addObject:customerObject];
+//    }
+//}
 
 #pragma mark table View methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -117,8 +122,11 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
     }
     // Configure the cell...
+    Customer *temp = (Customer*)[customersArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [[customersArray objectAtIndex:indexPath.row] objectForKey:@"NAME"];
+    cell.textLabel.text = temp.name;
+    
+    //[[customersArray objectAtIndex:indexPath.row] objectForKey:@"NAME"];
     cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     return cell;
 }
@@ -148,45 +156,31 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSLog(@"row selected");
     
-    // get and pass the customer object from the App delegate array
-    
-//    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-
-        [self showBackButton];
+//    [self showBackButton];
+    [backButton setHidden:NO];
     
     NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:indexPath.row] forKey:@"index"];
     
-      [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerDetailsView object:self  userInfo:dict];
+    [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerDetailsView object:self  userInfo:dict];
     
-//    [appObject.customersToService objectAtIndex:indexPath.row]
-    //
-//    CustomerDetailsViewController *customerDetailVC = [[CustomerDetailsViewController alloc] init];
+}
+
+//-(void)showBackButton {
+//    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    backButton.tag = 4;
+//    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
+//    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
+//    [navigationView addSubview:backButton];
+////    [[self.view viewWithTag:10909090] addSubview:backButton];
 //    
-//    customerDetailVCObject.customerSelected = [appObject.customersToService objectAtIndex:indexPath.row];
-//
-//    customerDetailVCObject.view.frame = CGRectMake(0, 30, tableWidth, 350);
-//    customerDetailVCObject.view.layer.cornerRadius = 10.0;
-//
+//}
 
-//    [self.view addSubview:customerDetailVCObject.view];
-   
-}
-
--(void)showBackButton {
-    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    backButton.tag = 4;
-    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
-    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
-    
-    [[self.view viewWithTag:1] addSubview:backButton];
-    
-}
 -(void)onclickBackButton{
  
-    [backButton removeFromSuperview];
+//    [backButton removeFromSuperview];
+    [backButton setHidden:YES];
     //remove the customer Details View
     [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerListView object:nil];
 }

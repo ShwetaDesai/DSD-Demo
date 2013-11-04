@@ -29,6 +29,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceOutletView) name:nShowCustomerListView object:nil];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCustomerServiceCompleted) name:nCustomerServiceComplete object:nil];
     
     [self showTodaysView];
 }
@@ -61,8 +62,10 @@
     
         // remove any of teh subview of the last button selection
         for (UIView *view in contentView.subviews) {
+//             NSLog(@"view in Arr for removal MENU BUTTON CLICK:%@",view);
             [view removeFromSuperview];
         }
+        ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID = nil;
         
         if (buttonClicked.tag == 1) {
             //show the Today view
@@ -108,6 +111,7 @@
 
 -(void) showServiceOutletView {
     for (UIView *view in contentView.subviews) {
+//        NSLog(@"view in Arr for removal:%@",view);
         [view removeFromSuperview];
     }
     
@@ -181,16 +185,36 @@
 }
 
 -(void)showCustomerDetailsView:(NSNotification*)notification{
-    NSLog(@"ENTER  showCustomerDetailsView");
+
     int index = [[[notification userInfo] valueForKey:@"index"] intValue];
-    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+//    NSLog(@"ENTER  showCustomerDetailsView index:%d",index);
     
-    customerDetailVC.customerSelected = [appObject.customersToService objectAtIndex:index];
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    appObject.rowCustomerListSelected = index;
+    
+//    customerDetailVC.customerSelected = [appObject.customersToService objectAtIndex:index];
 
     customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos+30, tableWidth, 350);
     customerDetailVC.view.layer.cornerRadius = 10.0;
 
     [contentView addSubview:customerDetailVC.view];
+//    [customerViewC.view setNeedsLayout];
+//    [customerViewC.view setNeedsDisplay];
     
+//    [contentView setNeedsLayout];
+    
+}
+
+-(void)handleCustomerServiceCompleted{
+    
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    for(int j=0;j<[appObject.customersToService count];j++){
+        Customer *obj = (Customer*)[appObject.customersToService objectAtIndex:j];
+        if([obj.ID isEqualToString:appObject.customerToServicID]){
+            obj.isServiced = YES;
+            appObject.customerToServicID = nil;
+        }
+    }
+    [self showServiceOutletView];
 }
 @end

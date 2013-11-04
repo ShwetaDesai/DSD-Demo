@@ -17,17 +17,18 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2ED-T3-Ea2">
-                    <rect key="frame" x="5" y="5" width="780" height="46"/>
+                    <rect key="frame" x="5" y="5" width="780" height="29"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="28" id="TOt-Oi-alS"/>
                         <constraint firstAttribute="width" constant="780" id="nVH-Nx-9K1"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="p7p-DE-C3u"/>
                     </constraints>
                     <segments>
                         <segment title="Sales"/>
                         <segment title="Returns" enabled="NO"/>
                         <segment title="No Sale" enabled="NO"/>
                         <segment title="Summary" enabled="NO"/>
+                        <segment title="Invoice" enabled="NO"/>
                     </segments>
                     <color key="tintColor" red="0.86872718979999997" green="0.096458713500000001" blue="0.099281478100000001" alpha="1" colorSpace="calibratedRGB"/>
                 </segmentedControl>

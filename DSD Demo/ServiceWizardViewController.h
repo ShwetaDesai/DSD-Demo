@@ -18,11 +18,11 @@
     UITableView *tbvSummary, *tbvSales, *tbvReturns;
     NSIndexPath *selectedRow;
     SignCaptureViewController *signatureViewController;
-    int yPos;
+//    int yPos;
     int selectedSegmentBarID;
     NSString *customerID;
-    int IDlastSelectedTab;
-    NSMutableArray *visibilityTruth;
+//    int IDlastSelectedTab;
+//    NSMutableArray *visibilityTruth;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
 @property (nonatomic,strong)   NSString *customerID;

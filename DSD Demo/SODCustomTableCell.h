@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Order.h"
 
-@interface SODCustomTableCell : UITableViewCell {
+@interface SODCustomTableCell : UITableViewCell <UITextFieldDelegate> {
     UILabel *_lblMatID, *_lblMatDesc, *_lblMatPlannedQty;
     UITextField *_txtFieldActualCount;
     UIButton *_btnAccept;

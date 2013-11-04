@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomerDetailsViewController">
             <connections>
-                <outlet property="btn_ServiceOutlet" destination="Sh7-Wx-OCq" id="tEs-Ub-MWB"/>
                 <outlet property="customerName" destination="7Zp-o0-JeB" id="UcC-en-DNT"/>
                 <outlet property="lbl_CustomerID" destination="4eP-Pn-o9i" id="ICo-S1-GlQ"/>
                 <outlet property="lbl_city" destination="Pav-Mi-b0n" id="ZQl-Pj-DfH"/>
@@ -54,16 +53,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sh7-Wx-OCq">
-                    <rect key="frame" x="305" y="283" width="159" height="51"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.86872718979999997" green="0.096458713500000001" blue="0.099281478100000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                    <state key="normal" title="Service Outlet">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Street" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiL-X6-ITF">
                     <rect key="frame" x="20" y="136" width="632" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

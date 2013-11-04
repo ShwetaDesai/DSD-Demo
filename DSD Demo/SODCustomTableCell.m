@@ -49,6 +49,7 @@
         _txtFieldActualCount.borderStyle = UITextBorderStyleLine;
         _txtFieldActualCount.backgroundColor = colorBG;
         _txtFieldActualCount.keyboardType = UIKeyboardTypeNumberPad;
+        _txtFieldActualCount.delegate = self;
         [_txtFieldActualCount addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
         
         _btnAccept = [[UIButton alloc] initWithFrame:CGRectMake(_txtFieldActualCount.frame.origin.x - WIDTH_ACCEPT_BUTTON - OFFSET_FIELDS, _txtFieldActualCount.frame.size.height/2 - HEIGHT_ACCEPT_BUTTON/2, WIDTH_ACCEPT_BUTTON, HEIGHT_ACCEPT_BUTTON)];
@@ -111,16 +112,27 @@
 }
     
 - (void)textFieldDidChange {
-    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
+//    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
     
     enteredValues[_index] = [_txtFieldActualCount.text intValue];
-    NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
-    
-//    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,_index, nil] forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
+   
+
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+//    NSLog(@"did end editing textValue:%@",textField.text);
+     NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
+    
+    int indexValue = _index;
+    [NSString stringWithFormat:@"%d",indexValue];
+//        [NSString stringWithFormat:@"%d",]
+//    int countValue = [_txtFieldActualCount.text intValue];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
+        forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
+    
+        [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
+}
 - (void)acceptButtonClicked {
     acceptedValues[_index] = 1;
     self.backgroundColor = [UIColor lightGrayColor];

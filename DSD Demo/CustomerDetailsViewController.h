@@ -16,12 +16,14 @@
     IBOutlet UILabel *lbl_street;
     IBOutlet UILabel *lbl_city;
     IBOutlet UILabel *lbl_zip; 
-    IBOutlet UIButton *btn_ServiceOutlet;
+//    IBOutlet UIButton *btn_ServiceOutlet;
+    
+    UIButton *btn;
     IBOutlet UILabel *lbl_phoneNumber;
 //    UIButton *backButton;
     Customer *customerSelected;
 }
 
-@property (nonatomic,retain) Customer *customerSelected;
+//@property (nonatomic,retain) Customer *customerSelected;
 
 @end

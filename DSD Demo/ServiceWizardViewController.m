@@ -26,6 +26,7 @@
         arr_NoServiceItems = [NSArray arrayWithObjects:@"Late delivery",@"Delivery refusal by customer",@"Quality problem",@"Wrong load",@"Product not ordered",@"Others", nil];
         
         arr_SalesOrders = [[NSMutableArray alloc] init];
+        selectedRow = nil;
     }
     return self;
 }
@@ -50,9 +51,9 @@
 //    returns = 3
     // nosale = 4
     // summary = 5
-    visibilityTruth = [[NSMutableArray alloc] initWithObjects:@"NO",@"NO",@"NO",@"NO", nil];
+//    visibilityTruth = [[NSMutableArray alloc] initWithObjects:@"NO",@"NO",@"NO",@"NO", nil];
     
-        IDlastSelectedTab = -2000000000;
+//      IDlastSelectedTab = -2000000000;
             segmentedBar.selectedSegmentIndex = 0;
     [self onClickSalesTab];
     // Do any additional setup after loading the view from its nib.
@@ -109,36 +110,51 @@
 
 -(void) onClickSummaryTab {
 
-[[self.view viewWithTag:3333] removeFromSuperview];
+    [[self.view viewWithTag:3333] removeFromSuperview];
+//    UIScrollView *scv = [[UIScrollView alloc] initWithFrame:CGRectMake(5, 55, tableWidth, 500)];
+//    scv.scrollEnabled = YES;
+//    scv.indicatorStyle = UIScrollViewIndicatorStyleBlack;
+//    scv.showsVerticalScrollIndicator = YES;
+//    scv.contentSize = CGSizeMake(tableWidth, 900);
     
-    tbvSummary = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 80, 2*50) style:UITableViewStylePlain];
+//    yPos = [arr_SalesOrders count]*50;
+    tbvSummary = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, [arr_SalesOrders count]*50) style:UITableViewStylePlain];
+
     tbvSummary.dataSource = self;
     tbvSummary.delegate = self;
+    tbvSummary.tag = 4444;
+//    [scv addSubview:tbvSummary];
+//    [self.view addSubview:tbvSummary];
+//    [self showSignCaptureTool];
+//    [self.view  addSubview:signatureViewController.view];
+//        [scv addSubview:signatureViewController.view];
+//    
+//    UIButton  *acceptButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    acceptButton.titleLabel.text = @"Accept and Print Invoice";
+//    acceptButton.titleLabel.textColor = [UIColor redColor];
+//    
+//    [acceptButton setFrame:CGRectMake(75,yPos, 200, 30)];
+//    [scv addSubview:acceptButton];
     [self.view addSubview:tbvSummary];
-    [self showSignCaptureTool];
-        [self.view  addSubview:signatureViewController.view];
-    
-    UIButton  *acceptButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    acceptButton.titleLabel.text = @"Accept and Print Invoice";
-    acceptButton.titleLabel.textColor = [UIColor redColor];
-    
-    [acceptButton setFrame:CGRectMake(75,120, 100, 30)];
-        [self.view  addSubview:acceptButton];
+//        [self.view  addSubview:acceptButton];
 }
 
 
 -(void)showSignCaptureTool {
+        [[self.view viewWithTag:4444] removeFromSuperview];
     signatureViewController = [[SignCaptureViewController alloc] init];
-    [signatureViewController.view setFrame:CGRectMake(0, 100+ 30, tableWidth - 60 , 150)];
+    [signatureViewController.view setFrame:CGRectMake(10, 55 , tableWidth - 20 , 200)];
     signatureViewController.view.backgroundColor = [UIColor colorWithRed:58.0/255.0
                                                                    green:134.0/255.0
                                                                     blue:206.0/255.0
                                                                    alpha:0.39];
+//    yPos+=30+150+20;
     signatureViewController.view.layer.borderWidth = 1.0;
     signatureViewController.view.layer.borderColor = [[UIColor blueColor] CGColor];
     signatureViewController.view.layer.cornerRadius = 5.0;
     signatureViewController.view.layer.masksToBounds = YES;
-    
+    signatureViewController.view.tag = 5555;
+    [self.view addSubview:signatureViewController.view];
 }
 #pragma mark table View methods
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -186,11 +202,29 @@
         return cellSOD;
     }
     if (tableView == tbvSummary) {
-        cell.textLabel.text = @"Testing";
+        Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
+        
+        if(o.placedQty != o.reqrdQty)
+            cell.backgroundColor = [UIColor yellowColor];
+        
+        UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+        PlacedQty.text = [NSString stringWithFormat:@"PLCD:%d PACK",o.placedQty];
+        UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+        reqQty.text = [NSString stringWithFormat:@"RQRD:%d PACK",o.reqrdQty];
+        [cell addSubview:PlacedQty];
+        [cell addSubview:reqQty];
+
+        cell.textLabel.text = o.matNo;
         cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     }
     return cell;
 }
+
+//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    if(tableView == tbvSummary){
+//        UIView
+//    }
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -206,7 +240,7 @@
     }else if (tableView == tbvSales) {
         return [arr_SalesOrders count];
     }else  if (tableView == tbvSummary)
-        return 2;
+        return [arr_SalesOrders count];
     return 0;
 
 }
@@ -231,10 +265,14 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0) { // Cancel
-
-    }else{ // OK
-        if (segmentedBar.selectedSegmentIndex == 0) {
+    if(alertView.tag == 5656){
+        
+//        NSDictionary *dict = [NSDictionary dictionaryWithObject: forKey:@"customerServicedID"];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:nCustomerServiceComplete object:nil];
+    }else{
+    if (buttonIndex == 1)// OK
+    {   if (segmentedBar.selectedSegmentIndex == 0) {
             [segmentedBar setEnabled:YES forSegmentAtIndex:1];
             [self showReturnsView];
             segmentedBar.selectedSegmentIndex = 1;
@@ -247,12 +285,43 @@
             [segmentedBar setEnabled:NO forSegmentAtIndex:1];
         }else
             if (segmentedBar.selectedSegmentIndex == 2) {
-                [segmentedBar setEnabled:YES forSegmentAtIndex:3];
-                [self onClickSummaryTab];
-                segmentedBar.selectedSegmentIndex = 3;
-                [segmentedBar setEnabled:NO forSegmentAtIndex:2];
+                if(selectedRow == nil)
+                    [self showAlertBox];
+                else{
+                    [segmentedBar setEnabled:YES forSegmentAtIndex:3];
+                    [self onClickSummaryTab];
+                    segmentedBar.selectedSegmentIndex = 3;
+                    [segmentedBar setEnabled:NO forSegmentAtIndex:2];
+                }
+            }else if (segmentedBar.selectedSegmentIndex == 3){
+                [segmentedBar setEnabled:YES forSegmentAtIndex:4];
+                [self showSignCaptureTool];
+                segmentedBar.selectedSegmentIndex = 4;
+                [segmentedBar setEnabled:NO forSegmentAtIndex:3];
+            }else if(segmentedBar.selectedSegmentIndex == 4){
+                [self showFinalAlert];
             }
     }
+    }
+}
+
+-(void)showFinalAlert{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Printing the Invoice on hand-held printer"                                                                  delegate:nil
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil];
+    
+    alertView.delegate = self;
+    alertView.tag = 5656;
+    [alertView show];
+}
+
+-(void)showAlertBox{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Please select any one option from the list !"                                                                  delegate:nil
+        cancelButtonTitle:@"OK"
+        otherButtonTitles:nil];
+    
+//    alertView.delegate = self;
+    [alertView show];
 }
 -(void)showReturnsView{
     [[self.view viewWithTag:1111] removeFromSuperview];
@@ -263,12 +332,11 @@
     
     AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
 
-    int index = (int)[[notif userInfo] valueForKey:@"indexPath"];
+//    NSLog(@"recvd values index:%@ plcdV:%d",[[notif userInfo] valueForKey:@"indexPath"],[[[notif userInfo] valueForKey:@"placedQty"] integerValue]);
+    
+int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
     int placedQty = [[[notif userInfo] valueForKey:@"placedQty"] integerValue];
     
-    NSLog(@"recvd values index:%d plcdV:%d",index,placedQty);
-  
-   ;
     Order *currentArr = (Order*)[arr_SalesOrders objectAtIndex:index];
    
     for (int i = 0; i <[appObject.ordersPlaced count]; i++) {
@@ -283,4 +351,5 @@
         }
     }
 }
+
 @end
