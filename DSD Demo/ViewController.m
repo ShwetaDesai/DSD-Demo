@@ -23,6 +23,7 @@
     [self initControllers];
     [self initButtons];
     contentView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ccbg1.png"]];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showServiceWizardView:) name:nServiceOutletButtonClicked object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showCustomerDetailsView:) name:nShowCustomerDetailsView object:nil];

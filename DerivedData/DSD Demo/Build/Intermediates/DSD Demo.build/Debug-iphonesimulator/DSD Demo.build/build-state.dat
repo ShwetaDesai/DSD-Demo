@@ -1,0 +1,1367 @@
+TDSD Demo
+v6
+r1
+cCheck dependencies
+cProcessPCH /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.pch DSD\ Demo/DSD\ Demo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODCustomTableCell.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ReturnsDatabaseViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/MaterialsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/EODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Order.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/TodayInfoViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SignCaptureViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Customer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DropDownOptionsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo normal i386
+cCompileXIB /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.xib
+cCpResource DSD\ Demo/materials.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/materials.json
+cCopyStringsFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/en.lproj/InfoPlist.strings DSD\ Demo/en.lproj/InfoPlist.strings
+cCpResource DSD\ Demo/CustomerInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/CustomerInfo.json
+cCompileXIB /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsView.xib
+cCpResource DSD\ Demo/OrderInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/OrderInfo.json
+cCompileStoryboard /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Base.lproj/Main.storyboard
+cCpResource DSD\ Demo/barcode.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/barcode.png
+cCpResource DSD\ Demo/back.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/back.png
+cCpResource DSD\ Demo/ccReverse.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccReverse.png
+cCpResource DSD\ Demo/ccbg2.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg2.png
+cCpResource DSD\ Demo/ccbg1.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg1.png
+cCompileAssetCatalog /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Images.xcassets
+cProcessInfoPlistFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Info.plist /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DSD\ Demo-Info.plist
+cGenerateDSYMFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app.dSYM /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo
+cTouch /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk
+c00000000526BEA3A0000000000000176
+t1382804026
+s374
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/SDKSettings.plist
+c000000005261E86D00000000000003B5
+t1382148205
+s949
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/CoreServices/SystemVersion.plist
+c00000000526BE9EF00000000000001A0
+t1382803951
+s416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+c00000000526BE9F100000000005838D0
+t1382803953
+s5781712
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c00000000526BE9F200000000005B82A0
+t1382803954
+s5997216
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c00000000526BE9F10000000000445870
+t1382803953
+s4479088
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+c00000000526BE9F20000000000355050
+t1382803954
+s3493968
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+c00000000526BE9F200000000002F6810
+t1382803954
+s3106832
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c00000000526BE9F2000000000004B000
+t1382803954
+s307200
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c00000000526BE9F4000000000088C680
+t1382803956
+s8963712
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+c00000000526BE9F40000000000037620
+t1382803956
+s226848
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+c00000000526BE9F500000000004848F0
+t1382803957
+s4737264
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Security.framework/Security
+c00000000526BE9F400000000001290B0
+t1382803956
+s1216688
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c00000000526BE9FA0000000001DB9910
+t1382803962
+s31168784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+c00000000526BE9FE00000000002B9F20
+t1382803966
+s2858784
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+c000000005261E8A60000000000002338
+t1382148262
+s9016
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+c00000000526BEA01000000000008D300
+t1382803969
+s578304
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+c000000005261E8A8000000000038ACB0
+t1382148264
+s3714224
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+c0000000052720AC900000000000141F0
+t1383205577
+s82416
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+c000000005261E8A80000000000013500
+t1382148264
+s79104
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+c000000005261E8A80000000000033BA0
+t1382148264
+s211872
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+c000000005261E8A8000000000001CFB0
+t1382148264
+s118704
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+c000000005261E8A8000000000001B2B0
+t1382148264
+s111280
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+c00000000526BEA0100000000000632B0
+t1382803969
+s406192
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+c000000005261E8A80000000000008880
+t1382148264
+s34944
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+c00000000526BEA010000000000015080
+t1382803969
+s86144
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+c000000005261E8A800000000000230E0
+t1382148264
+s143584
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+c000000005261E8A8000000000000E380
+t1382148264
+s58240
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+c000000005261E8A80000000000087200
+t1382148264
+s553472
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+c000000005261E8A800000000000171A0
+t1382148264
+s94624
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+c000000005261E8A80000000000039C10
+t1382148264
+s236560
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+c000000005261E8A8000000000000B0B0
+t1382148264
+s45232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+c000000005261E8A90000000000167FE0
+t1382148265
+s1474528
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+c00000000526BEA0100000000000106A0
+t1382803969
+s67232
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+c00000000526BEA01000000000001CE40
+t1382803969
+s118336
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+c000000005261E8A80000000000071040
+t1382148264
+s462912
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+c00000000526BEA010000000000067A10
+t1382803969
+s424464
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+c000000005261E8A8000000000001BAD0
+t1382148264
+s113360
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+c00000000526BEA010000000000088BA0
+t1382803969
+s560032
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/include/module.map
+c000000005261E8BB0000000000000AC9
+t1382148283
+s2761
+
+N/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+c00000000525638D90000000000005004
+t1381382361
+s20484
+
+N/Users/itim5/Desktop/dsd_demo/Constants.h
+c000000005278CBDF0000000000000619
+t1383648223
+s1561
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+c000000005278892B0000000000000271
+t1383631147
+s625
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.m
+c000000005278CC360000000000001941
+t1383648310
+s6465
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Base.lproj/Main.storyboard
+c000000005278892B00000000000029C6
+t1383631147
+s10694
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+c000000005278892B0000000000000254
+t1383631147
+s596
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.m
+c000000005278892B00000000000000FC
+t1383631147
+s252
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsView.xib
+c000000005278892B0000000000001F5E
+t1383631147
+s8030
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.h
+c000000005278C38200000000000002CB
+t1383646082
+s715
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.m
+c000000005278C7A5000000000000106B
+t1383647141
+s4203
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerInfo.json
+c000000005278892B000000000000038D
+t1383631147
+s909
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.h
+c000000005278892B0000000000000287
+t1383631147
+s647
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.m
+c000000005278892B0000000000001A48
+t1383631147
+s6728
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/DSD Demo-Info.plist
+c000000005278892B000000000000049B
+t1383631147
+s1179
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/DSD Demo-Prefix.pch
+c000000005278892B0000000000000172
+t1383631147
+s370
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.h
+c000000005278892B0000000000000200
+t1383631147
+s512
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.m
+c000000005278892B00000000000007A6
+t1383631147
+s1958
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.h
+c000000005278892B0000000000000128
+t1383631147
+s296
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.m
+c000000005278CE40000000000000189C
+t1383648832
+s6300
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Images.xcassets
+c000000005278892B0000000000000088
+t1383631147
+s136
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.h
+c000000005278892B00000000000001A7
+t1383631147
+s423
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.m
+c0000000052788B0C00000000000008D9
+t1383631628
+s2265
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+c000000005278892B00000000000001E2
+t1383631147
+s482
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.m
+c000000005278892B00000000000000E2
+t1383631147
+s226
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/OrderInfo.json
+c000000005278892B0000000000000B9C
+t1383631147
+s2972
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.h
+c000000005278892B00000000000001BE
+t1383631147
+s446
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.m
+c000000005278A833000000000000070D
+t1383639091
+s1805
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.h
+c000000005278A24B0000000000000351
+t1383637579
+s849
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.m
+c000000005278CCB60000000000001C89
+t1383648438
+s7305
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.h
+c0000000052788D250000000000000214
+t1383632165
+s532
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.m
+c0000000052788D4700000000000020BD
+t1383632199
+s8381
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.h
+c000000005278A0C20000000000000479
+t1383637186
+s1145
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.m
+c000000005278B0530000000000005963
+t1383641171
+s22883
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.xib
+c000000005278892B000000000000110E
+t1383631147
+s4366
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.h
+c000000005278892B00000000000002BF
+t1383631147
+s703
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.m
+c000000005278892B0000000000001E08
+t1383631147
+s7688
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.h
+c000000005278892B0000000000000289
+t1383631147
+s649
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.m
+c000000005278892B0000000000001ABC
+t1383631147
+s6844
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.h
+c000000005278892B00000000000004AF
+t1383631147
+s1199
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.m
+c000000005278BAA800000000000020C2
+t1383643816
+s8386
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/back.png
+c000000005278892B0000000000000612
+t1383631147
+s1554
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/barcode.png
+c000000005278892B0000000000000E6E
+t1383631147
+s3694
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ccReverse.png
+c000000005278892B000000000000136C
+t1383631147
+s4972
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ccbg1.png
+c000000005278892B0000000000018F61
+t1383631147
+s102241
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/ccbg2.png
+c000000005278892B00000000000046A6
+t1383631147
+s18086
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/en.lproj/InfoPlist.strings
+c000000005278892B000000000000002D
+t1383631147
+s45
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/main.m
+c000000005278892B000000000000014A
+t1383631147
+s330
+
+N/Users/itim5/Desktop/dsd_demo/DSD Demo/materials.json
+c000000005278892B000000000000055E
+t1383631147
+s1374
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/AppDelegate.o
+t1383648392
+s84568
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Customer.o
+t1383648392
+s13660
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerDetailsViewController.o
+t1383648393
+s67900
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerListViewController.o
+t1383648392
+s76944
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/DSD Demo.LinkFileList
+c0000000052788A170000000000000A6D
+t1383631383
+s2669
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/DropDownOptionsViewController.o
+t1383648393
+s57944
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/EODViewControllerViewController.o
+t1383648832
+s70364
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/MaterialsViewController.o
+t1383648392
+s62600
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Order.o
+t1383648392
+s11276
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o
+t1383648392
+s56612
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODCustomTableCell.o
+t1383648438
+s79916
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODViewControllerViewController.o
+t1383648393
+s89268
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ServiceWizardViewController.o
+t1383648393
+s142568
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SignCaptureViewController.o
+t1383648392
+s69236
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/TodayInfoViewController.o
+t1383648392
+s87928
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ViewController.o
+t1383648392
+s90588
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/main.o
+t1383648392
+s5220
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/assetcatalog_dependencies.txt
+t1383631386
+s284
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/assetcatalog_generated_info.plist
+t1383631386
+s181
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/PrecompiledHeaders/DSD Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD Demo-Prefix.pch.pch
+t1383648392
+s119608
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app
+t1383648832
+s612
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app.dSYM
+t1383648822
+s102
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/Base.lproj/Main.storyboardc
+t1383631386
+s170
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/CustomerDetailsView.nib
+t1383631386
+s4645
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/CustomerInfo.json
+t1383631384
+s909
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/DSD Demo
+t1383648832
+s219364
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/Info.plist
+t1383631386
+s788
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/OrderInfo.json
+t1383631384
+s2972
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/PkgInfo
+t1383631386
+s8
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ServiceWizardViewController.nib
+t1383631385
+s3473
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/back.png
+t1383631384
+s1554
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/barcode.png
+t1383631384
+s3694
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccReverse.png
+t1383631384
+s4972
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg1.png
+t1383631384
+s102241
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg2.png
+t1383631384
+s18086
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/en.lproj/InfoPlist.strings
+t1383631384
+s42
+
+N/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/materials.json
+t1383631384
+s1374
+
+N/usr/lib/libSystem.B.dylib
+c0000000052720AA6000000000000E6D0
+t1383205542
+s59088
+
+N/usr/lib/system/libcache.dylib
+c0000000052720AC90000000000012A00
+t1383205577
+s76288
+
+N/usr/lib/system/libcommonCrypto.dylib
+c0000000052720A8F000000000002E320
+t1383205519
+s189216
+
+N/usr/lib/system/libcompiler_rt.dylib
+c0000000052720AA60000000000021860
+t1383205542
+s137312
+
+N/usr/lib/system/libcopyfile.dylib
+c0000000052720AC6000000000001B620
+t1383205574
+s112160
+
+N/usr/lib/system/libcorecrypto.dylib
+c0000000052720AC700000000000BD920
+t1383205575
+s776480
+
+N/usr/lib/system/libdyld.dylib
+c0000000052720AC900000000000141F0
+t1383205577
+s82416
+
+N/usr/lib/system/libkeymgr.dylib
+c0000000052720AC9000000000000A120
+t1383205577
+s41248
+
+N/usr/lib/system/liblaunch.dylib
+c0000000052720AC9000000000001D550
+t1383205577
+s120144
+
+N/usr/lib/system/libmacho.dylib
+c0000000052720AC60000000000014EE0
+t1383205574
+s85728
+
+N/usr/lib/system/libquarantine.dylib
+c0000000052720ACB0000000000010380
+t1383205579
+s66432
+
+N/usr/lib/system/libremovefile.dylib
+c0000000052720ACB000000000000C4C0
+t1383205579
+s50368
+
+N/usr/lib/system/libsystem_asl.dylib
+c0000000052720AC900000000000357A0
+t1383205577
+s219040
+
+N/usr/lib/system/libsystem_blocks.dylib
+c0000000052720AC9000000000000C070
+t1383205577
+s49264
+
+N/usr/lib/system/libsystem_c.dylib
+c0000000052720AA60000000000168C00
+t1383205542
+s1477632
+
+N/usr/lib/system/libsystem_configuration.dylib
+c0000000052720AC60000000000010630
+t1383205574
+s67120
+
+N/usr/lib/system/libsystem_dnssd.dylib
+c0000000052720ACA000000000001DF10
+t1383205578
+s122640
+
+N/usr/lib/system/libsystem_info.dylib
+c0000000052720AA60000000000075B00
+t1383205542
+s482048
+
+N/usr/lib/system/libsystem_kernel.dylib
+c0000000052720AA6000000000007CC70
+t1383205542
+s511088
+
+N/usr/lib/system/libsystem_m.dylib
+c0000000052720AA600000000000766C0
+t1383205542
+s485056
+
+N/usr/lib/system/libsystem_malloc.dylib
+c0000000052720ACA0000000000044DC0
+t1383205578
+s282048
+
+N/usr/lib/system/libsystem_notify.dylib
+c0000000052720AA60000000000021FA0
+t1383205542
+s139168
+
+N/usr/lib/system/libsystem_platform.dylib
+c0000000052720ACA000000000002D900
+t1383205578
+s186624
+
+N/usr/lib/system/libsystem_pthread.dylib
+c0000000052720ACA000000000001E570
+t1383205578
+s124272
+
+N/usr/lib/system/libsystem_sandbox.dylib
+c0000000052720AB6000000000000CC70
+t1383205558
+s52336
+
+N/usr/lib/system/libunc.dylib
+c0000000052720ABD000000000000C3F0
+t1383205565
+s50160
+
+N/usr/lib/system/libunwind.dylib
+c0000000052720ACA00000000000199F0
+t1383205578
+s104944
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/AppDelegate.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Customer.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerListViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DropDownOptionsViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/EODViewControllerViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/MaterialsViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Order.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ReturnsDatabaseViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODCustomTableCell.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODViewControllerViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SignCaptureViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/TodayInfoViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ViewController.m
+r0
+
+CBuild AST from /Users/itim5/Desktop/dsd_demo/DSD\ Demo/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependenciesd78abac00529b841^8505bbc00529b841^---0#1#1#--18"Check dependencies36"8E262A20-8253-48AD-A732-B3FC979B9409-
+
+CCompileAssetCatalog /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Images.xcassets
+s405324184.792734
+e405324186.204345
+r1
+xCompileAssetCatalog
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/Images.xcassets
+o/* com.apple.actool.compilation-results */
+o/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/Assets.car
+o/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/assetcatalog_generated_info.plist
+o
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"CompileAssetCatalog DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app DSD\ Demo/Images.xcassets118"CompileAssetCatalog DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app DSD\ Demo/Images.xcassets2f4fcb98c128b841^2750349ac128b841^-313"/* com.apple.actool.compilation-results *//Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/Assets.car/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/assetcatalog_generated_info.plist-0#0#1#-19%DVTDocumentLocation2@64"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/Images.xcassets/0000000000000000^1195"CompileAssetCatalog DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app DSD\ Demo/Images.xcassets    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/actool --output-format human-readable-text --notices --warnings --export-dependency-info /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/assetcatalog_dependencies.txt --output-partial-info-plist /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/assetcatalog_generated_info.plist --app-icon AppIcon --launch-image LaunchImage --platform iphonesimulator --minimum-deployment-target 7.0 --target-device ipad --compress-pngs --compile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Images.xcassets36"62181D6B-34BE-4261-ACA9-E2A4E5A512B7-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.695049
+e405341192.858694
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/AppDelegate.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection60"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.m230"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.o DSD\ Demo/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerdc11b2080429b841^9dd4db080429b841^---0#0#1#-19%DVTDocumentLocation2@61"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/AppDelegate.m0000000000000000^3848"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.o DSD\ Demo/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/AppDelegate.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/AppDelegate.o36"F90969A7-6397-41DF-B5D1-5B43941C07E5-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Customer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.922471
+e405341192.983012
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Customer.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.m224"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.o DSD\ Demo/Customer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerbe4cec080429b841^d6a8fb080429b841^---0#0#1#-19%DVTDocumentLocation2@58"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/Customer.m0000000000000000^3830"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.o DSD\ Demo/Customer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Customer.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Customer.o36"62A658B6-CAD8-40CD-8F7D-9FB792F94E9B-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.908788
+e405341193.034686
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerDetailsViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.m266"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.o DSD\ Demo/CustomerDetailsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler26c8e8080429b841^cf3009090429b841^---0#0#1#-19%DVTDocumentLocation2@79"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/CustomerDetailsViewController.m0000000000000000^3956"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.o DSD\ Demo/CustomerDetailsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerDetailsViewController.o36"76A61005-9AF9-47D7-BB50-2AEF20A01A88-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.533294
+e405341192.672343
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerListViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.m260"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.o DSD\ Demo/CustomerListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilereca688080429b841^751fac080429b841^---0#0#1#-19%DVTDocumentLocation2@76"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/CustomerListViewController.m0000000000000000^3938"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.o DSD\ Demo/CustomerListViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerListViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/CustomerListViewController.o36"030CD672-FEEA-4706-A5CB-4D27A3CF1E5E-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DropDownOptionsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.983331
+e405341193.096128
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/DropDownOptionsViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.m266"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.o DSD\ Demo/DropDownOptionsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler83defb080429b841^b29c18090429b841^---0#0#1#-19%DVTDocumentLocation2@79"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/DropDownOptionsViewController.m0000000000000000^3956"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.o DSD\ Demo/DropDownOptionsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DropDownOptionsViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DropDownOptionsViewController.o36"F65DAB01-5F69-46F9-A5F2-025FC240F450-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/EODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341632.731401
+e405341632.816697
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/EODViewControllerViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.m270"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.o DSD\ Demo/EODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler0470bbc00529b841^0116d1c00529b841^---0#0#1#-19%DVTDocumentLocation2@81"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/EODViewControllerViewController.m0000000000000000^3968"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.o DSD\ Demo/EODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/EODViewControllerViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/EODViewControllerViewController.o36"E2067310-3E20-4049-9742-3EC56AD13008-
+bFADAE582-93CE-4E75-8149-59976BE13B57
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/MaterialsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.646886
+e405341192.785096
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/MaterialsViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.m254"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.o DSD\ Demo/MaterialsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler67d3a5080429b841^25ebc8080429b841^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/MaterialsViewController.m0000000000000000^3920"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.o DSD\ Demo/MaterialsViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/MaterialsViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/MaterialsViewController.o36"940CAED0-4B79-48C3-80FA-D3E0F3DB8559-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Order.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.672750
+e405341192.739546
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Order.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/Order.m218"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.o DSD\ Demo/Order.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerb859ac080429b841^fd67bd080429b841^---0#0#1#-19%DVTDocumentLocation2@55"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/Order.m0000000000000000^3812"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.o DSD\ Demo/Order.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Order.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/Order.o36"0CAF6482-25E3-4BCF-AE96-5D333B9800AE-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ReturnsDatabaseViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.533000
+e405341192.646088
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection78"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.m266"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o DSD\ Demo/ReturnsDatabaseViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler749b88080429b841^7b66a5080429b841^---0#0#1#-19%DVTDocumentLocation2@79"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/ReturnsDatabaseViewController.m0000000000000000^3956"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o DSD\ Demo/ReturnsDatabaseViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ReturnsDatabaseViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o36"96A6A054-E34B-4626-8277-D1C4BA338340-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODCustomTableCell.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341238.629084
+e405341238.716232
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODCustomTableCell.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection67"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.m244"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.o DSD\ Demo/SODCustomTableCell.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler9835a1360429b841^9a5db7360429b841^---0#0#1#-19%DVTDocumentLocation2@68"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/SODCustomTableCell.m0000000000000000^3890"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.o DSD\ Demo/SODCustomTableCell.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODCustomTableCell.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODCustomTableCell.o36"ADF734CD-AF18-4BF3-BF15-F59BDC59A4CB-
+bCCA08A11-39B5-4CC8-8407-E567A349168D
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.892678
+e405341193.043733
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODViewControllerViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.m270"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.o DSD\ Demo/SODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler04a9e4080429b841^27320b090429b841^---0#0#1#-19%DVTDocumentLocation2@81"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/SODViewControllerViewController.m0000000000000000^3968"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.o DSD\ Demo/SODViewControllerViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SODViewControllerViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SODViewControllerViewController.o36"427D5BDD-5E55-41E0-B617-B72B67F2B528-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.807712
+e405341193.034674
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ServiceWizardViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Order.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODCustomTableCell.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection76"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.m262"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.o DSD\ Demo/ServiceWizardViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerb6f2ce080429b841^dee308090429b841^---0#0#1#-19%DVTDocumentLocation2@77"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/ServiceWizardViewController.m0000000000000000^3944"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.o DSD\ Demo/ServiceWizardViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ServiceWizardViewController.o36"4A139349-B633-47CB-A2BF-C5C18D1C5C78-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SignCaptureViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.785450
+e405341192.921889
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SignCaptureViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.m258"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.o DSD\ Demo/SignCaptureViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler5d37c9080429b841^98fceb080429b841^---0#0#1#-19%DVTDocumentLocation2@75"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/SignCaptureViewController.m0000000000000000^3932"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.o DSD\ Demo/SignCaptureViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/SignCaptureViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/SignCaptureViewController.o36"96E35C66-A3AD-4293-A1DC-5FD4FF000033-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/TodayInfoViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.739884
+e405341192.892339
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/TodayInfoViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.m254"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.o DSD\ Demo/TodayInfoViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerdfc3bd080429b841^8670e4080429b841^---0#0#1#-19%DVTDocumentLocation2@73"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/TodayInfoViewController.m0000000000000000^3920"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.o DSD\ Demo/TodayInfoViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/TodayInfoViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/TodayInfoViewController.o36"12CA1838-2116-4E14-94AF-98E3B923ABA5-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.534570
+e405341192.694722
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ViewController.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/TodayInfoViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/DropDownOptionsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerListViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/Customer.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SODViewControllerViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/MaterialsViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/SignCaptureViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/ReturnsDatabaseViewController.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/EODViewControllerViewController.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/ViewController.m236"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.o DSD\ Demo/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerfcfb88080429b841^06dab1080429b841^---0#0#1#-19%DVTDocumentLocation2@64"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/ViewController.m0000000000000000^3866"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.o DSD\ Demo/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ViewController.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/ViewController.o36"416EE56E-78D2-4765-94C6-2D42009EB005-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.o /Users/itim5/Desktop/dsd_demo/DSD\ Demo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.859010
+e405341192.908471
+r1
+xCompileC
+xDerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/main.o
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/main.m
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/AppDelegate.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection53"Compile /Users/itim5/Desktop/dsd_demo/DSD Demo/main.m216"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.o DSD\ Demo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compilerca17dc080429b841^c191e8080429b841^---0#0#1#-19%DVTDocumentLocation2@54"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/main.m0000000000000000^3806"CompileC DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.o DSD\ Demo/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -include /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.dia -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/main.m -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/main.o36"B18D91C4-89B0-4EE6-91C1-0EB4A745B3B3-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CCompileStoryboard /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Base.lproj/Main.storyboard
+s405324184.774164
+e405324186.655704
+r1
+xCompileStoryboard
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/Base.lproj/Main.storyboard
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection54"CompileStoryboard DSD\ Demo/Base.lproj/Main.storyboard54"CompileStoryboard DSD\ Demo/Base.lproj/Main.storyboard16a7c698c128b841^9cdca79ac128b841^---0#0#1#-19%DVTDocumentLocation2@74"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/Base.lproj/Main.storyboard0000000000000000^840"CompileStoryboard DSD\ Demo/Base.lproj/Main.storyboard    cd /Users/itim5/Desktop/dsd_demo    setenv IBSC_MINIMUM_COMPATIBILITY_VERSION 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Base.lproj/Main.storyboardc /Users/itim5/Desktop/dsd_demo/DSD\ Demo/Base.lproj/Main.storyboard36"EFF312FF-2928-4366-A784-CA8ADDE85FD2-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCompileXIB /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsView.xib
+s405324184.773288
+e405324186.474888
+r1
+xCompileXIB
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsView.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compiling /Users/itim5/Desktop/dsd_demo/DSD Demo/CustomerDetailsView.xib44"CompileXIB DSD\ Demo/CustomerDetailsView.xib0115c698c128b841^0c93799ac128b841^---0#0#1#-19%DVTDocumentLocation2@71"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/CustomerDetailsView.xib0000000000000000^773"CompileXIB DSD\ Demo/CustomerDetailsView.xib    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/CustomerDetailsView.nib /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerDetailsView.xib36"A951FC9D-B009-4D75-A740-C7A5F4D55A5C-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCompileXIB /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.xib
+s405324184.770610
+e405324185.107254
+r1
+xCompileXIB
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.xib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection80"Compiling /Users/itim5/Desktop/dsd_demo/DSD Demo/ServiceWizardViewController.xib52"CompileXIB DSD\ Demo/ServiceWizardViewController.xibd864c598c128b841^86751b99c128b841^---0#0#1#-19%DVTDocumentLocation2@79"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/ServiceWizardViewController.xib0000000000000000^797"CompileXIB DSD\ Demo/ServiceWizardViewController.xib    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Applications/Xcode.app/Contents/Developer/usr/bin/..    /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/ibtool --errors --warnings --notices --minimum-deployment-target 7.0 --output-format human-readable-text --compile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ServiceWizardViewController.nib /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ServiceWizardViewController.xib36"F1EBF875-FC15-4A3F-BD0F-44424BF86BBF-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCopyStringsFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/en.lproj/InfoPlist.strings DSD\ Demo/en.lproj/InfoPlist.strings
+s405324184.771027
+e405324184.773315
+r1
+xCopyStringsFile
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/en.lproj/InfoPlist.strings
+xDSD Demo/en.lproj/InfoPlist.strings
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection40"Copy DSD Demo/en.lproj/InfoPlist.strings152"CopyStringsFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/en.lproj/InfoPlist.strings DSD\ Demo/en.lproj/InfoPlist.strings1685c598c128b841^c2f8c598c128b841^---0#0#1#-19%DVTDocumentLocation2@74"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/en.lproj/InfoPlist.strings0000000000000000^627"CopyStringsFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/en.lproj/InfoPlist.strings DSD\ Demo/en.lproj/InfoPlist.strings    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/en.lproj -- DSD\ Demo/en.lproj/InfoPlist.strings36"E034D375-1F84-47CD-B4DB-5B2F635716B3-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/CustomerInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/CustomerInfo.json
+s405324184.771823
+e405324184.773486
+r1
+xCpResource
+xDSD Demo/CustomerInfo.json
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/CustomerInfo.json
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/CustomerInfo.json129"CpResource DSD\ Demo/CustomerInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/CustomerInfo.jsonc3bac598c128b841^f703c698c128b841^---0#0#1#-19%DVTDocumentLocation2@129"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/CustomerInfo.json0034886dddffdf42^635"CpResource DSD\ Demo/CustomerInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/CustomerInfo.json    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/CustomerInfo.json /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"C28794A3-2214-44A1-92E1-C8298448ECAC-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/OrderInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/OrderInfo.json
+s405324184.773966
+e405324184.776113
+r1
+xCpResource
+xDSD Demo/OrderInfo.json
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/OrderInfo.json
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/OrderInfo.json123"CpResource DSD\ Demo/OrderInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/OrderInfo.json6a33c698c128b841^57b3c698c128b841^---0#0#1#-19%DVTDocumentLocation2@126"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/OrderInfo.json0034886dddffdf42^626"CpResource DSD\ Demo/OrderInfo.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/OrderInfo.json    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/OrderInfo.json /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"A363C90A-5301-4B46-88DB-A6D95602AA47-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/back.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/back.png
+s405324184.778906
+e405324184.781712
+r1
+xCpResource
+xDSD Demo/back.png
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/back.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection84"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/back.png111"CpResource DSD\ Demo/back.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/back.png9679c798c128b841^c0e7c798c128b841^---0#0#1#-19%DVTDocumentLocation2@120"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/back.png0034886dddffdf42^608"CpResource DSD\ Demo/back.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/back.png    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/back.png /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"7F0F64BB-C5B3-420A-8660-E0B1DDC51FC6-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/barcode.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/barcode.png
+s405324184.776808
+e405324184.778692
+r1
+xCpResource
+xDSD Demo/barcode.png
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/barcode.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/barcode.png117"CpResource DSD\ Demo/barcode.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/barcode.png52eec698c128b841^ff59c798c128b841^---0#0#1#-19%DVTDocumentLocation2@123"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/barcode.png0034886dddffdf42^617"CpResource DSD\ Demo/barcode.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/barcode.png    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/barcode.png /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"23131771-A856-4A9F-A9B7-DC85B88E5DE1-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/ccReverse.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccReverse.png
+s405324184.782611
+e405324184.785195
+r1
+xCpResource
+xDSD Demo/ccReverse.png
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccReverse.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection89"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccReverse.png121"CpResource DSD\ Demo/ccReverse.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccReverse.png2f6dc898c128b841^fb07c998c128b841^---0#0#1#-19%DVTDocumentLocation2@125"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/ccReverse.png0034886dddffdf42^623"CpResource DSD\ Demo/ccReverse.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccReverse.png    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ccReverse.png /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"29E9B788-B080-4CDF-8921-CFBBD07290A7-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/ccbg1.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg1.png
+s405324184.790174
+e405324184.792086
+r1
+xCpResource
+xDSD Demo/ccbg1.png
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg1.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg1.png113"CpResource DSD\ Demo/ccbg1.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg1.png0c5cca98c128b841^9df4ca98c128b841^---0#0#1#-19%DVTDocumentLocation2@121"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/ccbg1.png0034886dddffdf42^611"CpResource DSD\ Demo/ccbg1.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg1.png    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ccbg1.png /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"D4494055-DD51-4E17-97F9-B7A10DBA68C3-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/ccbg2.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg2.png
+s405324184.786462
+e405324184.789217
+r1
+xCpResource
+xDSD Demo/ccbg2.png
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg2.png
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection85"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/ccbg2.png113"CpResource DSD\ Demo/ccbg2.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg2.png81b2c998c128b841^d90aca98c128b841^---0#0#1#-19%DVTDocumentLocation2@121"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/ccbg2.png0034886dddffdf42^611"CpResource DSD\ Demo/ccbg2.png DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/ccbg2.png    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/ccbg2.png /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"DAF16A4C-805C-4BB5-84A2-A0FEB9C6968F-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CCpResource DSD\ Demo/materials.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/materials.json
+s405324184.770773
+e405324184.773040
+r1
+xCpResource
+xDSD Demo/materials.json
+xDerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/materials.json
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection90"Copy DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/materials.json123"CpResource DSD\ Demo/materials.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/materials.jsonb071c598c128b841^fed3c598c128b841^---0#0#1#-19%DVTDocumentLocation2@126"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app/materials.json0034886dddffdf42^626"CpResource DSD\ Demo/materials.json DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/materials.json    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/itim5/Desktop/dsd_demo/DSD\ Demo/materials.json /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app36"29282BFC-418E-445B-A012-92A3CCA552B7-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CGenerateDSYMFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app.dSYM /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo
+s405341632.866457
+e405341632.907654
+r1
+xGenerateDSYMFile
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app.dSYM
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/DSD Demo
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Generate /Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app.dSYM177"GenerateDSYMFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app.dSYM DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo72dcddc00529b841^68cce8c00529b841^---0#0#1#-19%DVTDocumentLocation2@117"file:///Users/itim5/Desktop/dsd_demo/DerivedData/DSD%20Demo/Build/Products/Debug-iphonesimulator/DSD%20Demo.app.dSYM/0000000000000000^734"GenerateDSYMFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app.dSYM DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app.dSYM36"FAE416A3-16DE-4185-9612-591ADAD0E4A4-
+bFADAE582-93CE-4E75-8149-59976BE13B57
+
+CLd /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo normal i386
+s405341632.819209
+e405341632.863405
+r1
+xLd
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/DSD Demo
+xnormal
+xi386
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/DSD Demo.LinkFileList
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/crt1.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODCustomTableCell.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ReturnsDatabaseViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerListViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/MaterialsViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/EODViewControllerViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Order.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/AppDelegate.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/TodayInfoViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SignCaptureViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/ServiceWizardViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/main.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/SODViewControllerViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/CustomerDetailsViewController.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/Customer.o
+d/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/DSD Demo.build/Debug-iphonesimulator/DSD Demo.build/Objects-normal/i386/DropDownOptionsViewController.o
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libobjc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/libSystem.dylib
+d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.0/lib/darwin/libclang_rt.ios.a
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreImage.framework/CoreImage
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/Security.framework/Security
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CFNetwork.framework/CFNetwork
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/Frameworks/CoreText.framework/CoreText
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_override.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcache_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcommonCrypto_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcompiler_rt_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libcopyfile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdispatch.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libdyld_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libmacho_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libnotify_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libremovefile_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_blocks.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_c.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_info.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_m.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_network.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libunwind_sim.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libxpc.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_configuration.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/libsystem_sim_asl.dylib
+d/usr/lib/libSystem.B.dylib
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
+d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk/usr/lib/system/host/libdyld.dylib
+d/usr/lib/system/libcache.dylib
+d/usr/lib/system/libcommonCrypto.dylib
+d/usr/lib/system/libcompiler_rt.dylib
+d/usr/lib/system/libcopyfile.dylib
+d/usr/lib/system/libcorecrypto.dylib
+d/usr/lib/system/libkeymgr.dylib
+d/usr/lib/system/liblaunch.dylib
+d/usr/lib/system/libmacho.dylib
+d/usr/lib/system/libquarantine.dylib
+d/usr/lib/system/libremovefile.dylib
+d/usr/lib/system/libsystem_asl.dylib
+d/usr/lib/system/libsystem_blocks.dylib
+d/usr/lib/system/libsystem_c.dylib
+d/usr/lib/system/libsystem_configuration.dylib
+d/usr/lib/system/libsystem_dnssd.dylib
+d/usr/lib/system/libsystem_info.dylib
+d/usr/lib/system/libsystem_kernel.dylib
+d/usr/lib/system/libsystem_m.dylib
+d/usr/lib/system/libsystem_malloc.dylib
+d/usr/lib/system/libsystem_notify.dylib
+d/usr/lib/system/libsystem_platform.dylib
+d/usr/lib/system/libsystem_pthread.dylib
+d/usr/lib/system/libsystem_sandbox.dylib
+d/usr/lib/system/libunc.dylib
+d/usr/lib/system/libunwind.dylib
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Link /Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/DSD Demo97"Ld DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo normal i386b0cad1c00529b841^e608ddc00529b841^---0#0#1#--1487"Ld DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo normal i386    cd /Users/itim5/Desktop/dsd_demo    setenv IPHONEOS_DEPLOYMENT_TARGET 7.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -L/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator -filelist /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DSD\ Demo.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=7.0 -framework CoreGraphics -framework UIKit -framework Foundation -Xlinker -dependency_info -Xlinker /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/Objects-normal/i386/DSD\ Demo_dependency_info.dat -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/DSD\ Demo36"C743C7B5-D10B-43DE-ACC4-6A9BFE43D036-
+bFADAE582-93CE-4E75-8149-59976BE13B57
+
+CProcessInfoPlistFile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Info.plist /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DSD\ Demo-Info.plist
+s405324186.656330
+e405324186.658440
+r1
+xProcessInfoPlistFile
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Products/Debug-iphonesimulator/DSD Demo.app/Info.plist
+x/Users/itim5/Desktop/dsd_demo/DSD Demo/DSD Demo-Info.plist
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection66"Process /Users/itim5/Desktop/dsd_demo/DSD Demo/DSD Demo-Info.plist135"ProcessInfoPlistFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Info.plist DSD\ Demo/DSD\ Demo-Info.pliste415a89ac128b841^7992a89ac128b841^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/DSD%20Demo-Info.plist0000000000000000^943"ProcessInfoPlistFile DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Info.plist DSD\ Demo/DSD\ Demo-Info.plist    cd /Users/itim5/Desktop/dsd_demo    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DSD\ Demo-Info.plist -genpkginfo /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/assetcatalog_generated_info.plist -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app/Info.plist36"38BFAE9A-5C4F-498A-8B09-ECD3A9285079-
+b4997A42D-CF03-4AF2-B365-8AE3D978FA9B
+
+CProcessPCH /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.pch DSD\ Demo/DSD\ Demo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s405341192.479470
+e405341192.532071
+r1
+xProcessPCH
+x/Users/itim5/Desktop/dsd_demo/DerivedData/DSD Demo/Build/Intermediates/PrecompiledHeaders/DSD Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD Demo-Prefix.pch.pch
+xDSD Demo/DSD Demo-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+d/Users/itim5/Desktop/dsd_demo/DSD Demo/DSD Demo-Prefix.pch
+d/Users/itim5/Desktop/dsd_demo/Constants.h
+lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection39"Precompile DSD Demo/DSD Demo-Prefix.pch241"ProcessPCH DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.pch DSD\ Demo/DSD\ Demo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler88d67a080429b841^823788080429b841^---0#0#1#-19%DVTDocumentLocation2@69"file:///Users/itim5/Desktop/dsd_demo/DSD%20Demo/DSD%20Demo-Prefix.pch0000000000000000^3708"ProcessPCH DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.pch DSD\ Demo/DSD\ Demo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/itim5/Desktop/dsd_demo    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=gnu99 -fobjc-arc -fmodules -fmodules-cache-path=/Users/itim5/Desktop/dsd_demo/DerivedData/ModuleCache -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Werror=return-type -Wno-implicit-atomic-properties -Werror=deprecated-objc-isa-usage -Werror=objc-root-class -Wno-receiver-is-weak -Wno-arc-repeated-use-of-weak -Wduplicate-method-match -Wno-missing-braces -Wparentheses -Wswitch -Wunused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wconstant-conversion -Wint-conversion -Wbool-conversion -Wenum-conversion -Wshorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wundeclared-selector -Wno-deprecated-implementations -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.0.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch -mios-simulator-version-min=7.0 -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-generated-files.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-own-target-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-all-target-headers.hmap -iquote /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DSD\ Demo-project-headers.hmap -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources/i386 -I/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/DSD\ Demo.build/Debug-iphonesimulator/DSD\ Demo.build/DerivedSources -F/Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator --serialize-diagnostics /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.dia -MMD -MT dependencies -MF /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.d -c /Users/itim5/Desktop/dsd_demo/DSD\ Demo/DSD\ Demo-Prefix.pch -o /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Intermediates/PrecompiledHeaders/DSD\ Demo-Prefix-dvzcyublkjyqzmfdiqspxqqlucem/DSD\ Demo-Prefix.pch.pch36"6F5917FC-344C-42CC-8419-A1B960312BE5-
+b58C43F4E-764A-484A-AE02-109B24A459E7
+
+CProcessPCH /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Index/PrecompiledHeaders/DSD\ Demo-Prefix-dkhaqqgbhvdoaobortvjfcbmgkvl_ast/DSD\ Demo-Prefix.pch.pch DSD\ Demo/DSD\ Demo-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CTouch /Users/itim5/Desktop/dsd_demo/DerivedData/DSD\ Demo/Build/Products/Debug-iphonesimulator/DSD\ Demo.app
+r0
+

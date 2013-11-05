@@ -18,7 +18,7 @@
 
 @implementation ServiceWizardViewController
 @synthesize segmentedBar, customerID;
-NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
+//NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,9 +30,9 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
         arr_SalesOrders = [[NSMutableArray alloc] init];
         selectedRow = nil;
         
-//        _returnsDatabaseVC = [[ReturnsDatabaseViewController alloc] initWithStyle:UITableViewStylePlain];
-//        _returnsDatabaseVC.parentDelegate = self;
-//        _popOverController = [[UIPopoverController alloc] initWithContentViewController:_returnsDatabaseVC];
+        _returnsDatabaseVC = [[ReturnsDatabaseViewController alloc] initWithStyle:UITableViewStylePlain];
+        _returnsDatabaseVC.parentDelegate = self;
+        _popOverController = [[UIPopoverController alloc] initWithContentViewController:_returnsDatabaseVC];
     }
     return self;
 }
@@ -181,6 +181,9 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
     if (tableView == tbvSummary) {
         return 44;
     }
+    if (tableView == tbvReturns) {
+        return 54;
+    }
     return 0;
 }
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -213,11 +216,13 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
     }
     if (tableView == tbvReturns) {
         UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
-        viewFooter.backgroundColor = COLOR_THEME;
+        viewFooter.backgroundColor = [UIColor clearColor];
         
-        txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+        txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 200, 44)];
         txtFieldMatID.placeholder = @" Enter Material ID";
         txtFieldMatID.backgroundColor = [UIColor whiteColor];
+        txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        txtFieldMatID.layer.borderWidth = 1.0;
         txtFieldMatID.delegate = self;
         txtFieldMatID.tag = 10001;
         [viewFooter addSubview:txtFieldMatID];
@@ -226,17 +231,11 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
         btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
         [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         [btnAdd setBackgroundColor:[UIColor whiteColor]];
+        btnAdd.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        btnAdd.layer.borderWidth = 1.0;
         [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
         [viewFooter addSubview:btnAdd];
-        
-        UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
-        [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-        [btnSubmit setBackgroundColor:[UIColor whiteColor]];
-        [btnSubmit setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-        [viewFooter addSubview:btnSubmit];
         
         return viewFooter;
     }
@@ -295,19 +294,10 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
     
     if (tableView == tbvReturns) {
         AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
+        [cellSOD setDataReturns:dict :indexPath.row];
         cellSOD.enumViewType = RETURNS;
-        [cellSOD setData:indexPath.row :appObject.rowCustomerListSelected];
         return cellSOD;
-//        if (indexPath.row == 0) {
-//            cell.textLabel.text = @"Click to Add";
-//            cell.detailTextLabel.text = @"";
-//        }
-//        else {
-//            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-//            NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row-1];
-//            cell.textLabel.text = [dict valueForKey:@"item"];
-//            cell.detailTextLabel.text = [dict valueForKey:@"value"];
-//        }
     }
     if (tableView == tbvSales) {
 
@@ -334,18 +324,20 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
         }
         else {
             AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-            cell.textLabel.text = arrReturnItems1[indexPath.row];
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", returnsValues[appObject.rowCustomerListSelected][indexPath.row]];
+            NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
+            
+            UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+            PlacedQty.text = [dict valueForKey:@"desc"];
+            UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+            reqQty.text = [dict valueForKey:@"value"];
+            [cell addSubview:PlacedQty];
+            [cell addSubview:reqQty];
+            
+            cell.textLabel.text = [dict valueForKey:@"item"];
         }
     }
     return cell;
 }
-
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    if(tableView == tbvSummary){
-//        UIView
-//    }
-//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -353,12 +345,12 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
         selectedRow = indexPath;
         [tbvNoService reloadData];
     }
-    if (tableView == tbvReturns && indexPath.row == 0) {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        _popOverController.popoverContentSize = CGSizeMake(200, 200);
-        [_popOverController presentPopoverFromRect:cell.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        [tbvReturns reloadData];
-    }
+//    if (tableView == tbvReturns && indexPath.row == 0) {
+//        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//        _popOverController.popoverContentSize = CGSizeMake(200, 200);
+//        [_popOverController presentPopoverFromRect:cell.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//        [tbvReturns reloadData];
+//    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -371,13 +363,13 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
             return [arr_SalesOrders count];
         }
         else {
-            return COUNT_RETURNS_ITEMS_;
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            return [arrReturns[appObject.rowCustomerListSelected] count];
         }
     } else if (tableView == tbvReturns) {
-        return COUNT_RETURNS_ITEMS_;
-//        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
 //        NSLog(@"appObject.rowCustomerListSelected  :: %d", appObject.rowCustomerListSelected);
-//        return [arrReturns[appObject.rowCustomerListSelected] count] + 1;
+        return [arrReturns[appObject.rowCustomerListSelected] count];
     }
     return 0;
 
@@ -488,7 +480,7 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
     [[self.view viewWithTag:1111] removeFromSuperview];
 //create ui - pending
     
-    tbvReturns = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, 4*50) style:UITableViewStylePlain];
+    tbvReturns = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, 6*50) style:UITableViewStylePlain];
     tbvReturns.dataSource = self;
     tbvReturns.delegate = self;
     tbvReturns.tag = 6666;
@@ -523,9 +515,17 @@ int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
     [_popOverController dismissPopoverAnimated:YES];
     AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
     
+    NSMutableDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:0];
+    [dict setValue:strReturnsName forKey:@"desc"];
+    
+    [tbvReturns reloadData];
+}
+
+- (void)addButtonClicked {
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
     for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
-        NSDictionary *dict = [[arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i] mutableCopy];
-        if ([[dict valueForKey:@"item"] isEqualToString:strReturnsName]) {
+        NSMutableDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i];
+        if ([[dict valueForKey:@"item"] isEqualToString:txtFieldMatID.text]) {
             int count = [[dict valueForKey:@"value"] intValue];
             count++;
             [dict setValue:[NSString stringWithFormat:@"%d", count] forKey:@"value"];
@@ -534,9 +534,17 @@ int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
         }
     }
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:strReturnsName forKey:@"item"];
+    [dict setValue:txtFieldMatID.text forKey:@"item"];
     [dict setValue:@"1" forKey:@"value"];
-    [arrReturns[appObject.rowCustomerListSelected] addObject:dict];
+    [dict setValue:@"" forKey:@"desc"];
+    [arrReturns[appObject.rowCustomerListSelected] insertObject:dict atIndex:0];
     [tbvReturns reloadData];
+    
+    UITableViewCell *cell = [tbvReturns cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    CGRect rectP = cell.frame;
+    rectP.origin.x = 0;
+    rectP.origin.y += row_Height_TodayTableView;
+    _popOverController.popoverContentSize = CGSizeMake(200, 200);
+    [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
 }
 @end

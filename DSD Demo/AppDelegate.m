@@ -54,7 +54,18 @@
 }
 #pragma mark - Custom Methods
 - (void)loadDataObjects {
-    
+    deliveredValues[0][0] = 20;
+    deliveredValues[0][1] = 10;
+    deliveredValues[0][2] = 112;
+    deliveredValues[0][3] = 120;
+    deliveredValues[0][4] = 50;
+
+    deliveredValues[0][0] = 13;
+    deliveredValues[0][1] = 10;
+    deliveredValues[0][2] = 10;
+    deliveredValues[0][3] = 12;
+    deliveredValues[0][4] = 25;
+
     for (int i=0; i < 6; i++) {
         acceptedValues[i] = enteredValues[i] = 0;
     }

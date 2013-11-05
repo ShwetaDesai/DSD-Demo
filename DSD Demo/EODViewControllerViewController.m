@@ -154,11 +154,11 @@
 
 #pragma mark - Custom Methods
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 54;
+    return 98;
 }
     
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
+    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
     viewFooter.backgroundColor = COLOR_THEME;
     
     UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -169,9 +169,29 @@
     [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
     [viewFooter addSubview:btnSubmit];
     
+    
+    UILabel *lblMat = [[UILabel alloc] initWithFrame:CGRectMake(0, 59, 100, 34)];
+    lblMat.backgroundColor = [UIColor clearColor];
+    lblMat.textColor = [UIColor whiteColor];
+    lblMat.text = @"Material ID";
+    
+    [viewFooter addSubview:lblMat];
+    
+    UILabel *lblPlaced = [[UILabel alloc] initWithFrame:CGRectMake(580, 59, 100, 34)];
+    lblPlaced.backgroundColor = [UIColor clearColor];
+    lblPlaced.textColor = [UIColor whiteColor];
+    lblPlaced.text = @"Pending";
+    [viewFooter addSubview:lblPlaced];
+    
+    UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(750, 59, 100, 34)];
+    lblRequired.backgroundColor = [UIColor clearColor];
+    lblRequired.textColor = [UIColor whiteColor];
+    lblRequired.text = @"Total";
+    [viewFooter addSubview:lblRequired];
+    
     return viewFooter;
 }
-    
+
 - (void)submitButtonClicked {
     _confirmFlag = TRUE;
     [self.tableView reloadData];
@@ -180,4 +200,5 @@
 - (void)addButtonClicked {
     
 }
+
 @end

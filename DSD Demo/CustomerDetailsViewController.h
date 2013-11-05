@@ -17,8 +17,9 @@
     IBOutlet UILabel *lbl_city;
     IBOutlet UILabel *lbl_zip; 
 //    IBOutlet UIButton *btn_ServiceOutlet;
-    
-    UIButton *btn;
+    UIView *viewContent;
+    UIButton* btnClose;
+    UIButton *btn, *btnMap;
     IBOutlet UILabel *lbl_phoneNumber;
 //    UIButton *backButton;
     Customer *customerSelected;

@@ -28,7 +28,7 @@ typedef enum viewType {
 } EnumViewType;
 
 NSMutableArray *arrOrders, *arrReturns[2];
-int enteredValues[6], acceptedValues[6], deliveredValues[6];
+int enteredValues[6], acceptedValues[6], deliveredValues[2][6];
 int returnsValues[2][4];
 
 #define COLOR_THEME [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]

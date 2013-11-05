@@ -7,7 +7,7 @@
 //
 
 #import "ReturnsDatabaseViewController.h"
-#define COUNT_RETURNS_ITEMS     4
+#define COUNT_RETURNS_ITEMS     3
 @interface ReturnsDatabaseViewController ()
 
 @end
@@ -15,7 +15,7 @@
 @implementation ReturnsDatabaseViewController
 @synthesize parentDelegate = _parentDelegate;
 
-//NSString *arrReturnItems[COUNT_RETURNS_ITEMS] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
+NSString *arrReturnItems_[COUNT_RETURNS_ITEMS] = {@"Oil", @"Rotten", @"Extra"};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -60,13 +60,13 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-//    cell.textLabel.text = arrReturnItems[indexPath.row];
+    cell.textLabel.text = arrReturnItems_[indexPath.row];
     return cell;
 }
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [_parentDelegate returnsItemSelected:arrReturnItems[indexPath.row]];
+    [_parentDelegate returnsItemSelected:arrReturnItems_[indexPath.row]];
 }
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "SODCustomTableCell.h"
-
+#import "AppDelegate.h"
 
 #define OFFSET_FIELDS       5
 #define WIDTH_FLAG          20
@@ -85,6 +85,14 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     self.backgroundColor = [UIColor whiteColor];
     
 }
+
+- (void)setDataReturns:(NSDictionary*)dict :(int)indexID {
+    _lblMatID.text = [dict valueForKey:@"item"];
+    _lblMatDesc.text = [dict valueForKey:@"desc"];
+    _txtFieldActualCount.text = [dict valueForKey:@"value"];
+    _index = indexID;
+}
+
 - (void)setData:(int)indexID :(int)colorIndex {
     if (_enumViewType == RETURNS) {
         _lblMatID.text = arrReturnItems[indexID];
@@ -102,9 +110,12 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         case SOD:
             _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
             break;
-        case EOD:
-            _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", deliveredValues[_index]];
+        case EOD: {
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            NSLog(@"appObject.rowCustomerListSelected :: %d", appObject.rowCustomerListSelected);
+            _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", deliveredValues[appObject.rowCustomerListSelected][_index]];
             break;
+        }
         default:
             _txtFieldActualCount.text = @"";
             break;
