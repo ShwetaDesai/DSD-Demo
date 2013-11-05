@@ -19,8 +19,9 @@
 #define HEIGHT_ACCEPT_BUTTON 34
 
 @implementation SODCustomTableCell
-//@synthesize dictionaryObject;
-    
+@synthesize txtFieldActualCount = _txtFieldActualCount, enumViewType = _enumViewType;
+NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
+
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 - (id)initWithFrame:(CGRect)frame
 {
@@ -85,12 +86,31 @@
     
 }
 - (void)setData:(int)indexID :(int)colorIndex {
+    if (_enumViewType == RETURNS) {
+        _lblMatID.text = arrReturnItems[indexID];
+        _returnsIndex = colorIndex;
+        _index = indexID;
+        return;
+    }
     _index = indexID;
     NSDictionary *dictionaryObject = [arrOrders objectAtIndex:_index];
     _lblMatID.text = [dictionaryObject valueForKey:JSONTAG_MAT_NO];
     _lblMatDesc.text = [dictionaryObject valueForKey:JSONTAG_MAT_DESC];
     _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
-    _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]]; //[dictionaryObject valueForKey:JSONTAG_EXTFLD4_EXPECTED];
+    
+    switch (_enumViewType) {
+        case SOD:
+            _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+            break;
+        case EOD:
+            _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", deliveredValues[_index]];
+            break;
+        default:
+            _txtFieldActualCount.text = @"";
+            break;
+    }
+    
+
     
     switch (colorIndex) {
         case 0: {
@@ -113,10 +133,13 @@
     
 - (void)textFieldDidChange {
 //    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
-    
-    enteredValues[_index] = [_txtFieldActualCount.text intValue];
-   
-
+    if (_enumViewType == SOD) {
+        enteredValues[_index] = [_txtFieldActualCount.text intValue];
+    }
+    if (_enumViewType == RETURNS) {
+        returnsValues[_returnsIndex][_index] = [_txtFieldActualCount.text intValue];
+        NSLog(@"%d -- %d", _returnsIndex, _index);
+    }
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{

@@ -58,6 +58,9 @@
     for (int i=0; i < 6; i++) {
         acceptedValues[i] = enteredValues[i] = 0;
     }
+    
+    arrReturns[0] = [[NSMutableArray alloc] init];
+    arrReturns[1] = [[NSMutableArray alloc] init];
     arrOrders = [[NSMutableArray alloc] init];
     
     NSBundle *mainBundle = [NSBundle mainBundle];

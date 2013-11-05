@@ -138,6 +138,8 @@
     for (UIView* view in [contentView subviews])
         [view removeFromSuperview];
     
+    wizardVC = nil;
+    wizardVC = [[ServiceWizardViewController alloc] init];
     wizardVC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 490);
 //    wizardVC.customerID = [[notification userInfo] valueForKey:@"customerToServiceID"];
     wizardVC.view.layer.cornerRadius = 10.0;

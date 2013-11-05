@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "SignCaptureViewController.h"
+#import "ReturnsDatabaseViewController.h"
 
 @interface ServiceWizardViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate>
+<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate>
 {
     NSArray *arr_NoServiceItems;
     NSMutableArray *arr_SalesOrders;
@@ -21,6 +22,8 @@
 //    int yPos;
     int selectedSegmentBarID;
     NSString *customerID;
+    UIPopoverController *_popOverController;
+    ReturnsDatabaseViewController *_returnsDatabaseVC;
 //    int IDlastSelectedTab;
 //    NSMutableArray *visibilityTruth;
 }

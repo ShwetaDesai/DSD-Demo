@@ -21,6 +21,7 @@
     if (self) {
         // Custom initialization
         _confirmFlag = FALSE;
+        _isEditable = TRUE;
     }
     return self;
 }
@@ -30,6 +31,10 @@
     [super viewDidLoad];
 //    self.tableView.backgroundView = nil;
 //    self.tableView.backgroundColor = COLOR_THEME;
+    
+    _materialsViewController = [[MaterialsViewController alloc] initWithStyle:UITableViewStylePlain];
+    _materialsViewController.parentDelegate = self;
+    _popOverController = [[UIPopoverController alloc] initWithContentViewController:_materialsViewController];
 }
 
 - (void)viewDidUnload
@@ -71,8 +76,12 @@
 //        cell = [[SODCustomTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 54)];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.enumViewType = SOD;
     }
     
+    if (!_isEditable) {
+        cell.txtFieldActualCount.enabled = NO;
+    }
     // Configure the cell...
     NSDictionary *dict = [arrOrders objectAtIndex:indexPath.row];
     
@@ -99,45 +108,6 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -163,6 +133,8 @@
     UITextField *txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
     txtFieldMatID.placeholder = @" Enter Material ID";
     txtFieldMatID.backgroundColor = [UIColor whiteColor];
+    txtFieldMatID.delegate = self;
+    txtFieldMatID.tag = 10001;
     [viewFooter addSubview:txtFieldMatID];
     
     UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -190,10 +162,54 @@
     
 - (void)submitButtonClicked {
     _confirmFlag = TRUE;
+    
+    int flag = 0;
+    for (int i=0; i<[arrOrders count]; i++) {
+        NSDictionary *dict = [arrOrders objectAtIndex:i];
+        if (enteredValues[i] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
+            flag = 1;
+        }
+    }
+    
+    if (flag == 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please check the discrepancies." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"You may proceed to the next section." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        _isEditable = FALSE;
+        [alert show];
+    }
     [self.tableView reloadData];
 }
 
 - (void)addButtonClicked {
     
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (!_isEditable) return NO;
+        
+    if (textField.tag == 10001) {
+        CGRect rectP = textField.frame;
+        _popOverController.popoverContentSize = CGSizeMake(200, 200);
+        [_popOverController presentPopoverFromRect:rectP inView:self.tableView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        return NO;
+    }
+    return YES;
+}
+
+- (void)materialSelected:(NSString *)strMaterialID {
+    [_popOverController dismissPopoverAnimated:YES];
+    if (![strMaterialID isEqualToString:@""]) {
+        for (int i = 0; i < [arrOrders count]; i++) {
+            NSDictionary *dict = [arrOrders objectAtIndex:i];
+            if ([strMaterialID isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
+                enteredValues[i] += 1;
+                [self.tableView reloadData];
+                return;
+            }
+        }
+    }
 }
 @end

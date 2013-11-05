@@ -71,6 +71,7 @@
 //        cell = [[SODCustomTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 54)];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.enumViewType = EOD;
     }
     
     // Configure the cell...

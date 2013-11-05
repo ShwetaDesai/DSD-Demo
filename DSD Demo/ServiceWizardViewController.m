@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Order.h"
 #import "SODCustomTableCell.h"
+#define COUNT_RETURNS_ITEMS_     4
 
 @interface ServiceWizardViewController ()
 
@@ -17,6 +18,7 @@
 
 @implementation ServiceWizardViewController
 @synthesize segmentedBar, customerID;
+NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,10 @@
         
         arr_SalesOrders = [[NSMutableArray alloc] init];
         selectedRow = nil;
+        
+//        _returnsDatabaseVC = [[ReturnsDatabaseViewController alloc] initWithStyle:UITableViewStylePlain];
+//        _returnsDatabaseVC.parentDelegate = self;
+//        _popOverController = [[UIPopoverController alloc] initWithContentViewController:_returnsDatabaseVC];
     }
     return self;
 }
@@ -78,6 +84,12 @@
 
 -(void) onClickNoSaleTab {
     
+    for (int i=0; i < 2; i++) {
+        for (int j=0; j<4; j++) {
+            NSLog(@"returnsValues :: %d", returnsValues[i][j]);
+        }
+    }
+    [[self.view viewWithTag:6666] removeFromSuperview];
 //    [[self.view viewWithTag:2222] removeFromSup];
         tbvNoService = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 10, [arr_NoServiceItems count] *row_Height_TodayTableView) style:UITableViewStylePlain];
         tbvNoService.dataSource = self;
@@ -118,7 +130,7 @@
 //    scv.contentSize = CGSizeMake(tableWidth, 900);
     
 //    yPos = [arr_SalesOrders count]*50;
-    tbvSummary = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, [arr_SalesOrders count]*50) style:UITableViewStylePlain];
+    tbvSummary = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, (2+[arr_SalesOrders count])*50) style:UITableViewStyleGrouped];
 
     tbvSummary.dataSource = self;
     tbvSummary.delegate = self;
@@ -181,8 +193,19 @@
          MyCellIdentifier = @"Summary";
          cell = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
          if (cell == nil) {
-             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
          }
+     } else  if (tableView == tbvReturns) {
+         MyCellIdentifier = @"Returns";
+         cellSOD = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+         if (!cellSOD) {
+             cellSOD = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0,tableWidth - 40, 50)];
+             cellSOD.selectionStyle = UITableViewCellSelectionStyleNone;
+         }
+//         cell = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+//         if (cell == nil) {
+//             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+//         }
      }
     
     // Configure the cell...
@@ -195,27 +218,50 @@
         cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     }
     
+    if (tableView == tbvReturns) {
+        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        cellSOD.enumViewType = RETURNS;
+        [cellSOD setData:indexPath.row :appObject.rowCustomerListSelected];
+        return cellSOD;
+//        if (indexPath.row == 0) {
+//            cell.textLabel.text = @"Click to Add";
+//            cell.detailTextLabel.text = @"";
+//        }
+//        else {
+//            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+//            NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row-1];
+//            cell.textLabel.text = [dict valueForKey:@"item"];
+//            cell.detailTextLabel.text = [dict valueForKey:@"value"];
+//        }
+    }
     if (tableView == tbvSales) {
 
         Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
-                [cellSOD setDataForRow:indexPath.row forOrder:o];
+        [cellSOD setDataForRow:indexPath.row forOrder:o];
         return cellSOD;
     }
     if (tableView == tbvSummary) {
-        Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
-        
-        if(o.placedQty != o.reqrdQty)
-            cell.backgroundColor = [UIColor yellowColor];
-        
-        UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
-        PlacedQty.text = [NSString stringWithFormat:@"PLCD:%d PACK",o.placedQty];
-        UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
-        reqQty.text = [NSString stringWithFormat:@"RQRD:%d PACK",o.reqrdQty];
-        [cell addSubview:PlacedQty];
-        [cell addSubview:reqQty];
-
-        cell.textLabel.text = o.matNo;
-        cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
+        if (indexPath.section == 0) {
+            Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
+            
+            if(o.placedQty != o.reqrdQty)
+                cell.backgroundColor = [UIColor yellowColor];
+            
+            UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+            PlacedQty.text = [NSString stringWithFormat:@"PLCD:%d PACK",o.placedQty];
+            UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+            reqQty.text = [NSString stringWithFormat:@"RQRD:%d PACK",o.reqrdQty];
+            [cell addSubview:PlacedQty];
+            [cell addSubview:reqQty];
+            
+            cell.textLabel.text = o.matNo;
+            cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
+        }
+        else {
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            cell.textLabel.text = arrReturnItems1[indexPath.row];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", returnsValues[appObject.rowCustomerListSelected][indexPath.row]];
+        }
     }
     return cell;
 }
@@ -232,6 +278,12 @@
         selectedRow = indexPath;
         [tbvNoService reloadData];
     }
+    if (tableView == tbvReturns && indexPath.row == 0) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        _popOverController.popoverContentSize = CGSizeMake(200, 200);
+        [_popOverController presentPopoverFromRect:cell.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        [tbvReturns reloadData];
+    }
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -239,14 +291,40 @@
             return [arr_NoServiceItems count];
     }else if (tableView == tbvSales) {
         return [arr_SalesOrders count];
-    }else  if (tableView == tbvSummary)
-        return [arr_SalesOrders count];
+    }else  if (tableView == tbvSummary) {
+        if (section == 0) {
+            return [arr_SalesOrders count];
+        }
+        else {
+            return COUNT_RETURNS_ITEMS_;
+        }
+    } else if (tableView == tbvReturns) {
+        return COUNT_RETURNS_ITEMS_;
+//        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+//        NSLog(@"appObject.rowCustomerListSelected  :: %d", appObject.rowCustomerListSelected);
+//        return [arrReturns[appObject.rowCustomerListSelected] count] + 1;
+    }
     return 0;
 
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if (tableView == tbvSummary) {
+        return 2;
+    }
     return 1;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (tableView == tbvSummary) {
+        if (section == 0) {
+            return @"Orders";
+        }
+        else {
+            return @"Returns";
+        }
+    }
+    return @"";
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -326,6 +404,12 @@
 -(void)showReturnsView{
     [[self.view viewWithTag:1111] removeFromSuperview];
 //create ui - pending
+    
+    tbvReturns = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 20, 4*50) style:UITableViewStylePlain];
+    tbvReturns.dataSource = self;
+    tbvReturns.delegate = self;
+    tbvReturns.tag = 6666;
+    [self.view addSubview:tbvReturns];
 }
 
 -(void)updateSoldQuantity:(NSNotification*)notif{
@@ -352,4 +436,24 @@ int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
     }
 }
 
+- (void)returnsItemSelected:(NSString *)strReturnsName {
+    [_popOverController dismissPopoverAnimated:YES];
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    
+    for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
+        NSDictionary *dict = [[arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i] mutableCopy];
+        if ([[dict valueForKey:@"item"] isEqualToString:strReturnsName]) {
+            int count = [[dict valueForKey:@"value"] intValue];
+            count++;
+            [dict setValue:[NSString stringWithFormat:@"%d", count] forKey:@"value"];
+            [tbvReturns reloadData];
+            return;
+        }
+    }
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setValue:strReturnsName forKey:@"item"];
+    [dict setValue:@"1" forKey:@"value"];
+    [arrReturns[appObject.rowCustomerListSelected] addObject:dict];
+    [tbvReturns reloadData];
+}
 @end

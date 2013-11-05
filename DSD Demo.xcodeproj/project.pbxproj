@@ -42,6 +42,8 @@
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
+		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
+		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,10 @@
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
+		BBFFE0A918281B5B006D51DB /* MaterialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsViewController.h; sourceTree = "<group>"; };
+		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
+		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
+		BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnsDatabaseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +273,8 @@
 				86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */,
 				86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */,
 				86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */,
+				BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */,
+				BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */,
 			);
 			name = ServiceWizard;
 			sourceTree = "<group>";
@@ -287,6 +295,8 @@
 				86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */,
 				86E26D401823BAD100D17098 /* SODViewControllerViewController.h */,
 				86E26D411823BAD100D17098 /* SODViewControllerViewController.m */,
+				BBFFE0A918281B5B006D51DB /* MaterialsViewController.h */,
+				BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */,
 			);
 			name = SOD;
 			sourceTree = "<group>";
@@ -419,8 +429,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
+				BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */,
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
+				BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */,
 				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MaterialsViewController.h"
 
-@interface SODViewControllerViewController : UITableViewController {
-    BOOL _confirmFlag;
+@interface SODViewControllerViewController : UITableViewController <UITextFieldDelegate, MaterialsViewControllerDelegate> {
+    BOOL _confirmFlag, _isEditable;
+    UIPopoverController *_popOverController;
+    MaterialsViewController *_materialsViewController;
 }
 
 @end

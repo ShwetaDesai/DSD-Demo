@@ -14,8 +14,12 @@
     UITextField *_txtFieldActualCount;
     UIButton *_btnAccept;
     UIImageView *_imgViewDiscFlag;
-    int _index;
+    int _index, _returnsIndex;
+    EnumViewType _enumViewType;
 }
+
+@property (nonatomic, strong) UITextField *txtFieldActualCount;
+@property (nonatomic)EnumViewType enumViewType;
 
 - (void)setData:(int)index :(int)colorIndex;
 - (void)setDataForRow:(int)indexID forOrder:(Order*)orderItem;

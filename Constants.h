@@ -22,8 +22,14 @@
 #define nSoldQtyUpdate @"nSoldQtyUpdate"
 #define nCustomerServiceComplete @"nCustomerServiceComplete"
 
-NSMutableArray *arrOrders;
-int enteredValues[6], acceptedValues[6];
+
+typedef enum viewType {
+    SOD, EOD, CUSTOMER, RETURNS
+} EnumViewType;
+
+NSMutableArray *arrOrders, *arrReturns[2];
+int enteredValues[6], acceptedValues[6], deliveredValues[6];
+int returnsValues[2][4];
 
 #define COLOR_THEME [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
 #define COLOR_ERROR [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
