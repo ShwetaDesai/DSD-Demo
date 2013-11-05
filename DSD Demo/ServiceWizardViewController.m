@@ -166,9 +166,84 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
     signatureViewController.view.layer.cornerRadius = 5.0;
     signatureViewController.view.layer.masksToBounds = YES;
     signatureViewController.view.tag = 5555;
+    
+    UILabel *lblText = [[UILabel alloc] initWithFrame:CGRectMake(10, 200-44, tableWidth-20, 44)];
+    lblText.backgroundColor = [UIColor clearColor];
+    lblText.textAlignment = NSTextAlignmentCenter;
+    lblText.text = @"Signature";
+    [signatureViewController.view addSubview:lblText];
+    
     [self.view addSubview:signatureViewController.view];
 }
 #pragma mark table View methods
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (tableView == tbvSummary) {
+        return 44;
+    }
+    return 0;
+}
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (tableView == tbvSummary) {
+        UIView *viewContent = [[UIView alloc] initWithFrame:CGRectMake(10, 0, tableWidth-20, 44)];
+        viewContent.backgroundColor = [UIColor clearColor];
+        
+        UILabel *lblMat = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 100, 34)];
+        lblMat.backgroundColor = [UIColor clearColor];
+        if (section == 0) {
+            lblMat.text = @"Material ID";
+        }
+        else {
+            lblMat.text = @"Returns";
+        }
+        
+        [viewContent addSubview:lblMat];
+        
+        UILabel *lblPlaced = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, 100, 34)];
+        lblPlaced.backgroundColor = [UIColor clearColor];
+        if (section == 0) lblPlaced.text = @"Delivered";
+        [viewContent addSubview:lblPlaced];
+        
+        UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(500, 5, 100, 34)];
+        lblRequired.backgroundColor = [UIColor clearColor];
+        if (section == 0) lblRequired.text = @"Expected";
+        [viewContent addSubview:lblRequired];
+        
+        return viewContent;
+    }
+    if (tableView == tbvReturns) {
+        UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
+        viewFooter.backgroundColor = COLOR_THEME;
+        
+        txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+        txtFieldMatID.placeholder = @" Enter Material ID";
+        txtFieldMatID.backgroundColor = [UIColor whiteColor];
+        txtFieldMatID.delegate = self;
+        txtFieldMatID.tag = 10001;
+        [viewFooter addSubview:txtFieldMatID];
+        
+        UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+        [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnAdd setBackgroundColor:[UIColor whiteColor]];
+        [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+        [viewFooter addSubview:btnAdd];
+        
+        UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
+        [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnSubmit setBackgroundColor:[UIColor whiteColor]];
+        [btnSubmit setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
+        [viewFooter addSubview:btnSubmit];
+        
+        return viewFooter;
+    }
+    
+    return nil;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *MyCellIdentifier;
     UITableViewCell *cell;
@@ -248,9 +323,9 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
                 cell.backgroundColor = [UIColor yellowColor];
             
             UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
-            PlacedQty.text = [NSString stringWithFormat:@"PLCD:%d PACK",o.placedQty];
+            PlacedQty.text = [NSString stringWithFormat:@"%d",o.placedQty];
             UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
-            reqQty.text = [NSString stringWithFormat:@"RQRD:%d PACK",o.reqrdQty];
+            reqQty.text = [NSString stringWithFormat:@"%d",o.reqrdQty];
             [cell addSubview:PlacedQty];
             [cell addSubview:reqQty];
             
@@ -333,7 +408,15 @@ NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broke
 
 - (IBAction)onClickconfirmButton:(id)sender {
     
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Once confirmed cannot re-Enter the values. Click OK only if you want to proceed further. To stay on the same screen click Cancel."                                                                  delegate:nil
+    if (segmentedBar.selectedSegmentIndex == 2) {
+        [segmentedBar setEnabled:YES forSegmentAtIndex:3];
+        [self onClickSummaryTab];
+        segmentedBar.selectedSegmentIndex = 3;
+        [segmentedBar setEnabled:NO forSegmentAtIndex:2];
+        return;
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Once confirmed you cannot modify the values. Click OK only if you want to proceed further. To stay on the same screen click Cancel."                                                                  delegate:nil
         cancelButtonTitle:@"Cancel"
         otherButtonTitles:@"OK", nil];
     

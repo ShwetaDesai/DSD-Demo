@@ -14,6 +14,7 @@
 @end
 
 @implementation SODViewControllerViewController
+NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"401760"};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -130,7 +131,7 @@
     UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
     viewFooter.backgroundColor = COLOR_THEME;
     
-    UITextField *txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
     txtFieldMatID.placeholder = @" Enter Material ID";
     txtFieldMatID.backgroundColor = [UIColor whiteColor];
     txtFieldMatID.delegate = self;
@@ -145,9 +146,10 @@
     [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
     [viewFooter addSubview:btnAdd];
     
-    UIImageView *imgViewBarCode = [[UIImageView alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
-    imgViewBarCode.image = [UIImage imageNamed:@"barcode.png"];
-    [viewFooter addSubview:imgViewBarCode];
+    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+    [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [viewFooter addSubview:btnBarCode];
     
     UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
@@ -184,18 +186,28 @@
 }
 
 - (void)addButtonClicked {
+    for (int i = 0; i < [arrOrders count]; i++) {
+        NSDictionary *dict = [arrOrders objectAtIndex:i];
+        if ([txtFieldMatID.text isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
+            enteredValues[i] += 1;
+            [self.tableView reloadData];
+            return;
+        }
+    }
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The selected product does not match any products from the Orders list. Please select some other product." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (!_isEditable) return NO;
         
-    if (textField.tag == 10001) {
-        CGRect rectP = textField.frame;
-        _popOverController.popoverContentSize = CGSizeMake(200, 200);
-        [_popOverController presentPopoverFromRect:rectP inView:self.tableView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-        return NO;
-    }
+//    if (textField.tag == 10001) {
+//        CGRect rectP = textField.frame;
+//        _popOverController.popoverContentSize = CGSizeMake(200, 200);
+//        [_popOverController presentPopoverFromRect:rectP inView:self.tableView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//        return NO;
+//    }
     return YES;
 }
 
@@ -211,5 +223,10 @@
             }
         }
     }
+}
+
+- (void)btnBarCodeBtnClicked {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
+    [alert show];
 }
 @end

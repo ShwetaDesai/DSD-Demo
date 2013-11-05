@@ -13,6 +13,7 @@
     BOOL _confirmFlag, _isEditable;
     UIPopoverController *_popOverController;
     MaterialsViewController *_materialsViewController;
+    UITextField *txtFieldMatID;
 }
 
 @end

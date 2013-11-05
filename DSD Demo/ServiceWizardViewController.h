@@ -11,7 +11,7 @@
 #import "ReturnsDatabaseViewController.h"
 
 @interface ServiceWizardViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate>
+<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate, UITextFieldDelegate>
 {
     NSArray *arr_NoServiceItems;
     NSMutableArray *arr_SalesOrders;
@@ -23,6 +23,7 @@
     int selectedSegmentBarID;
     NSString *customerID;
     UIPopoverController *_popOverController;
+    UITextField *txtFieldMatID;
     ReturnsDatabaseViewController *_returnsDatabaseVC;
 //    int IDlastSelectedTab;
 //    NSMutableArray *visibilityTruth;
