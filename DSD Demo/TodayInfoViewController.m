@@ -14,7 +14,7 @@
 
 @implementation TodayInfoViewController
 NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"Temperature : Fluid (C)", @"Temperature : Chilled (C)", @"Truck Damage"};
-NSString *dropDownValues[2] = {@"Select", @"Select"};
+NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,7 +107,7 @@ NSString *dropDownValues[2] = {@"Select", @"Select"};
     else {
         cell.textLabel.text = sectionTwoTitles[indexPath.row];
         
-        if (indexPath.row == 1 || indexPath.row == 2) {
+        if (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
             cell.detailTextLabel.text = dropDownValues[indexPath.row-1];
         }
         else if(indexPath.row == 6) {
@@ -131,7 +131,7 @@ NSString *dropDownValues[2] = {@"Select", @"Select"};
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 1 && (indexPath.row == 1 || indexPath.row == 2)) {
+    if (indexPath.section == 1 && (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3)) {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         CGRect rectP = cell.frame;
         rectP.origin.x += 200;

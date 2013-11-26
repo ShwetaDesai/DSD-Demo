@@ -161,6 +161,26 @@
     UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
     viewFooter.backgroundColor = COLOR_THEME;
     
+    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+    txtFieldMatID.placeholder = @" Enter Material ID";
+    txtFieldMatID.backgroundColor = [UIColor whiteColor];
+    txtFieldMatID.enabled = NO;
+    txtFieldMatID.tag = 10001;
+    [viewFooter addSubview:txtFieldMatID];
+    
+    UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+    [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnAdd setBackgroundColor:[UIColor whiteColor]];
+    [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+    [viewFooter addSubview:btnAdd];
+    
+    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+    [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [viewFooter addSubview:btnBarCode];
+    
     UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -199,6 +219,11 @@
 
 - (void)addButtonClicked {
     
+}
+
+- (void)btnBarCodeBtnClicked {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
+    [alert show];
 }
 
 @end

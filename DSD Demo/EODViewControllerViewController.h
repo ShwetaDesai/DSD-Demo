@@ -10,6 +10,7 @@
 
 @interface EODViewControllerViewController : UITableViewController {
     BOOL _confirmFlag;
+    UITextField *txtFieldMatID;
 }
 
 @end

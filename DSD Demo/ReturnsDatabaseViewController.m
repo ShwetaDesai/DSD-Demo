@@ -7,7 +7,7 @@
 //
 
 #import "ReturnsDatabaseViewController.h"
-#define COUNT_RETURNS_ITEMS     3
+#define COUNT_RETURNS_ITEMS     4
 @interface ReturnsDatabaseViewController ()
 
 @end
@@ -15,7 +15,7 @@
 @implementation ReturnsDatabaseViewController
 @synthesize parentDelegate = _parentDelegate;
 
-NSString *arrReturnItems_[COUNT_RETURNS_ITEMS] = {@"Oil", @"Rotten", @"Extra"};
+NSString *arrReturnItems_[COUNT_RETURNS_ITEMS] = {@"Oils", @"Extra/Unused", @"Damaged", @"Empty"};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

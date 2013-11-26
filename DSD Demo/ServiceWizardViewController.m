@@ -100,7 +100,7 @@
 
 -(void) onClickSalesTab {
     [self prepareDataForSalesTable];
-        tbvSales = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 40, [arr_SalesOrders count ]*row_Height_TodayTableView) style:UITableViewStylePlain];
+        tbvSales = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 40, 54+[arr_SalesOrders count ]*row_Height_TodayTableView) style:UITableViewStylePlain];
         tbvSales.dataSource = self;
         tbvSales.delegate = self;
     tbvSales.tag = 1111;
@@ -184,8 +184,12 @@
     if (tableView == tbvReturns) {
         return 54;
     }
+    if (tableView == tbvSales) {
+        return 54;
+    }
     return 0;
 }
+
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (tableView == tbvSummary) {
         UIView *viewContent = [[UIView alloc] initWithFrame:CGRectMake(10, 0, tableWidth-20, 44)];
@@ -239,7 +243,35 @@
         
         return viewFooter;
     }
-    
+    if (tableView == tbvSales) {
+            UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
+            viewFooter.backgroundColor = [UIColor clearColor];
+            
+            txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+            txtFieldMatID.placeholder = @" Enter Material ID";
+            txtFieldMatID.backgroundColor = [UIColor whiteColor];
+            txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            txtFieldMatID.layer.borderWidth = 1.0;
+            txtFieldMatID.enabled = NO;
+            txtFieldMatID.tag = 10001;
+            [viewFooter addSubview:txtFieldMatID];
+            
+            UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+            [btnAdd setBackgroundColor:[UIColor whiteColor]];
+            [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+            btnAdd.layer.borderColor = [UIColor lightGrayColor].CGColor;
+            btnAdd.layer.borderWidth = 1.0;
+            [viewFooter addSubview:btnAdd];
+            
+            UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+            [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+            [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+            [viewFooter addSubview:btnBarCode];
+            
+            return viewFooter;
+    }
     return nil;
 }
 
@@ -493,7 +525,7 @@
 
 //    NSLog(@"recvd values index:%@ plcdV:%d",[[notif userInfo] valueForKey:@"indexPath"],[[[notif userInfo] valueForKey:@"placedQty"] integerValue]);
     
-int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
+    int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
     int placedQty = [[[notif userInfo] valueForKey:@"placedQty"] integerValue];
     
     Order *currentArr = (Order*)[arr_SalesOrders objectAtIndex:index];
@@ -522,6 +554,8 @@ int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
 }
 
 - (void)addButtonClicked {
+    if([txtFieldMatID.text isEqualToString:@""]) return;
+    
     AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
     for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
         NSMutableDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i];
@@ -545,6 +579,10 @@ int index = [[[notif userInfo] valueForKey:@"indexPath"] intValue] ;
     rectP.origin.x = 0;
     rectP.origin.y += row_Height_TodayTableView;
     _popOverController.popoverContentSize = CGSizeMake(200, 200);
-    [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+- (void)btnBarCodeBtnClicked {
+    
 }
 @end

@@ -81,7 +81,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _lblMatID.text = orderItem.matNo;
     _lblMatDesc.text = orderItem.matDesc;
     _lblMatPlannedQty.text = [NSString stringWithFormat:@"%d",orderItem.reqrdQty];
-    _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+    _txtFieldActualCount.text = @""; //[NSString stringWithFormat:@"%d", enteredValues[_index]];
     self.backgroundColor = [UIColor whiteColor];
     
 }
