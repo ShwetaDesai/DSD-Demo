@@ -39,6 +39,8 @@
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
+		BB1AEA2218476FFF00D435E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */; };
+		BB1AEA241847722800D435E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1AEA231847722800D435E0 /* QuartzCore.framework */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
@@ -105,6 +107,8 @@
 		86E26D411823BAD100D17098 /* SODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODViewControllerViewController.m; sourceTree = "<group>"; };
 		86E26D441823BAF400D17098 /* materials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = materials.json; sourceTree = "<group>"; };
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BB1AEA231847722800D435E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1AEA241847722800D435E0 /* QuartzCore.framework in Frameworks */,
+				BB1AEA2218476FFF00D435E0 /* AVFoundation.framework in Frameworks */,
 				866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
@@ -164,6 +170,8 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB1AEA231847722800D435E0 /* QuartzCore.framework */,
+				BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */,
 				866DD48E181C403000DF43C5 /* Foundation.framework */,
 				866DD490181C403000DF43C5 /* CoreGraphics.framework */,
 				866DD492181C403000DF43C5 /* UIKit.framework */,
