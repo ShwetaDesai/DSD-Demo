@@ -11,12 +11,13 @@
 #define COUNT_TODAY_SECTION_2   7
 
 
-@interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate>
+@interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate>
 {
     UITableView *todayInfoTableView;
     NSArray *titleItemsArray , *valueArray;
     UITextField *_dataTextFields[COUNT_TODAY_SECTION_2];
     UIPopoverController *_popOverController;
     DropDownOptionsViewController *_dropDownOptionsVC;
+    NSMutableData *_responseData;
 }
 @end

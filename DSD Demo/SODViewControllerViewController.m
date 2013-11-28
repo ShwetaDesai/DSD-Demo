@@ -30,6 +30,7 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 //    self.tableView.backgroundView = nil;
 //    self.tableView.backgroundColor = COLOR_THEME;
     
@@ -229,4 +230,5 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
     [alert show];
 }
+
 @end

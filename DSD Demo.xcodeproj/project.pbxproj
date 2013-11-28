@@ -44,6 +44,7 @@
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
 		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
+		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
 		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
 		BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnsDatabaseViewController.m; sourceTree = "<group>"; };
+		ED46BB8518470B4D0095E532 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		ED46BB8618470B4D0095E532 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,7 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
+				ED46BB8318470B390095E532 /* Common */,
 				86BA80E01825562100F48B2E /* Signature */,
 				BB784C511824FB9F001C7644 /* EOD */,
 				86E26D3D1823BA9B00D17098 /* SOD */,
@@ -321,6 +325,23 @@
 			name = EOD;
 			sourceTree = "<group>";
 		};
+		ED46BB8318470B390095E532 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ED46BB8418470B3E0095E532 /* MBProgress HUD */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		ED46BB8418470B3E0095E532 /* MBProgress HUD */ = {
+			isa = PBXGroup;
+			children = (
+				ED46BB8518470B4D0095E532 /* MBProgressHUD.h */,
+				ED46BB8618470B4D0095E532 /* MBProgressHUD.m */,
+			);
+			name = "MBProgress HUD";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,6 +456,7 @@
 				BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */,
 				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
+				ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
