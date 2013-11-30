@@ -97,13 +97,15 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = COLOR_CELL_BACKGROUND;
+        cell.textLabel.textColor = COLOR_CELL_TEXT;
+        cell.detailTextLabel.textColor = COLOR_CELL_SUBTITLE;
     }
     
     cell.accessoryView = nil;
     if (indexPath.section == 0) {
         cell.textLabel.text = [titleItemsArray objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [valueArray objectAtIndex:indexPath.row];
-        cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     }
