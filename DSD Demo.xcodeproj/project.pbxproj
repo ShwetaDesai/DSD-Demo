@@ -46,7 +46,6 @@
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBDB3EEB1849A9F200378A71 /* SODPaletteCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB3EE81849A9F200378A71 /* SODPaletteCustomTableCell.m */; };
 		BBDB3EEC1849A9F200378A71 /* SODPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB3EEA1849A9F200378A71 /* SODPaletteViewController.m */; };
-		BBF3B83D1849D27F00657CCD /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BBF3B83C1849D27F00657CCD /* menu_bg.png */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
 		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
@@ -121,7 +120,6 @@
 		BBDB3EE81849A9F200378A71 /* SODPaletteCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteCustomTableCell.m; sourceTree = "<group>"; };
 		BBDB3EE91849A9F200378A71 /* SODPaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODPaletteViewController.h; sourceTree = "<group>"; };
 		BBDB3EEA1849A9F200378A71 /* SODPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteViewController.m; sourceTree = "<group>"; };
-		BBF3B83C1849D27F00657CCD /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
 		BBFFE0A918281B5B006D51DB /* MaterialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsViewController.h; sourceTree = "<group>"; };
 		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
 		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 		86749029181F92DC0052BB75 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BBF3B83C1849D27F00657CCD /* menu_bg.png */,
 				BBAFCEE2182516F50025D478 /* barcode.png */,
 				86E26D461823C5F500D17098 /* back.png */,
 				8681690D1820E1DA005516A2 /* ccbg1.png */,
@@ -450,7 +447,6 @@
 				BBAFCEE3182516F50025D478 /* barcode.png in Resources */,
 				86E26D471823C5F500D17098 /* back.png in Resources */,
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
-				BBF3B83D1849D27F00657CCD /* menu_bg.png in Resources */,
 				868169101820E1DA005516A2 /* ccbg2.png in Resources */,
 				8681690F1820E1DA005516A2 /* ccbg1.png in Resources */,
 			);

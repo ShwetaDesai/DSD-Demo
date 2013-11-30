@@ -31,12 +31,20 @@ NSMutableArray *arrOrders, *arrReturns[2];
 int enteredValues[6], acceptedValues[6], deliveredValues[2][6];
 int returnsValues[2][4];
 
-#define COLOR_THEME [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
-#define COLOR_ERROR [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
+
+#define TEXT_TEMPERATURE            @"%@  F                   aat %@ F                   Set %@ F                  Source %@ F"
+
+
+#define COLOR_THEME                 [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
+#define COLOR_ERROR                 [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
+#define COLOR_CELL_BACKGROUND       [UIColor colorWithRed:0.2745 green:0.2745 blue:0.2745 alpha:1.0]
+#define COLOR_CELL_TEXT             [UIColor colorWithRed:0.8941 green:0.8941 blue:0.8941 alpha:1.0]
+#define COLOR_CELL_SUBTITLE         [UIColor colorWithRed:0.9569 green:0.8431 blue:0.6275 alpha:1.0]
+
 
 #define kLeftMargin                             10.0
 #define kTopMargin                              10.0
-#define kTextFieldWidth                         70.0
+#define kTextFieldWidth                         100.0
 #define kTextFieldHeight                        25.0
 
 

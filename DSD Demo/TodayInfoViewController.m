@@ -14,7 +14,7 @@
 @end
 
 @implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"Temperature : Fluid (C)", @"Temperature : Chilled (C)", @"Truck Damage"};
+NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Truck Damage"};
 NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,20 +32,21 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             _dataTextFields[i].minimumFontSize = 12;
             _dataTextFields[i].adjustsFontSizeToFitWidth = YES;
             _dataTextFields[i].backgroundColor = [UIColor clearColor];
+            _dataTextFields[i].textColor = COLOR_CELL_SUBTITLE;
             _dataTextFields[i].delegate = self;
             _dataTextFields[i].clearButtonMode = UITextFieldViewModeWhileEditing;
             _dataTextFields[i].text = @"";
             _dataTextFields[i].tag = i;
         }
         
-        titleItemsArray = [[NSArray alloc] initWithObjects:@"Today's Date",@"Vehicle Number",@"Driver Number",@"Shipment Number",@"Customer count",@"Pallet count", nil];
+        titleItemsArray = [[NSArray alloc] initWithObjects:@"Today's Date",@"Vehicle Number",@"Driver Number",@"Customer count",@"Pallet count", nil];
         
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"dd MMM, yyyy"];
         
         NSDate *now = [[NSDate alloc] init];
         
-        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"FN5032",@"0010171018",@"S0001480807",@"2",@"5", nil];
+        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"FN5032",@"0010171018",@"2",@"5", nil];
     }
     return self;
 }
@@ -61,11 +62,11 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     _dropDownOptionsVC.parentDelegate =self;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:_dropDownOptionsVC];
     
-    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, COUNT_TODAY_SECTION_2*row_Height_TodayTableView + [valueArray count]*row_Height_TodayTableView) style:UITableViewStyleGrouped];
+    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, COUNT_TODAY_SECTION_2*row_Height_TodayTableView + [valueArray count]*row_Height_TodayTableView) style:UITableViewStylePlain];
     
     todayInfoTableView.dataSource = self;
     todayInfoTableView.delegate = self;
-    todayInfoTableView.layer.cornerRadius = 10.0;
+//    todayInfoTableView.layer.cornerRadius = 10.0;
     [self.view addSubview:todayInfoTableView];
 }
 
@@ -80,6 +81,10 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         return COUNT_TODAY_SECTION_2;
     }
     return [titleItemsArray count];;
+}
+
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44;
 }
 
 - (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -115,10 +120,18 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         if (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
             cell.detailTextLabel.text = dropDownValues[indexPath.row-1];
         }
-        else if(indexPath.row == 6) {
+        else if(indexPath.row == 7) {
             cell.detailTextLabel.text = @"Take Picture";
         }
-        else {
+        else if(indexPath.row == 5) {
+            NSDictionary *dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
+        }
+        else if(indexPath.row == 6) {
+            NSDictionary *dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
+        }
+        else if(indexPath.row == 0) {
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
     }
@@ -225,6 +238,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
+    arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
+    NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
+    
+    _dataTextFields[0].text = [dict valueForKey:@"odometer"];
+    
+    [todayInfoTableView reloadData];
     NSLog(@"Finished %@", strResponse);
 }
 

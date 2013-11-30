@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize btn_Today,btn_SOD,btn_ServiceOutlet,btn_transactionSummary,btn_EOD, contentView;
+@synthesize btn_Today,btn_SOD,btn_ServiceOutlet,btn_EOD, contentView;
 
 
 - (void)viewDidLoad
@@ -161,13 +161,11 @@
     [btn_Today setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_SOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_ServiceOutlet setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_transactionSummary setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_EOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     
     btn_Today.tag = 1;
     btn_SOD.tag = 2;
     btn_ServiceOutlet.tag = 3;
-    btn_transactionSummary.tag = 4;
     btn_EOD.tag = 5;
     
     [btn_Today addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -178,12 +176,9 @@
     
     [btn_ServiceOutlet addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    [btn_transactionSummary addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-    
     [btn_Today setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_SOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_ServiceOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_transactionSummary setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_EOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 
