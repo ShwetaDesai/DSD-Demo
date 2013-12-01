@@ -40,7 +40,7 @@ int returnsValues[2][4];
 #define COLOR_CELL_BACKGROUND       [UIColor colorWithRed:0.2745 green:0.2745 blue:0.2745 alpha:1.0]
 #define COLOR_CELL_TEXT             [UIColor colorWithRed:0.8941 green:0.8941 blue:0.8941 alpha:1.0]
 #define COLOR_CELL_SUBTITLE         [UIColor colorWithRed:0.9569 green:0.8431 blue:0.6275 alpha:1.0]
-
+#define COLOR_CELL_HEADER           [UIColor colorWithRed:0.3922 green:0.3922 blue:0.3922 alpha:1.0]
 
 #define kLeftMargin                             10.0
 #define kTopMargin                              10.0
