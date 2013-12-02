@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize btn_Today,btn_SOD,btn_ServiceOutlet,btn_transactionSummary,btn_EOD, contentView;
+@synthesize btn_Today,btn_SOD,btn_ServiceOutlet,btn_EOD, contentView;
 
 
 - (void)viewDidLoad
@@ -126,13 +126,13 @@
     todayTableViewController = [[TodayInfoViewController alloc] init];
     customerViewC = [[CustomerListViewController alloc] init];
     sodViewController = [[SODViewControllerViewController alloc]initWithStyle:UITableViewStylePlain];
-//    customerDetailVC = [[CustomerDetailsViewController alloc] init];
+    customerDetailVC = [[CustomerDetailsViewController alloc] init];
     wizardVC = [[ServiceWizardViewController alloc] init];
 }
 
 -(void) showServiceWizardView:(NSNotification*)notification{
-//    NSLog(@"ENTER  showServiceWizardView");
-//    NSLog(@"cust ID chosen:%@",[[notification userInfo] valueForKey:@"customerToServiceID"]);
+    NSLog(@"ENTER  showServiceWizardView");
+    NSLog(@"cust ID chosen:%@",[[notification userInfo] valueForKey:@"customerToServiceID"]);
     
     ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID = [[notification userInfo] valueForKey:@"customerToServiceID"];
     
@@ -147,6 +147,13 @@
     [contentView addSubview:wizardVC.view];
     
 }
+//- (void)containerAddChildViewController:(UIViewController *)childViewController {
+//    
+//    [self addChildViewController:childViewController];
+//    [self.view addSubview:childViewController.view];
+//    [childViewController didMoveToParentViewController:self];
+//    
+//}
 
 -(void)initButtons {
     [btn_Today setSelected:YES];
@@ -154,13 +161,11 @@
     [btn_Today setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_SOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_ServiceOutlet setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
-    [btn_transactionSummary setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     [btn_EOD setBackgroundImage:[UIImage imageNamed:@"ccReverse.png"] forState:UIControlStateSelected];
     
     btn_Today.tag = 1;
     btn_SOD.tag = 2;
     btn_ServiceOutlet.tag = 3;
-    btn_transactionSummary.tag = 4;
     btn_EOD.tag = 5;
     
     [btn_Today addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -171,12 +176,9 @@
     
     [btn_ServiceOutlet addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
     
-    [btn_transactionSummary addTarget:self action:@selector(onClickMenuButton:) forControlEvents:UIControlEventTouchUpInside];
-    
     [btn_Today setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_SOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_ServiceOutlet setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-    [btn_transactionSummary setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn_EOD setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 
@@ -187,13 +189,17 @@
     
     AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
     appObject.rowCustomerListSelected = index;
+    
+//    customerDetailVC.customerSelected = [appObject.customersToService objectAtIndex:index];
 
-    customerDetailVC = nil;
-    customerDetailVC = [[CustomerDetailsViewController alloc] init];
-    customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos+30, tableWidth, 470);
+    customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos+30, tableWidth, 350);
     customerDetailVC.view.layer.cornerRadius = 10.0;
 
     [contentView addSubview:customerDetailVC.view];
+//    [customerViewC.view setNeedsLayout];
+//    [customerViewC.view setNeedsDisplay];
+    
+//    [contentView setNeedsLayout];
     
 }
 
