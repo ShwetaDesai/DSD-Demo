@@ -15,7 +15,7 @@
     UITableView *customerListTableView;
 //    NSDictionary *customerDictionary;
     NSArray *customersArray;
-    UIButton *backButton;
+//    UIButton *backButton;
 //    UIView *navigationView;
 //    CustomerDetailsViewController *customerDetailVCObject;
 }

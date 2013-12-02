@@ -30,24 +30,24 @@
 {
     [super viewDidLoad];
     
-    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
-    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setHidden:YES];
-
-    [self.view addSubview:backButton];
+//    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+//    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
+//    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
+//    [backButton setHidden:YES];
+//
+//    [self.view addSubview:backButton];
     
-    NSString *title = @"Journey Halt List";
-    UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 200)/2,0, 200, 25 )];
-    lbltitle.text = title;
-    lbltitle.textColor = [UIColor whiteColor];
-    lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView+2];
-    [self.view addSubview:lbltitle];
+//    NSString *title = @"STOPS";
+//    UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 200)/2,0, 200, 25 )];
+//    lbltitle.text = title;
+//    lbltitle.textColor = [UIColor whiteColor];
+//    lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView+2];
+//    [self.view addSubview:lbltitle];
 
     customersArray = [NSArray arrayWithArray:((AppDelegate*)[[UIApplication sharedApplication] delegate]).customersToService];
     
-    customerListTableView = [[UITableView alloc] initWithFrame:CGRectMake( 0, 30 , tableWidth, [customersArray count]*row_Height_TodayTableView + 50) style:UITableViewStylePlain];
+    customerListTableView = [[UITableView alloc] initWithFrame:CGRectMake( 0, 0 , tableWidth, [customersArray count]*row_Height_TodayTableView + 50) style:UITableViewStylePlain];
     customerListTableView.dataSource = self;
     customerListTableView.delegate = self;
     customerListTableView.layer.cornerRadius = 10.0;
@@ -108,7 +108,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         
-    [backButton setHidden:NO];
+//    [backButton setHidden:NO];
     
     NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:indexPath.row] forKey:@"index"];
     
@@ -116,10 +116,10 @@
     
 }
 
--(void)onclickBackButton{
- 
-    [backButton setHidden:YES];
- 
-    [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerListView object:nil];
-}
+//-(void)onclickBackButton{
+// 
+//    [backButton setHidden:YES];
+// 
+//    [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerListView object:nil];
+//}
 @end

@@ -15,10 +15,11 @@
     IBOutlet UILabel *customerName;
     IBOutlet UILabel *lbl_street;
     IBOutlet UILabel *lbl_city;
-    UIButton *btn;
+    UIButton *btn_Service;
     IBOutlet UILabel *lbl_phoneNumber;
     Customer *customerSelected;
     GMSMapView *mapView_;
+    UIButton *btn_Simulate, *btn_directions;
 }
 
 @end

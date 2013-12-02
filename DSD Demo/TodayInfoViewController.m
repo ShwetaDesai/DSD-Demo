@@ -223,7 +223,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
-    NSLog(@"Finished %@", strResponse);
+//    NSLog(@"Finished %@", strResponse);
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

@@ -190,7 +190,7 @@
 
     customerDetailVC = nil;
     customerDetailVC = [[CustomerDetailsViewController alloc] init];
-    customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos+30, tableWidth, 470);
+    customerDetailVC.view.frame = CGRectMake(x_Pos,y_Pos, tableWidth, 700);
     customerDetailVC.view.layer.cornerRadius = 10.0;
 
     [contentView addSubview:customerDetailVC.view];
