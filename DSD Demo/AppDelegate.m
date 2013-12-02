@@ -9,12 +9,15 @@
 #import "AppDelegate.h"
 #import "Order.h"
 #import "Customer.h"
+#define APIKEY_GOOGLEMAPS @"AIzaSyCHLXAxb5nOqXJ9KuWU-5zOaGY2jmVKjpg"
 
 @implementation AppDelegate
 @synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GMSServices provideAPIKey:APIKEY_GOOGLEMAPS];
+    
     customersToService = [[NSMutableArray alloc] init];
     ordersPlaced = [[NSMutableArray alloc] init];
     [self loadDataObjects];
@@ -143,19 +146,21 @@
         
         customerObject.street = [[customersArray objectAtIndex:i] objectForKey:@"STREET"];
         
-        customerObject.pinCode = [[customersArray objectAtIndex:i] objectForKey:@"PCODE"];
-        
+        customerObject.latitudeC = [[customersArray objectAtIndex:i] objectForKey:@"LAT"];
+
+        customerObject.longitudeC = [[customersArray objectAtIndex:i] objectForKey:@"LON"];
+
         customerObject.city = [[customersArray objectAtIndex:i] objectForKey:@"CITY"];
         
         customerObject.ID = [[customersArray objectAtIndex:i] objectForKey:@"CUST_NO"];
         
+        customerObject.ETA = [[customersArray objectAtIndex:i] objectForKey:@"ETA"];
+
         customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
         
         //        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
         [customersToService addObject:customerObject];
-        
-//        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-//        [appObject.customersToService addObject:customerObject];
+       
     }
 }
 
