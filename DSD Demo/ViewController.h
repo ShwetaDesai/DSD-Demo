@@ -27,11 +27,11 @@
     EODViewControllerViewController *eodViewController;
 
 }
-@property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UIButton *btn_Today;
 @property (strong, nonatomic) IBOutlet UIButton *btn_SOD;
 @property (strong, nonatomic) IBOutlet UIButton *btn_ServiceOutlet;
+@property (strong, nonatomic) IBOutlet UIButton *btn_transactionSummary;
 @property (strong, nonatomic) IBOutlet UIButton *btn_EOD;
 
 @end

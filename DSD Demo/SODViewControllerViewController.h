@@ -8,19 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MaterialsViewController.h"
-#import <AVFoundation/AVFoundation.h>
 
-@interface SODViewControllerViewController : UITableViewController <UITextFieldDelegate, MaterialsViewControllerDelegate, AVCaptureMetadataOutputObjectsDelegate> {
+@interface SODViewControllerViewController : UITableViewController <UITextFieldDelegate, MaterialsViewControllerDelegate> {
     BOOL _confirmFlag, _isEditable;
     UIPopoverController *_popOverController;
     MaterialsViewController *_materialsViewController;
     UITextField *txtFieldMatID;
-    
-    AVCaptureSession *_session;
-    AVCaptureDevice *_device;
-    AVCaptureDeviceInput *_input;
-    AVCaptureMetadataOutput *_output;
-    AVCaptureVideoPreviewLayer *_prevLayer;
 }
 
 @end
