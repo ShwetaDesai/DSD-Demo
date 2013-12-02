@@ -1,35 +1,55 @@
 {
   "CUST_REC":[
       {
-        "VISIT_ID": "1",
-        "CUST_NO": "0001050446",
-        "NAME": "EUREST DZ PRIVATBANK",
-        "CITY": "STRASSEN",
-        "STREET": "4 R.THOMAS EDISSON",
-        "PCODE": "1445",
-        "PHONE": "449035560",
-        "UPTEN": "00:00:00",
-        "SALES_ORG": "2201",
-        "DIST_CHANNEL": "01",
-        "PRICE_LIST": "643",
-        "ZZCALLCYCLE": "1W",
-        "ZZNEXTVISITDATE": "00000000"
+        "CUST_NO": "STOP 1",
+        "NAME": "McDonald's",
+        "CITY": "IRVINE, CA, USA",
+        "STREET": "5445 ALTON PKWY",
+        "PHONE": "+1 949-551-4700",
+        "ETA":"8:15:00 AM",
+              "LAT":"33.67074",
+              "LON":"-117.78931"
       },
-      {
-        "VISIT_ID": "2",
-        "CUST_NO": "0001146020",
-        "NAME": "FONDATIOUN KRIIBSKRANK KANNER",
-        "CITY": "STRASSEN",
-        "STREET": "168 R.DES ROMAINS",
-        "PCODE": "8041",
-        "PHONE": "313170",
-        "UPTEN": "00:00:00",
-        "SALES_ORG": "2201",
-        "DIST_CHANNEL": "01",
-        "PRICE_LIST": "641",
-        "ZZCALLCYCLE": "1W",
-        "ZZNEXTVISITDATE": "20120910"
-      }
+    {   "CUST_NO": "STOP 2",
+        "NAME": "McDonald's",
+        "CITY": "IRVINE, CA, USA",
+        "STREET": "15459 CULVER DRV",
+        "PHONE": "+1 949-552-5959",
+        "ETA":"9:15:00 AM",
+              "LAT":"33.69478",
+              "LON":"-117.799557"
+
+      },
+    {   "CUST_NO": "STOP 3",
+        "NAME": "McDonald's",
+        "CITY": "IRVINE, CA, USA",
+        "STREET": "84 CORPORATE PARK",
+        "PHONE": "+1 949-251-1901",
+        "ETA":"10:25:00 AM",
+              "LAT":"33.693424",
+              "LON":"-117.826666"
+
+    },
+        {   "CUST_NO": "STOP 4",
+              "NAME": "McDonald's",
+              "CITY": "IRVINE, CA, USA",
+              "STREET": "1780 MAIN ST",
+              "PHONE": "+1 949-250-1728",
+              "ETA":"11:10:00 AM",
+              "LAT":"33.685782",
+              "LON":"-117.856964"
+
+    },
+            {   "CUST_NO": "STOP 5",
+              "NAME": "McDonald's",
+              "CITY": "IRVINE, CA, USA",
+              "STREET": "3853 PORTOLA PKWY",
+              "PHONE": "+1 714-505-3300",
+              "ETA":"12:00 PM",
+              "LAT":"33.733976",
+              "LON":"-117.761692"
+
+              }
     ]
 }
 
