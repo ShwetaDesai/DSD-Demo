@@ -8,23 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Customer.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface CustomerDetailsViewController : UIViewController
-{
+@interface CustomerDetailsViewController : UIViewController {
     IBOutlet UILabel *lbl_CustomerID;
     IBOutlet UILabel *customerName;
     IBOutlet UILabel *lbl_street;
     IBOutlet UILabel *lbl_city;
-    IBOutlet UILabel *lbl_zip; 
-//    IBOutlet UIButton *btn_ServiceOutlet;
-    UIView *viewContent;
-    UIButton* btnClose;
-    UIButton *btn, *btnMap;
+    UIButton *btn;
     IBOutlet UILabel *lbl_phoneNumber;
-//    UIButton *backButton;
     Customer *customerSelected;
+    GMSMapView *mapView_;
 }
-
-//@property (nonatomic,retain) Customer *customerSelected;
 
 @end
