@@ -10,15 +10,17 @@
 
 @interface Customer : NSObject
 {
-    NSString *name, *phoneNo, *ID, *street, *pinCode, *city;
+    NSString *name, *phoneNo, *ID, *street, *pinCode, *city, *ETA,*latitudeC, *longitudeC;
     BOOL isServiced;
 }
 @property (nonatomic,retain) NSString* name;
 @property (nonatomic,retain) NSString* street;
 @property (nonatomic,retain) NSString* phoneNo;
 @property (nonatomic,retain) NSString* ID;
-@property (nonatomic,retain) NSString* pinCode;
+@property (nonatomic,retain) NSString* latitudeC;
+@property (nonatomic,retain) NSString* longitudeC;
 @property (nonatomic,retain) NSString* city;
+@property (nonatomic,retain) NSString* ETA;
 @property (assign) BOOL isServiced;
 
 @end

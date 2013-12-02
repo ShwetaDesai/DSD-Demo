@@ -9,7 +9,7 @@
 #import "Customer.h"
 
 @implementation Customer
-@synthesize phoneNo,name,ID,street,pinCode,city;
+@synthesize phoneNo,name,ID,street,city,ETA,latitudeC,longitudeC;
 @synthesize isServiced;
 
 @end
