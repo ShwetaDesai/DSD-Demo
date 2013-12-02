@@ -54,9 +54,13 @@
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
+		BB1AEA2218476FFF00D435E0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */; };
+		BB1AEA241847722800D435E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1AEA231847722800D435E0 /* QuartzCore.framework */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
+		BBDB3EEB1849A9F200378A71 /* SODPaletteCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB3EE81849A9F200378A71 /* SODPaletteCustomTableCell.m */; };
+		BBDB3EEC1849A9F200378A71 /* SODPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBDB3EEA1849A9F200378A71 /* SODPaletteViewController.m */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
 		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
@@ -135,11 +139,17 @@
 		86E26D411823BAD100D17098 /* SODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODViewControllerViewController.m; sourceTree = "<group>"; };
 		86E26D441823BAF400D17098 /* materials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = materials.json; sourceTree = "<group>"; };
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BB1AEA231847722800D435E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
+		BBDB3EE71849A9F200378A71 /* SODPaletteCustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODPaletteCustomTableCell.h; sourceTree = "<group>"; };
+		BBDB3EE81849A9F200378A71 /* SODPaletteCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteCustomTableCell.m; sourceTree = "<group>"; };
+		BBDB3EE91849A9F200378A71 /* SODPaletteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODPaletteViewController.h; sourceTree = "<group>"; };
+		BBDB3EEA1849A9F200378A71 /* SODPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteViewController.m; sourceTree = "<group>"; };
 		BBFFE0A918281B5B006D51DB /* MaterialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsViewController.h; sourceTree = "<group>"; };
 		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
 		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				86798C53184C5BB100E78D5C /* libc++.dylib in Frameworks */,
 				86798C51184C5BA200E78D5C /* libicucore.dylib in Frameworks */,
 				86798C4F184C5B9400E78D5C /* libz.dylib in Frameworks */,
@@ -165,6 +176,10 @@
 				86798C44184C5B3300E78D5C /* CoreText.framework in Frameworks */,
 				86798C45184C5B3300E78D5C /* GLKit.framework in Frameworks */,
 				86798C3D184C5B0600E78D5C /* AVFoundation.framework in Frameworks */,
+=======
+				BB1AEA241847722800D435E0 /* QuartzCore.framework in Frameworks */,
+				BB1AEA2218476FFF00D435E0 /* AVFoundation.framework in Frameworks */,
+>>>>>>> ed8b17f24b98eeaf59a63846df83c7674733107f
 				866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
@@ -208,6 +223,7 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				86798C52184C5BB100E78D5C /* libc++.dylib */,
 				86798C50184C5BA200E78D5C /* libicucore.dylib */,
 				86798C4E184C5B9400E78D5C /* libz.dylib */,
@@ -223,6 +239,10 @@
 				86798C3A184C5ADA00E78D5C /* GoogleMaps.bundle */,
 				86798C38184C5A8700E78D5C /* GoogleMaps.framework */,
 				865FC80E18487FC200160D89 /* MapKit.framework */,
+=======
+				BB1AEA231847722800D435E0 /* QuartzCore.framework */,
+				BB1AEA2118476FFF00D435E0 /* AVFoundation.framework */,
+>>>>>>> ed8b17f24b98eeaf59a63846df83c7674733107f
 				866DD48E181C403000DF43C5 /* Foundation.framework */,
 				866DD490181C403000DF43C5 /* CoreGraphics.framework */,
 				866DD492181C403000DF43C5 /* UIKit.framework */,
@@ -354,6 +374,10 @@
 		86E26D3D1823BA9B00D17098 /* SOD */ = {
 			isa = PBXGroup;
 			children = (
+				BBDB3EE71849A9F200378A71 /* SODPaletteCustomTableCell.h */,
+				BBDB3EE81849A9F200378A71 /* SODPaletteCustomTableCell.m */,
+				BBDB3EE91849A9F200378A71 /* SODPaletteViewController.h */,
+				BBDB3EEA1849A9F200378A71 /* SODPaletteViewController.m */,
 				86E26D3E1823BAD100D17098 /* SODCustomTableCell.h */,
 				86E26D3F1823BAD100D17098 /* SODCustomTableCell.m */,
 				86E26D401823BAD100D17098 /* SODViewControllerViewController.h */,
@@ -520,6 +544,7 @@
 				BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */,
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
+				BBDB3EEB1849A9F200378A71 /* SODPaletteCustomTableCell.m in Sources */,
 				BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */,
 				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
@@ -527,6 +552,7 @@
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
+				BBDB3EEC1849A9F200378A71 /* SODPaletteViewController.m in Sources */,
 				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
 				866DD49B181C403000DF43C5 /* main.m in Sources */,
 				86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */,

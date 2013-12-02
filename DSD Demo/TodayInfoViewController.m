@@ -14,7 +14,7 @@
 @end
 
 @implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"Temperature : Fluid (C)", @"Temperature : Chilled (C)", @"Truck Damage"};
+NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
 NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -32,20 +32,21 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             _dataTextFields[i].minimumFontSize = 12;
             _dataTextFields[i].adjustsFontSizeToFitWidth = YES;
             _dataTextFields[i].backgroundColor = [UIColor clearColor];
+            _dataTextFields[i].textColor = COLOR_CELL_SUBTITLE;
             _dataTextFields[i].delegate = self;
             _dataTextFields[i].clearButtonMode = UITextFieldViewModeWhileEditing;
             _dataTextFields[i].text = @"";
             _dataTextFields[i].tag = i;
         }
         
-        titleItemsArray = [[NSArray alloc] initWithObjects:@"Today's Date",@"Vehicle Number",@"Driver Number",@"Shipment Number",@"Customer count",@"Pallet count", nil];
+        titleItemsArray = [[NSArray alloc] initWithObjects:@"Today's Date",@"Vehicle Number",@"Driver Number",@"Customer count",@"Pallet count", nil];
         
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"dd MMM, yyyy"];
         
         NSDate *now = [[NSDate alloc] init];
         
-        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"FN5032",@"0010171018",@"S0001480807",@"2",@"5", nil];
+        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"FN5032",@"0010171018",@"2",@"5", nil];
     }
     return self;
 }
@@ -54,6 +55,8 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+//    arrResponse = [[NSMutableArray alloc] init];
+    strTemperature = [[NSString alloc] init];
     
     [self callIBrightAPI];
     
@@ -61,11 +64,11 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     _dropDownOptionsVC.parentDelegate =self;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:_dropDownOptionsVC];
     
-    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, COUNT_TODAY_SECTION_2*row_Height_TodayTableView + [valueArray count]*row_Height_TodayTableView) style:UITableViewStyleGrouped];
+    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, COUNT_TODAY_SECTION_2*row_Height_TodayTableView + [valueArray count]*row_Height_TodayTableView) style:UITableViewStylePlain];
     
     todayInfoTableView.dataSource = self;
     todayInfoTableView.delegate = self;
-    todayInfoTableView.layer.cornerRadius = 10.0;
+//    todayInfoTableView.layer.cornerRadius = 10.0;
     [self.view addSubview:todayInfoTableView];
 }
 
@@ -82,11 +85,29 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     return [titleItemsArray count];;
 }
 
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 1) {
-        return @"Vehicle Pre-departure Inspection";
+- (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return 0;
     }
-    return @"Vehicle Details";
+    return 44;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return nil;
+    }
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, todayInfoTableView.frame.size.width, 44)];
+    view.backgroundColor = COLOR_CELL_HEADER;
+    
+    UILabel *lblText = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.frame.size.width-20, 44)];
+    lblText.backgroundColor = [UIColor clearColor];
+    lblText.text = @"VEHICLE PRE-DEPARTURE INSPECTION";
+    lblText.font = [UIFont systemFontOfSize:20];
+    lblText.textColor = [UIColor whiteColor];
+    
+    [view addSubview:lblText];
+    
+    return view;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -97,13 +118,15 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = COLOR_CELL_BACKGROUND;
+        cell.textLabel.textColor = COLOR_CELL_TEXT;
+        cell.detailTextLabel.textColor = COLOR_CELL_SUBTITLE;
     }
     
     cell.accessoryView = nil;
     if (indexPath.section == 0) {
         cell.textLabel.text = [titleItemsArray objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [valueArray objectAtIndex:indexPath.row];
-        cell.textLabel.textColor = [UIColor blackColor];
         cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
         cell.detailTextLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     }
@@ -113,10 +136,29 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         if (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
             cell.detailTextLabel.text = dropDownValues[indexPath.row-1];
         }
-        else if(indexPath.row == 6) {
+        else if(indexPath.row == 8) {
             cell.detailTextLabel.text = @"Take Picture";
         }
-        else {
+        else if(indexPath.row == 5) {
+            NSDictionary *dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
+            
+            if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature2"]) {
+                dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
+            }
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
+        }
+        else if(indexPath.row == 6) {
+            NSDictionary *dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
+            if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature1"]) {
+                dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
+            }
+
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"-25.41"];
+        }
+        else if(indexPath.row == 7) {
+            cell.detailTextLabel.text = strTemperature;
+        }
+        else if(indexPath.row == 0) {
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
     }
@@ -192,7 +234,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     
     // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    // Create the request.
+    NSMutableURLRequest *requestWeatherAPI = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?lat=33.670774&lon=-117.789306"]];
+    // Create url connection and fire request
+    connWeather = [[NSURLConnection alloc] initWithRequest:requestWeatherAPI delegate:self];
     
 }
 
@@ -203,12 +250,22 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     // so that we can append data to it in the didReceiveData method
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
-    _responseData = [[NSMutableData alloc] init];
+    if (connection == conn) {
+        _responseData = [[NSMutableData alloc] init];
+    }
+    else {
+        _responseDataWeather = [[NSMutableData alloc] init];
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
-    [_responseData appendData:data];
+    if (connection == conn) {
+        [_responseData appendData:data];
+    }
+    else {
+        [_responseDataWeather appendData:data];
+    }
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
@@ -220,10 +277,25 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
+    
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
-    NSLog(@"Finished %@", strResponse);
+    if (connection == conn) {
+        NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
+        arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
+        NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
+        
+        _dataTextFields[0].text = [dict valueForKey:@"odometer"];
+        
+        [todayInfoTableView reloadData];
+        NSLog(@"iBright API Finished %@", strResponse);
+    }
+    else {
+        NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
+        NSDictionary *dict = [[NSJSONSerialization JSONObjectWithData:_responseDataWeather options:kNilOptions error:nil] valueForKey:@"main"];
+        strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue] - 273.15)*(9/5)+32)];
+        NSLog(@"openweathermap API Finished %@", strResponse);
+    }
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {

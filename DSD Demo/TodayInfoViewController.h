@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DropDownOptionsViewController.h"
-#define COUNT_TODAY_SECTION_2   7
+#define COUNT_TODAY_SECTION_2   9
 
 
 @interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate>
@@ -18,6 +18,9 @@
     UITextField *_dataTextFields[COUNT_TODAY_SECTION_2];
     UIPopoverController *_popOverController;
     DropDownOptionsViewController *_dropDownOptionsVC;
-    NSMutableData *_responseData;
+    NSMutableData *_responseData, *_responseDataWeather;
+    NSArray *arrResponse;
+    NSString *strTemperature;
+    NSURLConnection *conn, *connWeather;
 }
 @end
