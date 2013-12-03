@@ -15,6 +15,7 @@
     UIPopoverController *_popOverController;
     MaterialsViewController *_materialsViewController;
     UITextField *txtFieldMatID;
+    NSString *palletID;
     
     AVCaptureSession *_session;
     AVCaptureDevice *_device;
@@ -22,5 +23,6 @@
     AVCaptureMetadataOutput *_output;
     AVCaptureVideoPreviewLayer *_prevLayer;
 }
+@property(nonatomic,strong)NSString *palletID;
 
 @end

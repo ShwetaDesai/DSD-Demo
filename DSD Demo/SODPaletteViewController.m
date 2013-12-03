@@ -14,6 +14,7 @@
 @interface SODPaletteViewController (){
     SODPaletteCustomTableCell *sodPalletCustomTableCell;
     AppDelegate *objDelegate;
+    NSString *PalletID;
 }
 
 @end
@@ -35,9 +36,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     sodPalletCustomTableCell = [[SODPaletteCustomTableCell alloc] init];
     [self initBarCode];
     self.tableView.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangeImage:) name:nMaterialScanCompleted object:nil];
     
 }
 
@@ -289,6 +292,26 @@
     _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     _prevLayer.frame = self.view.bounds;
     _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+}
+
+-(void)ChangeImage:(NSNotification *)notification{
+    
+    PalletID = [notification object];
+   // NSLog(@"Pallet ID %@", PalletID);
+    
+    
+    //BOOL isChecked = NO;
+    /* checking whether the Pallete is already scanned */
+    for (int i=0; i<[palletIDs count]; i++) {
+        if ([[palletIDs objectAtIndex:i] isEqualToString:PalletID]) {
+            //isChecked = [[palletImageCheck objectAtIndex:i] boolValue];
+            NSMutableArray *arrTemp = [objDelegate getImageForPallet];
+            [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
+            [objDelegate setImageForPallet:arrTemp];
+            break;
+        }
+    }
+    [self.tableView reloadData];
 }
 
 

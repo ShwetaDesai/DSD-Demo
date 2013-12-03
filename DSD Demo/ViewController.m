@@ -95,6 +95,9 @@
 }
 
 -(void) showSODView {
+    for (int i=0; i < 6; i++) {
+        acceptedValues[i] = enteredValues[i] = 0;
+    }
     SODViewControllerViewController *sodViewController;
     sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
     sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);

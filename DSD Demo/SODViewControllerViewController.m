@@ -11,13 +11,14 @@
 
 @interface SODViewControllerViewController (){
     
-    NSString *palletID;
+    
     NSMutableArray *arrMaterialsFinal;
 }
 
 @end
 
 @implementation SODViewControllerViewController
+@synthesize palletID;
 NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"401760"};
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -51,7 +52,7 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayPalletID:) name:nPassingPalletID object:nil];
     
     //    self.tableView.backgroundView = nil;
@@ -319,6 +320,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You may proceed to the next section." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         _isEditable = FALSE;
         [alert show];
+        [[NSNotificationCenter defaultCenter] postNotificationName:nMaterialScanCompleted object:palletID];
+        
     }
     [self.tableView reloadData];
 }
