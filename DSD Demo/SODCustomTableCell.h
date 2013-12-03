@@ -24,5 +24,6 @@
 - (void)setData:(int)index :(int)colorIndex  isCheckedValue:(BOOL)isChecked;
 - (void)setDataReturns:(NSDictionary*)dict :(int)index;
 - (void)setDataForRow:(int)indexID forOrder:(Order*)orderItem;
+- (void)setData:(NSDictionary*)dictionaryObject;
 //@property (nonatomic, strong)NSMutableDictionary *dictionaryObject;
 @end

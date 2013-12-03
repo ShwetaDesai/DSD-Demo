@@ -100,6 +100,13 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _index = indexID;
 }
 
+- (void)setData:(NSDictionary*)dictionaryObject {
+    self.backgroundColor = COLOR_CELL_BACKGROUND;
+    _lblMatID.text = [dictionaryObject valueForKey:JSONTAG_MAT_NO];
+    _lblMatDesc.text = [dictionaryObject valueForKey:JSONTAG_MAT_DESC];
+    _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
+}
+
 - (void)setData:(int)indexID :(int)colorIndex  isCheckedValue:(BOOL)isChecked{
     if (_enumViewType == RETURNS) {
         _lblMatID.text = arrReturnItems[indexID];
@@ -140,7 +147,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     
     switch (colorIndex) {
         case 0: {
-            self.backgroundColor = [UIColor whiteColor];
+            self.backgroundColor = COLOR_CELL_BACKGROUND;
             break;
         }
         case 1: {

@@ -54,11 +54,11 @@
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
+		BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB801DDF184E15D50001DCCD /* GoogleMaps.framework */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
 		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
-		ED3E3877184DA9F30099E682 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3E3876184DA9F30099E682 /* GoogleMaps.framework */; };
 		ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3878184DB23B0099E682 /* SODPaletteViewController.m */; };
 		ED3E387F184DB23B0099E682 /* SODPaletteCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3E387A184DB23B0099E682 /* SODPaletteCustomTableCell.m */; };
 		ED3E3880184DB23B0099E682 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387C184DB23B0099E682 /* uncheck.png */; };
@@ -140,6 +140,7 @@
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
+		BB801DDF184E15D50001DCCD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
@@ -147,7 +148,6 @@
 		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
 		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
 		BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnsDatabaseViewController.m; sourceTree = "<group>"; };
-		ED3E3876184DA9F30099E682 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		ED3E3878184DB23B0099E682 /* SODPaletteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteViewController.m; sourceTree = "<group>"; };
 		ED3E3879184DB23B0099E682 /* SODPaletteCustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SODPaletteCustomTableCell.h; sourceTree = "<group>"; };
 		ED3E387A184DB23B0099E682 /* SODPaletteCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODPaletteCustomTableCell.m; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				86798C3D184C5B0600E78D5C /* AVFoundation.framework in Frameworks */,
 				866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
-				ED3E3877184DA9F30099E682 /* GoogleMaps.framework in Frameworks */,
+				BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
 			);
@@ -218,7 +218,7 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ED3E3876184DA9F30099E682 /* GoogleMaps.framework */,
+				BB801DDF184E15D50001DCCD /* GoogleMaps.framework */,
 				86798C52184C5BB100E78D5C /* libc++.dylib */,
 				86798C50184C5BA200E78D5C /* libicucore.dylib */,
 				86798C4E184C5B9400E78D5C /* libz.dylib */,
@@ -685,6 +685,7 @@
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
@@ -704,6 +705,7 @@
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";

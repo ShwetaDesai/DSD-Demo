@@ -8,6 +8,7 @@
 
 #import "ServiceWizardViewController.h"
 #import "AppDelegate.h"
+#import "Customer.h"
 #import "Order.h"
 #import "SODCustomTableCell.h"
 #define COUNT_RETURNS_ITEMS_     4
@@ -25,6 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        isSummary = 0;
         arr_NoServiceItems = [NSArray arrayWithObjects:@"Late delivery",@"Delivery refusal by customer",@"Quality problem",@"Wrong load",@"Product not ordered",@"Others", nil];
         
         arr_SalesOrders = [[NSMutableArray alloc] init];
@@ -41,6 +43,12 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = COLOR_CELL_BACKGROUND;
+
+    for (int i=0; i<10; i++) {
+        arrMaterials[i] = [[NSMutableArray alloc] init];
+        rowsPerSectionSales[i] = 0;
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSoldQuantity:) name:nSoldQtyUpdate object:nil];
 
     customerID =  ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID;
@@ -100,24 +108,41 @@
 
 -(void) onClickSalesTab {
     [self prepareDataForSalesTable];
-        tbvSales = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 40, 54+[arr_SalesOrders count ]*row_Height_TodayTableView) style:UITableViewStylePlain];
+        tbvSales = [[UITableView alloc] initWithFrame:CGRectMake(0, 55, tableWidth, 350) style:UITableViewStyleGrouped];
+    tbvSales.backgroundView = nil;
+    tbvSales.backgroundColor = COLOR_CELL_BACKGROUND;
         tbvSales.dataSource = self;
         tbvSales.delegate = self;
     tbvSales.tag = 1111;
+//    tbvSales.tableHeaderView = [self salesFooter];
     [self.view addSubview:tbvSales];
 }
 
 -(void)prepareDataForSalesTable{
     AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+    NSLog(@"cust.palleteIDs :: %@", cust.palleteIDs);
     
-    NSArray *tarr = [NSArray arrayWithArray:appObject.ordersPlaced];
-    
-    for (int i = 0; i <[tarr count]; i++) {
-            Order *temp = (Order*)[tarr objectAtIndex:i];
-        if ([customerID isEqualToString:temp.customerNo]) {
-            [arr_SalesOrders addObject:[tarr objectAtIndex:i]];
+    for (int i=0; i<[arrOrders count]; i++) {
+        NSDictionary *dict = [arrOrders objectAtIndex:i];
+        
+        for (int j=0; j<[cust.palleteIDs count]; j++) {
+            if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:[cust.palleteIDs objectAtIndex:j]]) {
+                [arr_SalesOrders addObject:dict];
+                rowsPerSectionSales[j]++;
+//                [arrMaterials[j] addObject:dict];
+            }
         }
     }
+    [tbvSales reloadData];
+//    NSArray *tarr = [NSArray arrayWithArray:appObject.ordersPlaced];
+//    
+//    for (int i = 0; i <[tarr count]; i++) {
+//        Order *temp = (Order*)[tarr objectAtIndex:i];
+//        if ([customerID isEqualToString:temp.customerNo]) {
+//            [arr_SalesOrders addObject:[tarr objectAtIndex:i]];
+//        }
+//    }
 }
 
 -(void) onClickSummaryTab {
@@ -147,7 +172,9 @@
 //    
 //    [acceptButton setFrame:CGRectMake(75,yPos, 200, 30)];
 //    [scv addSubview:acceptButton];
-    [self.view addSubview:tbvSummary];
+    isSummary = 1;
+    [self.view addSubview:tbvSales];
+    [tbvSales reloadData];
 //        [self.view  addSubview:acceptButton];
 }
 
@@ -185,7 +212,10 @@
         return 54;
     }
     if (tableView == tbvSales) {
-        return 54;
+        if (section == 0) {
+            return 98;
+        }
+        return 44;
     }
     return 0;
 }
@@ -219,8 +249,8 @@
         return viewContent;
     }
     if (tableView == tbvReturns) {
-        UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 54)];
-        viewFooter.backgroundColor = [UIColor clearColor];
+        UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 54)];
+        viewFooter.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1.0];
         
         txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 200, 44)];
         txtFieldMatID.placeholder = @" Enter Material ID";
@@ -271,73 +301,86 @@
             [viewFooter addSubview:btnBarCode];
             
             return viewFooter;*/
-        return [self salesFooter];
+        
+        return [self salesFooter:section];
     }
     return nil;
 }
 
-- (UIView*)salesFooter {
-    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 54)];
+- (UIView*)salesFooter:(int)section {
+    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 98)];
     viewFooter.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1.0];
     
     UIView *viewFooterHeadings = [[UIView alloc] initWithFrame:CGRectMake(0, 54, self.view.frame.size.width, 44)];
     viewFooterHeadings.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
-    [viewFooter addSubview:viewFooterHeadings];
     
-    
-    UIView *viewFooterSeperator = [[UIView alloc]initWithFrame:CGRectMake(10, 98, 790, 1)];
-    viewFooterSeperator.backgroundColor = [UIColor whiteColor];
-    [viewFooter addSubview:viewFooterSeperator];
+//    UIView *viewFooterSeperator = [[UIView alloc]initWithFrame:CGRectMake(10, 98, 790, 1)];
+//    viewFooterSeperator.backgroundColor = [UIColor whiteColor];
+//    [viewFooter addSubview:viewFooterSeperator];
     
     UILabel *lblPalette = [[UILabel alloc] initWithFrame:CGRectMake(30,10,100, 20)];
     [lblPalette setTextColor:[UIColor colorWithRed:236.0/255.0 green:179.0/255.0 blue:93.0/255.0 alpha:1.0]];
     lblPalette.backgroundColor = [UIColor clearColor];
-    [lblPalette setText:@"Pallet"];
     [viewFooterHeadings addSubview:lblPalette];
     
-    UILabel *lblPaletteID = [[UILabel alloc] initWithFrame:CGRectMake(125,10,100, 20)];
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+    
+    UILabel *lblPaletteID = [[UILabel alloc] initWithFrame:CGRectMake(125,10,200, 20)];
     [lblPaletteID setTextColor:[UIColor colorWithRed:236.0/255.0 green:179.0/255.0 blue:93.0/255.0 alpha:1.0]];
     lblPaletteID.backgroundColor = [UIColor clearColor];
-    [lblPaletteID setText:@"Pallet ID"];
     [viewFooterHeadings addSubview:lblPaletteID];
     
-    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 225, 44)];
-    txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    txtFieldMatID.layer.borderWidth= 1.0f;
-    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
-    txtFieldMatID.placeholder = @" Enter/Scan Pallet Number";
-    [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
-    [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
-    txtFieldMatID.backgroundColor = [UIColor clearColor];
-    txtFieldMatID.delegate = self;
-    txtFieldMatID.tag = 10001;
-    [viewFooter addSubview:txtFieldMatID];
+    if (isSummary == 0) {
+        [lblPalette setText:@"RETURNS"];
+        [lblPaletteID setText:[NSString stringWithFormat:@"%@", [cust.palleteIDs objectAtIndex:section]]];
+    }
+    else
+        [lblPalette setText:@"Pallet"];
     
-    UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 10, 5, 75, 44);
-    [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
-    [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
-    btnAdd.font = [UIFont boldSystemFontOfSize:14.0];
-    [viewFooter addSubview:btnAdd];
+    if (section == 0) {
+        txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 225, 44)];
+        txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        txtFieldMatID.layer.borderWidth= 1.0f;
+        [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
+        txtFieldMatID.placeholder = @" Enter/Scan Pallet Number";
+        [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
+        [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
+        txtFieldMatID.backgroundColor = [UIColor clearColor];
+        txtFieldMatID.delegate = self;
+        txtFieldMatID.tag = 10001;
+        [viewFooter addSubview:txtFieldMatID];
+        
+        UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 10, 5, 75, 44);
+        [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+        [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+        btnAdd.font = [UIFont boldSystemFontOfSize:14.0];
+        [viewFooter addSubview:btnAdd];
+        
+        UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 10, 5, 64, 44)];
+        [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+        [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+        [viewFooter addSubview:btnBarCode];
+        
+        UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 5, 150, 44);
+        [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+        [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
+        btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
+        [viewFooter addSubview:btnSubmit];
+    }
+    else {
+        viewFooter.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+        viewFooterHeadings.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
+    }
     
-    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 10, 5, 64, 44)];
-    [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
-    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-    [viewFooter addSubview:btnBarCode];
-    
-    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 5, 150, 44);
-    [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
-    [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
-    [viewFooter addSubview:btnSubmit];
-    
+    [viewFooter addSubview:viewFooterHeadings];
     return viewFooter;
-    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -372,6 +415,7 @@
          if (!cellSOD) {
              cellSOD = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0,tableWidth - 40, 50)];
              cellSOD.selectionStyle = UITableViewCellSelectionStyleNone;
+             cellSOD.backgroundColor = COLOR_CELL_BACKGROUND;
          }
 //         cell = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
 //         if (cell == nil) {
@@ -397,9 +441,28 @@
         return cellSOD;
     }
     if (tableView == tbvSales) {
-
-        Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
-        [cellSOD setDataForRow:indexPath.row forOrder:o];
+        if (indexPath.section == (tbvSales.numberOfSections-1)) {
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
+            
+            UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+            PlacedQty.text = [dict valueForKey:@"desc"];
+            UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+            reqQty.text = [dict valueForKey:@"value"];
+            [cell addSubview:PlacedQty];
+            [cell addSubview:reqQty];
+            
+            cell.textLabel.text = [dict valueForKey:@"item"];
+            return cell;
+        }
+        int index = indexPath.row;
+        for (int i=0; i<indexPath.section; i++) {
+            index += rowsPerSectionSales[i];
+        }
+        NSDictionary *dict =  [arr_SalesOrders objectAtIndex:index];//[arrMaterials[indexPath.section] objectAtIndex:indexPath.row];
+        [cellSOD setData:dict];
+//        Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
+//        [cellSOD setDataForRow:indexPath.row forOrder:o];
         return cellSOD;
     }
     if (tableView == tbvSummary) {
@@ -454,7 +517,12 @@
     if (tableView == tbvNoService) {
             return [arr_NoServiceItems count];
     }else if (tableView == tbvSales) {
-        return [arr_SalesOrders count];
+        if (isSummary && (section == (tableView.numberOfSections-1))) {
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            return [arrReturns[appObject.rowCustomerListSelected] count];
+        }
+        return rowsPerSectionSales[section]; //[arrMaterials[section] count];
+//        return [arr_SalesOrders count];
     }else  if (tableView == tbvSummary) {
         if (section == 0) {
             return [arr_SalesOrders count];
@@ -477,22 +545,25 @@
         return 2;
     }
     if (tableView == tbvSales) {
-        return 1;
+        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+        NSLog(@"cust.palleteIDs.count :: %d", cust.palleteIDs.count);
+        return cust.palleteIDs.count + isSummary;
     }
     return 1;
 }
 
--(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (tableView == tbvSummary) {
-        if (section == 0) {
-            return @"Orders";
-        }
-        else {
-            return @"Returns";
-        }
-    }
-    return @"";
-}
+//-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (tableView == tbvSummary) {
+//        if (section == 0) {
+//            return @"Orders";
+//        }
+//        else {
+//            return @"Returns";
+//        }
+//    }
+//    return @"";
+//}
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return row_Height_TodayTableView;
@@ -531,27 +602,23 @@
             segmentedBar.selectedSegmentIndex = 1;
             [segmentedBar setEnabled:NO forSegmentAtIndex:0];
         }else
-        if (segmentedBar.selectedSegmentIndex == 1) {
-            [segmentedBar setEnabled:YES forSegmentAtIndex:2];
-            [self onClickNoSaleTab];
-            segmentedBar.selectedSegmentIndex = 2;
-            [segmentedBar setEnabled:NO forSegmentAtIndex:1];
-        }else
-            if (segmentedBar.selectedSegmentIndex == 2) {
-                if(selectedRow == nil)
-                    [self showAlertBox];
-                else{
-                    [segmentedBar setEnabled:YES forSegmentAtIndex:3];
+//        if (segmentedBar.selectedSegmentIndex == 1) {
+//            [segmentedBar setEnabled:YES forSegmentAtIndex:2];
+//            [self onClickNoSaleTab];
+//            segmentedBar.selectedSegmentIndex = 2;
+//            [segmentedBar setEnabled:NO forSegmentAtIndex:1];
+//        }else
+            if (segmentedBar.selectedSegmentIndex == 1) {
+                    [segmentedBar setEnabled:YES forSegmentAtIndex:2];
                     [self onClickSummaryTab];
-                    segmentedBar.selectedSegmentIndex = 3;
-                    [segmentedBar setEnabled:NO forSegmentAtIndex:2];
-                }
-            }else if (segmentedBar.selectedSegmentIndex == 3){
-                [segmentedBar setEnabled:YES forSegmentAtIndex:4];
+                    segmentedBar.selectedSegmentIndex = 2;
+                    [segmentedBar setEnabled:NO forSegmentAtIndex:1];
+            }else if (segmentedBar.selectedSegmentIndex == 2){
+                [segmentedBar setEnabled:YES forSegmentAtIndex:3];
                 [self showSignCaptureTool];
-                segmentedBar.selectedSegmentIndex = 4;
-                [segmentedBar setEnabled:NO forSegmentAtIndex:3];
-            }else if(segmentedBar.selectedSegmentIndex == 4){
+                segmentedBar.selectedSegmentIndex = 3;
+                [segmentedBar setEnabled:NO forSegmentAtIndex:2];
+            }else if(segmentedBar.selectedSegmentIndex == 3){
                 [self showFinalAlert];
             }
     }
@@ -584,6 +651,7 @@
     tbvReturns.dataSource = self;
     tbvReturns.delegate = self;
     tbvReturns.tag = 6666;
+    tbvReturns.backgroundColor = COLOR_CELL_BACKGROUND;
     [self.view addSubview:tbvReturns];
 }
 

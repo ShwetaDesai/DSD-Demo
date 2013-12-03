@@ -27,6 +27,9 @@
     ReturnsDatabaseViewController *_returnsDatabaseVC;
 //    int IDlastSelectedTab;
 //    NSMutableArray *visibilityTruth;
+    NSMutableArray *arrMaterials[10];
+    int rowsPerSectionSales[10];
+    int isSummary;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
 @property (nonatomic,strong)   NSString *customerID;
