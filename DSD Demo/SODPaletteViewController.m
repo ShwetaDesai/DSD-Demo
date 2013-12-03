@@ -144,6 +144,7 @@
     txtFieldPaletteID.layer.borderWidth= 1.0f;
     [txtFieldPaletteID setTextAlignment:NSTextAlignmentCenter];
     txtFieldPaletteID.placeholder = @" Enter/Scan Pallet Number";
+    txtFieldPaletteID.text = @"1456789023456950019";
     [txtFieldPaletteID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldPaletteID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
     txtFieldPaletteID.backgroundColor = [UIColor clearColor];
