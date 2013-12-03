@@ -9,7 +9,10 @@
 #import "SODViewControllerViewController.h"
 #import "SODCustomTableCell.h"
 
-@interface SODViewControllerViewController ()
+@interface SODViewControllerViewController () {
+    NSString *palletID;
+    NSMutableArray *arrMaterialsFinal;
+}
 
 @end
 
@@ -227,8 +230,90 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
 }
 
 - (void)btnBarCodeBtnClicked {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
-    [alert show];
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
+    //    [alert show];
+    [self.view.layer addSublayer:_prevLayer];
+    [_session startRunning];
 }
 
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+{
+    CGRect highlightViewRect = CGRectZero;
+    AVMetadataMachineReadableCodeObject *barCodeObject;
+    NSString *detectionString = nil;
+    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
+                              AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
+                              AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
+    
+    for (AVMetadataObject *metadata in metadataObjects) {
+        for (NSString *type in barCodeTypes) {
+            if ([metadata.type isEqualToString:type])
+            {
+                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+                highlightViewRect = barCodeObject.bounds;
+                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
+                break;
+            }
+        }
+        
+        if (detectionString != nil) {
+            //NOTE : Use the Barcode Value
+        }
+        else {
+            //NOTE : No barcode detected
+        }
+    }
+    
+    [_session stopRunning];
+    [_prevLayer removeFromSuperlayer];
+}
+
+- (void)initBarCode {
+    _session = [[AVCaptureSession alloc] init];
+    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    NSError *error = nil;
+    
+    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
+    if (_input) {
+        [_session addInput:_input];
+    } else {
+        NSLog(@"Error: %@", error);
+    }
+    
+    _output = [[AVCaptureMetadataOutput alloc] init];
+    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [_session addOutput:_output];
+    
+    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
+    
+    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+    _prevLayer.frame = self.view.bounds;
+    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+}
+
+
+-(void)displayPalletID:(NSNotification *)notification
+{
+    palletID = [notification object];
+    NSLog(@"Pallet ID %@", palletID);
+    
+    [self setUpData];
+}
+
+-(void)setUpData{
+    
+    // NSLog(@"Order array : %@", arrOrders);
+    
+    arrMaterialsFinal = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < [arrOrders count]; i++) {
+        NSDictionary *dict = [arrOrders objectAtIndex:i];
+        if ([palletID isEqualToString:[dict valueForKey:JSONTAG_PALLET_NO]])
+        {
+            [arrMaterialsFinal addObject:[arrOrders objectAtIndex:i]];
+            //NSLog(@"Material Array %@", arrMaterialsFinal);
+        }
+    }
+    
+}
 @end

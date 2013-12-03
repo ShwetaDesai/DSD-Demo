@@ -21,13 +21,15 @@
 #define nShowCustomerListView @"nShowCustomerListView"
 #define nSoldQtyUpdate @"nSoldQtyUpdate"
 #define nCustomerServiceComplete @"nCustomerServiceComplete"
-
+#define nPalleteDetailScreenCalled @"nPalleteDetailScreenCalled"
+#define nPassingPalletID @"nPassingPalletID"
+#define nBackButtonPressed @"nBackButtonPressed"
 
 typedef enum viewType {
     SOD, EOD, CUSTOMER, RETURNS
 } EnumViewType;
 
-NSMutableArray *arrOrders, *arrReturns[2];
+NSMutableArray *arrOrders, *arrReturns[2], *palletIDs, *palletImageCheck;
 int enteredValues[6], acceptedValues[6], deliveredValues[2][6];
 int returnsValues[2][4];
 

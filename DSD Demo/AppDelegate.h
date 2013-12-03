@@ -20,4 +20,8 @@
 @property (strong,nonatomic) NSMutableArray *ordersPlaced;
 @property (strong,nonatomic) NSString *customerToServicID;
 @property (assign) int rowCustomerListSelected;
+
+-(void)setImageForPallet:(NSMutableArray*)array;
+-(NSMutableArray*)getImageForPallet;
+
 @end

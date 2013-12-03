@@ -15,13 +15,14 @@
 #import "CustomerDetailsViewController.h"
 #import "AppDelegate.h"
 #import "EODViewControllerViewController.h"
+#import "SODPaletteViewController.h"
 
 @interface ViewController : UIViewController
 {
     int tagNoButtonSelected;
     TodayInfoViewController *todayTableViewController;
     CustomerListViewController *customerViewC;
-    SODViewControllerViewController *sodViewController;
+    SODPaletteViewController *sodpaletteViewController;
     ServiceWizardViewController *wizardVC;
     CustomerDetailsViewController *customerDetailVC;
     EODViewControllerViewController *eodViewController;

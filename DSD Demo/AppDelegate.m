@@ -20,6 +20,10 @@
     
     customersToService = [[NSMutableArray alloc] init];
     ordersPlaced = [[NSMutableArray alloc] init];
+    palletIDs = [[NSMutableArray alloc]init];
+    palletImageCheck = [[NSMutableArray alloc]init];
+    
+    [self getPalletIDs];
     [self loadDataObjects];
     [self parseOrderInfoData];
     [self getCustomerDetails];
@@ -162,6 +166,23 @@
         [customersToService addObject:customerObject];
        
     }
+}
+
+-(void)getPalletIDs
+{
+    palletIDs = [NSMutableArray arrayWithObjects:@"1456789023456950019",@"1456789023456940067",@"1456789023456930031",@"1456789023456920029",@"1456789023456970087",@"1456789023456990086",@"1456789023456980056",@"1456789023456960078", nil];
+    
+    [self setImageForPallet:[NSMutableArray arrayWithObjects:[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO],[NSNumber numberWithBool:NO], nil]];
+    
+}
+
+-(void)setImageForPallet:(NSMutableArray*)array
+{
+    palletImageCheck = array ;
+}
+-(NSMutableArray*)getImageForPallet
+{
+    return palletImageCheck;
 }
 
 @end

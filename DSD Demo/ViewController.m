@@ -32,6 +32,10 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCustomerServiceCompleted) name:nCustomerServiceComplete object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePalleteDetailScreen) name:nPalleteDetailScreenCalled object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backButtonPressed) name:nBackButtonPressed object:nil];
+    
     [self showTodaysView];
 }
 
@@ -74,7 +78,7 @@
         }
         else if (buttonClicked.tag == 2) {
             //show the SOD view
-            [self showSODView];
+            [self showSODPalleteView];
         }
         else if (buttonClicked.tag == 3) {
             //show the Service Outlet view
@@ -91,13 +95,11 @@
 }
 
 -(void) showSODView {
-    sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
-    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    sodpaletteViewController = [[SODPaletteViewController alloc]initWithStyle:UITableViewStylePlain];
+    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
     
-    [contentView addSubview:sodViewController.view];
-    
+    [contentView addSubview:sodpaletteViewController.view];
     tagNoButtonSelected = 2;
-    
 }
 
 -(void) showEODView {
@@ -125,7 +127,7 @@
 - (void)initControllers {
     todayTableViewController = [[TodayInfoViewController alloc] init];
     customerViewC = [[CustomerListViewController alloc] init];
-    sodViewController = [[SODViewControllerViewController alloc]initWithStyle:UITableViewStylePlain];
+    sodpaletteViewController = [[SODPaletteViewController alloc]init];
     customerDetailVC = [[CustomerDetailsViewController alloc] init];
     wizardVC = [[ServiceWizardViewController alloc] init];
 }
@@ -211,4 +213,24 @@
     }
     [self showServiceOutletView];
 }
+
+-(void)handlePalleteDetailScreen{
+    [self showSODView];
+    
+}
+
+-(void)backButtonPressed
+{
+    [self showSODPalleteView];
+    
+}
+
+-(void)showSODPalleteView{
+    sodpaletteViewController = [[SODPaletteViewController alloc]initWithStyle:UITableViewStylePlain];
+    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    
+    [contentView addSubview:sodpaletteViewController.view];
+    tagNoButtonSelected = 2;
+}
+
 @end
