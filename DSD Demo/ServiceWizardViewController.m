@@ -180,7 +180,7 @@
 
 
 -(void)showSignCaptureTool {
-        [[self.view viewWithTag:4444] removeFromSuperview];
+        [[self.view viewWithTag:1111] removeFromSuperview]; //4444
     signatureViewController = [[SignCaptureViewController alloc] init];
     [signatureViewController.view setFrame:CGRectMake(10, 55 , tableWidth - 20 , 200)];
     signatureViewController.view.backgroundColor = [UIColor colorWithRed:58.0/255.0
@@ -331,12 +331,14 @@
     lblPaletteID.backgroundColor = [UIColor clearColor];
     [viewFooterHeadings addSubview:lblPaletteID];
     
-    if (isSummary == 0) {
+    if (isSummary == 1 && section == (tbvSales.numberOfSections-1)) {
         [lblPalette setText:@"RETURNS"];
+    }
+    else {
+        [lblPalette setText:@"Pallet"];
         [lblPaletteID setText:[NSString stringWithFormat:@"%@", [cust.palleteIDs objectAtIndex:section]]];
     }
-    else
-        [lblPalette setText:@"Pallet"];
+    
     
     if (section == 0) {
         txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 225, 44)];
@@ -372,7 +374,7 @@
         [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
         btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
-        [viewFooter addSubview:btnSubmit];
+//        [viewFooter addSubview:btnSubmit];
     }
     else {
         viewFooter.frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
@@ -389,13 +391,22 @@
     SODCustomTableCell *cellSOD;
     
      if (tableView == tbvSales) {
-         MyCellIdentifier = @"Sales";
-         cellSOD = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
-         if (!cellSOD) {
-             cellSOD = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0,tableWidth - 40, 50)];
-             cellSOD.selectionStyle = UITableViewCellSelectionStyleNone;
+         if (isSummary ==1 && indexPath.section == (tbvSales.numberOfSections-1)) {
+             MyCellIdentifier = @"Summary";
+             cell = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+             if (cell == nil) {
+                 cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+                 cell.backgroundColor = COLOR_CELL_BACKGROUND;
+             }
          }
-         
+         else {
+             MyCellIdentifier = @"Sales";
+             cellSOD = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
+             if (!cellSOD) {
+                 cellSOD = [[SODCustomTableCell alloc] initWithFrame:CGRectMake(0, 0,tableWidth - 40, 50)];
+                 cellSOD.selectionStyle = UITableViewCellSelectionStyleNone;
+             }
+         }
      }else  if (tableView == tbvNoService) {
        MyCellIdentifier = @"NoServiceCell";
          cell = [tableView dequeueReusableCellWithIdentifier:MyCellIdentifier];
@@ -446,13 +457,16 @@
             NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
             
             UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+            PlacedQty.textColor = COLOR_CELL_TEXT;
             PlacedQty.text = [dict valueForKey:@"desc"];
             UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+            reqQty.textColor = COLOR_CELL_TEXT;
             reqQty.text = [dict valueForKey:@"value"];
             [cell addSubview:PlacedQty];
             [cell addSubview:reqQty];
             
             cell.textLabel.text = [dict valueForKey:@"item"];
+            cell.textLabel.textColor = COLOR_CELL_TEXT;
             return cell;
         }
         int index = indexPath.row;
