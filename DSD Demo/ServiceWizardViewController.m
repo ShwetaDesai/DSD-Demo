@@ -477,7 +477,7 @@
         return 2;
     }
     if (tableView == tbvSales) {
-        return [customersToService]
+        return 1;
     }
     return 1;
 }

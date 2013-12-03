@@ -9,11 +9,11 @@
 #import "SODCustomTableCell.h"
 #import "AppDelegate.h"
 
-#define OFFSET_FIELDS       5
+#define OFFSET_FIELDS       7.5
 #define WIDTH_FLAG          20
 #define HEIGHT_FLAG         20
 #define HEIGHT_FIELDS       22
-#define HEIGHT_TXT_FIELD    44
+#define HEIGHT_TXT_FIELD    34
 #define WIDTH_COUNT_FIELDS  100
 #define WIDTH_ACCEPT_BUTTON 100
 #define HEIGHT_ACCEPT_BUTTON 34
@@ -22,33 +22,40 @@
 @synthesize txtFieldActualCount = _txtFieldActualCount, enumViewType = _enumViewType;
 NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
 
+
 //- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 - (id)initWithFrame:(CGRect)frame
 {
-//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    //    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     self = [super initWithFrame:frame];
     UIColor *colorBG = [UIColor clearColor];
     if (self) {
+        
         // Initialization code
         _lblMatID = [[UILabel alloc] initWithFrame:CGRectMake(2*OFFSET_FIELDS, OFFSET_FIELDS, 200, HEIGHT_FIELDS)];
         _lblMatID.font = [UIFont boldSystemFontOfSize:18.0];
         _lblMatID.backgroundColor = colorBG;
+        [_lblMatID setTextColor:[UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:228.0/255.0 alpha:228.0/255.0]];
         
         _lblMatDesc = [[UILabel alloc] initWithFrame:CGRectMake(2*OFFSET_FIELDS, _lblMatID.frame.origin.y + _lblMatID.frame.size.height, 300, HEIGHT_FIELDS)];
         _lblMatDesc.font = [UIFont systemFontOfSize:14.0];
         _lblMatDesc.textColor = [UIColor grayColor];
         _lblMatDesc.backgroundColor = colorBG;
+        [_lblMatDesc setTextColor:[UIColor colorWithRed:228.0/255.0 green:228.0/255.0 blue:228.0/255.0 alpha:228.0/255.0]];
         
-//        _imgViewDiscFlag = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - OFFSET_FIELDS - WIDTH_FLAG, frame.size.height/2 - HEIGHT_FLAG/2, WIDTH_FLAG, HEIGHT_FLAG)];
-//        _imgViewDiscFlag.backgroundColor = colorBG;
-//        
-        _lblMatPlannedQty = [[UILabel alloc] initWithFrame:CGRectMake(frame.size.width - WIDTH_COUNT_FIELDS - 2*OFFSET_FIELDS, frame.size.height/2 - HEIGHT_FLAG/2, WIDTH_COUNT_FIELDS, HEIGHT_FIELDS)];
-        _lblMatPlannedQty.textAlignment = NSTextAlignmentRight;
+        //        _imgViewDiscFlag = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width - OFFSET_FIELDS - WIDTH_FLAG, frame.size.height/2 - HEIGHT_FLAG/2, WIDTH_FLAG, HEIGHT_FLAG)];
+        //        _imgViewDiscFlag.backgroundColor = colorBG;
+        //
+        _lblMatPlannedQty = [[UILabel alloc] initWithFrame:CGRectMake(600, frame.size.height/2 - HEIGHT_FLAG/2, WIDTH_COUNT_FIELDS, HEIGHT_FIELDS)];
         _lblMatPlannedQty.backgroundColor = colorBG;
+        [_txtFieldActualCount setTextAlignment:NSTextAlignmentLeft];
+        [_lblMatPlannedQty setTextColor:[UIColor colorWithRed:244.0/255.0 green:215.0/255.0 blue:160.0/255.0 alpha:1.0]];
         
-        _txtFieldActualCount = [[UITextField alloc] initWithFrame:CGRectMake(_lblMatPlannedQty.frame.origin.x - WIDTH_COUNT_FIELDS - OFFSET_FIELDS, frame.size.height/2 - HEIGHT_TXT_FIELD/2, WIDTH_COUNT_FIELDS, HEIGHT_TXT_FIELD)];
-        _txtFieldActualCount.borderStyle = UITextBorderStyleLine;
-        _txtFieldActualCount.backgroundColor = colorBG;
+        _txtFieldActualCount = [[UITextField alloc] initWithFrame:CGRectMake(300, frame.size.height/2 - HEIGHT_TXT_FIELD/2, WIDTH_COUNT_FIELDS, HEIGHT_TXT_FIELD)];
+        _txtFieldActualCount.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        [_txtFieldActualCount setTextAlignment:NSTextAlignmentCenter];
+        [_txtFieldActualCount setTextColor:[UIColor colorWithRed:244.0/255.0 green:215.0/255.0 blue:160.0/255.0 alpha:1.0]];
+        _txtFieldActualCount.layer.borderWidth= 0.8f;
         _txtFieldActualCount.keyboardType = UIKeyboardTypeNumberPad;
         _txtFieldActualCount.delegate = self;
         [_txtFieldActualCount addTarget:self action:@selector(textFieldDidChange) forControlEvents:UIControlEventEditingChanged];
@@ -64,7 +71,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         [self addSubview:_txtFieldActualCount];
         [self addSubview:_lblMatPlannedQty];
         [self addSubview:_btnAccept];
-//        [self addSubview:_imgViewDiscFlag];
+        [self addSubview:_imgViewDiscFlag];
     }
     return self;
 }
@@ -72,7 +79,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -107,6 +114,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
     
     switch (_enumViewType) {
+            
         case SOD: {
             if (isChecked) {
                 _txtFieldActualCount.text = _lblMatPlannedQty.text;
@@ -116,6 +124,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
             }
             break;
         }
+            
         case EOD: {
             AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
             NSLog(@"appObject.rowCustomerListSelected :: %d", appObject.rowCustomerListSelected);
@@ -127,7 +136,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
             break;
     }
     
-
+    
     
     switch (colorIndex) {
         case 0: {
@@ -147,9 +156,9 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         }
     }
 }
-    
+
 - (void)textFieldDidChange {
-//    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
+    //    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
     if (_enumViewType == SOD) {
         enteredValues[_index] = [_txtFieldActualCount.text intValue];
     }
@@ -160,18 +169,18 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-//    NSLog(@"did end editing textValue:%@",textField.text);
-     NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
+    //    NSLog(@"did end editing textValue:%@",textField.text);
+    NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
     
     int indexValue = _index;
     [NSString stringWithFormat:@"%d",indexValue];
-//        [NSString stringWithFormat:@"%d",]
-//    int countValue = [_txtFieldActualCount.text intValue];
+    //        [NSString stringWithFormat:@"%d",]
+    //    int countValue = [_txtFieldActualCount.text intValue];
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
-        forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
+                                                     forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
     
-        [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
+    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
 }
 - (void)acceptButtonClicked {
     acceptedValues[_index] = 1;

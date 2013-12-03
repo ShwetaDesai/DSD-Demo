@@ -95,11 +95,12 @@
 }
 
 -(void) showSODView {
-    sodpaletteViewController = [[SODPaletteViewController alloc]initWithStyle:UITableViewStylePlain];
-    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    SODViewControllerViewController *sodViewController;
+    sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
+    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
     
-    [contentView addSubview:sodpaletteViewController.view];
-    tagNoButtonSelected = 2;
+    [contentView addSubview:sodViewController.view];
+
 }
 
 -(void) showEODView {
