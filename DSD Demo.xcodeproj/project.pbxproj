@@ -364,10 +364,10 @@
 		86E26D3D1823BA9B00D17098 /* SOD */ = {
 			isa = PBXGroup;
 			children = (
-				ED3E3878184DB23B0099E682 /* SODPaletteViewController.m */,
 				ED3E3879184DB23B0099E682 /* SODPaletteCustomTableCell.h */,
 				ED3E387A184DB23B0099E682 /* SODPaletteCustomTableCell.m */,
 				ED3E387B184DB23B0099E682 /* SODPaletteViewController.h */,
+				ED3E3878184DB23B0099E682 /* SODPaletteViewController.m */,
 				ED3E387C184DB23B0099E682 /* uncheck.png */,
 				ED3E387D184DB23B0099E682 /* check.png */,
 				86E26D3E1823BAD100D17098 /* SODCustomTableCell.h */,

@@ -111,4 +111,12 @@
 //    }];
     
 }
+
+- (IBAction)serviceBtnClicked:(id)sender {
+    NSDictionary *dict = [NSDictionary dictionaryWithObject:lbl_CustomerID.text forKey:@"customerToServiceID"];
+    //    NSLog(@"cust ID chosen:%@",lbl_CustomerID.text);
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:nServiceOutletButtonClicked object:nil userInfo:dict];
+
+}
 @end

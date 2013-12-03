@@ -93,7 +93,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _index = indexID;
 }
 
-- (void)setData:(int)indexID :(int)colorIndex {
+- (void)setData:(int)indexID :(int)colorIndex  isCheckedValue:(BOOL)isChecked{
     if (_enumViewType == RETURNS) {
         _lblMatID.text = arrReturnItems[indexID];
         _returnsIndex = colorIndex;
@@ -107,9 +107,15 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
     
     switch (_enumViewType) {
-        case SOD:
-            _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+        case SOD: {
+            if (isChecked) {
+                _txtFieldActualCount.text = _lblMatPlannedQty.text;
+            }
+            else {
+                _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+            }
             break;
+        }
         case EOD: {
             AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
             NSLog(@"appObject.rowCustomerListSelected :: %d", appObject.rowCustomerListSelected);

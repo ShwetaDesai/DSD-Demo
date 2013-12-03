@@ -64,7 +64,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     _dropDownOptionsVC.parentDelegate =self;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:_dropDownOptionsVC];
     
-    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, COUNT_TODAY_SECTION_2*row_Height_TodayTableView + [valueArray count]*row_Height_TodayTableView) style:UITableViewStylePlain];
+    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, 450) style:UITableViewStylePlain];
     
     todayInfoTableView.dataSource = self;
     todayInfoTableView.delegate = self;

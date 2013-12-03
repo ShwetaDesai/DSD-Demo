@@ -40,12 +40,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = COLOR_CELL_BACKGROUND;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSoldQuantity:) name:nSoldQtyUpdate object:nil];
 
     customerID =  ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID;
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:19], NSFontAttributeName,nil];
-    
+    segmentedBar.backgroundColor = [UIColor clearColor];
 //    [segmentedBar addTarget:self
 //                         action:@selector(segmentedBarClicked:)
 //               forControlEvents:UIControlEventValueChanged];
@@ -244,7 +244,7 @@
         return viewFooter;
     }
     if (tableView == tbvSales) {
-            UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
+            /*UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
             viewFooter.backgroundColor = [UIColor clearColor];
             
             txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
@@ -270,9 +270,74 @@
             [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
             [viewFooter addSubview:btnBarCode];
             
-            return viewFooter;
+            return viewFooter;*/
+        return [self salesFooter];
     }
     return nil;
+}
+
+- (UIView*)salesFooter {
+    UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width, 54)];
+    viewFooter.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1.0];
+    
+    UIView *viewFooterHeadings = [[UIView alloc] initWithFrame:CGRectMake(0, 54, self.view.frame.size.width, 44)];
+    viewFooterHeadings.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
+    [viewFooter addSubview:viewFooterHeadings];
+    
+    
+    UIView *viewFooterSeperator = [[UIView alloc]initWithFrame:CGRectMake(10, 98, 790, 1)];
+    viewFooterSeperator.backgroundColor = [UIColor whiteColor];
+    [viewFooter addSubview:viewFooterSeperator];
+    
+    UILabel *lblPalette = [[UILabel alloc] initWithFrame:CGRectMake(30,10,100, 20)];
+    [lblPalette setTextColor:[UIColor colorWithRed:236.0/255.0 green:179.0/255.0 blue:93.0/255.0 alpha:1.0]];
+    lblPalette.backgroundColor = [UIColor clearColor];
+    [lblPalette setText:@"Pallet"];
+    [viewFooterHeadings addSubview:lblPalette];
+    
+    UILabel *lblPaletteID = [[UILabel alloc] initWithFrame:CGRectMake(125,10,100, 20)];
+    [lblPaletteID setTextColor:[UIColor colorWithRed:236.0/255.0 green:179.0/255.0 blue:93.0/255.0 alpha:1.0]];
+    lblPaletteID.backgroundColor = [UIColor clearColor];
+    [lblPaletteID setText:@"Pallet ID"];
+    [viewFooterHeadings addSubview:lblPaletteID];
+    
+    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 225, 44)];
+    txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    txtFieldMatID.layer.borderWidth= 1.0f;
+    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
+    txtFieldMatID.placeholder = @" Enter/Scan Pallet Number";
+    [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
+    [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
+    txtFieldMatID.backgroundColor = [UIColor clearColor];
+    txtFieldMatID.delegate = self;
+    txtFieldMatID.tag = 10001;
+    [viewFooter addSubview:txtFieldMatID];
+    
+    UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 10, 5, 75, 44);
+    [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+    btnAdd.font = [UIFont boldSystemFontOfSize:14.0];
+    [viewFooter addSubview:btnAdd];
+    
+    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 10, 5, 64, 44)];
+    [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [viewFooter addSubview:btnBarCode];
+    
+    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 5, 150, 44);
+    [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
+    btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
+    [viewFooter addSubview:btnSubmit];
+    
+    return viewFooter;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -410,6 +475,9 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if (tableView == tbvSummary) {
         return 2;
+    }
+    if (tableView == tbvSales) {
+        return [customersToService]
     }
     return 1;
 }

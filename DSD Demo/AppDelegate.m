@@ -162,6 +162,7 @@
 
         customerObject.phoneNo = [[customersArray objectAtIndex:i] objectForKey:@"PHONE"];
         
+        customerObject.palleteIDs = [[customersArray objectAtIndex:i] objectForKey:@"PALLETE"];
         //        NSLog(@"name:%@ address:%@",customerObject.name, customerObject.street);
         [customersToService addObject:customerObject];
        

@@ -21,5 +21,6 @@
     GMSMapView *mapView_;
     UIButton *btn_Simulate, *btn_directions;
 }
+- (IBAction)serviceBtnClicked:(id)sender;
 
 @end

@@ -11,5 +11,5 @@
 @implementation Customer
 @synthesize phoneNo,name,ID,street,city,ETA,latitudeC,longitudeC;
 @synthesize isServiced;
-
+@synthesize palleteIDs;
 @end

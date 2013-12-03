@@ -108,8 +108,16 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
     else {
         colorID = 0;
     }
-    
-    [cell setData:indexPath.row :colorID];
+
+    BOOL isChecked = NO;
+    /* checking whether the Pallete is already scanned */
+    for (int i=0; i<[palletIDs count]; i++) {
+        if ([[palletIDs objectAtIndex:i] isEqualToString:palletID]) {
+            isChecked = [[palletImageCheck objectAtIndex:i] boolValue];
+            break;
+        }
+    }
+    [cell setData:indexPath.row :colorID isCheckedValue:isChecked];
     return cell;
 }
 

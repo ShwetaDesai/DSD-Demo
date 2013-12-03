@@ -11,6 +11,7 @@
 @interface Customer : NSObject
 {
     NSString *name, *phoneNo, *ID, *street, *pinCode, *city, *ETA,*latitudeC, *longitudeC;
+    NSMutableArray *palleteIDs;
     BOOL isServiced;
 }
 @property (nonatomic,retain) NSString* name;
@@ -21,6 +22,7 @@
 @property (nonatomic,retain) NSString* longitudeC;
 @property (nonatomic,retain) NSString* city;
 @property (nonatomic,retain) NSString* ETA;
+@property (nonatomic,retain) NSMutableArray *palleteIDs;
 @property (assign) BOOL isServiced;
 
 @end

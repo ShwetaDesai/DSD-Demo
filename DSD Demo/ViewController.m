@@ -51,7 +51,7 @@
 
 -(void) showTodaysView {
     
-    todayTableViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    todayTableViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
 
     [contentView addSubview:todayTableViewController.view];
     tagNoButtonSelected = 1;
@@ -143,9 +143,9 @@
     
     wizardVC = nil;
     wizardVC = [[ServiceWizardViewController alloc] init];
-    wizardVC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 490);
+    wizardVC.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
 //    wizardVC.customerID = [[notification userInfo] valueForKey:@"customerToServiceID"];
-    wizardVC.view.layer.cornerRadius = 10.0;
+//    wizardVC.view.layer.cornerRadius = 10.0;
     [contentView addSubview:wizardVC.view];
     
 }
