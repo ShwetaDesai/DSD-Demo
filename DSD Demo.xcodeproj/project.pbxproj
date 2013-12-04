@@ -33,7 +33,6 @@
 		8698B47D184F1461004F6AF9 /* MapDirectionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47A184F1461004F6AF9 /* MapDirectionsTableViewController.m */; };
 		8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47C184F1461004F6AF9 /* MyAnnotation.m */; };
 		86B69D08184F53C200A95294 /* race-flag20.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B69D07184F53C200A95294 /* race-flag20.png */; };
-		86B7239B184F3DAC00AFD472 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B7239A184F3DAC00AFD472 /* libzbar.a */; };
 		86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */; };
 		86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */; };
 		86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E21825562F00F48B2E /* SignCaptureViewController.m */; };
@@ -49,6 +48,7 @@
 		86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F4146E184F3FFF0057353A /* CoreVideo.framework */; };
 		86F41471184F40090057353A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41470184F40090057353A /* QuartzCore.framework */; };
 		86F41473184F40330057353A /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41472184F40330057353A /* libz.1.2.5.dylib */; };
+		BB491CA7184FA3B400F4BDE6 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB491CA6184FA3B400F4BDE6 /* libzbar.a */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
@@ -111,7 +111,6 @@
 		8698B47B184F1461004F6AF9 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		8698B47C184F1461004F6AF9 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		86B69D07184F53C200A95294 /* race-flag20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "race-flag20.png"; sourceTree = "<group>"; };
-		86B7239A184F3DAC00AFD472 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWizardViewController.h; sourceTree = "<group>"; };
 		86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceWizardViewController.m; sourceTree = "<group>"; };
 		86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceWizardViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +151,7 @@
 		86F4146E184F3FFF0057353A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		86F41470184F40090057353A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		86F41472184F40330057353A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		BB491CA6184FA3B400F4BDE6 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				86F41469184F3FE70057353A /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
-				86B7239B184F3DAC00AFD472 /* libzbar.a in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
+				BB491CA7184FA3B400F4BDE6 /* libzbar.a in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,13 +226,13 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB491CA6184FA3B400F4BDE6 /* libzbar.a */,
 				86F41472184F40330057353A /* libz.1.2.5.dylib */,
 				86F41470184F40090057353A /* QuartzCore.framework */,
 				86F4146E184F3FFF0057353A /* CoreVideo.framework */,
 				86F4146C184F3FF90057353A /* CoreMedia.framework */,
 				86F4146A184F3FF00057353A /* AVFoundation.framework */,
 				86F41468184F3FE70057353A /* CoreGraphics.framework */,
-				86B7239A184F3DAC00AFD472 /* libzbar.a */,
 				EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */,
 				865FC80E18487FC200160D89 /* MapKit.framework */,
 				866DD48E181C403000DF43C5 /* Foundation.framework */,
@@ -748,6 +748,7 @@
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/HNI/Projects/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -772,6 +773,7 @@
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/HNI/Projects/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

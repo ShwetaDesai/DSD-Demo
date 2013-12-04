@@ -18,7 +18,7 @@
     UITableView *tbvNoService;
     UITableView *tbvSummary, *tbvSales, *tbvReturns;
     NSIndexPath *selectedRow;
-    SignCaptureViewController *signatureViewController;
+    SignCaptureViewController *signatureViewControllerManager, *signatureViewControllerDriver;
 //    int yPos;
     int selectedSegmentBarID;
     NSString *customerID;
