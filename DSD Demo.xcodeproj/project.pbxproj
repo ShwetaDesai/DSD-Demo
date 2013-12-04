@@ -14,7 +14,6 @@
 		865EE6F31822868600A3A891 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 865EE6F21822868600A3A891 /* Customer.m */; };
 		865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865FC80E18487FC200160D89 /* MapKit.framework */; };
 		866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866DD48E181C403000DF43C5 /* Foundation.framework */; };
-		866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866DD490181C403000DF43C5 /* CoreGraphics.framework */; };
 		866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866DD492181C403000DF43C5 /* UIKit.framework */; };
 		866DD499181C403000DF43C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866DD497181C403000DF43C5 /* InfoPlist.strings */; };
 		866DD49B181C403000DF43C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 866DD49A181C403000DF43C5 /* main.m */; };
@@ -28,22 +27,11 @@
 		866DD4B8181C403100DF43C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 866DD4B6181C403100DF43C5 /* InfoPlist.strings */; };
 		866DD4BA181C403100DF43C5 /* DSD_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 866DD4B9181C403100DF43C5 /* DSD_DemoTests.m */; };
 		8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */ = {isa = PBXBuildFile; fileRef = 8674902E181F9E7A0052BB75 /* ccReverse.png */; };
-		86798C3B184C5ADA00E78D5C /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 86798C3A184C5ADA00E78D5C /* GoogleMaps.bundle */; };
-		86798C3D184C5B0600E78D5C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C3C184C5B0600E78D5C /* AVFoundation.framework */; };
-		86798C42184C5B3300E78D5C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C3E184C5B3300E78D5C /* CoreData.framework */; };
-		86798C43184C5B3300E78D5C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C3F184C5B3300E78D5C /* CoreLocation.framework */; };
-		86798C44184C5B3300E78D5C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C40184C5B3300E78D5C /* CoreText.framework */; };
-		86798C45184C5B3300E78D5C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C41184C5B3300E78D5C /* GLKit.framework */; };
-		86798C4A184C5B6100E78D5C /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C46184C5B6100E78D5C /* ImageIO.framework */; };
-		86798C4B184C5B6100E78D5C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C47184C5B6100E78D5C /* OpenGLES.framework */; };
-		86798C4C184C5B6100E78D5C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C48184C5B6100E78D5C /* QuartzCore.framework */; };
-		86798C4D184C5B6100E78D5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C49184C5B6100E78D5C /* SystemConfiguration.framework */; };
-		86798C4F184C5B9400E78D5C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C4E184C5B9400E78D5C /* libz.dylib */; };
-		86798C51184C5BA200E78D5C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C50184C5BA200E78D5C /* libicucore.dylib */; };
-		86798C53184C5BB100E78D5C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86798C52184C5BB100E78D5C /* libc++.dylib */; };
 		8681690F1820E1DA005516A2 /* ccbg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8681690D1820E1DA005516A2 /* ccbg1.png */; };
 		868169101820E1DA005516A2 /* ccbg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8681690E1820E1DA005516A2 /* ccbg2.png */; };
 		8681691718210681005516A2 /* CustomerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8681691618210681005516A2 /* CustomerListViewController.m */; };
+		8698B47D184F1461004F6AF9 /* MapDirectionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47A184F1461004F6AF9 /* MapDirectionsTableViewController.m */; };
+		8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47C184F1461004F6AF9 /* MyAnnotation.m */; };
 		86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */; };
 		86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */; };
 		86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E21825562F00F48B2E /* SignCaptureViewController.m */; };
@@ -54,7 +42,6 @@
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
-		BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB801DDF184E15D50001DCCD /* GoogleMaps.framework */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
@@ -89,7 +76,6 @@
 		865FC80E18487FC200160D89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		866DD48B181C403000DF43C5 /* DSD Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DSD Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		866DD48E181C403000DF43C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		866DD490181C403000DF43C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		866DD492181C403000DF43C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		866DD496181C403000DF43C5 /* DSD Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DSD Demo-Info.plist"; sourceTree = "<group>"; };
 		866DD498181C403000DF43C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -107,23 +93,14 @@
 		866DD4B7181C403100DF43C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		866DD4B9181C403100DF43C5 /* DSD_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSD_DemoTests.m; sourceTree = "<group>"; };
 		8674902E181F9E7A0052BB75 /* ccReverse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccReverse.png; sourceTree = "<group>"; };
-		86798C3A184C5ADA00E78D5C /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
-		86798C3C184C5B0600E78D5C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		86798C3E184C5B3300E78D5C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		86798C3F184C5B3300E78D5C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		86798C40184C5B3300E78D5C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		86798C41184C5B3300E78D5C /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
-		86798C46184C5B6100E78D5C /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		86798C47184C5B6100E78D5C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		86798C48184C5B6100E78D5C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		86798C49184C5B6100E78D5C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		86798C4E184C5B9400E78D5C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		86798C50184C5BA200E78D5C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		86798C52184C5BB100E78D5C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		8681690D1820E1DA005516A2 /* ccbg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbg1.png; sourceTree = "<group>"; };
 		8681690E1820E1DA005516A2 /* ccbg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbg2.png; sourceTree = "<group>"; };
 		8681691518210680005516A2 /* CustomerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerListViewController.h; sourceTree = "<group>"; };
 		8681691618210681005516A2 /* CustomerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerListViewController.m; sourceTree = "<group>"; };
+		8698B479184F1461004F6AF9 /* MapDirectionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapDirectionsTableViewController.h; sourceTree = "<group>"; };
+		8698B47A184F1461004F6AF9 /* MapDirectionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapDirectionsTableViewController.m; sourceTree = "<group>"; };
+		8698B47B184F1461004F6AF9 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		8698B47C184F1461004F6AF9 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWizardViewController.h; sourceTree = "<group>"; };
 		86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceWizardViewController.m; sourceTree = "<group>"; };
 		86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceWizardViewController.xib; sourceTree = "<group>"; };
@@ -140,7 +117,6 @@
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
-		BB801DDF184E15D50001DCCD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
@@ -163,21 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86798C53184C5BB100E78D5C /* libc++.dylib in Frameworks */,
-				86798C51184C5BA200E78D5C /* libicucore.dylib in Frameworks */,
-				86798C4F184C5B9400E78D5C /* libz.dylib in Frameworks */,
-				86798C4A184C5B6100E78D5C /* ImageIO.framework in Frameworks */,
-				86798C4B184C5B6100E78D5C /* OpenGLES.framework in Frameworks */,
-				86798C4C184C5B6100E78D5C /* QuartzCore.framework in Frameworks */,
-				86798C4D184C5B6100E78D5C /* SystemConfiguration.framework in Frameworks */,
-				86798C42184C5B3300E78D5C /* CoreData.framework in Frameworks */,
-				86798C43184C5B3300E78D5C /* CoreLocation.framework in Frameworks */,
-				86798C44184C5B3300E78D5C /* CoreText.framework in Frameworks */,
-				86798C45184C5B3300E78D5C /* GLKit.framework in Frameworks */,
-				86798C3D184C5B0600E78D5C /* AVFoundation.framework in Frameworks */,
-				866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
-				BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
 			);
@@ -218,23 +180,8 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB801DDF184E15D50001DCCD /* GoogleMaps.framework */,
-				86798C52184C5BB100E78D5C /* libc++.dylib */,
-				86798C50184C5BA200E78D5C /* libicucore.dylib */,
-				86798C4E184C5B9400E78D5C /* libz.dylib */,
-				86798C46184C5B6100E78D5C /* ImageIO.framework */,
-				86798C47184C5B6100E78D5C /* OpenGLES.framework */,
-				86798C48184C5B6100E78D5C /* QuartzCore.framework */,
-				86798C49184C5B6100E78D5C /* SystemConfiguration.framework */,
-				86798C3E184C5B3300E78D5C /* CoreData.framework */,
-				86798C3F184C5B3300E78D5C /* CoreLocation.framework */,
-				86798C40184C5B3300E78D5C /* CoreText.framework */,
-				86798C41184C5B3300E78D5C /* GLKit.framework */,
-				86798C3C184C5B0600E78D5C /* AVFoundation.framework */,
-				86798C3A184C5ADA00E78D5C /* GoogleMaps.bundle */,
 				865FC80E18487FC200160D89 /* MapKit.framework */,
 				866DD48E181C403000DF43C5 /* Foundation.framework */,
-				866DD490181C403000DF43C5 /* CoreGraphics.framework */,
 				866DD492181C403000DF43C5 /* UIKit.framework */,
 				866DD4AD181C403100DF43C5 /* XCTest.framework */,
 			);
@@ -309,6 +256,7 @@
 		868169141821064F005516A2 /* Outlet Service */ = {
 			isa = PBXGroup;
 			children = (
+				8698B478184F1427004F6AF9 /* Maps */,
 				86BA80D21825185800F48B2E /* ServiceWizard */,
 				8681691518210680005516A2 /* CustomerListViewController.h */,
 				8681691618210681005516A2 /* CustomerListViewController.m */,
@@ -327,6 +275,17 @@
 				860DF5E3182243BD001FDEF2 /* CustomerInfo.json */,
 			);
 			name = JSON;
+			sourceTree = "<group>";
+		};
+		8698B478184F1427004F6AF9 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				8698B479184F1461004F6AF9 /* MapDirectionsTableViewController.h */,
+				8698B47A184F1461004F6AF9 /* MapDirectionsTableViewController.m */,
+				8698B47B184F1461004F6AF9 /* MyAnnotation.h */,
+				8698B47C184F1461004F6AF9 /* MyAnnotation.m */,
+			);
+			name = Maps;
 			sourceTree = "<group>";
 		};
 		86ADD2C1181E6FEF0052DCAB /* Today */ = {
@@ -515,7 +474,6 @@
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
 				868169101820E1DA005516A2 /* ccbg2.png in Resources */,
 				8681690F1820E1DA005516A2 /* ccbg1.png in Resources */,
-				86798C3B184C5ADA00E78D5C /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,9 +503,11 @@
 				ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
 				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
+				8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
 				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
 				866DD49B181C403000DF43C5 /* main.m in Sources */,
+				8698B47D184F1461004F6AF9 /* MapDirectionsTableViewController.m in Sources */,
 				86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */,
 				860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */,
 				865EE6F31822868600A3A891 /* Customer.m in Sources */,
@@ -686,11 +646,12 @@
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					"/Users/HNI/Projects/DSD-Demo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
 				INFOPLIST_FILE = "DSD Demo/DSD Demo-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -706,11 +667,12 @@
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					"/Users/HNI/Projects/DSD-Demo",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
 				INFOPLIST_FILE = "DSD Demo/DSD Demo-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
