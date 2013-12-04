@@ -8,19 +8,37 @@
 
 #import <UIKit/UIKit.h>
 #import "Customer.h"
-#import <GoogleMaps/GoogleMaps.h>
+#import <MapKit/MapKit.h>
+#define METERS_PER_MILE 1609.344
+#import "MyAnnotation.h"
+#import "MapDirectionsTableViewController.h"
 
-@interface CustomerDetailsViewController : UIViewController {
+@interface CustomerDetailsViewController : UIViewController <MKMapViewDelegate, UIPopoverControllerDelegate>
+{
     IBOutlet UILabel *lbl_CustomerID;
     IBOutlet UILabel *customerName;
     IBOutlet UILabel *lbl_street;
     IBOutlet UILabel *lbl_city;
-    UIButton *btn_Service;
     IBOutlet UILabel *lbl_phoneNumber;
     Customer *customerSelected;
-    GMSMapView *mapView_;
-    UIButton *btn_Simulate, *btn_directions;
+
+    IBOutlet UIButton *btn_Simulate;
+    IBOutlet UIButton *btn_directions;
+    IBOutlet UIButton *btn_Service;
+    IBOutlet UILabel *time_curr;
+    
+    IBOutlet UILabel *time_eta;
+    MKMapView *mMapView;
+    MKPolyline *_routeOverlay, *_stepOverlay;
+    MKRoute *_currentRoute;
+    CLLocationCoordinate2D destinationCoord;
+    CLLocationCoordinate2D sourceCoord;
+    MapDirectionsTableViewController *mapTVC;
+//    UIPopoverController *directionsPopover;
+    BOOL isStepOverlay;
+    CLLocationManager *locationManager;
+    NSTimer *aTimer;
+    int currentPointNumber;
 }
-- (IBAction)serviceBtnClicked:(id)sender;
 
 @end

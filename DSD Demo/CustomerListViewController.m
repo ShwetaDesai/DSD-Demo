@@ -29,28 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [backButton setBackgroundImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-//    [backButton setFrame:CGRectMake(0, 0, 70, 23)];
-//    [backButton addTarget:self action:@selector(onclickBackButton) forControlEvents:UIControlEventTouchUpInside];
-//    [backButton setHidden:YES];
-//
-//    [self.view addSubview:backButton];
-    
-//    NSString *title = @"STOPS";
-//    UILabel *lbltitle = [[UILabel alloc] initWithFrame:CGRectMake((tableWidth - 200)/2,0, 200, 25 )];
-//    lbltitle.text = title;
-//    lbltitle.textColor = [UIColor whiteColor];
-//    lbltitle.font = [UIFont boldSystemFontOfSize:font_TodayTableView+2];
-//    [self.view addSubview:lbltitle];
-
     customersArray = [NSArray arrayWithArray:((AppDelegate*)[[UIApplication sharedApplication] delegate]).customersToService];
     
     customerListTableView = [[UITableView alloc] initWithFrame:CGRectMake( 0, 0 , tableWidth, [customersArray count]*row_Height_TodayTableView + 50) style:UITableViewStylePlain];
     customerListTableView.dataSource = self;
     customerListTableView.delegate = self;
     customerListTableView.layer.cornerRadius = 10.0;
+    
     
     [self.view addSubview:customerListTableView];
 }
@@ -73,6 +58,7 @@
     }
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     // Configure the cell...
     Customer *temp = (Customer*)[customersArray objectAtIndex:indexPath.row];
@@ -87,9 +73,10 @@
     time.text = [NSString stringWithFormat:@"ETA: %@",temp.ETA];
     [cell addSubview:time];
     
-//    if (temp.isServiced == NO && indexPath.row !=0 ) {
-//        cell.backgroundColor = [UIColor grayColor];
-//    }
+    cell.backgroundColor = COLOR_CELL_BACKGROUND;
+    cell.textLabel.textColor = COLOR_CELL_TEXT;
+    cell.detailTextLabel.textColor = COLOR_CELL_SUBTITLE;
+    time.textColor = COLOR_CELL_TEXT;
     return cell;
 }
 
@@ -107,8 +94,6 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        
-//    [backButton setHidden:NO];
     
     NSDictionary *dict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:indexPath.row] forKey:@"index"];
     
@@ -116,10 +101,4 @@
     
 }
 
-//-(void)onclickBackButton{
-// 
-//    [backButton setHidden:YES];
-// 
-//    [[NSNotificationCenter defaultCenter] postNotificationName:nShowCustomerListView object:nil];
-//}
 @end
