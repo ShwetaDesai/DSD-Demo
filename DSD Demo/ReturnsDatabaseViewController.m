@@ -15,7 +15,7 @@
 @implementation ReturnsDatabaseViewController
 @synthesize parentDelegate = _parentDelegate;
 
-NSString *arrReturnItems_[COUNT_RETURNS_ITEMS] = {@"Oils", @"Extra/Unused", @"Damaged", @"Empty"};
+NSString *arrReturnItems_[COUNT_RETURNS_ITEMS] = {@"Cooked Oil", @"Extra/Unused", @"Damaged", @"Empty"};
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

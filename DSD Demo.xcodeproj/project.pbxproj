@@ -64,6 +64,8 @@
 		ED3E3880184DB23B0099E682 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387C184DB23B0099E682 /* uncheck.png */; };
 		ED3E3881184DB23B0099E682 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387D184DB23B0099E682 /* check.png */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
+		EDBC4E0E184F1A4000B86B91 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0D184F1A4000B86B91 /* libzbar.a */; };
+		EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,28 @@
 		ED3E387D184DB23B0099E682 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		ED46BB8518470B4D0095E532 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ED46BB8618470B4D0095E532 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		EDBC4DF9184F173F00B86B91 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
+		EDBC4DFA184F173F00B86B91 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		EDBC4DFB184F173F00B86B91 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		EDBC4DFC184F173F00B86B91 /* ImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScanner.h; sourceTree = "<group>"; };
+		EDBC4DFD184F173F00B86B91 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Processor.h; sourceTree = "<group>"; };
+		EDBC4DFE184F173F00B86B91 /* Scanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		EDBC4DFF184F173F00B86B91 /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Symbol.h; sourceTree = "<group>"; };
+		EDBC4E00184F173F00B86B91 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		EDBC4E01184F173F00B86B91 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		EDBC4E02184F173F00B86B91 /* zbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zbar.h; sourceTree = "<group>"; };
+		EDBC4E03184F173F00B86B91 /* ZBarCameraSimulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCameraSimulator.h; sourceTree = "<group>"; };
+		EDBC4E04184F173F00B86B91 /* ZBarCaptureReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarCaptureReader.h; sourceTree = "<group>"; };
+		EDBC4E05184F173F00B86B91 /* ZBarHelpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarHelpController.h; sourceTree = "<group>"; };
+		EDBC4E06184F173F00B86B91 /* ZBarImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImage.h; sourceTree = "<group>"; };
+		EDBC4E07184F173F00B86B91 /* ZBarImageScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarImageScanner.h; sourceTree = "<group>"; };
+		EDBC4E08184F173F00B86B91 /* ZBarReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderController.h; sourceTree = "<group>"; };
+		EDBC4E09184F173F00B86B91 /* ZBarReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderView.h; sourceTree = "<group>"; };
+		EDBC4E0A184F173F00B86B91 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
+		EDBC4E0B184F173F00B86B91 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
+		EDBC4E0C184F173F00B86B91 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
+		EDBC4E0D184F1A4000B86B91 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +187,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
 				86798C53184C5BB100E78D5C /* libc++.dylib in Frameworks */,
 				86798C51184C5BA200E78D5C /* libicucore.dylib in Frameworks */,
+				EDBC4E0E184F1A4000B86B91 /* libzbar.a in Frameworks */,
 				86798C4F184C5B9400E78D5C /* libz.dylib in Frameworks */,
 				86798C4A184C5B6100E78D5C /* ImageIO.framework in Frameworks */,
 				86798C4B184C5B6100E78D5C /* OpenGLES.framework in Frameworks */,
@@ -218,7 +244,11 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */,
+
+				EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */,
+				EDBC4E0D184F1A4000B86B91 /* libzbar.a */,
+				BB801DDF184E15D50001DCCD /* GoogleMaps.framework */,
+
 				86798C52184C5BB100E78D5C /* libc++.dylib */,
 				86798C50184C5BA200E78D5C /* libicucore.dylib */,
 				86798C4E184C5B9400E78D5C /* libz.dylib */,
@@ -403,6 +433,7 @@
 		ED46BB8318470B390095E532 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EDBC4DF7184F173F00B86B91 /* ZBarSDK */,
 				ED46BB8418470B3E0095E532 /* MBProgress HUD */,
 			);
 			name = Common;
@@ -415,6 +446,41 @@
 				ED46BB8618470B4D0095E532 /* MBProgressHUD.m */,
 			);
 			name = "MBProgress HUD";
+			sourceTree = "<group>";
+		};
+		EDBC4DF7184F173F00B86B91 /* ZBarSDK */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC4DF8184F173F00B86B91 /* zbar */,
+				EDBC4E02184F173F00B86B91 /* zbar.h */,
+				EDBC4E03184F173F00B86B91 /* ZBarCameraSimulator.h */,
+				EDBC4E04184F173F00B86B91 /* ZBarCaptureReader.h */,
+				EDBC4E05184F173F00B86B91 /* ZBarHelpController.h */,
+				EDBC4E06184F173F00B86B91 /* ZBarImage.h */,
+				EDBC4E07184F173F00B86B91 /* ZBarImageScanner.h */,
+				EDBC4E08184F173F00B86B91 /* ZBarReaderController.h */,
+				EDBC4E09184F173F00B86B91 /* ZBarReaderView.h */,
+				EDBC4E0A184F173F00B86B91 /* ZBarReaderViewController.h */,
+				EDBC4E0B184F173F00B86B91 /* ZBarSDK.h */,
+				EDBC4E0C184F173F00B86B91 /* ZBarSymbol.h */,
+			);
+			path = ZBarSDK;
+			sourceTree = "<group>";
+		};
+		EDBC4DF8184F173F00B86B91 /* zbar */ = {
+			isa = PBXGroup;
+			children = (
+				EDBC4DF9184F173F00B86B91 /* Decoder.h */,
+				EDBC4DFA184F173F00B86B91 /* Exception.h */,
+				EDBC4DFB184F173F00B86B91 /* Image.h */,
+				EDBC4DFC184F173F00B86B91 /* ImageScanner.h */,
+				EDBC4DFD184F173F00B86B91 /* Processor.h */,
+				EDBC4DFE184F173F00B86B91 /* Scanner.h */,
+				EDBC4DFF184F173F00B86B91 /* Symbol.h */,
+				EDBC4E00184F173F00B86B91 /* Video.h */,
+				EDBC4E01184F173F00B86B91 /* Window.h */,
+			);
+			path = zbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,7 +685,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -659,7 +726,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -691,6 +759,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
 				INFOPLIST_FILE = "DSD Demo/DSD Demo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/itim5/dev/iOS/dsd-demo",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -712,6 +784,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
 				INFOPLIST_FILE = "DSD Demo/DSD Demo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/itim5/dev/iOS/dsd-demo",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

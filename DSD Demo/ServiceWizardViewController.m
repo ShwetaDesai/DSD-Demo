@@ -640,7 +640,7 @@
 }
 
 -(void)showFinalAlert{
-    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Printing the Invoice on hand-held printer"                                                                  delegate:nil
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@""                                                                    message:@"Printing the Delivery Note on hand-held printer"                                                                  delegate:nil
         cancelButtonTitle:@"OK"
         otherButtonTitles:nil];
     
