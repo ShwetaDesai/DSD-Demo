@@ -96,7 +96,7 @@
         colorID = 0;
     }
     
-    [cell setData:indexPath.row :colorID isCheckedValue:NO];
+    [cell setData:indexPath.row :colorID :NO];
     return cell;
 }
 

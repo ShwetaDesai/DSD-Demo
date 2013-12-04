@@ -107,7 +107,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
 }
 
-- (void)setData:(int)indexID :(int)colorIndex  isCheckedValue:(BOOL)isChecked{
+- (void)setData:(int)indexID :(int)colorIndex :(BOOL)isChecked{
     if (_enumViewType == RETURNS) {
         _lblMatID.text = arrReturnItems[indexID];
         _returnsIndex = colorIndex;

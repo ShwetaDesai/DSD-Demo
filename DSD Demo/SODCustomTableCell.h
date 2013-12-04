@@ -21,7 +21,7 @@
 @property (nonatomic, strong) UITextField *txtFieldActualCount;
 @property (nonatomic)EnumViewType enumViewType;
 
-- (void)setData:(int)index :(int)colorIndex  isCheckedValue:(BOOL)isChecked;
+- (void)setData:(int)index :(int)colorIndex :(BOOL)isChecked;
 - (void)setDataReturns:(NSDictionary*)dict :(int)index;
 - (void)setDataForRow:(int)indexID forOrder:(Order*)orderItem;
 - (void)setData:(NSDictionary*)dictionaryObject;

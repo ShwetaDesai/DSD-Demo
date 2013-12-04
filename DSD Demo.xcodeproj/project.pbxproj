@@ -54,6 +54,7 @@
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
 		9D9322C5184F02A500EE3D7B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */; };
+		9DFADB54184F2B6F00EFC704 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFADB53184F2B6F00EFC704 /* libzbar.a */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
@@ -64,7 +65,6 @@
 		ED3E3880184DB23B0099E682 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387C184DB23B0099E682 /* uncheck.png */; };
 		ED3E3881184DB23B0099E682 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387D184DB23B0099E682 /* check.png */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
-		EDBC4E0E184F1A4000B86B91 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0D184F1A4000B86B91 /* libzbar.a */; };
 		EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +141,7 @@
 		86E26D441823BAF400D17098 /* materials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = materials.json; sourceTree = "<group>"; };
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		9DFADB53184F2B6F00EFC704 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
@@ -178,7 +179,6 @@
 		EDBC4E0A184F173F00B86B91 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
 		EDBC4E0B184F173F00B86B91 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
 		EDBC4E0C184F173F00B86B91 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
-		EDBC4E0D184F1A4000B86B91 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -190,8 +190,8 @@
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
 				86798C53184C5BB100E78D5C /* libc++.dylib in Frameworks */,
 				86798C51184C5BA200E78D5C /* libicucore.dylib in Frameworks */,
-				EDBC4E0E184F1A4000B86B91 /* libzbar.a in Frameworks */,
 				86798C4F184C5B9400E78D5C /* libz.dylib in Frameworks */,
+				9DFADB54184F2B6F00EFC704 /* libzbar.a in Frameworks */,
 				86798C4A184C5B6100E78D5C /* ImageIO.framework in Frameworks */,
 				86798C4B184C5B6100E78D5C /* OpenGLES.framework in Frameworks */,
 				86798C4C184C5B6100E78D5C /* QuartzCore.framework in Frameworks */,
@@ -244,11 +244,8 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
+				9DFADB53184F2B6F00EFC704 /* libzbar.a */,
 				EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */,
-				EDBC4E0D184F1A4000B86B91 /* libzbar.a */,
-				BB801DDF184E15D50001DCCD /* GoogleMaps.framework */,
-
 				86798C52184C5BB100E78D5C /* libc++.dylib */,
 				86798C50184C5BA200E78D5C /* libicucore.dylib */,
 				86798C4E184C5B9400E78D5C /* libz.dylib */,
@@ -762,6 +759,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					/Users/itim3/dev/gitDSD,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -787,6 +785,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					/Users/itim3/dev/gitDSD,
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

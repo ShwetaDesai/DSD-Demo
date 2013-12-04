@@ -38,7 +38,6 @@
     [super viewDidLoad];
     
     sodPalletCustomTableCell = [[SODPaletteCustomTableCell alloc] init];
-    [self initBarCode];
     self.tableView.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ChangeImage:) name:nMaterialScanCompleted object:nil];
     
@@ -107,8 +106,8 @@
     NSString *palletID = cell.lblPaletteId.text;
     NSLog(@"ID ::: %@", palletID);
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:nPalleteDetailScreenCalled object:Nil];
-    [[NSNotificationCenter defaultCenter] postNotificationName:nPassingPalletID object:palletID];
+    [[NSNotificationCenter defaultCenter] postNotificationName:nPalleteDetailScreenCalled object:palletID];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:nPassingPalletID object:palletID];
     
 }
 
@@ -147,7 +146,7 @@
     txtFieldPaletteID.layer.borderWidth= 1.0f;
     [txtFieldPaletteID setTextAlignment:NSTextAlignmentCenter];
     txtFieldPaletteID.placeholder = @" Enter/Scan Pallet Number";
-    txtFieldPaletteID.text = @"1456789023456950019";
+    //txtFieldPaletteID.text = @"1456789023456950019";
     [txtFieldPaletteID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldPaletteID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
     txtFieldPaletteID.backgroundColor = [UIColor clearColor];
@@ -184,30 +183,17 @@
 
 
 - (void)submitButtonClicked {
-    
-    
-    _confirmFlag = TRUE;
-    
-    int flag = 0;
-    
-    for (int i=0; i<[palletIDs count]; i++) {
+  
+    for(int i=0;i <[palletIDs count];i++){
         
         NSMutableArray *arrTemp = [objDelegate getImageForPallet];
-        NSLog(@"Temp Array : %@", arrTemp);
-        if ([[arrTemp objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:NO]]) {
-            flag = 1;
-        }
+        [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
+        [objDelegate setImageForPallet:arrTemp];
+        
+        
     }
     
-    if (flag == 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please check the discrepancies." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    }
-    else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You may proceed to the next section." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        _isEditable = FALSE;
-        [alert show];
-    }
+    
     [self.tableView reloadData];
    
 }
@@ -238,10 +224,7 @@
 
 
 - (void)btnBarCodeBtnClicked {
-//    [self.view.layer addSublayer:_prevLayer];
-//    [_session startRunning];
-    
-    //initialize the reader and provide some config instructions
+ //initialize the reader and provide some config instructions
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
     
@@ -252,61 +235,6 @@
     
     //show the scanning/camera mode
     [self presentModalViewController:reader animated:YES];
-}
-
-//- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
-//{
-//    CGRect highlightViewRect = CGRectZero;
-//    AVMetadataMachineReadableCodeObject *barCodeObject;
-//    NSString *detectionString = nil;
-//    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
-//                              AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
-//                              AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
-//    
-//    for (AVMetadataObject *metadata in metadataObjects) {
-//        for (NSString *type in barCodeTypes) {
-//            if ([metadata.type isEqualToString:type])
-//            {
-//                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
-//                highlightViewRect = barCodeObject.bounds;
-//                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
-//                break;
-//            }
-//        }
-//        
-//        if (detectionString != nil) {
-//            //NOTE : Use the Barcode Value
-//        }
-//        else {
-//            //NOTE : No barcode detected
-//        }
-//    }
-//    
-//    [_session stopRunning];
-//    [_prevLayer removeFromSuperlayer];
-//}
-
-- (void)initBarCode {
-//    _session = [[AVCaptureSession alloc] init];
-//    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-//    NSError *error = nil;
-//    
-//    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
-//    if (_input) {
-//        [_session addInput:_input];
-//    } else {
-//        NSLog(@"Error: %@", error);
-//    }
-//    
-//    _output = [[AVCaptureMetadataOutput alloc] init];
-//    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-//    [_session addOutput:_output];
-//    
-//    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
-//    
-//    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-//    _prevLayer.frame = self.view.bounds;
-//    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 }
 
 -(void)ChangeImage:(NSNotification *)notification{
@@ -345,20 +273,24 @@
         //print to the console
         NSLog(@"the value of the scanned UPC is: %@",upcString);
         
-        NSMutableString *message = [[NSMutableString alloc]
-                                    initWithString: @"Scanned Barcode: "];
+        NSMutableString *message = [[NSMutableString alloc]init];
+                                    
         
         [message appendString:[NSString stringWithFormat:@"%@ ",
                                upcString]];
         
-        //Create UIAlertView alert
-        UIAlertView  *alert = [[UIAlertView alloc]
-                               initWithTitle:@"Product Barcode" message: message delegate:self
-                               cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        NSLog(@"Barcode is : %@", message);
         
-        [alert show];
-        //After some time
-        [alert dismissWithClickedButtonIndex:0 animated:TRUE];
+        [self addPalletBarcodeScanning:upcString];
+        
+        //Create UIAlertView alert
+//        UIAlertView  *alert = [[UIAlertView alloc]
+//                               initWithTitle:@"Product Barcode" message: message delegate:self
+//                               cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+//        
+//        [alert show];
+//        //After some time
+//        [alert dismissWithClickedButtonIndex:0 animated:TRUE];
         
         //make the reader view go away
         [reader dismissModalViewControllerAnimated: YES];
@@ -366,5 +298,23 @@
     
 }
 
+-(void)addPalletBarcodeScanning:(NSMutableString*)strBarcode{
+    
+     for(int i=0; i< [palletIDs count]; i++)
+    {
+        if([strBarcode isEqualToString:[palletIDs objectAtIndex:i]])
+        {
+            NSLog(@"Match Found !");
+            NSMutableArray *arrTemp = [objDelegate getImageForPallet];
+            [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
+            [objDelegate setImageForPallet:arrTemp];
+            
+            break;
+            
+        }
+    }
+    [self.tableView reloadData];
+    
+}
 
 @end
