@@ -41,6 +41,10 @@
     int currentPointNumber;
     Customer *prevCustomer;
     MyAnnotation *DestinationAnnotation;
+    NSDate *nowDate;
+    NSDateFormatter *nowFormat;
+    NSDate *etaDate;
+    NSTimeInterval intrval;
 }
 
 @end

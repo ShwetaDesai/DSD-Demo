@@ -57,27 +57,43 @@
     destinationCoord.latitude = latC;
     destinationCoord.longitude= longC;
     
+    //set ETA time
+    NSDateFormatter *etaFormat = [[NSDateFormatter alloc] init];
+    [etaFormat setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+    
+    etaDate = [[NSDate alloc] init];
+    etaDate = [etaFormat dateFromString:customerSelected.ETA];
+    [etaFormat setDateFormat:@"HH:mm:ss a"];
+    time_eta.text = [etaFormat stringFromDate:etaDate];
+    
+    //set now time
+    nowFormat = [[NSDateFormatter alloc] init];
+    [nowFormat setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+    nowDate = [[NSDate alloc] init];
+    
     // set the previous stop co-ordinates
     if (appObject.rowCustomerListSelected == 0) {
         sourceCoord.latitude = 33.687978;
         sourceCoord.longitude= -117.851332;
-        time_curr.text = @"8:00 AM";
+        nowDate = [nowFormat dateFromString:@"10-12-2013 7:45:00"];
+        [nowFormat setDateFormat:@"HH:mm:ss a"];
+        time_curr.text = [nowFormat stringFromDate:nowDate];
+        
     }else{
         prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
         sourceCoord.latitude = [prevCustomer.latitudeC floatValue];
         sourceCoord.longitude= [prevCustomer.longitudeC floatValue];
+        // set current time
         
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"HH:mm:ss aa"];
-        NSDate *dateFromString = [[NSDate alloc] init];
-        dateFromString = [formatter dateFromString:prevCustomer.ETA];
-        
-        NSLog(@"previous customer time:%@",dateFromString);
-        
-//        time_curr.text = prevCustomer.ETA
+        nowDate = [nowFormat dateFromString:prevCustomer.ETA];
+        nowDate = [nowDate dateByAddingTimeInterval:15*60];
+        [nowFormat setDateFormat:@"HH:mm:ss a"];
+        time_curr.text = [nowFormat stringFromDate:nowDate];
+
     }
     
-    time_eta.text = customerSelected.ETA;
+    intrval = [etaDate timeIntervalSinceDate:nowDate];
+//    NSLog(@"time interval **********:%f",intrval);
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(destinationCoord, 0.7*METERS_PER_MILE, 0.7*METERS_PER_MILE);
@@ -187,7 +203,7 @@
     mapTVC = [[MapDirectionsTableViewController alloc] initWithStyle:UITableViewStylePlain];
     mapTVC.route = _currentRoute;
     UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:mapTVC];
-    navC.title = @"Route Directions";
+    
     navC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navC animated:YES completion:nil];
     
@@ -209,6 +225,14 @@
             coordinate:CLLocationCoordinate2DMake(_stepOverlay.coordinate.latitude,_stepOverlay.coordinate.longitude)];
         ++currentPointNumber;
         [mMapView addAnnotation:stepAnnotation];
+    //update timer
+    float val = (intrval/60)/[_currentRoute.steps count];
+//    NSLog(@"interval division:%f",val);
+    
+    nowDate = [nowDate dateByAddingTimeInterval:val*60];
+//    [nowFormat setDateFormat:@"HH:mm:ss a"];
+    time_curr.text = [nowFormat stringFromDate:nowDate];
+    
         [mMapView addOverlay:_stepOverlay];
         if(currentPointNumber == [_currentRoute.steps count])
         {
