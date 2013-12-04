@@ -204,7 +204,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     UIButton *btnBack = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnBack.frame = CGRectMake(10 , 15, 62, 23);
     [btnBack setBackgroundColor:[UIColor clearColor]];
-    [btnBack setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [btnBack setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"back.png"]]];
     [btnBack addTarget:self action:@selector(backButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [viewFooter addSubview:btnBack];
     
@@ -241,10 +241,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [viewFooterHeadings addSubview:lblExpectedQuantity];
     
     
-    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 225, 44)];
+    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 230, 44)];
     txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
     txtFieldMatID.layer.borderWidth= 1.0f;
-    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
+    [txtFieldMatID setTextAlignment:NSTextAlignmentLeft];
     txtFieldMatID.placeholder = @" Enter/Scan Material Number";
     [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
@@ -260,7 +260,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
-    btnAdd.font = [UIFont boldSystemFontOfSize:14.0];
     [viewFooterHeadings addSubview:btnAdd];
     
     
@@ -275,8 +274,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
+    [btnSubmit setTitle:@"CONFIRM ALL" forState:UIControlStateNormal];
+    
     [viewFooterHeadings addSubview:btnSubmit];
     
     return viewFooter;
@@ -317,10 +316,11 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         [alert show];
     }
     else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You may proceed to the next section." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        _isEditable = FALSE;
-        [alert show];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"You may proceed to the next section." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        _isEditable = FALSE;
+//        [alert show];
         [[NSNotificationCenter defaultCenter] postNotificationName:nMaterialScanCompleted object:palletID];
+        [[NSNotificationCenter defaultCenter] postNotificationName:nNavigateBackToPalletScreen object:nil];
         
     }
     [self.tableView reloadData];

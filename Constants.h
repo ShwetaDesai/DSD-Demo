@@ -25,6 +25,7 @@
 #define nPassingPalletID @"nPassingPalletID"
 #define nBackButtonPressed @"nBackButtonPressed"
 #define nMaterialScanCompleted @"nMaterialScanCompleted"
+#define nNavigateBackToPalletScreen @"nNavigateBackToPalletScreen"
 
 typedef enum viewType {
     SOD, EOD, CUSTOMER, RETURNS
