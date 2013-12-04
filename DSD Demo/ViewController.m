@@ -36,6 +36,9 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backButtonPressed) name:nBackButtonPressed object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backButtonPressed) name:nNavigateBackToPalletScreen object:nil];
+    
+    
     [self showTodaysView];
 }
 
@@ -95,12 +98,16 @@
 }
 
 -(void) showSODView {
+    
+    for (UIView *view in contentView.subviews)
+        [view removeFromSuperview];
+    
     for (int i=0; i < 6; i++) {
         acceptedValues[i] = enteredValues[i] = 0;
     }
     SODViewControllerViewController *sodViewController;
     sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
-    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 550);
     
     [contentView addSubview:sodViewController.view];
 
@@ -225,13 +232,20 @@
 
 -(void)backButtonPressed
 {
+    for (UIView *view in contentView.subviews)
+        [view removeFromSuperview];
+    
     [self showSODPalleteView];
     
 }
 
 -(void)showSODPalleteView{
+    
+    for (UIView *view in contentView.subviews)
+        [view removeFromSuperview];
+    
     sodpaletteViewController = [[SODPaletteViewController alloc]initWithStyle:UITableViewStylePlain];
-    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 550);
     
     [contentView addSubview:sodpaletteViewController.view];
     tagNoButtonSelected = 2;

@@ -161,7 +161,7 @@
     [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
-    btnAdd.font = [UIFont boldSystemFontOfSize:14.0];
+    
     [viewFooter addSubview:btnAdd];
     
     UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 10, 5, 64, 44)];
@@ -174,8 +174,8 @@
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    btnSubmit.font = [UIFont boldSystemFontOfSize:14.0];
+    [btnSubmit setTitle:@"CONFIRM ALL" forState:UIControlStateNormal];
+    
     [viewFooter addSubview:btnSubmit];
     
     return viewFooter;
@@ -189,9 +189,12 @@
     _confirmFlag = TRUE;
     
     int flag = 0;
-    for (int i=0; i<[arrOrders count]; i++) {
-        NSDictionary *dict = [arrOrders objectAtIndex:i];
-        if (enteredValues[i] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
+    
+    for (int i=0; i<[palletIDs count]; i++) {
+        
+        NSMutableArray *arrTemp = [objDelegate getImageForPallet];
+        NSLog(@"Temp Array : %@", arrTemp);
+        if ([[arrTemp objectAtIndex:i] isEqualToNumber:[NSNumber numberWithBool:NO]]) {
             flag = 1;
         }
     }
@@ -297,14 +300,11 @@
 -(void)ChangeImage:(NSNotification *)notification{
     
     PalletID = [notification object];
-   // NSLog(@"Pallet ID %@", PalletID);
-    
-    
-    //BOOL isChecked = NO;
+
+   
     /* checking whether the Pallete is already scanned */
     for (int i=0; i<[palletIDs count]; i++) {
         if ([[palletIDs objectAtIndex:i] isEqualToString:PalletID]) {
-            //isChecked = [[palletImageCheck objectAtIndex:i] boolValue];
             NSMutableArray *arrTemp = [objDelegate getImageForPallet];
             [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
             [objDelegate setImageForPallet:arrTemp];

@@ -53,8 +53,8 @@
 		86E26D431823BAD100D17098 /* SODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E26D411823BAD100D17098 /* SODViewControllerViewController.m */; };
 		86E26D451823BAF400D17098 /* materials.json in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D441823BAF400D17098 /* materials.json */; };
 		86E26D471823C5F500D17098 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E26D461823C5F500D17098 /* back.png */; };
+		9D9322C5184F02A500EE3D7B /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
-		BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB801DDF184E15D50001DCCD /* GoogleMaps.framework */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
@@ -138,9 +138,9 @@
 		86E26D411823BAD100D17098 /* SODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SODViewControllerViewController.m; sourceTree = "<group>"; };
 		86E26D441823BAF400D17098 /* materials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = materials.json; sourceTree = "<group>"; };
 		86E26D461823C5F500D17098 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
-		BB801DDF184E15D50001DCCD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 				86798C3D184C5B0600E78D5C /* AVFoundation.framework in Frameworks */,
 				866DD491181C403000DF43C5 /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
-				BB801DE0184E15D50001DCCD /* GoogleMaps.framework in Frameworks */,
+				9D9322C5184F02A500EE3D7B /* GoogleMaps.framework in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
 			);
@@ -218,7 +218,7 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB801DDF184E15D50001DCCD /* GoogleMaps.framework */,
+				9D9322C4184F02A500EE3D7B /* GoogleMaps.framework */,
 				86798C52184C5BB100E78D5C /* libc++.dylib */,
 				86798C50184C5BA200E78D5C /* libicucore.dylib */,
 				86798C4E184C5B9400E78D5C /* libz.dylib */,
@@ -686,6 +686,7 @@
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					/Users/itim3/dev/gitDSD,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
@@ -706,6 +707,7 @@
 					"/Users/HNI/Desktop/DSD\\ Demo",
 					"/Users/itim5/dev/iOS/dsd-demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					/Users/itim3/dev/gitDSD,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DSD Demo/DSD Demo-Prefix.pch";
