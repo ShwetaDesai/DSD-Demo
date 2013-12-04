@@ -235,63 +235,75 @@
 
 
 - (void)btnBarCodeBtnClicked {
-    [self.view.layer addSublayer:_prevLayer];
-    [_session startRunning];
+//    [self.view.layer addSublayer:_prevLayer];
+//    [_session startRunning];
+    
+    //initialize the reader and provide some config instructions
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    
+    [reader.scanner setSymbology: ZBAR_I25
+                          config: ZBAR_CFG_ENABLE
+                              to: 1];
+    reader.readerView.zoom = 1.0; // define camera zoom property
+    
+    //show the scanning/camera mode
+    [self presentModalViewController:reader animated:YES];
 }
 
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
-{
-    CGRect highlightViewRect = CGRectZero;
-    AVMetadataMachineReadableCodeObject *barCodeObject;
-    NSString *detectionString = nil;
-    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
-                              AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
-                              AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
-    
-    for (AVMetadataObject *metadata in metadataObjects) {
-        for (NSString *type in barCodeTypes) {
-            if ([metadata.type isEqualToString:type])
-            {
-                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
-                highlightViewRect = barCodeObject.bounds;
-                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
-                break;
-            }
-        }
-        
-        if (detectionString != nil) {
-            //NOTE : Use the Barcode Value
-        }
-        else {
-            //NOTE : No barcode detected
-        }
-    }
-    
-    [_session stopRunning];
-    [_prevLayer removeFromSuperlayer];
-}
+//- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
+//{
+//    CGRect highlightViewRect = CGRectZero;
+//    AVMetadataMachineReadableCodeObject *barCodeObject;
+//    NSString *detectionString = nil;
+//    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
+//                              AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
+//                              AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
+//    
+//    for (AVMetadataObject *metadata in metadataObjects) {
+//        for (NSString *type in barCodeTypes) {
+//            if ([metadata.type isEqualToString:type])
+//            {
+//                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
+//                highlightViewRect = barCodeObject.bounds;
+//                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
+//                break;
+//            }
+//        }
+//        
+//        if (detectionString != nil) {
+//            //NOTE : Use the Barcode Value
+//        }
+//        else {
+//            //NOTE : No barcode detected
+//        }
+//    }
+//    
+//    [_session stopRunning];
+//    [_prevLayer removeFromSuperlayer];
+//}
 
 - (void)initBarCode {
-    _session = [[AVCaptureSession alloc] init];
-    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *error = nil;
-    
-    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
-    if (_input) {
-        [_session addInput:_input];
-    } else {
-        NSLog(@"Error: %@", error);
-    }
-    
-    _output = [[AVCaptureMetadataOutput alloc] init];
-    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [_session addOutput:_output];
-    
-    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
-    
-    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    _prevLayer.frame = self.view.bounds;
-    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+//    _session = [[AVCaptureSession alloc] init];
+//    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+//    NSError *error = nil;
+//    
+//    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
+//    if (_input) {
+//        [_session addInput:_input];
+//    } else {
+//        NSLog(@"Error: %@", error);
+//    }
+//    
+//    _output = [[AVCaptureMetadataOutput alloc] init];
+//    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+//    [_session addOutput:_output];
+//    
+//    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
+//    
+//    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
+//    _prevLayer.frame = self.view.bounds;
+//    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
 }
 
 -(void)ChangeImage:(NSNotification *)notification{
@@ -312,6 +324,46 @@
         }
     }
     [self.tableView reloadData];
+}
+
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info {
+    
+    //this contains your result from the scan
+    id results = [info objectForKey: ZBarReaderControllerResults];
+    
+    //create a symbol object to attach the response data to
+    ZBarSymbol *symbol = nil;
+    
+    //add the symbol properties from the result
+    //so you can access it
+    for(symbol in results){
+        
+        //symbol.data holds the value
+        NSString *upcString = symbol.data;
+        
+        //print to the console
+        NSLog(@"the value of the scanned UPC is: %@",upcString);
+        
+        NSMutableString *message = [[NSMutableString alloc]
+                                    initWithString: @"Scanned Barcode: "];
+        
+        [message appendString:[NSString stringWithFormat:@"%@ ",
+                               upcString]];
+        
+        //Create UIAlertView alert
+        UIAlertView  *alert = [[UIAlertView alloc]
+                               initWithTitle:@"Product Barcode" message: message delegate:self
+                               cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        
+        [alert show];
+        //After some time
+        [alert dismissWithClickedButtonIndex:0 animated:TRUE];
+        
+        //make the reader view go away
+        [reader dismissModalViewControllerAnimated: YES];
+    }
+    
 }
 
 

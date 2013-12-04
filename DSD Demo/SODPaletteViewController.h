@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SODViewControllerViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZBarSDK.h"
 
 @interface SODPaletteViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,AVCaptureMetadataOutputObjectsDelegate>{
     
