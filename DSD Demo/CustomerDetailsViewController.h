@@ -39,6 +39,8 @@
     CLLocationManager *locationManager;
     NSTimer *aTimer;
     int currentPointNumber;
+    Customer *prevCustomer;
+    MyAnnotation *DestinationAnnotation;
 }
 
 @end

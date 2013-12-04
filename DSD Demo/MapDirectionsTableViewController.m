@@ -26,7 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.title = @"Drive Directions";
+    self.navigationItem.title = @"Drive Directions";
+//    self.navigationController.title = @"Drive Directions";
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

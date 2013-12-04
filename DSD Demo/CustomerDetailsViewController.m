@@ -17,7 +17,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+//NSArray  *currentTimeArr = [NSArray arrayWithObjects:, nil ]
     }
     return self;
 }
@@ -63,15 +63,14 @@
         sourceCoord.longitude= -117.851332;
         time_curr.text = @"8:00 AM";
     }else{
-       Customer *prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
+        prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
         sourceCoord.latitude = [prevCustomer.latitudeC floatValue];
         sourceCoord.longitude= [prevCustomer.longitudeC floatValue];
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"yyyy-MM-dd HH:mm a"];
+        [formatter setDateFormat:@"HH:mm:ss aa"];
         NSDate *dateFromString = [[NSDate alloc] init];
         dateFromString = [formatter dateFromString:prevCustomer.ETA];
-
         
         NSLog(@"previous customer time:%@",dateFromString);
         
@@ -90,12 +89,20 @@
     [self.view addSubview:mMapView];
     
     //4 destination annotation
-    MyAnnotation *DestinationAnnotation = [[MyAnnotation alloc] initWithName:customerSelected.name
+    DestinationAnnotation = [[MyAnnotation alloc] initWithName:customerSelected.name
             address:customerSelected.street
         coordinate:destinationCoord];
 
-    MyAnnotation *sourceAnnotation = [[MyAnnotation alloc] initWithName:@"McDonald's"
-            address:nil
+    NSString *sourceString, *addString;
+    if (prevCustomer == nil) {
+        sourceString = @"McDonald's";
+        addString = @"Irving";
+    }else{
+        sourceString = prevCustomer.name;
+        addString = prevCustomer.street;
+    }
+    MyAnnotation *sourceAnnotation = [[MyAnnotation alloc] initWithName:sourceString
+            address:addString
         coordinate:sourceCoord];
 
     [mMapView showAnnotations:[NSArray arrayWithObjects:sourceAnnotation,DestinationAnnotation, nil] animated:YES];
@@ -232,5 +239,18 @@
         return  renderer;
 }
 
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    static NSString* AnnotationIdentifier = @"AnnotationIdentifier";
+    MKPinAnnotationView* pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationIdentifier];
+    
+    if (annotation == DestinationAnnotation) {
+        pinView.image = [UIImage imageNamed:@"race-flag20.png"];
+    }
+    pinView.canShowCallout=YES;
+    return pinView;
+    
+}
 
 @end
