@@ -68,9 +68,17 @@
     cell.textLabel.font = [UIFont systemFontOfSize:font_TodayTableView+2];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:font_TodayTableView-2];
     
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
+    NSDate *dateFromString = [[NSDate alloc] init];
+    dateFromString = [dateFormatter dateFromString:temp.ETA];
+    
+    [dateFormatter setDateFormat:@"HH:mm:ss a"];
+    
     UILabel *time = [[UILabel alloc] initWithFrame:CGRectMake(cell.frame.origin.x + 400, cell.frame.origin.y + 10, 300 , 21)];
     time.font = [UIFont systemFontOfSize:font_TodayTableView+2];
-    time.text = [NSString stringWithFormat:@"ETA: %@",temp.ETA];
+    time.text = [NSString stringWithFormat:@"ETA: %@",[dateFormatter stringFromDate:dateFromString]];
     [cell addSubview:time];
     
     cell.backgroundColor = COLOR_CELL_BACKGROUND;
