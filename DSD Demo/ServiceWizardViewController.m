@@ -452,7 +452,7 @@
         return cellSOD;
     }
     if (tableView == tbvSales) {
-        if (indexPath.section == (tbvSales.numberOfSections-1)) {
+        if (indexPath.section == (tbvSales.numberOfSections-1) && isSummary == 1) {
             AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
             NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
             

@@ -94,6 +94,9 @@
             [self showEODView];
         }
         tagNoButtonSelected = buttonClicked.tag;
+    }else if (buttonClicked.selected == YES && buttonClicked.tag == 3){
+        // show stop list screen
+        [self showServiceOutletView];
     }
 }
 
@@ -145,8 +148,8 @@
 }
 
 -(void) showServiceWizardView:(NSNotification*)notification{
-    NSLog(@"ENTER  showServiceWizardView");
-    NSLog(@"cust ID chosen:%@",[[notification userInfo] valueForKey:@"customerToServiceID"]);
+//    NSLog(@"ENTER  showServiceWizardView");
+//    NSLog(@"cust ID chosen:%@",[[notification userInfo] valueForKey:@"customerToServiceID"]);
     
     ((AppDelegate*)[[UIApplication sharedApplication] delegate]).customerToServicID = [[notification userInfo] valueForKey:@"customerToServiceID"];
     
@@ -161,13 +164,6 @@
     [contentView addSubview:wizardVC.view];
     
 }
-//- (void)containerAddChildViewController:(UIViewController *)childViewController {
-//    
-//    [self addChildViewController:childViewController];
-//    [self.view addSubview:childViewController.view];
-//    [childViewController didMoveToParentViewController:self];
-//    
-//}
 
 -(void)initButtons {
     [btn_Today setSelected:YES];

@@ -13,13 +13,7 @@
     <UITableViewDataSource,UITableViewDelegate>
 {        
     UITableView *customerListTableView;
-//    NSDictionary *customerDictionary;
     NSArray *customersArray;
-//    UIButton *backButton;
-//    UIView *navigationView;
-//    CustomerDetailsViewController *customerDetailVCObject;
 }
-
-//@property (nonatomic,retain) CustomerDetailsViewController *customerDetailVCObject;
 
 @end

@@ -9,15 +9,12 @@
 #import "AppDelegate.h"
 #import "Order.h"
 #import "Customer.h"
-#define APIKEY_GOOGLEMAPS @"AIzaSyCHLXAxb5nOqXJ9KuWU-5zOaGY2jmVKjpg"
 
 @implementation AppDelegate
 @synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [GMSServices provideAPIKey:APIKEY_GOOGLEMAPS];
-    
     customersToService = [[NSMutableArray alloc] init];
     ordersPlaced = [[NSMutableArray alloc] init];
     palletIDs = [[NSMutableArray alloc]init];
