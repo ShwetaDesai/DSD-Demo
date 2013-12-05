@@ -123,12 +123,14 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     switch (_enumViewType) {
             
         case SOD: {
-            if (isChecked) {
-                _txtFieldActualCount.text = _lblMatPlannedQty.text;
-            }
-            else {
-                _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
-            }
+//            if (isChecked) {
+//                _txtFieldActualCount.text = _lblMatPlannedQty.text;
+//            }
+//            else {
+                NSDictionary *dict = [arrOrders objectAtIndex:_index];
+//                _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+                _txtFieldActualCount.text = [NSString stringWithFormat:@"%@", [dict valueForKey:JSONTAG_USER_ENTERED]];
+//            }
             break;
         }
             
@@ -180,6 +182,11 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     //    NSLog(@"did end editing textValue:%@",textField.text);
     NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
     
+    if (_enumViewType == SOD) {
+        NSMutableDictionary *dict = [[arrOrders objectAtIndex:_index] mutableCopy];
+        [dict setValue:textField.text forKey:JSONTAG_USER_ENTERED];
+        [arrOrders replaceObjectAtIndex:_index withObject:dict];
+    }
     int indexValue = _index;
     [NSString stringWithFormat:@"%d",indexValue];
     //        [NSString stringWithFormat:@"%d",]
@@ -190,6 +197,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     
     [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
 }
+
 - (void)acceptButtonClicked {
     acceptedValues[_index] = 1;
     self.backgroundColor = [UIColor lightGrayColor];

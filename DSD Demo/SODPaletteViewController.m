@@ -209,12 +209,22 @@
              NSMutableArray *arrTemp = [objDelegate getImageForPallet];
             [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
             [objDelegate setImageForPallet:arrTemp];
-            
+            [self fixAllMaterials:txtFieldPaletteID.text];
             break;
             
         }
     }
     [self.tableView reloadData];
+}
+
+- (void)fixAllMaterials:(NSString*)strPalletID {
+    for (int i=0; i < [arrOrders count]; i++) {
+        NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
+        if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:strPalletID]) {
+            [dict setObject:[dict valueForKey:JSONTAG_EXTFLD4_COUNT] forKey:JSONTAG_USER_ENTERED];
+            [arrOrders replaceObjectAtIndex:i withObject:dict];
+        }
+    }
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {

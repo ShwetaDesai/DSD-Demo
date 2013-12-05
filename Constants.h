@@ -60,5 +60,5 @@ int returnsValues[2][4];
 #define JSONTAG_EXTFLD4_EXPECTED    @"EXTFLD4_EXPECTED"
 #define JSONTAG_EXTFLD4_COUNT       @"EXTFLD4_COUNT"
 #define JSONTAG_PALLET_NO           @"PAT_NO"
-
+#define JSONTAG_USER_ENTERED        @"USER_ENTERED"
 #endif

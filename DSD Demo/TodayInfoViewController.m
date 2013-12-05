@@ -146,7 +146,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
                 dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
             }
             cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
-            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
         else if(indexPath.row == 6) {
             NSDictionary *dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
@@ -156,17 +156,17 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
             cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE_CHILLED, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"NIL"];
             
-            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
         else if(indexPath.row == 7) {
             if (_hasNetworkCallFailed) {
-                cell.detailTextLabel.textColor = [UIColor redColor];
+                cell.detailTextLabel.textColor = COLOR_THEME;
             }
             cell.detailTextLabel.text = strTemperature;
-            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
         else if(indexPath.row == 0) {
-            if (_hasNetworkCallFailed) _dataTextFields[indexPath.row].textColor = [UIColor redColor];
+            if (_hasNetworkCallFailed) _dataTextFields[indexPath.row].textColor = COLOR_THEME;
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
     }
@@ -246,7 +246,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     // Create the request.
-    NSMutableURLRequest *requestWeatherAPI = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?lat=33.670774&lon=-117.789306"]];
+    NSMutableURLRequest *requestWeatherAPI = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://api.openweathermap.org/data/2.5/weather?lat=33.678158&lon=-117.854505"]];
     // Create url connection and fire request
     connWeather = [[NSURLConnection alloc] initWithRequest:requestWeatherAPI delegate:self];
     

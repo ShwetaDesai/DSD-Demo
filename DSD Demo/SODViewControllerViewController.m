@@ -307,17 +307,19 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     int flag = 0;
     for (int i=0; i<[arrMaterialFinalIndex count]; i++) {
-        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
-        
+//        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]];
         NSLog(@"Count %d",[[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue]);
-        NSLog(@"Entered Value %d", enteredValues[i]);
-        
-        if (enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
+        NSLog(@"Entered Value %d", [[dict valueForKey:JSONTAG_USER_ENTERED] intValue]);
+        //        if (enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != 1) {
+
+      if ([[dict valueForKey:JSONTAG_USER_ENTERED] intValue] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != 1){
             flag = 1;
         }
     }
     
-    if (flag == 1 && !isChecked) {
+    
+    if (flag == 1) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please check the discrepancies." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -327,7 +329,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 //        [alert show];
         [[NSNotificationCenter defaultCenter] postNotificationName:nMaterialScanCompleted object:palletID];
         [[NSNotificationCenter defaultCenter] postNotificationName:nNavigateBackToPalletScreen object:nil];
-        
     }
     [self.tableView reloadData];
 }

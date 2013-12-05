@@ -794,11 +794,23 @@
     }
     
     if (segmentedBar.selectedSegmentIndex == 0) {
-        [self checkPallete:txtFieldMatID.text];
+        
+        if (txtFieldMatID.text.length > 15) {
+            [self checkPallete:txtFieldMatID.text];
+        }
+        else {
+            [self checkMaterial:txtFieldMatID.text];
+        }
     }
 }
 
 - (void)checkMaterial:(NSString*)strMaterial {
+    if ([selectedPallete isEqualToString:@""]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please scan a Pallet first." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+        return;
+    }
+
     int index = -1;
     for (int i=0; i<[arrOrders count]; i++) {
         NSDictionary *dict = [arrOrders objectAtIndex:i];
@@ -811,10 +823,11 @@
     }
     
     if (index == -1) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Pallet ID does not go with this customer." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Material ID does not match with any materials inside this Pallet." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     }
     else {
+        NSLog(@"Success Material");
     }
 }
 
