@@ -28,7 +28,7 @@
 #define nNavigateBackToPalletScreen @"nNavigateBackToPalletScreen"
 
 typedef enum viewType {
-    SOD, EOD, CUSTOMER, RETURNS
+    SOD, EOD, CUSTOMER, RETURNS, SALES
 } EnumViewType;
 
 NSMutableArray *arrOrders, *arrReturns[2], *palletIDs, *palletImageCheck;
@@ -61,4 +61,5 @@ int returnsValues[2][4];
 #define JSONTAG_EXTFLD4_COUNT       @"EXTFLD4_COUNT"
 #define JSONTAG_PALLET_NO           @"PAT_NO"
 #define JSONTAG_USER_ENTERED        @"USER_ENTERED"
+#define JSONTAG_CUSTOMER_ENTERED    @"CUSTOMER_ENTERED"
 #endif

@@ -16,10 +16,12 @@
     UIImageView *_imgViewDiscFlag;
     int _index, _returnsIndex;
     EnumViewType _enumViewType;
+    NSDictionary *_dictSalesObj;
 }
 
 @property (nonatomic, strong) UITextField *txtFieldActualCount;
 @property (nonatomic)EnumViewType enumViewType;
+@property (nonatomic, strong) NSDictionary *dictSalesObj;
 
 - (void)setData:(int)index :(int)colorIndex :(BOOL)isChecked;
 - (void)setDataReturns:(NSDictionary*)dict :(int)index;
