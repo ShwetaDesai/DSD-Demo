@@ -189,7 +189,7 @@
         NSMutableArray *arrTemp = [objDelegate getImageForPallet];
         [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
         [objDelegate setImageForPallet:arrTemp];
-        
+        [self fixAllMaterials:[palletIDs objectAtIndex:i]];
         
     }
     
@@ -318,7 +318,7 @@
             NSMutableArray *arrTemp = [objDelegate getImageForPallet];
             [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
             [objDelegate setImageForPallet:arrTemp];
-            
+            [self fixAllMaterials:strBarcode];
             break;
             
         }

@@ -250,7 +250,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 230, 44)];
     txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
     txtFieldMatID.layer.borderWidth= 1.0f;
-    [txtFieldMatID setTextAlignment:NSTextAlignmentLeft];
+    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
     txtFieldMatID.placeholder = @" Enter/Scan Material Number";
     [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
@@ -443,14 +443,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 -(void)addMaterialBarcodeScanning:(NSMutableString*)strBarcode{
     
     for (int i = 0; i < [arrMaterialFinalIndex count]; i++) {
-        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        //        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [[arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]] mutableCopy];
+        NSLog(@"dict :: %@", dict);
         if ([strBarcode isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
-            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+            //            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+            int userEntered = [[dict valueForKey:JSONTAG_USER_ENTERED] intValue];
+            userEntered++;
+            [dict setValue:[NSString stringWithFormat:@"%d", userEntered] forKey:JSONTAG_USER_ENTERED];
+            [arrOrders replaceObjectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue] withObject:dict];
+            
             [self.tableView reloadData];
             return;
         }
     }
-    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The selected product does not match any products from the Orders list. Please select some other product." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }

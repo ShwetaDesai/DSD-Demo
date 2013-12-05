@@ -9,7 +9,10 @@
 #import "TodayInfoViewController.h"
 #import "MBProgressHUD.h"
 
-@interface TodayInfoViewController ()
+@interface TodayInfoViewController (){
+    
+    float odometerReading;
+}
 
 @end
 
@@ -153,7 +156,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature1"]) {
                 dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
             }
-
+            
             cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE_CHILLED, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"NIL"];
             
             if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
@@ -294,7 +297,10 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
         NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
         
-        _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", [[dict valueForKey:@"odometer"] floatValue]];
+        odometerReading = ([[dict valueForKey:@"odometer"] floatValue]/1.609344);
+        //NSLog(@"Odometer Value %2f",odometerReading);
+        
+        _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", odometerReading];
         
         [todayInfoTableView reloadData];
         NSLog(@"iBright API Finished %@", strResponse);
@@ -302,7 +308,10 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     else {
         NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
         NSDictionary *dict = [[NSJSONSerialization JSONObjectWithData:_responseDataWeather options:kNilOptions error:nil] valueForKey:@"main"];
-        strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue] - 273.15)*(9/5)+32)];
+        
+        //NSLog(@"Temperature Reading %.2f F", [[dict valueForKey:@"temp"] floatValue]*(9/5)+32);
+        
+        strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue]- 273.15)*(9/5)+32)];
         NSLog(@"openweathermap API Finished %@", strResponse);
     }
 
@@ -321,7 +330,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     arrResponse = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
     
-    _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", [[dict valueForKey:@"odometer"] floatValue]];
+    _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", odometerReading];
     
     [todayInfoTableView reloadData];
 }
