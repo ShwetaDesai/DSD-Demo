@@ -335,9 +335,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)addButtonClicked {
     for (int i = 0; i < [arrMaterialFinalIndex count]; i++) {
-        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+//        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [[arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]] mutableCopy];
+        NSLog(@"dict :: %@", dict);
         if ([txtFieldMatID.text isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
-            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+//            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+            int userEntered = [[dict valueForKey:JSONTAG_USER_ENTERED] intValue];
+            userEntered++;
+            [dict setValue:[NSString stringWithFormat:@"%d", userEntered] forKey:JSONTAG_USER_ENTERED];
+            [arrOrders replaceObjectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue] withObject:dict];
+
             [self.tableView reloadData];
             return;
         }
