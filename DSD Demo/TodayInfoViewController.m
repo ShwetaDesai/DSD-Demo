@@ -285,7 +285,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
         NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
         
-        _dataTextFields[0].text = [dict valueForKey:@"odometer"];
+        _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", [[dict valueForKey:@"odometer"] floatValue]];
         
         [todayInfoTableView reloadData];
         NSLog(@"iBright API Finished %@", strResponse);
@@ -303,6 +303,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     // The request has failed for some reason!
     // Check the error var
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+    strTemperature = @"40.76";
 }
 
 @end

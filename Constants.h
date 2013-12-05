@@ -32,11 +32,11 @@ typedef enum viewType {
 } EnumViewType;
 
 NSMutableArray *arrOrders, *arrReturns[2], *palletIDs, *palletImageCheck;
-int enteredValues[6], acceptedValues[6], deliveredValues[2][6];
+int enteredValues[30], acceptedValues[30], deliveredValues[2][30];
 int returnsValues[2][4];
 
 
-#define TEXT_TEMPERATURE            @"%@  F                   aat %@ F                   Set %@ F                  Source %@ F"
+#define TEXT_TEMPERATURE            @"%@  F                   AAT %@ F                   Set %@ F                  Source %@ F"
 
 
 #define COLOR_THEME                 [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]

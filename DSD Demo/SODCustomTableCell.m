@@ -167,6 +167,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 - (void)textFieldDidChange {
     //    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
     if (_enumViewType == SOD) {
+        NSLog(@"_index :: %d :: %d", _index, enteredValues[_index]);
         enteredValues[_index] = [_txtFieldActualCount.text intValue];
     }
     if (_enumViewType == RETURNS) {

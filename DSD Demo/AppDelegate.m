@@ -70,7 +70,7 @@
     deliveredValues[0][3] = 12;
     deliveredValues[0][4] = 25;
 
-    for (int i=0; i < 6; i++) {
+    for (int i=0; i < 30; i++) {
         acceptedValues[i] = enteredValues[i] = 0;
     }
     

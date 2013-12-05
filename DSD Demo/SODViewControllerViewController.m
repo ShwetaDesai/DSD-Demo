@@ -306,13 +306,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
     
     int flag = 0;
-    for (int i=0; i<[arrMaterialsFinal count]; i++) {
+    for (int i=0; i<[arrMaterialFinalIndex count]; i++) {
         NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
         
         NSLog(@"Count %d",[[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue]);
         NSLog(@"Entered Value %d", enteredValues[i]);
         
-        if (enteredValues[i] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
+        if (enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
             flag = 1;
         }
     }
