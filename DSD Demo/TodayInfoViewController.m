@@ -22,7 +22,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        _hasNetworkCallFailed = NO;
         for (int i=0; i<COUNT_TODAY_SECTION_2; i++) {
             _dataTextFields[i] = [[UITextField alloc] initWithFrame:CGRectMake(kLeftMargin, kTopMargin, kTextFieldWidth, kTextFieldHeight)];
             _dataTextFields[i].autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -146,6 +146,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
                 dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
             }
             cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
         }
         else if(indexPath.row == 6) {
             NSDictionary *dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
@@ -153,12 +154,19 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
                 dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
             }
 
-            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"-25.41"];
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE_CHILLED, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"NIL"];
+            
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
         }
         else if(indexPath.row == 7) {
+            if (_hasNetworkCallFailed) {
+                cell.detailTextLabel.textColor = [UIColor redColor];
+            }
             cell.detailTextLabel.text = strTemperature;
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = [UIColor redColor];
         }
         else if(indexPath.row == 0) {
+            if (_hasNetworkCallFailed) _dataTextFields[indexPath.row].textColor = [UIColor redColor];
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
     }
@@ -227,6 +235,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 }
 
 - (void)callIBrightAPI {
+    _hasNetworkCallFailed = NO;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     // Create the request.
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.ibright.info/v2/rawdata/latest?AssetIDFilter=16277&orderby=WhenOccurred%20desc&LogNameFilter=position%2Ctemperature2%2Ctemperature1%2CreeferFuelLevel%2CpositionTimer%2CmotionStart%2CmotionStop&apikey=df4d2438-9d90-4b03-b025-98412018e3ad"]];
@@ -303,7 +312,18 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     // The request has failed for some reason!
     // Check the error var
     [MBProgressHUD hideHUDForView:self.view animated:YES];
-    strTemperature = @"40.76";
+    
+    _hasNetworkCallFailed = YES;
+    strTemperature = @"41.76";
+    
+    NSString *response = @"[{\"ID\":8251002788,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T03:56:11\",\"Data\":{\"name\":\"motionStart\",\"latitude\":\"47.608050\",\"longitude\":\"-122.336160\",\"odometer\":\"20566.210\",\"distance\":{\"gps\":\"20566210\"},\"stationary\":{\"elapsed\":\"1399.042\",\"distance\":\"0.000\"},\"geofence\":{\"inside.names\":\"1057150,1057054,1058172,1058187,1057176\"},\"motion\":{\"acid\":\"4941\"},\"total\":{\"actualMovingElapsed\":\"2921639.35629783291\"},\"idling\":{\"totalElapsed\":\"\"}}},{\"ID\":8251103937,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T04:01:21\",\"Data\":{\"name\":\"motionStop\",\"moving\":{\"actualElapsed\":\"307.98080428457\",\"elapsed\":\"310.017\",\"distance\":\"0.495\",\"idleElapsed\":\"\",\"maxSpeed\":\"22.4\"},\"latitude\":\"47.609945\",\"longitude\":\"-122.333447\",\"odometer\":\"20566.705\",\"distance\":{\"gps\":\"20566705\"},\"geofence\":{\"inside.names\":\"1056441,1057500,1058183\"},\"motion\":{\"acid\":\"4941\"},\"total\":{\"actualMovingElapsed\":\"2921947.33710211748\"},\"idling\":{\"totalElapsed\":\"\"},\"mean\":{\"speed\":\"0.0\"}}},{\"ID\":8251103943,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T04:01:21\",\"Data\":{\"name\":\"position\",\"distance\":{\"gps\":\"20566705\"},\"gps\":{\"satellitesused\":\"7\",\"speed\":\"0.2\"},\"engine\":{\"running\":\"true\"},\"system\":{\"voltage\":\"12.531\"},\"modem\":{\"rssi\":\"31\",\"gprs.registration\":\"1\",\"gsm.registration\":\"1\"},\"latitude\":\"47.609945\",\"longitude\":\"-122.333447\",\"odometer\":\"20566.705\",\"speed\":{\"kmph\":\"0.0\"},\"heading\":\"\",\"speeding\":{\"speedLimit\":\"112.65408\"}}},{\"ID\":8252112639,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T06:00:00\",\"Data\":{\"name\":\"positionTimer\",\"latitude\":\"47.611773\",\"longitude\":\"-122.335068\",\"odometer\":\"20567.027\",\"speed\":{\"kmph\":\"0.0\"},\"heading\":\"\",\"speeding\":{\"speedLimit\":\"112.65408\"},\"system\":{\"voltage\":\"14.467\"},\"total\":{\"engineRunningElapsed\":\"13584555.63887488097\"},\"idling\":{\"totalElapsed\":\"\"},\"moving\":{\"totalElapsed\":\"2868205.702\"},\"geofence\":{\"inside.names\":\"1057155,1057840,1057841\"}}},{\"ID\":8252159665,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T06:04:06\",\"Data\":{\"name\":\"reeferFuelLevel\",\"percent\":\"66\",\"fuelLevel\":{\"percent\":\"66\"},\"latitude\":\"47.611773\",\"longitude\":\"-122.335068\",\"odometer\":\"20567.027\",\"distance\":\"20567027\"}},{\"ID\":8252327151,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T06:30:00\",\"Data\":{\"name\":\"temperature1\",\"type\":\"comp\",\"id\":\"K4801\",\"comp\":\"1\",\"aat\":\"4.34\",\"temp\":\"-11.94\",\"sat\":\"-10.41\",\"set\":\"-17.75\",\"probe1\":\"-15.3358\",\"probe2\":\"NA\",\"probe3\":\"NA\",\"probe4\":\"NA\",\"mode\":\"DEFROST\",\"latitude\":\"47.613663\",\"longitude\":\"-122.337690\",\"geofence\":{\"inside.names\":\"1057157\"}}},{\"ID\":8252327155,\"AssetID\":16277,\"AssetName\":\"K4801 RT 12\",\"EdiIdentifier\":\"801\",\"EnterpriseCode\":\"GSF23\",\"AccountCode\":\"GSF23\",\"WhenOccurred\":\"2013-12-05T06:30:00\",\"Data\":{\"name\":\"temperature2\",\"type\":\"comp\",\"id\":\"K4801\",\"comp\":\"2\",\"aat\":\"4.34\",\"temp\":\"4.88\",\"set\":\"2.22\",\"probe1\":\"1.4224\",\"probe2\":\"NA\",\"probe3\":\"NA\",\"probe4\":\"NA\",\"mode\":\"DEFROST\",\"latitude\":\"47.613663\",\"longitude\":\"-122.337690\",\"geofence\":{\"inside.names\":\"1057157\"}}}]";
+    
+    arrResponse = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+    NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
+    
+    _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", [[dict valueForKey:@"odometer"] floatValue]];
+    
+    [todayInfoTableView reloadData];
 }
 
 @end

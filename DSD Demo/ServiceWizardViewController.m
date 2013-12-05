@@ -18,7 +18,7 @@
 @end
 
 @implementation ServiceWizardViewController
-@synthesize segmentedBar, customerID;
+@synthesize segmentedBar, customerID, selectedPallete;
 //NSString *arrReturnItems1[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -260,7 +260,7 @@
             lblPlaced.text = @"Delivered";
             [viewContent addSubview:lblPlaced];
             
-            UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(500, 5, 100, 34)];
+            UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(400, 5, 100, 34)];
             lblRequired.textColor = COLOR_CELL_TEXT;
             lblRequired.backgroundColor = [UIColor clearColor];
             lblRequired.text = @"Expected";
@@ -344,6 +344,7 @@
         txtFieldMatID.layer.borderWidth= 1.0f;
         [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
         txtFieldMatID.placeholder = @" Enter/Scan Pallet Number";
+        txtFieldMatID.text = @"1456789023456940067";
         [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
         [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
         txtFieldMatID.backgroundColor = [UIColor clearColor];
@@ -404,7 +405,7 @@
     lblPlaced.text = @"Delivered";
     [viewFooter addSubview:lblPlaced];
     
-    UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(650, 35 + yOffset, 100, 20)];
+    UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(600, 35 + yOffset, 100, 20)];
     lblRequired.textColor = COLOR_CELL_TEXT;
     lblRequired.backgroundColor = [UIColor clearColor];
     lblRequired.text = @"Expected";
@@ -642,7 +643,6 @@
     
     alertView.delegate = self;
     [alertView show];
-    
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -749,30 +749,78 @@
 - (void)addButtonClicked {
     if([txtFieldMatID.text isEqualToString:@""]) return;
     
-    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
-    for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
-        NSMutableDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i];
-        if ([[dict valueForKey:@"item"] isEqualToString:txtFieldMatID.text]) {
-            int count = [[dict valueForKey:@"value"] intValue];
-            count++;
-            [dict setValue:[NSString stringWithFormat:@"%d", count] forKey:@"value"];
-            [tbvReturns reloadData];
-            return;
+    if (segmentedBar.selectedSegmentIndex == 1) {
+        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
+            NSMutableDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i];
+            if ([[dict valueForKey:@"item"] isEqualToString:txtFieldMatID.text]) {
+                int count = [[dict valueForKey:@"value"] intValue];
+                count++;
+                [dict setValue:[NSString stringWithFormat:@"%d", count] forKey:@"value"];
+                [tbvReturns reloadData];
+                return;
+            }
+        }
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        [dict setValue:txtFieldMatID.text forKey:@"item"];
+        [dict setValue:@"1" forKey:@"value"];
+        [dict setValue:@"" forKey:@"desc"];
+        [arrReturns[appObject.rowCustomerListSelected] insertObject:dict atIndex:0];
+        [tbvReturns reloadData];
+        
+        UITableViewCell *cell = [tbvReturns cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        CGRect rectP = cell.frame;
+        rectP.origin.x = 0;
+        rectP.origin.y += row_Height_TodayTableView;
+        _popOverController.popoverContentSize = CGSizeMake(200, 200);
+        [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    
+    if (segmentedBar.selectedSegmentIndex == 0) {
+        [self checkPallete:txtFieldMatID.text];
+    }
+}
+
+- (void)checkMaterial:(NSString*)strMaterial {
+    int index = -1;
+    for (int i=0; i<[arrOrders count]; i++) {
+        NSDictionary *dict = [arrOrders objectAtIndex:i];
+        if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:selectedPallete]) {
+            if ([[dict valueForKey:JSONTAG_MAT_NO] isEqualToString:strMaterial]) {
+                index = i;
+                break;
+            }
         }
     }
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    [dict setValue:txtFieldMatID.text forKey:@"item"];
-    [dict setValue:@"1" forKey:@"value"];
-    [dict setValue:@"" forKey:@"desc"];
-    [arrReturns[appObject.rowCustomerListSelected] insertObject:dict atIndex:0];
-    [tbvReturns reloadData];
     
-    UITableViewCell *cell = [tbvReturns cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    CGRect rectP = cell.frame;
-    rectP.origin.x = 0;
-    rectP.origin.y += row_Height_TodayTableView;
-    _popOverController.popoverContentSize = CGSizeMake(200, 200);
-    [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    if (index == -1) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Pallet ID does not go with this customer." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    else {
+    }
+}
+
+- (void)checkPallete:(NSString*)strPallete {
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+    int index = -1;
+    for (int i=0; i < [cust.palleteIDs count]; i++) {
+        if ([[cust.palleteIDs objectAtIndex:i] isEqualToString:strPallete]) {
+            index = i;
+            break;
+        }
+    }
+    
+    if (index == -1) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Pallet ID does not go with this customer." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    }
+    else {
+        [tbvSales scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        selectedPallete = [cust.palleteIDs objectAtIndex:index];
+        NSLog(@"selectedPallete :: %@", selectedPallete);
+    }
 }
 
 - (void)btnBarCodeBtnClicked {

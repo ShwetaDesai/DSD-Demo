@@ -22,5 +22,6 @@
     NSArray *arrResponse;
     NSString *strTemperature;
     NSURLConnection *conn, *connWeather;
+    BOOL _hasNetworkCallFailed;
 }
 @end

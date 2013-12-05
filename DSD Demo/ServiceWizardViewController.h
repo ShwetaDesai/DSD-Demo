@@ -21,7 +21,7 @@
     SignCaptureViewController *signatureViewControllerManager, *signatureViewControllerDriver;
 //    int yPos;
     int selectedSegmentBarID;
-    NSString *customerID;
+    NSString *customerID, *selectedPallete;
     UIPopoverController *_popOverController;
     UITextField *txtFieldMatID;
     ReturnsDatabaseViewController *_returnsDatabaseVC;
@@ -32,7 +32,8 @@
     int isSummary;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
-@property (nonatomic,strong)   NSString *customerID;
+@property (nonatomic,strong)  NSString *customerID;
+@property (nonatomic,strong)  NSString *selectedPallete;
 @property (strong, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
