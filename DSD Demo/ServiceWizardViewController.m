@@ -200,8 +200,17 @@
     lblText.text = @"Store Manager's Signature";
     [signatureViewControllerManager.view addSubview:lblText];
     
-    [self.view addSubview:signatureViewControllerManager.view];
     
+    UIButton *btnClearManager = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnClearManager.frame = CGRectMake(200,300,100,25);
+    [btnClearManager addTarget:self action:@selector(clearButtonManagerClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnClearManager setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnClearManager setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnClearManager setTitle:@"CLEAR" forState:UIControlStateNormal];
+    [self.view addSubview:btnClearManager];
+ 
+    
+  [self.view addSubview:signatureViewControllerManager.view];
     
     signatureViewControllerDriver = [[SignCaptureViewController alloc] init];
     [signatureViewControllerDriver.view setFrame:CGRectMake(tableWidth/2+5, 55 , tableWidth/2 - 10 , 200)];
@@ -216,11 +225,19 @@
     signatureViewControllerDriver.view.layer.masksToBounds = YES;
     signatureViewControllerDriver.view.tag = 55551;
     
-    UILabel *lblText1 = [[UILabel alloc] initWithFrame:CGRectMake(tableWidth/2+5, 200-44, tableWidth/2-10, 44)];
+    UILabel *lblText1 = [[UILabel alloc] initWithFrame:CGRectMake(5, 200-44, tableWidth/2-10, 44)];
     lblText1.backgroundColor = [UIColor clearColor];
     lblText1.textAlignment = NSTextAlignmentCenter;
     lblText1.text = @"Driver's Signature";
     [signatureViewControllerDriver.view addSubview:lblText1];
+    
+    UIButton *btnClearDriver = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnClearDriver.frame = CGRectMake(550,300,100,25);
+    [btnClearDriver addTarget:self action:@selector(clearButtonDriverClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnClearDriver setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnClearDriver setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btnClearDriver setTitle:@"CLEAR" forState:UIControlStateNormal];
+    [self.view addSubview:btnClearDriver];
     
     [self.view addSubview:signatureViewControllerDriver.view];
 
@@ -280,8 +297,9 @@
         
         txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 200, 44)];
         txtFieldMatID.placeholder = @" Enter Material ID";
-        txtFieldMatID.backgroundColor = [UIColor whiteColor];
+        txtFieldMatID.backgroundColor = [UIColor clearColor];
         txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
         txtFieldMatID.layer.borderWidth = 1.0;
         txtFieldMatID.delegate = self;
         txtFieldMatID.tag = 10001;
@@ -290,10 +308,9 @@
         UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
         [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-        [btnAdd setBackgroundColor:[UIColor whiteColor]];
-        btnAdd.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        btnAdd.layer.borderWidth = 1.0;
-        [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+         btnAdd.layer.borderWidth = 1.0;
+        [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
         [viewFooter addSubview:btnAdd];
         
@@ -824,6 +841,17 @@
 }
 
 - (void)btnBarCodeBtnClicked {
+    
+}
+-(void)clearButtonManagerClicked{
+    
+    signatureViewControllerManager.mySignatureImage.image = nil;
+    
+    
+}
+-(void)clearButtonDriverClicked{
+    
+    signatureViewControllerDriver.mySignatureImage.image = nil;
     
 }
 @end
