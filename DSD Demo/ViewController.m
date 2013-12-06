@@ -111,7 +111,7 @@
     SODViewControllerViewController *sodViewController;
     sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
     sodViewController.palletID = val;
-    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 550);
+    sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
     
     [contentView addSubview:sodViewController.view];
 
@@ -249,7 +249,7 @@
         [view removeFromSuperview];
     
     sodpaletteViewController = [[SODPaletteViewController alloc]initWithStyle:UITableViewStylePlain];
-    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 550);
+    sodpaletteViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
     
     [contentView addSubview:sodpaletteViewController.view];
     tagNoButtonSelected = 2;
