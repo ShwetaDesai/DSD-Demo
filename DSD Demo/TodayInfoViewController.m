@@ -202,14 +202,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         _popOverController.popoverContentSize = CGSizeMake(200, 100);
         [_popOverController presentPopoverFromRect:rectP inView:todayInfoTableView permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
     }
-    if (indexPath.section == 1 && indexPath.row == 8) {
-        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        imagePicker.delegate = self;
-        [self presentModalViewController:imagePicker animated:YES];
-    }
-    if (indexPath.section == 1 && indexPath.row == 8) {
-    }
+//    if (indexPath.section == 1 && indexPath.row == 8) {
+//        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+//        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        imagePicker.delegate = self;
+//        [self presentModalViewController:imagePicker animated:YES];
+//    }
 }
 
 - (void)optionSelected:(NSString *)strValue  textFieldTag:(int)tag {

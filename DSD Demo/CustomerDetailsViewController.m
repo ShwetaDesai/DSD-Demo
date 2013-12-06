@@ -42,8 +42,8 @@
     
     [btn_directions addTarget:self action:@selector(onClickGetDirections) forControlEvents:UIControlEventTouchUpInside];
     
-    if(customerSelected.isServiced)
-        [btn_Service setHidden:YES];
+//    if(customerSelected.isServiced)
+//        [btn_Service setHidden:YES];
     
     [self.view addSubview:btn_Service];
     
