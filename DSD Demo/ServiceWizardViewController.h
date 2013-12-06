@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SignCaptureViewController.h"
 #import "ReturnsDatabaseViewController.h"
+#import "ZBarSDK.h"
 
 @interface ServiceWizardViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate, UITextFieldDelegate>
+<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate, UITextFieldDelegate, ZBarReaderDelegate>
 {
     NSArray *arr_NoServiceItems;
     NSMutableArray *arr_SalesOrders;

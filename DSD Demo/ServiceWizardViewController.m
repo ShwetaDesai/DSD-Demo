@@ -92,11 +92,11 @@
 
 -(void) onClickNoSaleTab {
     
-    for (int i=0; i < 2; i++) {
-        for (int j=0; j<4; j++) {
-            NSLog(@"returnsValues :: %d", returnsValues[i][j]);
-        }
-    }
+//    for (int i=0; i < 2; i++) {
+//        for (int j=0; j<4; j++) {
+//            NSLog(@"returnsValues :: %d", returnsValues[i][j]);
+//        }
+//    }
     [[self.view viewWithTag:6666] removeFromSuperview];
 //    [[self.view viewWithTag:2222] removeFromSup];
         tbvNoService = [[UITableView alloc] initWithFrame:CGRectMake(5, 55, tableWidth - 10, [arr_NoServiceItems count] *row_Height_TodayTableView) style:UITableViewStylePlain];
@@ -125,6 +125,10 @@
     Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
     NSLog(@"cust.palleteIDs :: %@", cust.palleteIDs);
     
+    [arr_SalesOrders removeAllObjects];
+    for (int j=0; j<10; j++) {
+        rowsPerSectionSales[j] = 0;
+    }
     for (int i=0; i<[arrOrders count]; i++) {
         NSDictionary *dict = [arrOrders objectAtIndex:i];
         
@@ -175,6 +179,7 @@
 //    [acceptButton setFrame:CGRectMake(75,yPos, 200, 30)];
 //    [scv addSubview:acceptButton];
     isSummary = 1;
+    [self prepareDataForSalesTable];
     [self.view addSubview:tbvSales];
     [tbvSales reloadData];
 //        [self.view  addSubview:acceptButton];
@@ -297,6 +302,7 @@
         txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 5, 200, 44)];
         txtFieldMatID.placeholder = @" Enter Material ID";
         txtFieldMatID.backgroundColor = [UIColor clearColor];
+        txtFieldMatID.textColor = [UIColor whiteColor];
         txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
         [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
         txtFieldMatID.layer.borderWidth = 1.0;
@@ -493,9 +499,9 @@
         for (int i=0; i<indexPath.section; i++) {
             index += rowsPerSectionSales[i];
         }
+        cellSOD.enumViewType = SALES;
         NSDictionary *dict =  [arr_SalesOrders objectAtIndex:index];//[arrMaterials[indexPath.section] objectAtIndex:indexPath.row];
         [cellSOD setData:dict];
-        cellSOD.enumViewType = SALES;
 //        Order *o = (Order*)[arr_SalesOrders objectAtIndex:indexPath.row];
 //        [cellSOD setDataForRow:indexPath.row forOrder:o];
         return cellSOD;
@@ -796,6 +802,7 @@
                 value++;
                 [dict setObject:[NSString stringWithFormat:@"%d", value] forKey:JSONTAG_CUSTOMER_ENTERED];
                 [arrOrders replaceObjectAtIndex:i withObject:dict];
+                [self prepareDataForSalesTable];
                 [tbvSales reloadData];
                 break;
             }
@@ -830,9 +837,6 @@
     }
 }
 
-- (void)btnBarCodeBtnClicked {
-    
-}
 -(void)clearButtonManagerClicked{
     
     signatureViewControllerManager.mySignatureImage.image = nil;
@@ -844,4 +848,59 @@
     signatureViewControllerDriver.mySignatureImage.image = nil;
     
 }
+
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info {
+    
+    //this contains your result from the scan
+    id results = [info objectForKey: ZBarReaderControllerResults];
+    
+    //create a symbol object to attach the response data to
+    ZBarSymbol *symbol = nil;
+    
+    //add the symbol properties from the result
+    //so you can access it
+    for(symbol in results){
+        
+        //symbol.data holds the value
+        NSString *upcString = symbol.data;
+        
+        //print to the console
+        NSLog(@"the value of the scanned UPC is: %@",upcString);
+        
+        NSMutableString *message = [[NSMutableString alloc]init];
+        
+        
+        [message appendString:[NSString stringWithFormat:@"%@ ",
+                               upcString]];
+        
+        NSLog(@"Barcode is : %@", message);
+        
+        if (upcString.length > 15) {
+            [self checkPallete:upcString];
+        }
+        else {
+            [self checkMaterial:upcString];
+        }
+        
+        //make the reader view go away
+        [reader dismissModalViewControllerAnimated: YES];
+    }
+    
+}
+
+- (void)btnBarCodeBtnClicked {
+    //initialize the reader and provide some config instructions
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    
+    [reader.scanner setSymbology: ZBAR_I25
+                          config: ZBAR_CFG_ENABLE
+                              to: 1];
+    reader.readerView.zoom = 1.0; // define camera zoom property
+    
+    //show the scanning/camera mode
+    [self presentModalViewController:reader animated:YES];
+}
+
 @end

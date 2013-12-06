@@ -192,9 +192,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
             NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
             if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_PALLET_NO]]) {
                 if ([[dict valueForKey:JSONTAG_MAT_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_MAT_NO]]) {
-                    int value = [[dict valueForKey:JSONTAG_CUSTOMER_ENTERED] intValue];
-                    value++;
-                    [dict setObject:[NSString stringWithFormat:@"%d", value] forKey:JSONTAG_CUSTOMER_ENTERED];
+                    [dict setObject:textField.text forKey:JSONTAG_CUSTOMER_ENTERED];
                     [arrOrders replaceObjectAtIndex:i withObject:dict];
                     break;
                 }

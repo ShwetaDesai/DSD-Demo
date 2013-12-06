@@ -148,7 +148,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature2"]) {
                 dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
             }
-            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], [dict1 valueForKey:@"sat"]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [self convertDegreeC_To_F:[dict1 valueForKey:@"temp"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"aat"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"set"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"sat"]]];
             if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
         else if(indexPath.row == 6) {
@@ -157,7 +157,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
                 dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
             }
             
-            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE_CHILLED, [dict1 valueForKey:@"temp"], [dict1 valueForKey:@"aat"], [dict1 valueForKey:@"set"], @"NIL"];
+            cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE_CHILLED, [self convertDegreeC_To_F:[dict1 valueForKey:@"temp"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"aat"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"set"]], @"NIL"];
             
             if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
@@ -235,6 +235,11 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 	[UIView commitAnimations];
 	return YES;
 	
+}
+
+- (NSString*)convertDegreeC_To_F:(NSString*)strDegreeC {
+    float degreeC = [strDegreeC floatValue];
+    return [NSString stringWithFormat:@"%.2f", (degreeC*(9/5)+32)];
 }
 
 - (void)callIBrightAPI {
