@@ -643,6 +643,27 @@
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 1024) {
+        if (buttonIndex == 0) {
+            for (int i=0; i<[arrOrders count]; i++) {
+                NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
+                if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:selectedPallete]) {
+                    [dict setObject:[dict valueForKey:JSONTAG_EXTFLD4_COUNT] forKey:JSONTAG_CUSTOMER_ENTERED];
+                    [arrOrders replaceObjectAtIndex:i withObject:dict];
+                    [self prepareDataForSalesTable];
+                    [tbvSales reloadData];
+                }
+            }
+        }
+        else {
+            AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+            Customer *cust = (Customer*)[appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+            
+            [tbvSales scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:selectedPalletIndex] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+            selectedPallete = [cust.palleteIDs objectAtIndex:selectedPalletIndex];
+        }
+        return;
+    }
     if(alertView.tag == 5656){
         
 //        NSDictionary *dict = [NSDictionary dictionaryWithObject: forKey:@"customerServicedID"];
@@ -831,8 +852,11 @@
         [alertView show];
     }
     else {
-        [tbvSales scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:index] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        selectedPallete = [cust.palleteIDs objectAtIndex:index];
+        selectedPallete = strPallete;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Confirm pallet or enter Detailed Mode?" delegate:self cancelButtonTitle:@"Confirm" otherButtonTitles:@"Detailed Mode", nil];
+        alertView.tag = 1024;
+        [alertView show];
+        
         NSLog(@"selectedPallete :: %@", selectedPallete);
     }
 }

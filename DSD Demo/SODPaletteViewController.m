@@ -188,20 +188,14 @@
     
     int flag=0;
     for(int i=0; i<[palletIDs count];i++){
-        if([[palletImageCheck objectAtIndex:i] boolValue] == YES){
+        if([[palletImageCheck objectAtIndex:i] boolValue] == NO){
             flag=1;
         }
     }
     if(flag == 1){
-        return;
-    }
-    else{
-    UIAlertView * alert  = [[UIAlertView alloc]initWithTitle:nil message:@"Really confirm all pallets?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-    alert.delegate = self;
-    
-    [alert show];
-  
-
+        UIAlertView * alert  = [[UIAlertView alloc]initWithTitle:nil message:@"Really confirm all pallets?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+        alert.delegate = self;
+        [alert show];
     }
 }
 

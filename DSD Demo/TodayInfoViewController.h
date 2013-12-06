@@ -11,7 +11,7 @@
 #define COUNT_TODAY_SECTION_2   9
 
 
-@interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate>
+@interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     UITableView *todayInfoTableView;
     NSArray *titleItemsArray , *valueArray;
@@ -23,5 +23,6 @@
     NSString *strTemperature;
     NSURLConnection *conn, *connWeather;
     BOOL _hasNetworkCallFailed;
+    NSMutableArray *_arrDamagePictures;
 }
 @end

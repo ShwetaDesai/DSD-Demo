@@ -64,7 +64,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         [_btnAccept setTitle:@"Accept" forState:UIControlStateNormal];
         [_btnAccept addTarget:self action:@selector(acceptButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         _btnAccept.backgroundColor = colorBG;
-        [_btnAccept setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_btnAccept setTitleColor:COLOR_THEME forState:UIControlStateNormal];
         _btnAccept.hidden = YES;
         
         [self addSubview:_lblMatID];
@@ -170,42 +170,39 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 }
 
 - (void)textFieldDidChange {
-    //    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
-//    if (_enumViewType == SOD) {
-//        NSLog(@"_index :: %d :: %d", _index, enteredValues[_index]);
-//        enteredValues[_index] = [_txtFieldActualCount.text intValue];
-//    }
+    if (_enumViewType == SOD) {
+        NSMutableDictionary *dict = [[arrOrders objectAtIndex:_index] mutableCopy];
+        [dict setValue:_txtFieldActualCount.text forKey:JSONTAG_USER_ENTERED];
+        [arrOrders replaceObjectAtIndex:_index withObject:dict];
+    }
+
     if (_enumViewType == RETURNS) {
         returnsValues[_returnsIndex][_index] = [_txtFieldActualCount.text intValue];
         NSLog(@"%d -- %d", _returnsIndex, _index);
     }
-}
-
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    if (_enumViewType == SOD) {
-        NSMutableDictionary *dict = [[arrOrders objectAtIndex:_index] mutableCopy];
-        [dict setValue:textField.text forKey:JSONTAG_USER_ENTERED];
-        [arrOrders replaceObjectAtIndex:_index withObject:dict];
-    }
+    
     if (_enumViewType == SALES) {
         for (int i=0; i<[arrOrders count]; i++) {
             NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
             if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_PALLET_NO]]) {
                 if ([[dict valueForKey:JSONTAG_MAT_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_MAT_NO]]) {
-                    [dict setObject:textField.text forKey:JSONTAG_CUSTOMER_ENTERED];
+                    [dict setObject:_txtFieldActualCount.text forKey:JSONTAG_CUSTOMER_ENTERED];
                     [arrOrders replaceObjectAtIndex:i withObject:dict];
                     break;
                 }
             }
         }
     }
-//    int indexValue = _index;
-//    
-//    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
-//                                                     forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
 }
+
+//-(void)textFieldDidEndEditing:(UITextField *)textField{
+////    int indexValue = _index;
+////    
+////    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
+////                                                     forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
+////    
+////    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
+//}
 
 - (void)acceptButtonClicked {
     acceptedValues[_index] = 1;

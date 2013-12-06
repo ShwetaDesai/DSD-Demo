@@ -17,7 +17,7 @@
 @end
 
 @implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
+NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Levels", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURES", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
 NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -25,6 +25,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _arrDamagePictures = [[NSMutableArray alloc] init];
         _hasNetworkCallFailed = NO;
         for (int i=0; i<COUNT_TODAY_SECTION_2; i++) {
             _dataTextFields[i] = [[UITextField alloc] initWithFrame:CGRectMake(kLeftMargin, kTopMargin, kTextFieldWidth, kTextFieldHeight)];
@@ -49,7 +50,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         
         NSDate *now = [[NSDate alloc] init];
         
-        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"KLV8465",@"GSFCA002",@"6",@"6", nil];
+        valueArray = [[NSArray alloc] initWithObjects:[format stringFromDate:now],@"KLV8465",@"GSFCA002",@"5",@"8", nil];
     }
     return self;
 }
@@ -83,7 +84,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 1) {
-        return COUNT_TODAY_SECTION_2;
+        return (COUNT_TODAY_SECTION_2 + [_arrDamagePictures count]);
     }
     return [titleItemsArray count];;
 }
@@ -172,6 +173,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             if (_hasNetworkCallFailed) _dataTextFields[indexPath.row].textColor = COLOR_THEME;
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
+        else if(indexPath.row > 7) {
+            cell.textLabel.text = [NSString stringWithFormat:@"Damage Picture %d", (indexPath.row -7)];
+//            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(todayInfoTableView.frame.size.width - 100, 5, 50, 50)];
+//            imgView.image = [_arrDamagePictures objectAtIndex:(indexPath.row-8)];
+//            cell.accessoryView = imgView;
+        }
     }
     
     return cell;
@@ -193,11 +200,19 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         rectP.origin.x += 200;
         _dropDownOptionsVC.index = indexPath.row;
         _popOverController.popoverContentSize = CGSizeMake(200, 100);
-        [_popOverController presentPopoverFromRect:rectP inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        [_popOverController presentPopoverFromRect:rectP inView:todayInfoTableView permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }
+    if (indexPath.section == 1 && indexPath.row == 8) {
+        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+    if (indexPath.section == 1 && indexPath.row == 8) {
     }
 }
 
-- (void)optionSelected:(NSString *)strValue  textFieldTag:(int)tag{
+- (void)optionSelected:(NSString *)strValue  textFieldTag:(int)tag {
     [_popOverController dismissPopoverAnimated:YES];
     dropDownValues[tag-1] = strValue;
     [todayInfoTableView reloadData];
@@ -341,4 +356,17 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [todayInfoTableView reloadData];
 }
 
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage * image = [info objectForKey:UIImagePickerControllerEditedImage];
+    [_arrDamagePictures addObject:image];
+    [self dismissModalViewControllerAnimated:YES];
+    [todayInfoTableView reloadData];
+}
 @end
+
+
