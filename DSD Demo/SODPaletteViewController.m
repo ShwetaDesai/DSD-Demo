@@ -15,6 +15,7 @@
     SODPaletteCustomTableCell *sodPalletCustomTableCell;
     AppDelegate *objDelegate;
     NSString *PalletID;
+    UIButton *btnSubmit;
 }
 
 @end
@@ -168,12 +169,14 @@
     [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [viewFooter addSubview:btnBarCode];
     
-    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 5, 150, 44);
+     btnSubmit = [[UIButton alloc]init];
+     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 5, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btnSubmit setTitle:@"CONFIRM ALL" forState:UIControlStateNormal];
+    btnSubmit.tag =1001;
+    
     
     [viewFooter addSubview:btnSubmit];
     
@@ -181,21 +184,25 @@
     
 }
 
-
 - (void)submitButtonClicked {
-  
-    for(int i=0;i <[palletIDs count];i++){
-        
-        NSMutableArray *arrTemp = [objDelegate getImageForPallet];
-        [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
-        [objDelegate setImageForPallet:arrTemp];
-        [self fixAllMaterials:[palletIDs objectAtIndex:i]];
-        
+    
+    int flag=0;
+    for(int i=0; i<[palletIDs count];i++){
+        if([[palletImageCheck objectAtIndex:i] boolValue] == YES){
+            flag=1;
+        }
     }
+    if(flag == 1){
+        return;
+    }
+    else{
+    UIAlertView * alert  = [[UIAlertView alloc]initWithTitle:nil message:@"Really confirm all pallets?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alert.delegate = self;
     
-    
-    [self.tableView reloadData];
-   
+    [alert show];
+  
+
+    }
 }
 
 - (void)addButtonClicked
@@ -225,6 +232,7 @@
             [arrOrders replaceObjectAtIndex:i withObject:dict];
         }
     }
+    
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -324,6 +332,39 @@
         }
     }
     [self.tableView reloadData];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // My OK button
+    
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        
+         NSLog(@"Cancel");
+        
+    } else if (buttonIndex == alertView.firstOtherButtonIndex) {
+        
+        // Confirm all the pallets
+        for(int i=0;i <[palletIDs count];i++){
+            
+            NSMutableArray *arrTemp = [objDelegate getImageForPallet];
+            [arrTemp replaceObjectAtIndex:i withObject:[NSNumber numberWithBool:YES]];
+            [objDelegate setImageForPallet:arrTemp];
+            [self fixAllMaterials:[palletIDs objectAtIndex:i]];
+            
+//            NSIndexPath *path = [NSIndexPath indexPathForRow:i inSection:0];
+//            [self.tableView reloadRowsAtIndexPaths:@[path]
+//                                  withRowAnimation:UITableViewRowAnimationNone];
+            
+        }
+        //[btnSubmit setUserInteractionEnabled:NO];
+        [self.tableView reloadData];
+        
+        
+    }
+    
+    
     
 }
 

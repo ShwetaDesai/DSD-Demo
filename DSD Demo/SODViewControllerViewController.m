@@ -14,6 +14,7 @@
     
     NSMutableArray *arrMaterialsFinal;
     NSMutableArray *arrMaterialFinalIndex;
+    UIButton *btnSubmit;
 }
 
 @end
@@ -129,6 +130,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     if (!_isEditable) {
         cell.txtFieldActualCount.enabled = NO;
     }
+    
+    
     // Configure the cell...
     NSDictionary *dict = [arrMaterialsFinal objectAtIndex:indexPath.row];
     
@@ -147,6 +150,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
         }
     }
+    
+
 
     if (_confirmFlag) {
         if (enteredValues[indexPath.row] == [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] || isChecked) {
@@ -275,8 +280,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [viewFooterHeadings addSubview:btnBarCode];
     
     
-    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 15, 150, 44);
+     btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 15, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -297,11 +302,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     _confirmFlag = TRUE;
     
     BOOL isChecked = NO;
+    
     /* checking whether the Pallete is already scanned */
     for (int i=0; i<[palletIDs count]; i++) {
         if ([[palletIDs objectAtIndex:i] isEqualToString:palletID]) {
             isChecked = [[palletImageCheck objectAtIndex:i] boolValue];
-            break;
+            if([[palletImageCheck objectAtIndex:i] boolValue])
+              return;
         }
     }
     
@@ -436,7 +443,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     palletID = [notification object];
     NSLog(@"Pallet ID %@", palletID);
-    
+   
     [self setUpData];
 }
 

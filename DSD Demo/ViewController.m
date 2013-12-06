@@ -118,11 +118,17 @@
 }
 
 -(void) showEODView {
-    eodViewController = [[EODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
-    eodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+//    eodViewController = [[EODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
+//    eodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+//    
+//    [contentView addSubview:eodViewController.view];
+//    
+//    tagNoButtonSelected = 5;
     
-    [contentView addSubview:eodViewController.view];
+    eodModifiedViewController = [[EODModifiedViewController alloc] init];
+    eodModifiedViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
     
+    [contentView addSubview:eodModifiedViewController.view];
     tagNoButtonSelected = 5;
     
 }

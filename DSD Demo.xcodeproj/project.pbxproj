@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */; };
 		860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E3182243BD001FDEF2 /* CustomerInfo.json */; };
 		860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5E618225C8C001FDEF2 /* CustomerDetailsViewController.m */; };
 		860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E818225D84001FDEF2 /* CustomerDetailsView.xib */; };
@@ -47,6 +46,8 @@
 		86F4146D184F3FF90057353A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F4146C184F3FF90057353A /* CoreMedia.framework */; };
 		86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F4146E184F3FFF0057353A /* CoreVideo.framework */; };
 		86F41471184F40090057353A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41470184F40090057353A /* QuartzCore.framework */; };
+		9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */; };
+		9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
@@ -150,6 +151,8 @@
 		86F4146E184F3FFF0057353A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		86F41470184F40090057353A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		86F41472184F40330057353A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		9DCB14D11851B17C00327A53 /* EODModifiedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODModifiedViewController.h; sourceTree = "<group>"; };
+		9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODModifiedViewController.m; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
@@ -444,6 +447,8 @@
 			children = (
 				BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */,
 				BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */,
+				9DCB14D11851B17C00327A53 /* EODModifiedViewController.h */,
+				9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */,
 			);
 			name = EOD;
 			sourceTree = "<group>";
@@ -584,6 +589,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */,
+				9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */,
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
 				ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */,
 				BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */,
@@ -594,7 +601,6 @@
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
 				ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
-				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
 				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
