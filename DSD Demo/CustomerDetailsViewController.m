@@ -70,7 +70,7 @@
     nowDate = [[NSDate alloc] init];
 
     if (CLLocationCoordinate2DIsValid([[AppSingleton getSingleton] curntLoc].coordinate)) {
-//        NSLog(@"got a location !!!");
+        NSLog(@"got a location !!!");
         sourceCoord.latitude = [[AppSingleton getSingleton] curntLoc].coordinate.latitude;
         sourceCoord.longitude = [[AppSingleton getSingleton] curntLoc].coordinate.longitude;
     }else{
@@ -80,17 +80,21 @@
             sourceCoord.longitude= -117.854505;
             
         }else{
-            prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
             sourceCoord.latitude = [prevCustomer.latitudeC floatValue];
             sourceCoord.longitude= [prevCustomer.longitudeC floatValue];
         }
     }
+    
+     if (appObject.rowCustomerListSelected != 0)
+         prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
     
     if (appObject.rowCustomerListSelected == 0) {
         nowDate = [nowFormat dateFromString:@"10-12-2013 8:12:00"];
         [nowFormat setDateFormat:@"HH:mm:ss a"];
         time_curr.text = [nowFormat stringFromDate:nowDate];
     }else{
+//        NSLog(@"prev customer:%@",prevCustomer);
+        
         nowDate = [nowFormat dateFromString:prevCustomer.ETA];
         nowDate = [nowDate dateByAddingTimeInterval:10*60];
         [nowFormat setDateFormat:@"HH:mm:ss a"];
@@ -117,11 +121,12 @@
 
     NSString *sourceString, *addString;
     sourceString = @"Current location";
-    if (prevCustomer == nil) {
-        addString = @"18301 Von Karman Ave";
-    }else{
-        addString = prevCustomer.street;
-    }
+//    if (appObject.rowCustomerListSelected == 0) {
+//        addString = @"18301 Von Karman Ave";
+//    }else{
+//        addString = prevCustomer.street;
+//    }
+
     MyAnnotation *sourceAnnotation = [[MyAnnotation alloc] initWithName:sourceString
             address:addString
         coordinate:sourceCoord];
