@@ -13,6 +13,8 @@
     
     
     NSMutableArray *arrMaterialsFinal;
+    NSMutableArray *arrMaterialFinalIndex;
+    UIButton *btnSubmit;
 }
 
 @end
@@ -34,16 +36,20 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
 
 -(void)setUpData{
     
-    // NSLog(@"Order array : %@", arrOrders);
+    NSLog(@"Pallet ID in setupdata : %@", palletID);
     
     arrMaterialsFinal = [[NSMutableArray alloc]init];
+    arrMaterialFinalIndex = [[NSMutableArray alloc]init];
     
     for (int i = 0; i < [arrOrders count]; i++) {
         NSDictionary *dict = [arrOrders objectAtIndex:i];
+        NSLog(@"Value from json : %@", [dict valueForKey:JSONTAG_PALLET_NO]);
         if ([palletID isEqualToString:[dict valueForKey:JSONTAG_PALLET_NO]])
         {
             [arrMaterialsFinal addObject:[arrOrders objectAtIndex:i]];
-            //NSLog(@"Material Array %@", arrMaterialsFinal);
+            [arrMaterialFinalIndex addObject:[NSNumber numberWithInt:i]];
+            NSLog(@"Material Array %@", arrMaterialsFinal);
+            
         }
     }
     [self.tableView reloadData];
@@ -52,19 +58,18 @@ NSString *arrMaterials1[5] = {@"380003", @"380004", @"380136", @"400760", @"4017
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(displayPalletID:) name:nPassingPalletID object:nil];
     
     //    self.tableView.backgroundView = nil;
     self.tableView.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
     
-    [self initBarCode];
-    
     _materialsViewController = [[MaterialsViewController alloc] initWithStyle:UITableViewStylePlain];
     _materialsViewController.parentDelegate = self;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:_materialsViewController];
     
-    
+    [self setUpData];
     
 }
 
@@ -125,6 +130,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     if (!_isEditable) {
         cell.txtFieldActualCount.enabled = NO;
     }
+    
+    
     // Configure the cell...
     NSDictionary *dict = [arrMaterialsFinal objectAtIndex:indexPath.row];
     
@@ -143,6 +150,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
         }
     }
+    
+
 
     if (_confirmFlag) {
         if (enteredValues[indexPath.row] == [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] || isChecked) {
@@ -161,7 +170,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         colorID = 0;
     }
     
-    [cell setData:indexPath.row :colorID isCheckedValue:isChecked];
+    //[cell setData:indexPath.row :colorID isCheckedValue:isChecked];
+    NSNumber *index = (NSNumber*)[arrMaterialFinalIndex objectAtIndex:indexPath.row];
+    [cell setData:[index intValue] :colorID :isChecked];
     return cell;
 }
 
@@ -244,7 +255,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(10, 15, 230, 44)];
     txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
     txtFieldMatID.layer.borderWidth= 1.0f;
-    [txtFieldMatID setTextAlignment:NSTextAlignmentLeft];
+    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
     txtFieldMatID.placeholder = @" Enter/Scan Material Number";
     [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
@@ -265,16 +276,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 10, 15, 64, 44)];
     [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
-    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [btnBarCode addTarget:self action:@selector(barCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [viewFooterHeadings addSubview:btnBarCode];
     
     
-    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 15, 150, 44);
+     btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 145, 15, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [btnSubmit setTitle:@"CONFIRM ALL" forState:UIControlStateNormal];
+    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
     
     [viewFooterHeadings addSubview:btnSubmit];
     
@@ -291,27 +302,31 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     _confirmFlag = TRUE;
     
     BOOL isChecked = NO;
+    
     /* checking whether the Pallete is already scanned */
     for (int i=0; i<[palletIDs count]; i++) {
         if ([[palletIDs objectAtIndex:i] isEqualToString:palletID]) {
             isChecked = [[palletImageCheck objectAtIndex:i] boolValue];
-            break;
+            if([[palletImageCheck objectAtIndex:i] boolValue])
+              return;
         }
     }
     
     int flag = 0;
-    for (int i=0; i<[arrMaterialsFinal count]; i++) {
-        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
-        
+    for (int i=0; i<[arrMaterialFinalIndex count]; i++) {
+//        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]];
         NSLog(@"Count %d",[[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue]);
-        NSLog(@"Entered Value %d", enteredValues[i]);
-        
-        if (enteredValues[i] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[i] != 1) {
+        NSLog(@"Entered Value %d", [[dict valueForKey:JSONTAG_USER_ENTERED] intValue]);
+        //        if (enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != 1) {
+
+      if ([[dict valueForKey:JSONTAG_USER_ENTERED] intValue] != [[dict valueForKey:JSONTAG_EXTFLD4_COUNT] intValue] && acceptedValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] != 1){
             flag = 1;
         }
     }
     
-    if (flag == 1 && !isChecked) {
+    
+    if (flag == 1) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Please check the discrepancies." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -321,16 +336,22 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 //        [alert show];
         [[NSNotificationCenter defaultCenter] postNotificationName:nMaterialScanCompleted object:palletID];
         [[NSNotificationCenter defaultCenter] postNotificationName:nNavigateBackToPalletScreen object:nil];
-        
     }
     [self.tableView reloadData];
 }
 
 - (void)addButtonClicked {
-    for (int i = 0; i < [arrOrders count]; i++) {
-        NSDictionary *dict = [arrOrders objectAtIndex:i];
+    for (int i = 0; i < [arrMaterialFinalIndex count]; i++) {
+//        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [[arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]] mutableCopy];
+        NSLog(@"dict :: %@", dict);
         if ([txtFieldMatID.text isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
-            enteredValues[i] += 1;
+//            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+            int userEntered = [[dict valueForKey:JSONTAG_USER_ENTERED] intValue];
+            userEntered++;
+            [dict setValue:[NSString stringWithFormat:@"%d", userEntered] forKey:JSONTAG_USER_ENTERED];
+            [arrOrders replaceObjectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue] withObject:dict];
+
             [self.tableView reloadData];
             return;
         }
@@ -342,13 +363,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (!_isEditable) return NO;
-    
-    //    if (textField.tag == 10001) {
-    //        CGRect rectP = textField.frame;
-    //        _popOverController.popoverContentSize = CGSizeMake(200, 200);
-    //        [_popOverController presentPopoverFromRect:rectP inView:self.tableView permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    //        return NO;
-    //    }
+
     return YES;
 }
 
@@ -366,92 +381,90 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)btnBarCodeBtnClicked {
-    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Starting the scanner...." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:@"CANCEL", nil];
-    //    [alert show];
-    [self.view.layer addSublayer:_prevLayer];
-    [_session startRunning];
+- (void)barCodeBtnClicked{
+    //initialize the reader and provide some config instructions
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    
+    [reader.scanner setSymbology: ZBAR_I25
+                          config: ZBAR_CFG_ENABLE
+                              to: 1];
+    reader.readerView.zoom = 1.0; // define camera zoom property
+    
+    //show the scanning/camera mode
+    [self presentModalViewController:reader animated:YES];
 }
 
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
-{
-    CGRect highlightViewRect = CGRectZero;
-    AVMetadataMachineReadableCodeObject *barCodeObject;
-    NSString *detectionString = nil;
-    NSArray *barCodeTypes = @[AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code,
-                              AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code,
-                              AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeQRCode, AVMetadataObjectTypeAztecCode];
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info {
     
-    for (AVMetadataObject *metadata in metadataObjects) {
-        for (NSString *type in barCodeTypes) {
-            if ([metadata.type isEqualToString:type])
-            {
-                barCodeObject = (AVMetadataMachineReadableCodeObject *)[_prevLayer transformedMetadataObjectForMetadataObject:(AVMetadataMachineReadableCodeObject *)metadata];
-                highlightViewRect = barCodeObject.bounds;
-                detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
-                break;
-            }
-        }
+    //this contains your result from the scan
+    id results = [info objectForKey: ZBarReaderControllerResults];
+    
+    //create a symbol object to attach the response data to
+    ZBarSymbol *symbol = nil;
+    
+    //add the symbol properties from the result
+    //so you can access it
+    for(symbol in results){
         
-        if (detectionString != nil) {
-            //NOTE : Use the Barcode Value
-        }
-        else {
-            //NOTE : No barcode detected
-        }
+        //symbol.data holds the value
+        NSString *upcString = symbol.data;
+        
+        //print to the console
+        NSLog(@"the value of the scanned UPC is: %@",upcString);
+        
+        NSMutableString *message = [[NSMutableString alloc]init];
+        
+        
+        [message appendString:[NSString stringWithFormat:@"%@ ",
+                               upcString]];
+        
+        NSLog(@"Barcode is : %@", message);
+        
+        [self addMaterialBarcodeScanning:upcString];
+        
+        //Create UIAlertView alert
+        //        UIAlertView  *alert = [[UIAlertView alloc]
+        //                               initWithTitle:@"Product Barcode" message: message delegate:self
+        //                               cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
+        //
+        //        [alert show];
+        //        //After some time
+        //        [alert dismissWithClickedButtonIndex:0 animated:TRUE];
+        
+        //make the reader view go away
+        [reader dismissModalViewControllerAnimated: YES];
     }
     
-    [_session stopRunning];
-    [_prevLayer removeFromSuperlayer];
 }
-
-- (void)initBarCode {
-    _session = [[AVCaptureSession alloc] init];
-    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError *error = nil;
-    
-    _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
-    if (_input) {
-        [_session addInput:_input];
-    } else {
-        NSLog(@"Error: %@", error);
-    }
-    
-    _output = [[AVCaptureMetadataOutput alloc] init];
-    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [_session addOutput:_output];
-    
-    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
-    
-    _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    _prevLayer.frame = self.view.bounds;
-    _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    
-    if(interfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        _prevLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
-    }
-    
-    // and so on for other orientations
-    
-    return ((interfaceOrientation == UIInterfaceOrientationLandscapeRight));
-}
-
 
 -(void)displayPalletID:(NSNotification *)notification
 {
     palletID = [notification object];
     NSLog(@"Pallet ID %@", palletID);
-    
+   
     [self setUpData];
 }
 
--(void)changeValuesOnPalletScan{
+-(void)addMaterialBarcodeScanning:(NSMutableString*)strBarcode{
     
+    for (int i = 0; i < [arrMaterialFinalIndex count]; i++) {
+        //        NSDictionary *dict = [arrMaterialsFinal objectAtIndex:i];
+        NSDictionary *dict = [[arrOrders objectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue]] mutableCopy];
+        NSLog(@"dict :: %@", dict);
+        if ([strBarcode isEqualToString:[dict valueForKey:JSONTAG_MAT_NO]]) {
+            //            enteredValues[[[arrMaterialFinalIndex objectAtIndex:i] intValue]] += 1;
+            int userEntered = [[dict valueForKey:JSONTAG_USER_ENTERED] intValue];
+            userEntered++;
+            [dict setValue:[NSString stringWithFormat:@"%d", userEntered] forKey:JSONTAG_USER_ENTERED];
+            [arrOrders replaceObjectAtIndex:[[arrMaterialFinalIndex objectAtIndex:i] intValue] withObject:dict];
+            
+            [self.tableView reloadData];
+            return;
+        }
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"The selected product does not match any products from the Orders list. Please select some other product." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
 }
 @end

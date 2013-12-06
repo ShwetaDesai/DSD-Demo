@@ -28,16 +28,16 @@
 #define nNavigateBackToPalletScreen @"nNavigateBackToPalletScreen"
 
 typedef enum viewType {
-    SOD, EOD, CUSTOMER, RETURNS
+    SOD, EOD, CUSTOMER, RETURNS, SALES
 } EnumViewType;
 
 NSMutableArray *arrOrders, *arrReturns[2], *palletIDs, *palletImageCheck;
-int enteredValues[6], acceptedValues[6], deliveredValues[2][6];
+int enteredValues[30], acceptedValues[30], deliveredValues[2][30];
 int returnsValues[2][4];
 
 
-#define TEXT_TEMPERATURE            @"%@  F                   aat %@ F                   Set %@ F                  Source %@ F"
-
+#define TEXT_TEMPERATURE            @"%@  F                   AAT %@ F                   Set %@ F                  Source %@ F"
+#define TEXT_TEMPERATURE_CHILLED    @"%@  F                   AAT %@ F                   Set %@ F                  Source       %@"
 
 #define COLOR_THEME                 [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
 #define COLOR_ERROR                 [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
@@ -60,5 +60,6 @@ int returnsValues[2][4];
 #define JSONTAG_EXTFLD4_EXPECTED    @"EXTFLD4_EXPECTED"
 #define JSONTAG_EXTFLD4_COUNT       @"EXTFLD4_COUNT"
 #define JSONTAG_PALLET_NO           @"PAT_NO"
-
+#define JSONTAG_USER_ENTERED        @"USER_ENTERED"
+#define JSONTAG_CUSTOMER_ENTERED    @"CUSTOMER_ENTERED"
 #endif

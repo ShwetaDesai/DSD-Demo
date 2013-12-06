@@ -1,24 +1,25 @@
 //
-//  TodayInfoViewController.m
+//  EODModifiedViewController.m
 //  DSD Demo
 //
-//  Created by Shweta on 31/10/13.
+//  Created by Radhika Bhangaonkar on 06/12/13.
 //  Copyright (c) 2013 Quinnox. All rights reserved.
 //
 
-#import "TodayInfoViewController.h"
+#import "EODModifiedViewController.h"
 #import "MBProgressHUD.h"
 
-@interface TodayInfoViewController (){
+@interface EODModifiedViewController (){
     
     float odometerReading;
 }
 
 @end
 
-@implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
-NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
+@implementation EODModifiedViewController
+
+NSString *sectionTwoTitles1[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
+NSString *dropDownValues1[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,7 +59,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    arrResponse = [[NSMutableArray alloc] init];
+    //    arrResponse = [[NSMutableArray alloc] init];
     strTemperature = [[NSString alloc] init];
     
     [self callIBrightAPI];
@@ -67,12 +68,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     _dropDownOptionsVC.parentDelegate =self;
     _popOverController = [[UIPopoverController alloc] initWithContentViewController:_dropDownOptionsVC];
     
-    todayInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, 450) style:UITableViewStylePlain];
+    eodInfoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, tableWidth, 450) style:UITableViewStylePlain];
     
-    todayInfoTableView.dataSource = self;
-    todayInfoTableView.delegate = self;
-//    todayInfoTableView.layer.cornerRadius = 10.0;
-    [self.view addSubview:todayInfoTableView];
+    eodInfoTableView.dataSource = self;
+    eodInfoTableView.delegate = self;
+    //    todayInfoTableView.layer.cornerRadius = 10.0;
+    [self.view addSubview:eodInfoTableView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,16 +91,39 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (float)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return 0;
+        return 54;
     }
     return 44;
 }
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return nil;
+        NSLog(@"Header for section 0");
+        
+        UIView *viewHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 5, self.view.frame.size.width - 20, 54)];
+        viewHeader.backgroundColor = [UIColor colorWithRed:86.0/255.0 green:86.0/255.0 blue:86.0/255.0 alpha:1.0];
+
+        
+        UIButton *btnSettlement = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnSettlement.frame = CGRectMake(10, 5, 125, 44);
+        [btnSettlement addTarget:self action:@selector(settlementButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnSettlement setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+        [btnSettlement setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btnSettlement setTitle:@"SETTLEMENT" forState:UIControlStateNormal];
+        [viewHeader addSubview:btnSettlement];
+        
+        
+        UIButton *btnCheck = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        btnCheck.frame = CGRectMake(150, 5, 175, 44);
+        [btnCheck addTarget:self action:@selector(checkButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+        [btnCheck setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+        [btnCheck setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btnCheck setTitle:@"INVENTORY CHECK" forState:UIControlStateNormal];
+        [viewHeader addSubview:btnCheck];
+        
+        return viewHeader;
     }
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, todayInfoTableView.frame.size.width, 44)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, eodInfoTableView.frame.size.width, 44)];
     view.backgroundColor = COLOR_CELL_HEADER;
     
     UILabel *lblText = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, view.frame.size.width-20, 44)];
@@ -134,10 +158,10 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         cell.detailTextLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
     }
     else {
-        cell.textLabel.text = sectionTwoTitles[indexPath.row];
+        cell.textLabel.text = sectionTwoTitles1[indexPath.row];
         
         if (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
-            cell.detailTextLabel.text = dropDownValues[indexPath.row-1];
+            cell.detailTextLabel.text = dropDownValues1[indexPath.row-1];
         }
         else if(indexPath.row == 8) {
             cell.detailTextLabel.text = @"Take Picture";
@@ -199,19 +223,19 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (void)optionSelected:(NSString *)strValue  textFieldTag:(int)tag{
     [_popOverController dismissPopoverAnimated:YES];
-    dropDownValues[tag-1] = strValue;
-    [todayInfoTableView reloadData];
+    dropDownValues1[tag-1] = strValue;
+    [eodInfoTableView reloadData];
 }
 
 #pragma mark - Keyboard Delegate Methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-	CGPoint point = [todayInfoTableView convertPoint:CGPointZero fromView:textField];
+	CGPoint point = [eodInfoTableView convertPoint:CGPointZero fromView:textField];
 	
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.2];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	
-    todayInfoTableView.contentOffset = CGPointMake(0, point.y - 190);
+    eodInfoTableView.contentOffset = CGPointMake(0, point.y - 190);
 	[UIView commitAnimations];
 	
 	return YES;
@@ -226,11 +250,11 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 	[UIView setAnimationDuration:0.2];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
 	
-	CGRect frame = todayInfoTableView.frame;
-	todayInfoTableView.frame = CGRectMake(0.0f,
-                                  0.0f,
-                                  frame.size.width,
-                                  frame.size.height);
+	CGRect frame = eodInfoTableView.frame;
+	eodInfoTableView.frame = CGRectMake(0.0f,
+                                          0.0f,
+                                          frame.size.width,
+                                          frame.size.height);
 	
 	[UIView commitAnimations];
 	return YES;
@@ -299,7 +323,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (connection == conn) {
-//        NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
+        NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
         arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
         NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
         
@@ -308,24 +332,19 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         
         _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", odometerReading];
         
-        [todayInfoTableView reloadData];
-//        NSLog(@"iBright API Finished %@", strResponse);
+        [eodInfoTableView reloadData];
+        NSLog(@"iBright API Finished %@", strResponse);
     }
     else {
-//        NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
+        NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
         NSDictionary *dict = [[NSJSONSerialization JSONObjectWithData:_responseDataWeather options:kNilOptions error:nil] valueForKey:@"main"];
-
-        strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue] - 273.15)*(9/5)+32)];
-//        NSLog(@"openweathermap API Finished %@", strResponse);
-
         
         //NSLog(@"Temperature Reading %.2f F", [[dict valueForKey:@"temp"] floatValue]*(9/5)+32);
         
         strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue]- 273.15)*(9/5)+32)];
         NSLog(@"openweathermap API Finished %@", strResponse);
->>>>>>> 272555dad1d9c8463e6ad73dd6b8024e2468cee1
     }
-
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -343,7 +362,15 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     
     _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", odometerReading];
     
-    [todayInfoTableView reloadData];
+    [eodInfoTableView reloadData];
+}
+-(void)settlementButtonClicked{
+    
+    NSLog(@"Settlement Button Clicked !");
 }
 
+-(void)checkButtonClicked{
+    
+    NSLog(@"Check Button Clicked !");
+}
 @end

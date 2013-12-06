@@ -1,8 +1,8 @@
 //
-//  TodayInfoViewController.h
+//  EODModifiedViewController.h
 //  DSD Demo
 //
-//  Created by Shweta on 31/10/13.
+//  Created by Radhika Bhangaonkar on 06/12/13.
 //  Copyright (c) 2013 Quinnox. All rights reserved.
 //
 
@@ -10,10 +10,9 @@
 #import "DropDownOptionsViewController.h"
 #define COUNT_TODAY_SECTION_2   9
 
-
-@interface TodayInfoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate>
+@interface EODModifiedViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, DropDownOptionsViewControllerDelegate, NSURLConnectionDelegate>
 {
-    UITableView *todayInfoTableView;
+    UITableView *eodInfoTableView;
     NSArray *titleItemsArray , *valueArray;
     UITextField *_dataTextFields[COUNT_TODAY_SECTION_2];
     UIPopoverController *_popOverController;
@@ -24,4 +23,5 @@
     NSURLConnection *conn, *connWeather;
     BOOL _hasNetworkCallFailed;
 }
+
 @end

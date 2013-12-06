@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */; };
 		860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E3182243BD001FDEF2 /* CustomerInfo.json */; };
 		860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5E618225C8C001FDEF2 /* CustomerDetailsViewController.m */; };
 		860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E818225D84001FDEF2 /* CustomerDetailsView.xib */; };
@@ -35,7 +34,6 @@
 		8698B47D184F1461004F6AF9 /* MapDirectionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47A184F1461004F6AF9 /* MapDirectionsTableViewController.m */; };
 		8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8698B47C184F1461004F6AF9 /* MyAnnotation.m */; };
 		86B69D08184F53C200A95294 /* race-flag20.png in Resources */ = {isa = PBXBuildFile; fileRef = 86B69D07184F53C200A95294 /* race-flag20.png */; };
-		86B7239B184F3DAC00AFD472 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B7239A184F3DAC00AFD472 /* libzbar.a */; };
 		86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */; };
 		86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */; };
 		86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BA80E21825562F00F48B2E /* SignCaptureViewController.m */; };
@@ -50,10 +48,12 @@
 		86F4146D184F3FF90057353A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F4146C184F3FF90057353A /* CoreMedia.framework */; };
 		86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F4146E184F3FFF0057353A /* CoreVideo.framework */; };
 		86F41471184F40090057353A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41470184F40090057353A /* QuartzCore.framework */; };
-		86F41473184F40330057353A /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41472184F40330057353A /* libz.1.2.5.dylib */; };
+		9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */; };
+		9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
+		BBE5E7341850D58400D8BB3E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5E7331850D58400D8BB3E /* libzbar.a */; };
 		BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */; };
 		BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFE0AD18285361006D51DB /* ReturnsDatabaseViewController.m */; };
 		ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED3E3878184DB23B0099E682 /* SODPaletteViewController.m */; };
@@ -116,7 +116,6 @@
 		8698B47B184F1461004F6AF9 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		8698B47C184F1461004F6AF9 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		86B69D07184F53C200A95294 /* race-flag20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "race-flag20.png"; sourceTree = "<group>"; };
-		86B7239A184F3DAC00AFD472 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		86BA80DB18251D9600F48B2E /* ServiceWizardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceWizardViewController.h; sourceTree = "<group>"; };
 		86BA80DC18251D9600F48B2E /* ServiceWizardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceWizardViewController.m; sourceTree = "<group>"; };
 		86BA80DD18251D9600F48B2E /* ServiceWizardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServiceWizardViewController.xib; sourceTree = "<group>"; };
@@ -157,11 +156,14 @@
 		86F4146E184F3FFF0057353A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		86F41470184F40090057353A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		86F41472184F40330057353A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		9DCB14D11851B17C00327A53 /* EODModifiedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODModifiedViewController.h; sourceTree = "<group>"; };
+		9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODModifiedViewController.m; sourceTree = "<group>"; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
+		BBE5E7331850D58400D8BB3E /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
 		BBFFE0A918281B5B006D51DB /* MaterialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialsViewController.h; sourceTree = "<group>"; };
 		BBFFE0AA18281B5B006D51DB /* MaterialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaterialsViewController.m; sourceTree = "<group>"; };
 		BBFFE0AC18285361006D51DB /* ReturnsDatabaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnsDatabaseViewController.h; sourceTree = "<group>"; };
@@ -182,8 +184,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				865C35E21850917100897F4C /* CoreLocation.framework in Frameworks */,
 				86F41473184F40330057353A /* libz.1.2.5.dylib in Frameworks */,
+
+				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
+
 				86F41471184F40090057353A /* QuartzCore.framework in Frameworks */,
 				86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */,
 				86F4146D184F3FF90057353A /* CoreMedia.framework in Frameworks */,
@@ -191,8 +197,8 @@
 				86F41469184F3FE70057353A /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
-				86B7239B184F3DAC00AFD472 /* libzbar.a in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
+				BBE5E7341850D58400D8BB3E /* libzbar.a in Frameworks */,
 				866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,14 +247,17 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+
 				865C35E11850917100897F4C /* CoreLocation.framework */,
+
+				BBE5E7331850D58400D8BB3E /* libzbar.a */,
+
 				86F41472184F40330057353A /* libz.1.2.5.dylib */,
 				86F41470184F40090057353A /* QuartzCore.framework */,
 				86F4146E184F3FFF0057353A /* CoreVideo.framework */,
 				86F4146C184F3FF90057353A /* CoreMedia.framework */,
 				86F4146A184F3FF00057353A /* AVFoundation.framework */,
 				86F41468184F3FE70057353A /* CoreGraphics.framework */,
-				86B7239A184F3DAC00AFD472 /* libzbar.a */,
 				EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */,
 				865FC80E18487FC200160D89 /* MapKit.framework */,
 				866DD48E181C403000DF43C5 /* Foundation.framework */,
@@ -462,6 +471,8 @@
 			children = (
 				BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */,
 				BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */,
+				9DCB14D11851B17C00327A53 /* EODModifiedViewController.h */,
+				9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */,
 			);
 			name = EOD;
 			sourceTree = "<group>";
@@ -602,6 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */,
+				9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */,
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
 				865C35E61850995E00897F4C /* AppSingleton.m in Sources */,
 				ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */,
@@ -613,7 +626,6 @@
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
 				ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
-				860DF5DC18223148001FDEF2 /* TodayInfoViewController.m in Sources */,
 				8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
 				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
@@ -690,8 +702,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -709,7 +721,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+
 				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
+
+				PROVISIONING_PROFILE = "";
+
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -732,8 +748,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -745,7 +761,11 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+
 				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
+
+				PROVISIONING_PROFILE = "";
+
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -755,10 +775,16 @@
 		866DD4BE181C403100DF43C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
+
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -770,11 +796,18 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					/Users/itim3/dev/gitDSD,
 					"/Users/HNI/Projects/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+
 				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
+
+				PROVISIONING_PROFILE = "";
+
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -782,10 +815,16 @@
 		866DD4BF181C403100DF43C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+
 				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
+
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -797,11 +836,18 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/itim5/dev/iOS/dsd-demo",
+					/Users/itim3/dev/gitDSD,
 					"/Users/HNI/Projects/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+
 				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
+
+				PROVISIONING_PROFILE = "";
+
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -19,7 +19,7 @@
 #define HEIGHT_ACCEPT_BUTTON 34
 
 @implementation SODCustomTableCell
-@synthesize txtFieldActualCount = _txtFieldActualCount, enumViewType = _enumViewType;
+@synthesize txtFieldActualCount = _txtFieldActualCount, enumViewType = _enumViewType, dictSalesObj = _dictSalesObj;
 NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken Bottles", @"Incorrect Crate"};
 
 
@@ -64,6 +64,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         [_btnAccept setTitle:@"Accept" forState:UIControlStateNormal];
         [_btnAccept addTarget:self action:@selector(acceptButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         _btnAccept.backgroundColor = colorBG;
+        [_btnAccept setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _btnAccept.hidden = YES;
         
         [self addSubview:_lblMatID];
@@ -101,13 +102,15 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 }
 
 - (void)setData:(NSDictionary*)dictionaryObject {
+    _dictSalesObj = dictionaryObject;
     self.backgroundColor = COLOR_CELL_BACKGROUND;
     _lblMatID.text = [dictionaryObject valueForKey:JSONTAG_MAT_NO];
     _lblMatDesc.text = [dictionaryObject valueForKey:JSONTAG_MAT_DESC];
     _lblMatPlannedQty.text = [dictionaryObject valueForKey:JSONTAG_MAT_ACTUAL_COUNT];
+    _txtFieldActualCount.text = [dictionaryObject valueForKey:JSONTAG_CUSTOMER_ENTERED];
 }
 
-- (void)setData:(int)indexID :(int)colorIndex  isCheckedValue:(BOOL)isChecked{
+- (void)setData:(int)indexID :(int)colorIndex :(BOOL)isChecked{
     if (_enumViewType == RETURNS) {
         _lblMatID.text = arrReturnItems[indexID];
         _returnsIndex = colorIndex;
@@ -123,12 +126,14 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
     switch (_enumViewType) {
             
         case SOD: {
-            if (isChecked) {
-                _txtFieldActualCount.text = _lblMatPlannedQty.text;
-            }
-            else {
-                _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
-            }
+//            if (isChecked) {
+//                _txtFieldActualCount.text = _lblMatPlannedQty.text;
+//            }
+//            else {
+                NSDictionary *dict = [arrOrders objectAtIndex:_index];
+//                _txtFieldActualCount.text = [NSString stringWithFormat:@"%d", enteredValues[_index]];
+                _txtFieldActualCount.text = [NSString stringWithFormat:@"%@", [dict valueForKey:JSONTAG_USER_ENTERED]];
+//            }
             break;
         }
             
@@ -166,9 +171,10 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 
 - (void)textFieldDidChange {
     //    NSLog(@"_txtFieldActualCount.text :: %@", _txtFieldActualCount.text);
-    if (_enumViewType == SOD) {
-        enteredValues[_index] = [_txtFieldActualCount.text intValue];
-    }
+//    if (_enumViewType == SOD) {
+//        NSLog(@"_index :: %d :: %d", _index, enteredValues[_index]);
+//        enteredValues[_index] = [_txtFieldActualCount.text intValue];
+//    }
     if (_enumViewType == RETURNS) {
         returnsValues[_returnsIndex][_index] = [_txtFieldActualCount.text intValue];
         NSLog(@"%d -- %d", _returnsIndex, _index);
@@ -176,19 +182,31 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    //    NSLog(@"did end editing textValue:%@",textField.text);
-    NSLog(@"index:%d value:%@",_index,_txtFieldActualCount.text);
-    
-    int indexValue = _index;
-    [NSString stringWithFormat:@"%d",indexValue];
-    //        [NSString stringWithFormat:@"%d",]
-    //    int countValue = [_txtFieldActualCount.text intValue];
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
-                                                     forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
+    if (_enumViewType == SOD) {
+        NSMutableDictionary *dict = [[arrOrders objectAtIndex:_index] mutableCopy];
+        [dict setValue:textField.text forKey:JSONTAG_USER_ENTERED];
+        [arrOrders replaceObjectAtIndex:_index withObject:dict];
+    }
+    if (_enumViewType == SALES) {
+        for (int i=0; i<[arrOrders count]; i++) {
+            NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
+            if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_PALLET_NO]]) {
+                if ([[dict valueForKey:JSONTAG_MAT_NO] isEqualToString:[_dictSalesObj valueForKey:JSONTAG_MAT_NO]]) {
+                    [dict setObject:textField.text forKey:JSONTAG_CUSTOMER_ENTERED];
+                    [arrOrders replaceObjectAtIndex:i withObject:dict];
+                    break;
+                }
+            }
+        }
+    }
+//    int indexValue = _index;
+//    
+//    NSDictionary *dict = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:_txtFieldActualCount.text,[NSString stringWithFormat:@"%d",indexValue], nil]
+//                                                     forKeys:[NSArray arrayWithObjects:@"placedQty",@"indexPath", nil]];
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:nSoldQtyUpdate object:nil  userInfo:dict];
 }
+
 - (void)acceptButtonClicked {
     acceptedValues[_index] = 1;
     self.backgroundColor = [UIColor lightGrayColor];

@@ -96,7 +96,7 @@
         colorID = 0;
     }
     
-    [cell setData:indexPath.row :colorID isCheckedValue:NO];
+    [cell setData:indexPath.row :colorID :NO];
     return cell;
 }
 
@@ -159,35 +159,72 @@
     
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *viewFooter = [[UIView alloc] initWithFrame:CGRectMake(10, 5, self.view.frame.size.width - 20, 98)];
-    viewFooter.backgroundColor = COLOR_THEME;
+    viewFooter.backgroundColor = [UIColor colorWithRed:70.0/255.0 green:70.0/255.0 blue:70.0/255.0 alpha:1.0];
     
-    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
-    txtFieldMatID.placeholder = @" Enter Material ID";
-    txtFieldMatID.backgroundColor = [UIColor whiteColor];
-    txtFieldMatID.enabled = NO;
+//    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 44)];
+//    txtFieldMatID.placeholder = @" Enter Material ID";
+//    txtFieldMatID.backgroundColor = [UIColor whiteColor];
+//    txtFieldMatID.enabled = NO;
+//    txtFieldMatID.tag = 10001;
+//    [viewFooter addSubview:txtFieldMatID];
+    
+    
+    txtFieldMatID = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 225, 44)];
+    txtFieldMatID.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    txtFieldMatID.layer.borderWidth= 1.0f;
+    [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
+    txtFieldMatID.placeholder = @" Enter/Scan Material Number";
+    [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
+    [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
+    txtFieldMatID.backgroundColor = [UIColor clearColor];
     txtFieldMatID.tag = 10001;
     [viewFooter addSubview:txtFieldMatID];
     
+//    UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+//    [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [btnAdd setBackgroundColor:[UIColor whiteColor]];
+//    [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
+//    [viewFooter addSubview:btnAdd];
+    
+    
     UIButton *btnAdd = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 5, 5, 75, 44);
+    btnAdd.frame = CGRectMake(txtFieldMatID.frame.origin.x + txtFieldMatID.frame.size.width + 15, 5, 75, 44);
     [btnAdd addTarget:self action:@selector(addButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [btnAdd setBackgroundColor:[UIColor whiteColor]];
-    [btnAdd setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnAdd setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btnAdd setTitle:@"ADD" forState:UIControlStateNormal];
     [viewFooter addSubview:btnAdd];
     
-    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+    
+//    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 5, 5, 162, 44)];
+//    [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
+//    [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [viewFooter addSubview:btnBarCode];
+    
+    
+    UIButton *btnBarCode = [[UIButton alloc] initWithFrame:CGRectMake(btnAdd.frame.origin.x + btnAdd.frame.size.width + 15, 5, 64, 44)];
     [btnBarCode setBackgroundImage:[UIImage imageNamed:@"barcode.png"] forState:UIControlStateNormal];
     [btnBarCode addTarget:self action:@selector(btnBarCodeBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     [viewFooter addSubview:btnBarCode];
     
+    
+    
+//    UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
+//    [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+//    [btnSubmit setBackgroundColor:[UIColor whiteColor]];
+//    [btnSubmit setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
+//    [viewFooter addSubview:btnSubmit];
+    
     UIButton *btnSubmit = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     btnSubmit.frame = CGRectMake(viewFooter.frame.size.width - 130, 5, 150, 44);
     [btnSubmit addTarget:self action:@selector(submitButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [btnSubmit setBackgroundColor:[UIColor whiteColor]];
-    [btnSubmit setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [btnSubmit setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnSubmit setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [btnSubmit setTitle:@"CONFIRM" forState:UIControlStateNormal];
-    [viewFooter addSubview:btnSubmit];
     
     
     UILabel *lblMat = [[UILabel alloc] initWithFrame:CGRectMake(0, 59, 100, 34)];

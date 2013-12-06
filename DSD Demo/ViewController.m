@@ -32,7 +32,7 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleCustomerServiceCompleted) name:nCustomerServiceComplete object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePalleteDetailScreen) name:nPalleteDetailScreenCalled object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePalleteDetailScreen:) name:nPalleteDetailScreenCalled object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backButtonPressed) name:nBackButtonPressed object:nil];
     
@@ -100,7 +100,7 @@
     }
 }
 
--(void) showSODView {
+-(void) showSODView:(NSString*)val {
     
     for (UIView *view in contentView.subviews)
         [view removeFromSuperview];
@@ -110,6 +110,7 @@
     }
     SODViewControllerViewController *sodViewController;
     sodViewController = [[SODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
+    sodViewController.palletID = val;
     sodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 550);
     
     [contentView addSubview:sodViewController.view];
@@ -117,11 +118,17 @@
 }
 
 -(void) showEODView {
-    eodViewController = [[EODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
-    eodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+//    eodViewController = [[EODViewControllerViewController alloc] initWithStyle:UITableViewStylePlain];
+//    eodViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 650);
+//    
+//    [contentView addSubview:eodViewController.view];
+//    
+//    tagNoButtonSelected = 5;
     
-    [contentView addSubview:eodViewController.view];
+    eodModifiedViewController = [[EODModifiedViewController alloc] init];
+    eodModifiedViewController.view.frame = CGRectMake(x_Pos, y_Pos, tableWidth, 450);
     
+    [contentView addSubview:eodModifiedViewController.view];
     tagNoButtonSelected = 5;
     
 }
@@ -221,8 +228,9 @@
     [self showServiceOutletView];
 }
 
--(void)handlePalleteDetailScreen{
-    [self showSODView];
+-(void)handlePalleteDetailScreen:(NSNotification*)notification{
+    NSString *val = [notification object];
+    [self showSODView:val];
     
 }
 

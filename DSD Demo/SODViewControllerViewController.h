@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MaterialsViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZBarSDK.h"
 
 @interface SODViewControllerViewController : UITableViewController <UITextFieldDelegate, MaterialsViewControllerDelegate, AVCaptureMetadataOutputObjectsDelegate> {
     BOOL _confirmFlag, _isEditable;

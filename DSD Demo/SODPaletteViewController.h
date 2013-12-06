@@ -11,17 +11,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ZBarSDK.h"
 
-@interface SODPaletteViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,AVCaptureMetadataOutputObjectsDelegate>{
+@interface SODPaletteViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>{
     
     SODViewControllerViewController *sodViewController;
     UITextField *txtFieldPaletteID;
-    BOOL _isEditable, _confirmFlag;
-    
-    AVCaptureSession *_session;
-    AVCaptureDevice *_device;
-    AVCaptureDeviceInput *_input;
-    AVCaptureMetadataOutput *_output;
-    AVCaptureVideoPreviewLayer *_prevLayer;
+    BOOL _isEditable, _confirmFlag;    
 }
 
 @end

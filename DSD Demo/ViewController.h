@@ -14,7 +14,8 @@
 #import "ServiceWizardViewController.h"
 #import "CustomerDetailsViewController.h"
 #import "AppDelegate.h"
-#import "EODViewControllerViewController.h"
+//#import "EODViewControllerViewController.h"
+#import "EODModifiedViewController.h"
 #import "SODPaletteViewController.h"
 
 @interface ViewController : UIViewController
@@ -25,7 +26,8 @@
     SODPaletteViewController *sodpaletteViewController;
     ServiceWizardViewController *wizardVC;
     CustomerDetailsViewController *customerDetailVC;
-    EODViewControllerViewController *eodViewController;
+    //EODViewControllerViewController *eodViewController;
+    EODModifiedViewController *eodModifiedViewController;
 
 }
 @property (strong, nonatomic) IBOutlet UIView *mainView;
