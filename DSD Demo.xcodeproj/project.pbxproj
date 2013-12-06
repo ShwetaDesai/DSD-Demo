@@ -61,6 +61,7 @@
 		ED3E3880184DB23B0099E682 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387C184DB23B0099E682 /* uncheck.png */; };
 		ED3E3881184DB23B0099E682 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387D184DB23B0099E682 /* check.png */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
+		ED65530F18520A3000EC4E4E /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED65530E18520A3000EC4E4E /* beep-07.wav */; };
 		EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +177,7 @@
 		ED3E387D184DB23B0099E682 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		ED46BB8518470B4D0095E532 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ED46BB8618470B4D0095E532 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		ED65530E18520A3000EC4E4E /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
 		EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -184,12 +186,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				865C35E21850917100897F4C /* CoreLocation.framework in Frameworks */,
-				86F41473184F40330057353A /* libz.1.2.5.dylib in Frameworks */,
-
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
-
 				86F41471184F40090057353A /* QuartzCore.framework in Frameworks */,
 				86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */,
 				86F4146D184F3FF90057353A /* CoreMedia.framework in Frameworks */,
@@ -247,11 +245,8 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-
 				865C35E11850917100897F4C /* CoreLocation.framework */,
-
 				BBE5E7331850D58400D8BB3E /* libzbar.a */,
-
 				86F41472184F40330057353A /* libz.1.2.5.dylib */,
 				86F41470184F40090057353A /* QuartzCore.framework */,
 				86F4146E184F3FFF0057353A /* CoreVideo.framework */,
@@ -270,6 +265,7 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
+				ED65530E18520A3000EC4E4E /* beep-07.wav */,
 				865C35E31850994D00897F4C /* AppSingleton */,
 				ED46BB8318470B390095E532 /* Common */,
 				86BA80E01825562100F48B2E /* Signature */,
@@ -585,6 +581,7 @@
 				86E26D451823BAF400D17098 /* materials.json in Resources */,
 				866DD499181C403000DF43C5 /* InfoPlist.strings in Resources */,
 				860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */,
+				ED65530F18520A3000EC4E4E /* beep-07.wav in Resources */,
 				86B69D08184F53C200A95294 /* race-flag20.png in Resources */,
 				860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */,
 				86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */,
@@ -721,11 +718,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-
-				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
-
 				PROVISIONING_PROFILE = "";
-
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -761,11 +754,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-
-				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
-
 				PROVISIONING_PROFILE = "";
-
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -778,13 +767,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
-
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -803,11 +787,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-
-				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
-
 				PROVISIONING_PROFILE = "";
-
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -818,13 +798,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-
-				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
-
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Quinnox Inc";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Quinnox Inc";
-
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -843,11 +818,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-
-				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
-
 				PROVISIONING_PROFILE = "";
-
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
