@@ -16,8 +16,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-//NSArray  *currentTimeArr = [NSArray arrayWithObjects:, nil ]
     }
     return self;
 }
@@ -72,7 +70,7 @@
     nowDate = [[NSDate alloc] init];
 
     if (CLLocationCoordinate2DIsValid([[AppSingleton getSingleton] curntLoc].coordinate)) {
-        NSLog(@"got a location !!!");
+//        NSLog(@"got a location !!!");
         sourceCoord.latitude = [[AppSingleton getSingleton] curntLoc].coordinate.latitude;
         sourceCoord.longitude = [[AppSingleton getSingleton] curntLoc].coordinate.longitude;
     }else{
@@ -118,13 +116,12 @@
         coordinate:destinationCoord];
 
     NSString *sourceString, *addString;
-//    if (prevCustomer == nil) {
-        sourceString = @"Current location"; //@"McDonald's";
-//        addString = @"Irving";
-//    }else{
-//        sourceString = prevCustomer.name;
-//        addString = prevCustomer.street;
-//    }
+    sourceString = @"Current location";
+    if (prevCustomer == nil) {
+        addString = @"18301 Von Karman Ave";
+    }else{
+        addString = prevCustomer.street;
+    }
     MyAnnotation *sourceAnnotation = [[MyAnnotation alloc] initWithName:sourceString
             address:addString
         coordinate:sourceCoord];
@@ -159,8 +156,7 @@
         }
         _currentRoute = [response.routes firstObject];
 //        NSLog(@"expected 8888888time:%f and distance:%f",_currentRoute.expectedTravelTime,_currentRoute.distance);
-        
-//        (_currentRoute.distance / (50 * METERS_PER_MILE))*60*60
+     
         [self plotRouteOnMap:_currentRoute];
     }];
 }
@@ -192,34 +188,16 @@
     // Add it to the map
         isStepOverlay = NO;
     [mMapView addOverlay:_routeOverlay];
- 
-//    //additional
-//    mapTVC = [[MapDirectionsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-//    
-//    mapTVC.route = _currentRoute;
-    
-//    directionsPopover =[[UIPopoverController alloc] initWithContentViewController:mapTVC];
-//    
-//    directionsPopover.delegate = self;
-//    directionsPopover.popoverContentSize = CGSizeMake(360, [_currentRoute.steps count]*44);
     
 }
 
 -(void) onClickGetDirections {
-//    CGRect rect = CGRectMake(btn_directions.frame.origin.x - 70, btn_directions.frame.origin.y, btn_directions.frame.size.width,btn_directions.frame.size.height);
-    
-//    [directionsPopover presentPopoverFromRect:rect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES ];
-    
-    // new code
-    //additional
     mapTVC = [[MapDirectionsTableViewController alloc] initWithStyle:UITableViewStylePlain];
     mapTVC.route = _currentRoute;
     UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:mapTVC];
     
     navC.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:navC animated:YES completion:nil];
-    
- 
 }
 
 -(void)onClickSimulate{
@@ -245,12 +223,10 @@
 //    NSLog(@"expected and distance:%f",routeStep.distance);
    
     float val = (routeStep.distance/(50 * METERS_PER_MILE))*60*60;
-    //(intrval/60)/[_currentRoute.steps count];
+    
 //    NSLog(@"interval division:%f",val);
     
-    nowDate = [nowDate dateByAddingTimeInterval:val];
-//    [nowFormat setDateFormat:@"HH:mm:ss a"];
-    time_curr.text = [nowFormat stringFromDate:nowDate];
+    nowDate = [nowDate dateByAddingTimeInterval:val];     time_curr.text = [nowFormat stringFromDate:nowDate];
     
         [mMapView addOverlay:_stepOverlay];
         if(currentPointNumber == [_currentRoute.steps count])
@@ -260,11 +236,6 @@
             btn_Simulate.enabled = YES;
         }
     }
-
-
-//-(void)addMyPoint:(MyAnnotation*)note{
-//    [mMapView addAnnotation:note];
-//}
 
 #pragma mark - MKMapViewDelegate methods
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay

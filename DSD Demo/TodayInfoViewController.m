@@ -337,8 +337,8 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         //NSLog(@"Temperature Reading %.2f F", [[dict valueForKey:@"temp"] floatValue]*(9/5)+32);
         
         strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue]- 273.15)*(9/5)+32)];
-        NSLog(@"openweathermap API Finished %@", strResponse);
->>>>>>> 272555dad1d9c8463e6ad73dd6b8024e2468cee1
+//        NSLog(@"openweathermap API Finished %@", strResponse);
+
     }
 
 }
