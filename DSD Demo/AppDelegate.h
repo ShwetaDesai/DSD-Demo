@@ -15,6 +15,7 @@
     NSString *customerToServicID;
     int rowCustomerListSelected;
     CLLocationManager *locationManager;
+    BOOL isGPSUseSet;
     
 }
 @property (nonatomic, retain) NSString *strCurrentLat,*strCurrentLng;
@@ -28,6 +29,8 @@
 @property (nonatomic,retain) CLLocation *updatedLastLocation;
 @property (nonatomic,retain)  CLLocationManager *locationManager;
 @property (nonatomic,assign) BOOL isFirstTime;
+
+@property (nonatomic,assign) BOOL isGPSUseSet;
 
 -(void)setImageForPallet:(NSMutableArray*)array;
 -(NSMutableArray*)getImageForPallet;

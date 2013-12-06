@@ -22,6 +22,7 @@
     NSString *strTemperature;
     NSURLConnection *conn, *connWeather;
     BOOL _hasNetworkCallFailed;
+    UIButton *btnGPS;
 }
 
 @end

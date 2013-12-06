@@ -8,6 +8,7 @@
 
 #import "EODModifiedViewController.h"
 #import "MBProgressHUD.h"
+#import "AppDelegate.h"
 
 @interface EODModifiedViewController (){
     
@@ -121,6 +122,16 @@ NSString *dropDownValues1[3] = {@"Select", @"Select", @"Select"};
         [btnCheck setTitle:@"INVENTORY CHECK" forState:UIControlStateNormal];
         [viewHeader addSubview:btnCheck];
         
+        btnGPS = [UIButton buttonWithType:UIButtonTypeCustom];
+        btnGPS.frame = CGRectMake(700, 15, 31, 30);
+        [btnGPS setBackgroundImage:[UIImage imageNamed:@"uncheck.png"] forState:UIControlStateNormal];
+        [btnGPS setBackgroundImage:[UIImage imageNamed:@"check.png"] forState:UIControlStateSelected];
+        [btnGPS addTarget:self action:@selector(checkButtonGPSToggle) forControlEvents:UIControlEventTouchUpInside];
+        AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+        btnGPS.selected = appObject.isGPSUseSet;
+        
+        [viewHeader addSubview:btnGPS];
+        
         return viewHeader;
     }
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, eodInfoTableView.frame.size.width, 44)];
@@ -135,6 +146,18 @@ NSString *dropDownValues1[3] = {@"Select", @"Select", @"Select"};
     [view addSubview:lblText];
     
     return view;
+}
+
+-(void)checkButtonGPSToggle{
+AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    
+    if (btnGPS.selected) {
+        btnGPS.selected = NO;
+        appObject.isGPSUseSet = NO;
+    }else{
+        btnGPS.selected = YES;
+        appObject.isGPSUseSet = YES;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

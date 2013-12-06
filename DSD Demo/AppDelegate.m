@@ -14,7 +14,7 @@
 @implementation AppDelegate
 @synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected,locationManager;
 @synthesize strCurrentLat,strCurrentLng;
-@synthesize isFirstTime,updatedLastLocation,updatedLocation;
+@synthesize isFirstTime,updatedLastLocation,updatedLocation,isGPSUseSet;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
