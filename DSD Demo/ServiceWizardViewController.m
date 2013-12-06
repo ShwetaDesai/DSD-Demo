@@ -647,7 +647,9 @@
         if (buttonIndex == 0) {
             for (int i=0; i<[arrOrders count]; i++) {
                 NSMutableDictionary *dict = [[arrOrders objectAtIndex:i] mutableCopy];
+                NSLog(@"selectedPallete :: %@", selectedPallete);
                 if ([[dict valueForKey:JSONTAG_PALLET_NO] isEqualToString:selectedPallete]) {
+                    NSLog(@"[dict valueForKey:JSONTAG_EXTFLD4_COUNT] :: %@", [dict valueForKey:JSONTAG_EXTFLD4_COUNT]);
                     [dict setObject:[dict valueForKey:JSONTAG_EXTFLD4_COUNT] forKey:JSONTAG_CUSTOMER_ENTERED];
                     [arrOrders replaceObjectAtIndex:i withObject:dict];
                     [self prepareDataForSalesTable];
@@ -853,6 +855,7 @@
     }
     else {
         selectedPallete = strPallete;
+        selectedPalletIndex = index;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:@"Confirm pallet or enter Detailed Mode?" delegate:self cancelButtonTitle:@"Confirm" otherButtonTitles:@"Detailed Mode", nil];
         alertView.tag = 1024;
         [alertView show];
