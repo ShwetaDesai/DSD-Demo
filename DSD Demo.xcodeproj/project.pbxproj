@@ -11,6 +11,8 @@
 		860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E3182243BD001FDEF2 /* CustomerInfo.json */; };
 		860DF5E718225C8C001FDEF2 /* CustomerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5E618225C8C001FDEF2 /* CustomerDetailsViewController.m */; };
 		860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860DF5E818225D84001FDEF2 /* CustomerDetailsView.xib */; };
+		865C35E21850917100897F4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865C35E11850917100897F4C /* CoreLocation.framework */; };
+		865C35E61850995E00897F4C /* AppSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 865C35E51850995E00897F4C /* AppSingleton.m */; };
 		865EE6F31822868600A3A891 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = 865EE6F21822868600A3A891 /* Customer.m */; };
 		865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 865FC80E18487FC200160D89 /* MapKit.framework */; };
 		866DD48F181C403000DF43C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 866DD48E181C403000DF43C5 /* Foundation.framework */; };
@@ -80,6 +82,9 @@
 		860DF5E518225C8C001FDEF2 /* CustomerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerDetailsViewController.h; sourceTree = "<group>"; };
 		860DF5E618225C8C001FDEF2 /* CustomerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerDetailsViewController.m; sourceTree = "<group>"; };
 		860DF5E818225D84001FDEF2 /* CustomerDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerDetailsView.xib; sourceTree = "<group>"; };
+		865C35E11850917100897F4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		865C35E41850995E00897F4C /* AppSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSingleton.h; sourceTree = "<group>"; };
+		865C35E51850995E00897F4C /* AppSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSingleton.m; sourceTree = "<group>"; };
 		865EE6F11822868600A3A891 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		865EE6F21822868600A3A891 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		865FC80E18487FC200160D89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -177,6 +182,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865C35E21850917100897F4C /* CoreLocation.framework in Frameworks */,
 				86F41473184F40330057353A /* libz.1.2.5.dylib in Frameworks */,
 				86F41471184F40090057353A /* QuartzCore.framework in Frameworks */,
 				86F4146F184F3FFF0057353A /* CoreVideo.framework in Frameworks */,
@@ -204,6 +210,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		865C35E31850994D00897F4C /* AppSingleton */ = {
+			isa = PBXGroup;
+			children = (
+				865C35E41850995E00897F4C /* AppSingleton.h */,
+				865C35E51850995E00897F4C /* AppSingleton.m */,
+			);
+			name = AppSingleton;
+			sourceTree = "<group>";
+		};
 		866DD482181C403000DF43C5 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +241,7 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				865C35E11850917100897F4C /* CoreLocation.framework */,
 				86F41472184F40330057353A /* libz.1.2.5.dylib */,
 				86F41470184F40090057353A /* QuartzCore.framework */,
 				86F4146E184F3FFF0057353A /* CoreVideo.framework */,
@@ -245,6 +261,7 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
+				865C35E31850994D00897F4C /* AppSingleton */,
 				ED46BB8318470B390095E532 /* Common */,
 				86BA80E01825562100F48B2E /* Signature */,
 				BB784C511824FB9F001C7644 /* EOD */,
@@ -515,6 +532,7 @@
 				ORGANIZATIONNAME = Quinnox;
 				TargetAttributes = {
 					866DD48A181C403000DF43C5 = {
+						DevelopmentTeam = UX94S6ZN59;
 						SystemCapabilities = {
 							com.apple.iOS = {
 								enabled = 1;
@@ -585,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
+				865C35E61850995E00897F4C /* AppSingleton.m in Sources */,
 				ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */,
 				BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */,
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
@@ -690,6 +709,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -725,6 +745,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -736,6 +757,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -751,6 +774,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -760,6 +784,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rajesh Joshi (V68MEC88P4)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/HNI/Desktop/DSD\\ Demo",
@@ -775,6 +801,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "63E07DFD-C284-4DE2-9C38-9FF9E79A6E69";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

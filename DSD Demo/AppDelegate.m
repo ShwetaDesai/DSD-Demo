@@ -9,12 +9,26 @@
 #import "AppDelegate.h"
 #import "Order.h"
 #import "Customer.h"
+#import "AppSingleton.h"
 
 @implementation AppDelegate
-@synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected;
+@synthesize customersToService,ordersPlaced,customerToServicID,rowCustomerListSelected,locationManager;
+@synthesize strCurrentLat,strCurrentLng;
+@synthesize isFirstTime,updatedLastLocation,updatedLocation;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    locationManager = [[CLLocationManager alloc] init];     locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    
+    [locationManager startUpdatingLocation];
+    [locationManager startMonitoringSignificantLocationChanges];
+    
+    if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorized)
+    {
+        // NSLog(@"We are OK with GPS");
+    }
+    
     customersToService = [[NSMutableArray alloc] init];
     ordersPlaced = [[NSMutableArray alloc] init];
     palletIDs = [[NSMutableArray alloc]init];
@@ -181,6 +195,65 @@
 -(NSMutableArray*)getImageForPallet
 {
     return palletImageCheck;
+}
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if(status==kCLAuthorizationStatusAuthorized)
+    {
+        // NSLog(@"We are Good to Go");
+    }
+    if(status==kCLAuthorizationStatusNotDetermined)
+    {
+        // NSLog(@"kCLAuthorizationStatusNotDetermined");
+    }
+    
+    if(status==kCLAuthorizationStatusRestricted)
+    {
+        // NSLog(@"kCLAuthorizationStatusRestricted");
+    }
+    if(status==kCLAuthorizationStatusDenied)
+    {
+        // NSLog(@"kCLAuthorizationStatusDenied");
+        //        UIAlertView *errorAlert = [[UIAlertView alloc]
+        //                                   initWithTitle:@"Access Denied"
+        //                                   message:@"System Failed to Get Your Location"
+        //                                   delegate:nil
+        //                                   cancelButtonTitle:@"OK"
+        //                                   otherButtonTitles:nil];
+        //        [errorAlert show];
+    }
+    
+}
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    // NSLog(@"didFailWithError: %@", error);
+    
+    //     UIAlertView *errorAlert = [[UIAlertView alloc]
+    //     initWithTitle:@"Error" message:@"Failed to Get Your Location"
+    //     delegate:nil
+    //     cancelButtonTitle:@"OK"
+    //     otherButtonTitles:nil];
+    //     [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
+           fromLocation:(CLLocation *)oldLocation
+{    NSLog(@"I have called Again locationManager DID UPDATE LOCATION");
+    
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil ) {
+        strCurrentLat=[NSString stringWithFormat:@"%.8f", updatedLocation.coordinate.latitude];
+        strCurrentLng=[NSString stringWithFormat:@"%.8f", updatedLocation.coordinate.longitude];
+        // // NSLog(@"Marker Point -- %@,%@",[NSString stringWithFormat:@"%.8f", updatedLocation.coordinate.latitude],[NSString stringWithFormat:@"%.8f", updatedLocation.coordinate.longitude]);
+        
+        AppSingleton *objSingleton = [AppSingleton getSingleton];
+        
+        [objSingleton setCurntLoc:currentLocation];         
+        [objSingleton gotLocationUpdate];
+    }
 }
 
 @end

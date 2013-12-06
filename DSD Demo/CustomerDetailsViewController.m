@@ -8,7 +8,7 @@
 
 #import "CustomerDetailsViewController.h"
 #import "AppDelegate.h"
-
+#import "AppSingleton.h"
 
 @implementation CustomerDetailsViewController
 
@@ -70,27 +70,35 @@
     nowFormat = [[NSDateFormatter alloc] init];
     [nowFormat setDateFormat:@"dd-MM-yyyy HH:mm:ss"];
     nowDate = [[NSDate alloc] init];
-    
-    // set the previous stop co-ordinates
-    if (appObject.rowCustomerListSelected == 0) {
-        sourceCoord.latitude = 33.687978;
-        sourceCoord.longitude= -117.851332;
-        nowDate = [nowFormat dateFromString:@"10-12-2013 7:45:00"];
-        [nowFormat setDateFormat:@"HH:mm:ss a"];
-        time_curr.text = [nowFormat stringFromDate:nowDate];
-        
-    }else{
-        prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
-        sourceCoord.latitude = [prevCustomer.latitudeC floatValue];
-        sourceCoord.longitude= [prevCustomer.longitudeC floatValue];
-        // set current time
-        
-        nowDate = [nowFormat dateFromString:prevCustomer.ETA];
-        nowDate = [nowDate dateByAddingTimeInterval:15*60];
-        [nowFormat setDateFormat:@"HH:mm:ss a"];
-        time_curr.text = [nowFormat stringFromDate:nowDate];
 
+    if (CLLocationCoordinate2DIsValid([[AppSingleton getSingleton] curntLoc].coordinate)) {
+        NSLog(@"got a location !!!");
+        sourceCoord.latitude = [[AppSingleton getSingleton] curntLoc].coordinate.latitude;
+        sourceCoord.longitude = [[AppSingleton getSingleton] curntLoc].coordinate.longitude;
+    }else{
+        // set the previous stop co-ordinates
+        if (appObject.rowCustomerListSelected == 0) {
+            sourceCoord.latitude = 33.678158;
+            sourceCoord.longitude= -117.854505;
+            
+        }else{
+            prevCustomer = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected-1];
+            sourceCoord.latitude = [prevCustomer.latitudeC floatValue];
+            sourceCoord.longitude= [prevCustomer.longitudeC floatValue];
+        }
     }
+    
+    if (appObject.rowCustomerListSelected == 0) {
+        nowDate = [nowFormat dateFromString:@"10-12-2013 8:12:00"];
+        [nowFormat setDateFormat:@"HH:mm:ss a"];
+        time_curr.text = [nowFormat stringFromDate:nowDate];
+    }else{
+        nowDate = [nowFormat dateFromString:prevCustomer.ETA];
+        nowDate = [nowDate dateByAddingTimeInterval:10*60];
+        [nowFormat setDateFormat:@"HH:mm:ss a"];
+        time_curr.text = [nowFormat stringFromDate:nowDate];
+    }
+    
     
     intrval = [etaDate timeIntervalSinceDate:nowDate];
 //    NSLog(@"time interval **********:%f",intrval);
@@ -110,19 +118,20 @@
         coordinate:destinationCoord];
 
     NSString *sourceString, *addString;
-    if (prevCustomer == nil) {
-        sourceString = @"McDonald's";
-        addString = @"Irving";
-    }else{
-        sourceString = prevCustomer.name;
-        addString = prevCustomer.street;
-    }
+//    if (prevCustomer == nil) {
+        sourceString = @"Current location"; //@"McDonald's";
+//        addString = @"Irving";
+//    }else{
+//        sourceString = prevCustomer.name;
+//        addString = prevCustomer.street;
+//    }
     MyAnnotation *sourceAnnotation = [[MyAnnotation alloc] initWithName:sourceString
             address:addString
         coordinate:sourceCoord];
 
     [mMapView showAnnotations:[NSArray arrayWithObjects:sourceAnnotation,DestinationAnnotation, nil] animated:YES];
     mMapView.showsUserLocation = YES;
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -149,6 +158,9 @@
             return;
         }
         _currentRoute = [response.routes firstObject];
+//        NSLog(@"expected 8888888time:%f and distance:%f",_currentRoute.expectedTravelTime,_currentRoute.distance);
+        
+//        (_currentRoute.distance / (50 * METERS_PER_MILE))*60*60
         [self plotRouteOnMap:_currentRoute];
     }];
 }
@@ -212,6 +224,10 @@
 
 -(void)onClickSimulate{
     currentPointNumber = 0;
+    btn_Simulate.enabled = NO;
+    if(_stepOverlay) {
+        [mMapView removeOverlay:_stepOverlay];
+    }
     aTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(aTime) userInfo:nil repeats:YES];
 }
 
@@ -226,10 +242,13 @@
         ++currentPointNumber;
         [mMapView addAnnotation:stepAnnotation];
     //update timer
-    float val = (intrval/60)/[_currentRoute.steps count];
+//    NSLog(@"expected and distance:%f",routeStep.distance);
+   
+    float val = (routeStep.distance/(50 * METERS_PER_MILE))*60*60;
+    //(intrval/60)/[_currentRoute.steps count];
 //    NSLog(@"interval division:%f",val);
     
-    nowDate = [nowDate dateByAddingTimeInterval:val*60];
+    nowDate = [nowDate dateByAddingTimeInterval:val];
 //    [nowFormat setDateFormat:@"HH:mm:ss a"];
     time_curr.text = [nowFormat stringFromDate:nowDate];
     
@@ -238,13 +257,14 @@
         {
             [aTimer invalidate];
             aTimer = nil;
+            btn_Simulate.enabled = YES;
         }
     }
 
 
--(void)addMyPoint:(MyAnnotation*)note{
-    [mMapView addAnnotation:note];
-}
+//-(void)addMyPoint:(MyAnnotation*)note{
+//    [mMapView addAnnotation:note];
+//}
 
 #pragma mark - MKMapViewDelegate methods
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay

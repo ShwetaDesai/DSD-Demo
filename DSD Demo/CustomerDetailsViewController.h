@@ -36,7 +36,7 @@
     MapDirectionsTableViewController *mapTVC;
 //    UIPopoverController *directionsPopover;
     BOOL isStepOverlay;
-    CLLocationManager *locationManager;
+//    CLLocationManager *locationManager;
     NSTimer *aTimer;
     int currentPointNumber;
     Customer *prevCustomer;

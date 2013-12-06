@@ -281,20 +281,20 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     if (connection == conn) {
-        NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
+//        NSString *strResponse = [NSString stringWithUTF8String:[_responseData bytes]];
         arrResponse = [NSJSONSerialization JSONObjectWithData:_responseData options:kNilOptions error:nil];
         NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
         
         _dataTextFields[0].text = [dict valueForKey:@"odometer"];
         
         [todayInfoTableView reloadData];
-        NSLog(@"iBright API Finished %@", strResponse);
+//        NSLog(@"iBright API Finished %@", strResponse);
     }
     else {
-        NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
+//        NSString *strResponse = [NSString stringWithUTF8String:[_responseDataWeather bytes]];
         NSDictionary *dict = [[NSJSONSerialization JSONObjectWithData:_responseDataWeather options:kNilOptions error:nil] valueForKey:@"main"];
         strTemperature = [NSString stringWithFormat:@"%.2f F", (([[dict valueForKey:@"temp"] floatValue] - 273.15)*(9/5)+32)];
-        NSLog(@"openweathermap API Finished %@", strResponse);
+//        NSLog(@"openweathermap API Finished %@", strResponse);
     }
 
 }
