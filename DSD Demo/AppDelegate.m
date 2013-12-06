@@ -244,7 +244,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation
-{    NSLog(@"I have called Again locationManager DID UPDATE LOCATION");
+{
+//    NSLog(@"I have called Again locationManager DID UPDATE LOCATION");
     
     CLLocation *currentLocation = newLocation;
     
