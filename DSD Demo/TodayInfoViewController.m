@@ -17,7 +17,7 @@
 @end
 
 @implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odomter Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
+NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Level", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURE", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
 NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -239,6 +239,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (NSString*)convertDegreeC_To_F:(NSString*)strDegreeC {
     float degreeC = [strDegreeC floatValue];
+    NSLog(@"degreeC :: %f", degreeC);
     return [NSString stringWithFormat:@"%.2f", (degreeC*(9/5)+32)];
 }
 
