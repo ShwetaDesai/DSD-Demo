@@ -39,7 +39,7 @@ int returnsValues[2][4];
 #define TEXT_TEMPERATURE            @"%@  F                   AAT %@ F                   Set %@ F                  Source %@ F"
 #define TEXT_TEMPERATURE_CHILLED    @"%@  F                   AAT %@ F                   Set %@ F                  Source       %@"
 
-#define COLOR_THEME                 [UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
+#define COLOR_THEME                 [UIColor orangeColor] //[UIColor colorWithRed:0.8706 green:0.0980 blue:0.0980 alpha:1.0]
 #define COLOR_ERROR                 [UIColor colorWithRed:0.9059 green:0.4549 blue:0.4431 alpha:1.0]
 #define COLOR_CELL_BACKGROUND       [UIColor colorWithRed:0.2745 green:0.2745 blue:0.2745 alpha:1.0]
 #define COLOR_CELL_TEXT             [UIColor colorWithRed:0.8941 green:0.8941 blue:0.8941 alpha:1.0]

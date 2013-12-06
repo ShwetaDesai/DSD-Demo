@@ -17,7 +17,7 @@
 @end
 
 @implementation TodayInfoViewController
-NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Fluid Levels", @"Light Indicators", @"Alarms", @"COMPARTMENT TEMPERATURES", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
+NSString *sectionTwoTitles[COUNT_TODAY_SECTION_2] = {@"Odometer Reading", @"Alarms", @"Light Indicators", @"Fluid Levels", @"Fuel Percentage", @"COMPARTMENT TEMPERATURES", @"            Frozen", @"            Chilled", @"Weather Conditions", @"Truck Damage"};
 NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -140,10 +140,10 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         if (indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
             cell.detailTextLabel.text = dropDownValues[indexPath.row-1];
         }
-        else if(indexPath.row == 8) {
+        else if(indexPath.row == 9) {
             cell.detailTextLabel.text = @"Take Picture";
         }
-        else if(indexPath.row == 5) {
+        else if(indexPath.row == 6) {
             NSDictionary *dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
             
             if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature2"]) {
@@ -152,7 +152,19 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             cell.detailTextLabel.text = [NSString stringWithFormat:TEXT_TEMPERATURE, [self convertDegreeC_To_F:[dict1 valueForKey:@"temp"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"aat"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"set"]], [self convertDegreeC_To_F:[dict1 valueForKey:@"sat"]]];
             if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
-        else if(indexPath.row == 6) {
+        else if(indexPath.row == 4) {
+            NSDictionary *dict;
+            for (int i=0; i<[arrResponse count]; i++) {
+                if ([[[arrResponse objectAtIndex:i] valueForKey:@"Data"] valueForKey:@"fuelLevel"] != nil) {
+                    dict = [[[arrResponse objectAtIndex:i] valueForKey:@"Data"] valueForKey:@"fuelLevel"];
+                    break;
+                }
+            }
+            
+            cell.detailTextLabel.text = [dict valueForKey:@"percent"];
+            if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
+        }
+        else if(indexPath.row == 7) {
             NSDictionary *dict1 = [[arrResponse objectAtIndex:6] valueForKey:@"Data"];
             if ([[dict1 valueForKey:@"name"] isEqualToString:@"temperature1"]) {
                 dict1 = [[arrResponse objectAtIndex:5] valueForKey:@"Data"];
@@ -162,7 +174,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             
             if (_hasNetworkCallFailed) cell.detailTextLabel.textColor = COLOR_THEME;
         }
-        else if(indexPath.row == 7) {
+        else if(indexPath.row == 8) {
             if (_hasNetworkCallFailed) {
                 cell.detailTextLabel.textColor = COLOR_THEME;
             }
@@ -173,12 +185,12 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
             if (_hasNetworkCallFailed) _dataTextFields[indexPath.row].textColor = COLOR_THEME;
             cell.accessoryView = _dataTextFields[indexPath.row];
         }
-        else if(indexPath.row > 7) {
-            cell.textLabel.text = [NSString stringWithFormat:@"Damage Picture %d", (indexPath.row -7)];
-//            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(todayInfoTableView.frame.size.width - 100, 5, 50, 50)];
-//            imgView.image = [_arrDamagePictures objectAtIndex:(indexPath.row-8)];
-//            cell.accessoryView = imgView;
-        }
+//        else if(indexPath.row > 7) {
+//            cell.textLabel.text = [NSString stringWithFormat:@"Damage Picture %d", (indexPath.row -7)];
+////            UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(todayInfoTableView.frame.size.width - 100, 5, 50, 50)];
+////            imgView.image = [_arrDamagePictures objectAtIndex:(indexPath.row-8)];
+////            cell.accessoryView = imgView;
+//        }
     }
     
     return cell;
@@ -202,12 +214,14 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
         _popOverController.popoverContentSize = CGSizeMake(200, 100);
         [_popOverController presentPopoverFromRect:rectP inView:todayInfoTableView permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
     }
-//    if (indexPath.section == 1 && indexPath.row == 8) {
-//        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-//        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-//        imagePicker.delegate = self;
-//        [self presentModalViewController:imagePicker animated:YES];
-//    }
+    if (indexPath.section == 1 && indexPath.row == 8) {
+        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+    }
+    if (indexPath.section == 1 && indexPath.row == 8) {
+    }
 }
 
 - (void)optionSelected:(NSString *)strValue  textFieldTag:(int)tag {
@@ -352,6 +366,7 @@ NSString *dropDownValues[3] = {@"Select", @"Select", @"Select"};
     arrResponse = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
     NSDictionary *dict = [[arrResponse objectAtIndex:0] valueForKey:@"Data"];
     
+    odometerReading = ([[dict valueForKey:@"odometer"] floatValue]/1.609344);
     _dataTextFields[0].text = [NSString stringWithFormat:@"%.2f", odometerReading];
     
     [todayInfoTableView reloadData];
