@@ -64,7 +64,7 @@ NSString *arrReturnItems[4] = {@"Expired Crate", @"Empty bottle Crate", @"Broken
         [_btnAccept setTitle:@"Accept" forState:UIControlStateNormal];
         [_btnAccept addTarget:self action:@selector(acceptButtonClicked) forControlEvents:UIControlEventTouchUpInside];
         _btnAccept.backgroundColor = colorBG;
-        [_btnAccept setTitleColor:COLOR_THEME forState:UIControlStateNormal];
+        [_btnAccept setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
         _btnAccept.hidden = YES;
         
         [self addSubview:_lblMatID];

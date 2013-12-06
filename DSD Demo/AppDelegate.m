@@ -90,6 +90,10 @@
     
     arrReturns[0] = [[NSMutableArray alloc] init];
     arrReturns[1] = [[NSMutableArray alloc] init];
+    arrReturns[2] = [[NSMutableArray alloc] init];
+    arrReturns[3] = [[NSMutableArray alloc] init];
+    arrReturns[4] = [[NSMutableArray alloc] init];
+    
     arrOrders = [[NSMutableArray alloc] init];
     
     NSBundle *mainBundle = [NSBundle mainBundle];

@@ -31,7 +31,7 @@ typedef enum viewType {
     SOD, EOD, CUSTOMER, RETURNS, SALES
 } EnumViewType;
 
-NSMutableArray *arrOrders, *arrReturns[2], *palletIDs, *palletImageCheck;
+NSMutableArray *arrOrders, *arrReturns[5], *palletIDs, *palletImageCheck;
 int enteredValues[30], acceptedValues[30], deliveredValues[2][30];
 int returnsValues[2][4];
 

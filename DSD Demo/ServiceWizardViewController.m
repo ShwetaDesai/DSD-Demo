@@ -269,29 +269,31 @@
         UIView *viewContent = [[UIView alloc] initWithFrame:CGRectMake(10, 0, tableWidth-20, 44)];
         viewContent.backgroundColor = [UIColor clearColor];
         
-        UILabel *lblMat = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 100, 34)];
+        UILabel *lblMat = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 34)];
+        UILabel *lblPlaced = [[UILabel alloc] initWithFrame:CGRectMake(300, 5, 100, 34)];
+        UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(600, 5, 100, 34)];
+        
         lblMat.backgroundColor = [UIColor clearColor];
-        lblMat.textColor = COLOR_CELL_TEXT;
+        lblMat.textColor = [UIColor orangeColor];
+        lblPlaced.textColor = [UIColor orangeColor];
+        lblPlaced.backgroundColor = [UIColor clearColor];
+        lblRequired.textColor = [UIColor orangeColor];
+        lblRequired.backgroundColor = [UIColor clearColor];
+        
         if (section != (tbvSales.numberOfSections -1)) {
             lblMat.text = @"Material ID";
-
-            UILabel *lblPlaced = [[UILabel alloc] initWithFrame:CGRectMake(200, 5, 100, 34)];
-            lblPlaced.textColor = COLOR_CELL_TEXT;
-            lblPlaced.backgroundColor = [UIColor clearColor];
             lblPlaced.text = @"Delivered";
-            [viewContent addSubview:lblPlaced];
-            
-            UILabel *lblRequired = [[UILabel alloc] initWithFrame:CGRectMake(400, 5, 100, 34)];
-            lblRequired.textColor = COLOR_CELL_TEXT;
-            lblRequired.backgroundColor = [UIColor clearColor];
             lblRequired.text = @"Expected";
-            [viewContent addSubview:lblRequired];
         }
         else {
-            lblMat.text = @"Returns";
+            lblMat.text = @"Return ID";
+            lblPlaced.text = @"Description";
+            lblRequired.text = @"Quantity";
         }
         
         [viewContent addSubview:lblMat];
+        [viewContent addSubview:lblPlaced];
+        [viewContent addSubview:lblRequired];
         
         return viewContent;
     }
@@ -337,7 +339,7 @@
     txtFieldMatID.layer.borderWidth= 1.0f;
     [txtFieldMatID setTextAlignment:NSTextAlignmentCenter];
     txtFieldMatID.placeholder = @" Enter/Scan Pallet Number";
-    txtFieldMatID.text = @"1456789023456940067";
+    txtFieldMatID.text = @"";
     [txtFieldMatID setValue:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
     [txtFieldMatID setTextColor:[UIColor colorWithRed:190.0/255.0 green:190.0/255.0 blue:190.0/255.0 alpha:1.0]];
     txtFieldMatID.backgroundColor = [UIColor clearColor];
@@ -482,10 +484,10 @@
             AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
             NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:indexPath.row];
             
-            UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 200, 10 ,160 ,30 )];
+            UILabel *PlacedQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 290, 10 ,160 ,30 )];
             PlacedQty.textColor = COLOR_CELL_TEXT;
             PlacedQty.text = [dict valueForKey:@"desc"];
-            UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 500, 10 ,200 ,30 )];
+            UILabel *reqQty = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.origin.x + 600, 10 ,200 ,30 )];
             reqQty.textColor = COLOR_CELL_TEXT;
             reqQty.text = [dict valueForKey:@"value"];
             [cell addSubview:PlacedQty];
