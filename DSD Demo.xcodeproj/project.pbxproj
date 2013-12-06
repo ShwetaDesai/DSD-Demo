@@ -61,7 +61,9 @@
 		ED3E3880184DB23B0099E682 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387C184DB23B0099E682 /* uncheck.png */; };
 		ED3E3881184DB23B0099E682 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = ED3E387D184DB23B0099E682 /* check.png */; };
 		ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = ED46BB8618470B4D0095E532 /* MBProgressHUD.m */; };
-		ED65530F18520A3000EC4E4E /* beep-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED65530E18520A3000EC4E4E /* beep-07.wav */; };
+		ED65531218520F5900EC4E4E /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = ED65531018520F5900EC4E4E /* icon.png */; };
+		ED65531318520F5900EC4E4E /* icon2@x.png in Resources */ = {isa = PBXBuildFile; fileRef = ED65531118520F5900EC4E4E /* icon2@x.png */; };
+		ED65531518520FE000EC4E4E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = ED65531418520FE000EC4E4E /* Default.png */; };
 		EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +91,7 @@
 		865EE6F11822868600A3A891 /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		865EE6F21822868600A3A891 /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		865FC80E18487FC200160D89 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		866DD48B181C403000DF43C5 /* DSD Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DSD Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		866DD48B181C403000DF43C5 /* GSF App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GSF App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		866DD48E181C403000DF43C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		866DD492181C403000DF43C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		866DD496181C403000DF43C5 /* DSD Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DSD Demo-Info.plist"; sourceTree = "<group>"; };
@@ -177,7 +179,9 @@
 		ED3E387D184DB23B0099E682 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		ED46BB8518470B4D0095E532 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		ED46BB8618470B4D0095E532 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		ED65530E18520A3000EC4E4E /* beep-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "beep-07.wav"; sourceTree = "<group>"; };
+		ED65531018520F5900EC4E4E /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		ED65531118520F5900EC4E4E /* icon2@x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon2@x.png"; sourceTree = "<group>"; };
+		ED65531418520FE000EC4E4E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		EDBC4E0F184F1A6800B86B91 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -236,7 +240,7 @@
 		866DD48C181C403000DF43C5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				866DD48B181C403000DF43C5 /* DSD Demo.app */,
+				866DD48B181C403000DF43C5 /* GSF App.app */,
 				866DD4AC181C403100DF43C5 /* DSD DemoTests.xctest */,
 			);
 			name = Products;
@@ -265,7 +269,6 @@
 		866DD494181C403000DF43C5 /* DSD Demo */ = {
 			isa = PBXGroup;
 			children = (
-				ED65530E18520A3000EC4E4E /* beep-07.wav */,
 				865C35E31850994D00897F4C /* AppSingleton */,
 				ED46BB8318470B390095E532 /* Common */,
 				86BA80E01825562100F48B2E /* Signature */,
@@ -320,6 +323,9 @@
 		86749029181F92DC0052BB75 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				ED65531418520FE000EC4E4E /* Default.png */,
+				ED65531018520F5900EC4E4E /* icon.png */,
+				ED65531118520F5900EC4E4E /* icon2@x.png */,
 				86B69D07184F53C200A95294 /* race-flag20.png */,
 				BBAFCEE2182516F50025D478 /* barcode.png */,
 				86E26D461823C5F500D17098 /* back.png */,
@@ -508,7 +514,7 @@
 			);
 			name = "DSD Demo";
 			productName = "DSD Demo";
-			productReference = 866DD48B181C403000DF43C5 /* DSD Demo.app */;
+			productReference = 866DD48B181C403000DF43C5 /* GSF App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		866DD4AB181C403100DF43C5 /* DSD DemoTests */ = {
@@ -577,11 +583,12 @@
 			files = (
 				866DD4A7181C403000DF43C5 /* Images.xcassets in Resources */,
 				86BA80DF18251D9600F48B2E /* ServiceWizardViewController.xib in Resources */,
+				ED65531218520F5900EC4E4E /* icon.png in Resources */,
+				ED65531318520F5900EC4E4E /* icon2@x.png in Resources */,
 				ED3E3880184DB23B0099E682 /* uncheck.png in Resources */,
 				86E26D451823BAF400D17098 /* materials.json in Resources */,
 				866DD499181C403000DF43C5 /* InfoPlist.strings in Resources */,
 				860DF5E4182243BD001FDEF2 /* CustomerInfo.json in Resources */,
-				ED65530F18520A3000EC4E4E /* beep-07.wav in Resources */,
 				86B69D08184F53C200A95294 /* race-flag20.png in Resources */,
 				860DF5E918225D84001FDEF2 /* CustomerDetailsView.xib in Resources */,
 				86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */,
@@ -592,6 +599,7 @@
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
 				868169101820E1DA005516A2 /* ccbg2.png in Resources */,
 				8681690F1820E1DA005516A2 /* ccbg1.png in Resources */,
+				ED65531518520FE000EC4E4E /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,8 +724,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "GSF Demo";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -752,8 +761,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "GSF Demo";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -786,7 +796,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GSF App";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -817,7 +827,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "GSF App";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};

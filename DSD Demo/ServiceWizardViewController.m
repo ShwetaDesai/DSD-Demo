@@ -248,6 +248,14 @@
     [btnClearDriver setTitle:@"CLEAR" forState:UIControlStateNormal];
     [self.view addSubview:btnClearDriver];
     
+    UIButton *btnemail = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btnemail.frame = CGRectMake((self.view.frame.size.width - 100)/2,360,100,25);
+    btnemail.titleLabel.font = [UIFont systemFontOfSize:font_TodayTableView];
+    [btnemail setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
+    [btnemail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btnemail setTitle:@"Email" forState:UIControlStateNormal];
+    [self.view addSubview:btnemail];
+    
     [self.view addSubview:signatureViewControllerDriver.view];
 
 }
@@ -882,10 +890,6 @@
 
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info {
-    
-    NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep-07" ofType:@"wav"]];
-    AVAudioPlayer *click = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    [click play];
     
     //this contains your result from the scan
     id results = [info objectForKey: ZBarReaderControllerResults];

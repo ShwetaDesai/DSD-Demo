@@ -9,6 +9,7 @@
 #import "SODPaletteViewController.h"
 #import "SODPaletteCustomTableCell.h"
 #import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
 #import "AppDelegate.h"
 
 @interface SODPaletteViewController (){
@@ -268,10 +269,6 @@
 
 - (void) imagePickerController: (UIImagePickerController*) reader
  didFinishPickingMediaWithInfo: (NSDictionary*) info {
-    
-    NSURL* musicFile = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep-07" ofType:@"wav"]];
-    AVAudioPlayer *click = [[AVAudioPlayer alloc] initWithContentsOfURL:musicFile error:nil];
-    [click play];
     
     //this contains your result from the scan
     id results = [info objectForKey: ZBarReaderControllerResults];
