@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "SignCaptureViewController.h"
 #import "ReturnsDatabaseViewController.h"
+#import "PRKGeneratorDataSource.h"
+#import "PRKGeneratorDelegate.h"
+#import <MessageUI/MessageUI.h>
 #import "ZBarSDK.h"
 
 @interface ServiceWizardViewController : UIViewController
-<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate, UITextFieldDelegate, ZBarReaderDelegate>
+<UITableViewDataSource,UITableViewDelegate, UIAlertViewDelegate, ReturnsDatabaseViewControllerDelegate, UITextFieldDelegate, ZBarReaderDelegate, PRKGeneratorDataSource, PRKGeneratorDelegate, MFMailComposeViewControllerDelegate>
 {
     NSArray *arr_NoServiceItems;
     NSMutableArray *arr_SalesOrders;
@@ -31,6 +34,7 @@
     NSMutableArray *arrMaterials[10];
     int rowsPerSectionSales[10];
     int isSummary, selectedPalletIndex;
+    NSDictionary * defaultValues;
 }
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedBar;
 @property (nonatomic,strong)  NSString *customerID;

@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                font-family: Verdana, Verdana, Geneva, sans-serif;
+                width:70%;
+            }
+            
+            .header
+            {
+                clear:both;
+                overflow: hidden;
+                padding: 20px;
+            }
+            
+            .header img
+            {
+                width: 100%;
+                height: 100px;
+                float: left;
+                
+                margin-right: 10px;
+            }
+            
+            .header .myCompany
+            {
+                float: left;
+                font-size: smaller;
+                margin-top: -20px;
+            }
+            
+            .header .otherCompany
+            {
+            	float: right;
+            	padding: 15px;
+            	border: 1px solid lightgray;
+            	background-color: #fafafa;
+                font-size: smaller;
+            }
+            
+            .content
+            {
+                margin-top: 20px;
+                padding: 30px;
+                border: 1px solid lightgray;
+                border-radius: 3px;
+            }
+            
+            table
+            {
+                width: 100%;
+                font-size: smaller;
+            }
+            
+            tr:nth-child(even)
+            {
+                background-color: #f0f0f0;
+            }
+            
+            tr th
+            {
+                color: gray;        
+                border-bottom: 1px solid lightgray;
+            }
+            tr th, tr td
+            {
+                font-weight: normal;
+                padding: 5px;
+                margin: 0;
+                width: 20%;
+                text-align: center;
+            }
+            
+            td
+            {
+                font-size: smaller;
+            }
+            
+            .footer
+            {
+                font-size: 12px;
+                padding: 20px;
+                margin: 0;
+                text-align: right;
+                
+            }
+        </style>
+        <meta name="viewport" id="view" content="width=320px, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <body>
+        {{#documentHeader}}
+         
+        {{/documentHeader}}
+
+        {{#pageHeader}}        
+        <div class='header'>
+            <img src='logo.png' />
+            
+            <p align="right">{{companyName}}<br />{{companyStreet}}<br />{{companyCity}}<br />Tel : {{companyTelephone}}</p>
+
+        </div>
+        {{/pageHeader}}
+        
+        {{#pageContent}}  
+        <div class='content' style='padding: 5px;'>
+            <table cellspacing='0'>
+                <tr>
+                    <th>Material ID</th>
+                    <th>Delivered</th>
+                    <th>Expected</th>
+                </tr>
+                
+                {{#articles}}
+                <tr>
+                    <td>{{title}}<br />{{desc}}</td>
+                    <td>{{value}}</td>
+                    <td>{{value1}}</td>
+                </tr>
+                {{/articles}}
+            </table>
+        </div>
+             
+
+        <div class='content'>
+            <table cellspacing='0'>
+                <tr>
+                    <th>Returns ID</th>
+                    <th>Reason</th>
+                    <th>Quantity</th>
+                </tr>
+                
+                {{#articles1}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{desc}}</td>
+                    <td>{{value}}</td>
+                </tr>
+                {{/articles1}}
+            </table>
+        </div>
+        
+        {{/pageContent}}
+
+        {{#pageFooter}}
+        {{/pageFooter}}      
+        
+        
+        
+    </body>
+</html>

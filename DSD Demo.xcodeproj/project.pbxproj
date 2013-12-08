@@ -50,7 +50,16 @@
 		86F41471184F40090057353A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F41470184F40090057353A /* QuartzCore.framework */; };
 		9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 860DF5DB18223148001FDEF2 /* TodayInfoViewController.m */; };
 		9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */; };
+		BB3162111853AEBE0060396D /* InvoiceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3162101853AEBE0060396D /* InvoiceItem.m */; };
+		BB3162131853C9ED0060396D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3162121853C9ED0060396D /* MessageUI.framework */; };
 		BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */; };
+		BB79E28F18532F4F008DA699 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BB79E28218532F4F008DA699 /* logo.png */; };
+		BB79E29018532F4F008DA699 /* PRKFakeRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79E28418532F4F008DA699 /* PRKFakeRenderer.m */; };
+		BB79E29118532F4F008DA699 /* PRKGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79E28618532F4F008DA699 /* PRKGenerator.m */; };
+		BB79E29218532F4F008DA699 /* PRKPageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79E28A18532F4F008DA699 /* PRKPageRenderer.m */; };
+		BB79E29318532F4F008DA699 /* PRKRenderHtmlOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BB79E28C18532F4F008DA699 /* PRKRenderHtmlOperation.m */; };
+		BB79E29418532F4F008DA699 /* template1.mustache in Resources */ = {isa = PBXBuildFile; fileRef = BB79E28E18532F4F008DA699 /* template1.mustache */; };
+		BB79E29618532F66008DA699 /* libGRMustache6-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB79E29518532F66008DA699 /* libGRMustache6-iOS.a */; };
 		BBAFCEE3182516F50025D478 /* barcode.png in Resources */ = {isa = PBXBuildFile; fileRef = BBAFCEE2182516F50025D478 /* barcode.png */; };
 		BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */; };
 		BBE5E7341850D58400D8BB3E /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBE5E7331850D58400D8BB3E /* libzbar.a */; };
@@ -161,8 +170,26 @@
 		86F41472184F40330057353A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		9DCB14D11851B17C00327A53 /* EODModifiedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODModifiedViewController.h; sourceTree = "<group>"; };
 		9DCB14D21851B17C00327A53 /* EODModifiedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODModifiedViewController.m; sourceTree = "<group>"; };
+		BB31620F1853AEBE0060396D /* InvoiceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceItem.h; sourceTree = "<group>"; };
+		BB3162101853AEBE0060396D /* InvoiceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceItem.m; sourceTree = "<group>"; };
+		BB3162121853C9ED0060396D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BB784C521824FBAD001C7644 /* EODViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EODViewControllerViewController.m; sourceTree = "<group>"; };
 		BB784C531824FBAD001C7644 /* EODViewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EODViewControllerViewController.h; sourceTree = "<group>"; };
+		BB79E28218532F4F008DA699 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BB79E28318532F4F008DA699 /* PRKFakeRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKFakeRenderer.h; sourceTree = "<group>"; };
+		BB79E28418532F4F008DA699 /* PRKFakeRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRKFakeRenderer.m; sourceTree = "<group>"; };
+		BB79E28518532F4F008DA699 /* PRKGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKGenerator.h; sourceTree = "<group>"; };
+		BB79E28618532F4F008DA699 /* PRKGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRKGenerator.m; sourceTree = "<group>"; };
+		BB79E28718532F4F008DA699 /* PRKGeneratorDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKGeneratorDataSource.h; sourceTree = "<group>"; };
+		BB79E28818532F4F008DA699 /* PRKGeneratorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKGeneratorDelegate.h; sourceTree = "<group>"; };
+		BB79E28918532F4F008DA699 /* PRKPageRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKPageRenderer.h; sourceTree = "<group>"; };
+		BB79E28A18532F4F008DA699 /* PRKPageRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRKPageRenderer.m; sourceTree = "<group>"; };
+		BB79E28B18532F4F008DA699 /* PRKRenderHtmlOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKRenderHtmlOperation.h; sourceTree = "<group>"; };
+		BB79E28C18532F4F008DA699 /* PRKRenderHtmlOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRKRenderHtmlOperation.m; sourceTree = "<group>"; };
+		BB79E28D18532F4F008DA699 /* PRKRenderHtmlOperationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRKRenderHtmlOperationDelegate.h; sourceTree = "<group>"; };
+		BB79E28E18532F4F008DA699 /* template1.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = template1.mustache; sourceTree = "<group>"; };
+		BB79E29518532F66008DA699 /* libGRMustache6-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libGRMustache6-iOS.a"; path = "DSD Demo/GRMustache/lib/libGRMustache6-iOS.a"; sourceTree = SOURCE_ROOT; };
+		BB79E29718532F75008DA699 /* GRMustache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GRMustache.h; path = "DSD Demo/GRMustache/include/GRMustache.h"; sourceTree = SOURCE_ROOT; };
 		BBAFCEE2182516F50025D478 /* barcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barcode.png; sourceTree = "<group>"; };
 		BBAFCEE41825191B0025D478 /* DropDownOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownOptionsViewController.h; sourceTree = "<group>"; };
 		BBAFCEE51825191B0025D478 /* DropDownOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownOptionsViewController.m; sourceTree = "<group>"; };
@@ -190,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3162131853C9ED0060396D /* MessageUI.framework in Frameworks */,
 				865C35E21850917100897F4C /* CoreLocation.framework in Frameworks */,
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
 				86F41471184F40090057353A /* QuartzCore.framework in Frameworks */,
@@ -198,6 +226,7 @@
 				86F4146B184F3FF00057353A /* AVFoundation.framework in Frameworks */,
 				86F41469184F3FE70057353A /* CoreGraphics.framework in Frameworks */,
 				866DD493181C403000DF43C5 /* UIKit.framework in Frameworks */,
+				BB79E29618532F66008DA699 /* libGRMustache6-iOS.a in Frameworks */,
 				EDBC4E10184F1A6800B86B91 /* libiconv.dylib in Frameworks */,
 				865FC80F18487FC200160D89 /* MapKit.framework in Frameworks */,
 				BBE5E7341850D58400D8BB3E /* libzbar.a in Frameworks */,
@@ -249,6 +278,7 @@
 		866DD48D181C403000DF43C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB3162121853C9ED0060396D /* MessageUI.framework */,
 				865C35E11850917100897F4C /* CoreLocation.framework */,
 				BBE5E7331850D58400D8BB3E /* libzbar.a */,
 				86F41472184F40330057353A /* libz.1.2.5.dylib */,
@@ -479,9 +509,34 @@
 			name = EOD;
 			sourceTree = "<group>";
 		};
+		BB79E28118532F4F008DA699 /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				BB79E29718532F75008DA699 /* GRMustache.h */,
+				BB79E29518532F66008DA699 /* libGRMustache6-iOS.a */,
+				BB79E28218532F4F008DA699 /* logo.png */,
+				BB79E28318532F4F008DA699 /* PRKFakeRenderer.h */,
+				BB79E28418532F4F008DA699 /* PRKFakeRenderer.m */,
+				BB79E28518532F4F008DA699 /* PRKGenerator.h */,
+				BB79E28618532F4F008DA699 /* PRKGenerator.m */,
+				BB79E28718532F4F008DA699 /* PRKGeneratorDataSource.h */,
+				BB79E28818532F4F008DA699 /* PRKGeneratorDelegate.h */,
+				BB79E28918532F4F008DA699 /* PRKPageRenderer.h */,
+				BB79E28A18532F4F008DA699 /* PRKPageRenderer.m */,
+				BB79E28B18532F4F008DA699 /* PRKRenderHtmlOperation.h */,
+				BB79E28C18532F4F008DA699 /* PRKRenderHtmlOperation.m */,
+				BB79E28D18532F4F008DA699 /* PRKRenderHtmlOperationDelegate.h */,
+				BB79E28E18532F4F008DA699 /* template1.mustache */,
+			);
+			path = pdf;
+			sourceTree = "<group>";
+		};
 		ED46BB8318470B390095E532 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				BB31620F1853AEBE0060396D /* InvoiceItem.h */,
+				BB3162101853AEBE0060396D /* InvoiceItem.m */,
+				BB79E28118532F4F008DA699 /* pdf */,
 				86F41452184F3F6D0057353A /* ZBarSDK */,
 				ED46BB8418470B3E0095E532 /* MBProgress HUD */,
 			);
@@ -594,9 +649,11 @@
 				86BA80E5182560CD00F48B2E /* OrderInfo.json in Resources */,
 				866DD4A2181C403000DF43C5 /* Main.storyboard in Resources */,
 				BBAFCEE3182516F50025D478 /* barcode.png in Resources */,
+				BB79E29418532F4F008DA699 /* template1.mustache in Resources */,
 				ED3E3881184DB23B0099E682 /* check.png in Resources */,
 				86E26D471823C5F500D17098 /* back.png in Resources */,
 				8674902F181F9E7A0052BB75 /* ccReverse.png in Resources */,
+				BB79E28F18532F4F008DA699 /* logo.png in Resources */,
 				868169101820E1DA005516A2 /* ccbg2.png in Resources */,
 				8681690F1820E1DA005516A2 /* ccbg1.png in Resources */,
 				ED65531518520FE000EC4E4E /* Default.png in Resources */,
@@ -621,18 +678,22 @@
 				9D3AA65F1851B75F00E20A37 /* EODModifiedViewController.m in Sources */,
 				9D3AA65E1851B74D00E20A37 /* TodayInfoViewController.m in Sources */,
 				86E26D421823BAD100D17098 /* SODCustomTableCell.m in Sources */,
+				BB79E29218532F4F008DA699 /* PRKPageRenderer.m in Sources */,
 				865C35E61850995E00897F4C /* AppSingleton.m in Sources */,
 				ED3E387E184DB23B0099E682 /* SODPaletteViewController.m in Sources */,
 				BBFFE0AE18285361006D51DB /* ReturnsDatabaseViewController.m in Sources */,
 				8681691718210681005516A2 /* CustomerListViewController.m in Sources */,
+				BB3162111853AEBE0060396D /* InvoiceItem.m in Sources */,
 				866DD4A5181C403000DF43C5 /* ViewController.m in Sources */,
 				BBFFE0AB18281B5B006D51DB /* MaterialsViewController.m in Sources */,
 				BB784C541824FBAD001C7644 /* EODViewControllerViewController.m in Sources */,
 				86BA80E818256B6100F48B2E /* Order.m in Sources */,
 				ED46BB8718470B4D0095E532 /* MBProgressHUD.m in Sources */,
 				866DD49F181C403000DF43C5 /* AppDelegate.m in Sources */,
+				BB79E29318532F4F008DA699 /* PRKRenderHtmlOperation.m in Sources */,
 				8698B47E184F1461004F6AF9 /* MyAnnotation.m in Sources */,
 				86BA80E31825562F00F48B2E /* SignCaptureViewController.m in Sources */,
+				BB79E29118532F4F008DA699 /* PRKGenerator.m in Sources */,
 				86BA80DE18251D9600F48B2E /* ServiceWizardViewController.m in Sources */,
 				866DD49B181C403000DF43C5 /* main.m in Sources */,
 				8698B47D184F1461004F6AF9 /* MapDirectionsTableViewController.m in Sources */,
@@ -641,6 +702,7 @@
 				865EE6F31822868600A3A891 /* Customer.m in Sources */,
 				BBAFCEE61825191B0025D478 /* DropDownOptionsViewController.m in Sources */,
 				ED3E387F184DB23B0099E682 /* SODPaletteCustomTableCell.m in Sources */,
+				BB79E29018532F4F008DA699 /* PRKFakeRenderer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,6 +855,7 @@
 					/Users/itim3/dev/gitDSD,
 					"/Users/HNI/Projects/DSD-Demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo/DSD\\ Demo/GRMustache/lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -824,6 +887,7 @@
 					/Users/itim3/dev/gitDSD,
 					"/Users/HNI/Projects/DSD-Demo",
 					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo",
+					"/Users/shahilshah/xCode/vworker/Quinnox/DSD-Demo/DSD\\ Demo/GRMustache/lib",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";

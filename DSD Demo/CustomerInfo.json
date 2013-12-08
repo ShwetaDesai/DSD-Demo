@@ -2,7 +2,7 @@
   "CUST_REC":[
       {
         "CUST_NO": "STOP 1",
-        "NAME": "McDonald's",
+        "NAME": "Chick-fil-A",
         "CITY": "IRVINE, CA, USA",
         "STREET": "5445 ALTON PKWY",
         "PHONE": "+1 949-551-4700",
@@ -12,7 +12,7 @@
         "PALLETE":["1456789023456950019","1456789023456940067","1456789023456930031"]
       },
     {   "CUST_NO": "STOP 2",
-        "NAME": "McDonald's",
+        "NAME": "Chick-fil-A",
         "CITY": "IRVINE, CA, USA",
         "STREET": "15459 CULVER DRV",
         "PHONE": "+1 949-552-5959",
@@ -22,7 +22,7 @@
         "PALLETE":["1456789023456920029","1456789023456970087"]
       },
     {   "CUST_NO": "STOP 3",
-        "NAME": "McDonald's",
+        "NAME": "Chick-fil-A",
         "CITY": "IRVINE, CA, USA",
         "STREET": "84 CORPORATE PARK",
         "PHONE": "+1 949-251-1901",
@@ -33,7 +33,7 @@
 
     },
         {   "CUST_NO": "STOP 4",
-              "NAME": "McDonald's",
+              "NAME": "Chick-fil-A",
               "CITY": "IRVINE, CA, USA",
               "STREET": "1780 MAIN ST",
               "PHONE": "+1 949-250-1728",
@@ -44,7 +44,7 @@
 
     },
             {   "CUST_NO": "STOP 5",
-              "NAME": "McDonald's",
+              "NAME": "Chick-fil-A",
               "CITY": "IRVINE, CA, USA",
               "STREET": "3853 PORTOLA PKWY",
               "PHONE": "+1 714-505-3300",

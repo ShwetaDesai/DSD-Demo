@@ -10,8 +10,12 @@
 #import "AppDelegate.h"
 #import "Customer.h"
 #import "Order.h"
+#import "InvoiceItem.h"
 #import "SODCustomTableCell.h"
 #import <AVFoundation/AVFoundation.h>
+#import "PRKGenerator.h"
+#import "PRKRenderHtmlOperation.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
 #define COUNT_RETURNS_ITEMS_     4
 
@@ -254,6 +258,7 @@
     [btnemail setBackgroundColor:[UIColor colorWithRed:254.0/255.0 green:155.0/255.0 blue:1.0/255.0 alpha:1.0]];
     [btnemail setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btnemail setTitle:@"Email" forState:UIControlStateNormal];
+    [btnemail addTarget:self action:@selector(sendPDFEmail) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnemail];
     
     [self.view addSubview:signatureViewControllerDriver.view];
@@ -940,6 +945,93 @@
     
     //show the scanning/camera mode
     [self presentModalViewController:reader animated:YES];
+}
+
+- (void)sendPDFEmail {
+    NSMutableArray * articles = [NSMutableArray array];
+    NSMutableArray * articles1 = [NSMutableArray array];
+    
+    for (int i = 0; i < [arr_SalesOrders count]; i++) {
+        NSDictionary *dict =  [arr_SalesOrders objectAtIndex:i];
+        InvoiceItem * item = [[InvoiceItem alloc] init];
+        item.title = [dict valueForKey:JSONTAG_MAT_NO];
+        item.desc = [dict valueForKey:JSONTAG_MAT_DESC];
+        item.value = [dict valueForKey:JSONTAG_CUSTOMER_ENTERED];
+        item.value1 = [dict valueForKey:JSONTAG_EXTFLD4_COUNT];
+        
+        [articles addObject:item];
+    }
+    
+    AppDelegate *appObject = (AppDelegate*)([[UIApplication sharedApplication] delegate]);
+    
+    for (int i = 0; i < [arrReturns[appObject.rowCustomerListSelected] count]; i++) {
+        NSDictionary *dict = [arrReturns[appObject.rowCustomerListSelected] objectAtIndex:i];
+        InvoiceItem * item = [[InvoiceItem alloc] init];
+        item.title = [dict valueForKey:@"item"];
+        item.desc = [dict valueForKey:@"desc"];
+        item.value = [dict valueForKey:@"value"];;
+        
+        [articles1 addObject:item];
+    }
+    
+    Customer *customerSelected = [appObject.customersToService objectAtIndex:appObject.rowCustomerListSelected];
+    
+    defaultValues = @{
+                      @"articles"         : articles,
+                      @"articles1"        : articles1,
+                      @"companyName"      : customerSelected.name,
+                      @"companyStreet"   : customerSelected.street,
+                      @"companyCity"   : customerSelected.city,
+                      @"companyTelephone" : customerSelected.phoneNo,
+                      @"companyEmail"     : @"info@teseo.it",
+                      @"otherCompanyName" : @"Rossi Paolo s.r.l."
+                      };
+    
+    NSError * error;
+    NSString * templatePath = [[NSBundle mainBundle] pathForResource:@"template1" ofType:@"mustache"];
+    [[PRKGenerator sharedGenerator] createReportWithName:@"template1" templateURLString:templatePath itemsPerPage:100 totalItems:articles.count pageOrientation:PRKLandscapePage dataSource:self delegate:self error:&error];
+}
+
+- (id)reportsGenerator:(PRKGenerator *)generator dataForReport:(NSString *)reportName withTag:(NSString *)tagName forPage:(NSUInteger)pageNumber offset:(NSUInteger)offset itemsCount:(NSUInteger)itemsCount
+{
+    if ([tagName isEqualToString:@"articles"])
+    {
+        int count = itemsCount;
+        if (offset + count > [[defaultValues valueForKey:tagName] count])
+        {
+            count = [[defaultValues valueForKey:tagName] count] - offset;
+        }
+        
+        return [[defaultValues valueForKey:tagName] subarrayWithRange:NSMakeRange(offset, count)];
+    }
+    
+    return [defaultValues valueForKey:tagName];
+}
+
+- (void)reportsGenerator:(PRKGenerator *)generator didFinishRenderingWithData:(NSData *)data
+{
+    NSString * basePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString * fileName = [basePath stringByAppendingPathComponent:@"report.pdf"];
+    
+    [data writeToFile:fileName atomically:YES];
+    
+    MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+    controller.mailComposeDelegate = self;
+    [controller setSubject:[NSString stringWithFormat:@"GSF App"]];
+    [controller setMessageBody:@"Please find attached the invoice." isHTML:YES];
+    [controller addAttachmentData:data mimeType:@"text/pdf"  fileName:@"report.pdf"];
+    if (controller) [self presentModalViewController:controller animated:YES];
+
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError*)error;
+{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
